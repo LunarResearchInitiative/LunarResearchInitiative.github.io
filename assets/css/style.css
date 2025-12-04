@@ -269,10 +269,11 @@ body {
 }
 
 .lri-seal {
-  height: 52px;
-  width: 52px;
+  height: 85px;
+  width: 85px;
   object-fit: contain;
 }
+
 
 /* Navigation */
 .lri-topnav a {
