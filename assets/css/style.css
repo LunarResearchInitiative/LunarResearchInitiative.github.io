@@ -44,6 +44,63 @@ body {
   font-size: 1.6rem;
   margin: 0;
 }
+/* ================================================
+   MOBILE RESPONSIVE BEHAVIOR
+   ================================================ */
+
+@media (max-width: 720px) {
+
+  /* Logo reduces to avoid crowding */
+  .lri-seal {
+    height: 55px;
+    width: 55px;
+  }
+
+  /* Topbar stacks vertically */
+  .lri-topbar-inner {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 0;
+  }
+
+  /* Navigation wraps and centers */
+  .lri-topnav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .lri-topnav a {
+    font-size: 0.9rem;
+    padding: 4px 8px;
+  }
+
+  /* Headings spacing tightened */
+  h1.lri-section-title,
+  .lri-hero h1 {
+    font-size: 1.65rem;
+    line-height: 1.25;
+  }
+
+  .lri-section-text {
+    font-size: 0.95rem;
+  }
+
+  /* Card grid collapses to 1 column */
+  .lri-card-grid,
+  .archive-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Cards get more padding */
+  .lri-card,
+  .archive-card {
+    padding: 18px 16px;
+  }
+}
+
 
 .tagline {
   margin: 0.15rem 0 0;
