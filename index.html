@@ -4,118 +4,103 @@
   <meta charset="UTF-8">
   <title>Lunar Research Initiative</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-<header class="site-header">
-  <div class="brand">
-    <div>
-      <h1>Lunar Research Initiative</h1>
-      <p class="tagline">Quality, risk, and systems thinking for lunar and aerospace operations.</p>
+  <!-- Top navigation bar -->
+  <header class="lri-topbar">
+    <div class="lri-topbar-inner">
+      <div class="lri-topbar-left">
+        <img
+          src="assets/img/lri-seal.png"
+          alt="Lunar Research Initiative seal"
+          class="lri-seal"
+        />
+      </div>
+      <nav class="lri-topnav">
+        <a href="/">Home</a>
+        <a href="/about/">About</a>
+        <a href="/research/">Research</a>
+        <a href="/initiatives/">Initiatives</a>
+        <a href="/standards/">Standards</a>
+        <a href="/partnerships/">Partnerships</a>
+        <a href="/contact/">Contact</a>
+      </nav>
     </div>
-  </div>
+  </header>
 
-<nav class="top-nav">
-  <a href="index.html" class="active">Home</a>
-  <a href="publications.html">Publications</a>
-  <a href="newsletter.html">Newsletter Archive</a>
-  <a href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7402028860193796097" target="_blank" rel="noopener">
-    Newsletter
-  </a>
-  <a href="#about">About</a>
-</nav>
-
-</header>
-
-<main>
-
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-text">
-      <h2>Building quality frameworks for the next phase of space operations.</h2>
-      <p>
-        The Lunar Research Initiative explores practical architectures for quality, verification,
-        and risk management in lunar surface and aerospace manufacturing.
-      </p>
-      <a href="#newsletter" class="primary-button">Read Aerospace Quality Brief</a>
-    </div>
-  </section>
-
-  <!-- Newsletter Section -->
-  <section id="newsletter" class="section">
-    <h3>Aerospace Quality Brief</h3>
-    <p>
-      Aerospace Quality Brief is a weekly LinkedIn newsletter that focuses on the intersection
-      of cost, speed, and compliance in aerospace and lunar manufacturing.
-    </p>
-    <p>
-      Each edition shares real case studies, checklists, and tools that quality and systems
-      engineers can apply in live projects.
-    </p>
-   <p class="callout">
-  <strong>Read the latest issues on LinkedIn:</strong><br>
-  <a href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7402028860193796097" target="_blank" rel="noopener">
-    Visit Aerospace Quality Brief
-  </a>
-</p>
-
-  </section>
-
-  <!-- Publications Section -->
-  <section id="publications" class="section">
-    <h3>Key Publications</h3>
-    <div class="card-grid">
-      <article class="card">
-        <h4>Risk Based Quality Architecture for Lunar Production Systems</h4>
-        <p>
-          A framework that aligns lunar production quality with risk, CTQ flow down,
-          and mission assurance requirements.
+  <!-- Hero section -->
+  <main>
+    <section class="lri-hero">
+      <div class="lri-hero-inner">
+        <h1>Engineering the Quality Foundations of Lunar Exploration</h1>
+        <p class="lri-hero-subtitle">
+          Building the research, standards, and tools that make lunar manufacturing safe, reliable, and mission ready.
         </p>
-        <p>
-          <a href="https://engrxiv.org/" target="_blank" rel="noopener">
-            View on engrXiv
-          </a>
+        <div class="lri-hero-buttons">
+          <a href="/research/" class="lri-btn lri-btn-primary">Explore Our Research</a>
+          <a href="/partnerships/" class="lri-btn lri-btn-outline">Partner With LRI</a>
+        </div>
+        <p class="lri-hero-caption">
+          Lunar Research Initiative is a nonprofit scientific and educational organization focused on the next generation of lunar infrastructure.
         </p>
-      </article>
+      </div>
+    </section>
 
-      <article class="card">
-        <h4>Unified Lunar Quality Framework (ULQF) Series</h4>
-        <p>
-          A series of technical manuscripts that organize predictive quality, CTQs,
-          and autonomy for lunar surface operations.
+    <!-- What is LRI -->
+    <section class="lri-section">
+      <div class="lri-section-inner">
+        <h2 class="lri-section-title">What is the Lunar Research Initiative</h2>
+        <p class="lri-section-text">
+          The Lunar Research Initiative (LRI) develops the scientific foundations that future lunar missions need to build safe and reliable
+          infrastructure on the Moon. We combine quality engineering, reliability science, and lunar manufacturing research to create methods
+          that mission planners can trust.
         </p>
-        <p>
-          <a href="publications.html">View publication list</a>
-        </p>
-      </article>
-    </div>
-  </section>
+      </div>
+    </section>
 
-  <!-- About Section -->
-  <section id="about" class="section">
-    <h3>About the Lunar Research Initiative</h3>
-    <p>
-      The Lunar Research Initiative studies how quality systems, risk management, and
-      verification methods adapt to lunar environments and highly autonomous aerospace systems.
-    </p>
-    <p>
-      The initiative focuses on practical tools that engineers can use now:
-      checklists, reference architectures, and flight ready quality patterns.
-    </p>
-  </section>
+    <!-- What We Do cards -->
+    <section class="lri-section">
+      <div class="lri-section-inner">
+        <h2 class="lri-section-title">What We Do</h2>
 
-</main>
+        <div class="lri-card-grid">
+          <article class="lri-card">
+            <h3>Quality Architectures</h3>
+            <p>
+              Designing mission tier quality structures that connect requirements, risk, and verification for lunar systems.
+            </p>
+          </article>
 
-<footer class="site-footer">
-  <p>
-    © <span id="year"></span> Lunar Research Initiative. All rights reserved.
-  </p>
-</footer>
+          <article class="lri-card">
+            <h3>Regolith Manufacturing Research</h3>
+            <p>
+              Studying regolith based processes, capability, and reliability for construction and production on the lunar surface.
+            </p>
+          </article>
 
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
+          <article class="lri-card">
+            <h3>Predictive Quality</h3>
+            <p>
+              Developing predictive signatures, drift detection, and decision structures for time shifted lunar operations.
+            </p>
+          </article>
+
+          <article class="lri-card">
+            <h3>Standards and Frameworks</h3>
+            <p>
+              Publishing open frameworks like ULQF that help unify quality practices across lunar missions and organizations.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="lri-footer">
+    <p>© 2025 Lunar Research Initiative. All rights reserved.</p>
+  </footer>
 
 </body>
 </html>
