@@ -1,0 +1,26 @@
+[
+  {
+    "edition": "001",
+    "title": "The 20 Minute Protocol Review That Prevents Weeks of Rework",
+    "tags": "Validation · Speed",
+    "summary": "A fast, structured pre-execution review that catches missing tests, bad sampling plans, and misaligned acceptance criteria before execution, avoiding rework and launch delays.",
+    "url": "YOUR-LINKEDIN-URL-EDITION-001",
+    "status": "live"
+  },
+  {
+    "edition": "002",
+    "title": "Three Case Studies: Traceability and Documentation Failures",
+    "tags": "Compliance · Risk",
+    "summary": "Three real-world scenarios where small documentation gaps created large compliance and schedule impacts in production systems.",
+    "url": "",
+    "status": "coming-soon"
+  },
+  {
+    "edition": "003",
+    "title": "The Tests That Predict Process Failure",
+    "tags": "Capability · Production Readiness",
+    "summary": "Three simple screening tests that forecast whether a process will fail in production: stability under load, sensitivity to variation, and margin against worst-case inputs.",
+    "url": "",
+    "status": "coming-soon"
+  }
+]
