@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ISO to ULQF Crosswalk – Lunar Research Initiative</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body>
+
+<header class="lri-topbar">
+  <div class="lri-topbar-inner">
+    <div class="lri-topbar-left">
+      <img src="/assets/img/LRI LOGO.jpeg" alt="Lunar Research Initiative seal" class="lri-seal">
+    </div>
+    <nav class="lri-topnav">
+      <a href="/">Home</a>
+      <a href="/about/">About</a>
+      <a href="/research/">Research</a>
+      <a href="/initiatives/">Initiatives</a>
+      <a href="/standards/">Standards</a>
+      <a href="/publications/">Publications</a>
+      <a href="/newsletter/">Newsletter</a>
+      <a href="/partnerships/">Partnerships</a>
+      <a href="/contact/">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="lri-section">
+  <div class="lri-section-inner">
+    <h1 class="lri-section-title">ISO 9001 to ULQF Crosswalk</h1>
+
+    <p class="lri-section-text" style="max-width: 900px;">
+      This crosswalk maps selected ISO 9001 concepts to ULQF constructs used in lunar and autonomous operations.
+      It serves as a navigation aid for reviewers and partners, not a certification guide.
+    </p>
+
+    <p class="lri-section-text" style="max-width: 900px; font-size: 0.95em;">
+      <strong>Download:</strong>
+      <a href="/assets/docs/ISO9001_ULQF_Crosswalk.csv" target="_blank" rel="noopener">
+        ISO9001_ULQF_Crosswalk.csv
+      </a>
+    </p>
+
+    <div style="overflow-x:auto; border: 1px solid #e6e6e6; border-radius: 12px;">
+      <table style="width: 100%; border-collapse: collapse; min-width: 980px;">
+        <thead>
+          <tr>
+            <th style="text-align:left; padding: 10px; border-bottom: 1px solid #e6e6e6;">ISO 9001 clause</th>
+            <th style="text-align:left; padding: 10px; border-bottom: 1px solid #e6e6e6;">Intent</th>
+            <th style="text-align:left; padding: 10px; border-bottom: 1px solid #e6e6e6;">ULQF mapping</th>
+            <th style="text-align:left; padding: 10px; border-bottom: 1px solid #e6e6e6;">Notes for lunar or delayed ops</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td style="padding: 10px; border-bottom: 1px solid #f0f0f0;">4.4 QMS and its processes</td>
+            <td style="padding: 10px; border-bottom: 1px solid #f0f0f0;">Define, sequence, and control core processes</td>
+            <td style="padding: 10px; border-bottom: 1px solid #f0f0f0;">ULQF quality architecture and process authority structure</td>
+            <td style="padding: 10px; border-bottom: 1px solid #f0f0f0;">Distributed ops require explicit authority handoffs and verification windows</td>
+          </tr>
+
+          <tr>
+            <td style="padding: 10px; border-bottom: 1px solid #f0f0f0;">6.1 Actions to address risks and opportunities</td>
+            <td style="padding: 10px; border-bottom: 1px solid #f0f0f0;">Plan controls for uncertainty and change</td>
+            <td style="padding: 10px; border-bottom: 1px solid #f0f0f0;">ULQF risk governance and hazard drift controls</td>
+            <td style="padding: 10px; border-bottom: 1px solid #f0f0f0;">Delay increases evidence aging, so model decision windows and triggers</td>
+          </tr>
+
+          <tr>
+            <td style="padding: 10px; border-bottom: 1px solid #f0f0f0;">7.1.5 Monitoring and measuring resources</td>
+            <td style="padding: 10px; border-bottom: 1px solid #f0f0f0;">Ensure measurement capability and validity</td>
+            <td style="padding: 10px; border-bottom: 1px solid #f0f0f0;">ULQF metrology validity, sensor drift detection, evidence confidence</td>
+            <td style="padding: 10px; border-bottom: 1px solid #f0f0f0;">Thermal cycling and dust create drift; treat confidence decay as a control variable</td>
+          </tr>
+
+          <tr>
+            <td style="padding: 10px; border-bottom: 1px solid #f0f0f0;">8.5 Production and service provision</td>
+            <td style="padding: 10px; border-bottom: 1px solid #f0f0f0;">Execute under controlled conditions</td>
+            <td style="padding: 10px; border-bottom: 1px solid #f0f0f0;">ULQF CTQ control, verification load planning, process drift monitoring</td>
+            <td style="padding: 10px; border-bottom: 1px solid #f0f0f0;">Autonomy requires verified control modes and off-nominal transitions</td>
+          </tr>
+
+          <tr>
+            <td style="padding: 10px; border-bottom: 1px solid #f0f0f0;">8.7 Control of nonconforming outputs</td>
+            <td style="padding: 10px; border-bottom: 1px solid #f0f0f0;">Contain and disposition nonconformance</td>
+            <td style="padding: 10px; border-bottom: 1px solid #f0f0f0;">ULQF anomaly containment, quarantine logic, mission risk disposition</td>
+            <td style="padding: 10px; border-bottom: 1px solid #f0f0f0;">Remote disposition must include latency-aware escalation and safe states</td>
+          </tr>
+
+          <tr>
+            <td style="padding: 10px;">9.1 Monitoring, measurement, analysis and evaluation</td>
+            <td style="padding: 10px;">Measure performance and decision inputs</td>
+            <td style="padding: 10px;">ULQF data integrity, decision fidelity metrics, leading indicators</td>
+            <td style="padding: 10px;">Track data age and confidence, not just accuracy, under delayed telemetry</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="lri-section-text" style="max-width: 900px; font-size: 0.95em; margin-top: 14px;">
+      Note: This mapping is descriptive. ISO and ULQF terms are not interchangeable, and the crosswalk does not
+      imply certification, endorsement, or compliance claims.
+    </p>
+
+  </div>
+</section>
+
+</main>
+
+<footer class="lri-footer">
+  <p>© 2025 Lunar Research Initiative. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
