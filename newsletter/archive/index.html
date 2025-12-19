@@ -30,31 +30,61 @@
 
 <main>
 
+  <!-- Page intro -->
   <section class="lri-section">
     <div class="lri-section-inner">
       <h1 class="lri-section-title">Newsletter Archive</h1>
       <p class="lri-section-text">
-        Browse all past editions of Aerospace Quality Brief, organized by release date. Each article
-        focuses on practical tools that improve cost, speed, and compliance in aerospace and lunar
-        manufacturing.
+        Browse all past editions of Aerospace Quality Brief, organized by release date.
+        Each article focuses on practical tools that improve cost, speed, and compliance
+        in aerospace and lunar manufacturing.
       </p>
 
-      <div class="archive-toolbar">
-        <span class="archive-pill">Cost · Speed · Compliance</span>
-        <a class="primary-button"
-           href="https://www.linkedin.com/newsletters/aerospace-quality-brief-7402028860193796097/"
-           target="_blank" rel="noopener">
+      <p style="margin-top: 20px;">
+        <a href="https://www.linkedin.com/newsletters/7402028860193796097/"
+           class="lri-btn lri-btn-primary"
+           target="_blank"
+           rel="noopener">
           Subscribe on LinkedIn
         </a>
-      </div>
+      </p>
     </div>
   </section>
 
+  <!-- Archive list -->
   <section class="lri-section">
     <div class="lri-section-inner">
-      <div id="archive-grid" class="archive-grid">
-        <!-- Cards will be injected here by JavaScript -->
+
+      <div class="lri-card-grid">
+
+        <!-- EDITION 1 -->
+        <article class="lri-card">
+          <h3>When Traceability Slows Production Instead of Protecting It</h3>
+          <p>Published 2025</p>
+          <p>
+            <a href="#" target="_blank" rel="noopener">
+              Read on LinkedIn
+            </a>
+          </p>
+        </article>
+
+        <!-- EDITION 2 -->
+        <article class="lri-card">
+          <h3>Three Case Studies: Traceability and Documentation Failures in Aerospace</h3>
+          <p>Published 2025</p>
+          <p>
+            <a href="#" target="_blank" rel="noopener">
+              Read on LinkedIn
+            </a>
+          </p>
+        </article>
+
       </div>
+
+      <p class="lri-section-text" style="margin-top: 18px;">
+        New editions publish weekly. Links above point to the original LinkedIn newsletter posts.
+      </p>
+
     </div>
   </section>
 
@@ -63,72 +93,6 @@
 <footer class="lri-footer">
   <p>© 2025 Lunar Research Initiative. All rights reserved.</p>
 </footer>
-
-<script>
-  // Load newsletter archive data from JSON and render cards
-  document.addEventListener('DOMContentLoaded', function () {
-    fetch('archive-data.json')
-      .then(function (response) {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return response.json();
-      })
-      .then(function (data) {
-        renderArchiveCards(data);
-      })
-      .catch(function (error) {
-        console.error('Error loading archive-data.json:', error);
-        const grid = document.getElementById('archive-grid');
-        grid.innerHTML = '<p>Unable to load newsletter archive at this time.</p>';
-      });
-  });
-
-  function renderArchiveCards(editions) {
-    const grid = document.getElementById('archive-grid');
-    grid.innerHTML = '';
-
-    // Sort editions by edition number descending (newest first)
-    editions.sort(function (a, b) {
-      return parseInt(b.edition, 10) - parseInt(a.edition, 10);
-    });
-
-    editions.forEach(function (item) {
-      const card = document.createElement('article');
-      card.className = 'archive-card';
-
-      const title = document.createElement('h4');
-      title.textContent = item.title;
-      card.appendChild(title);
-
-      const meta = document.createElement('p');
-      meta.className = 'archive-meta';
-      meta.textContent = 'Edition ' + item.edition + ' · ' + item.tags;
-      card.appendChild(meta);
-
-      const summary = document.createElement('p');
-      summary.className = 'archive-summary';
-      summary.textContent = item.summary;
-      card.appendChild(summary);
-
-      const link = document.createElement('a');
-      link.className = 'archive-link';
-
-      if (item.status === 'live' && item.url) {
-        link.href = item.url;
-        link.target = '_blank';
-        link.rel = 'noopener';
-        link.textContent = 'Read this edition on LinkedIn';
-      } else {
-        link.href = '#';
-        link.textContent = 'LinkedIn link coming soon';
-      }
-
-      card.appendChild(link);
-      grid.appendChild(card);
-    });
-  }
-</script>
 
 </body>
 </html>
