@@ -335,12 +335,25 @@ body {
   object-fit: contain;
 }
 
-/* Navigation */
+/* Top navigation layout fix */
+.lri-topnav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 18px;
+}
+
 .lri-topnav a {
-  margin-left: 24px;
+  margin-left: 0;
   text-decoration: none;
   font-size: 0.95rem;
   color: #333333;
+  white-space: nowrap;
+}
+
+.lri-topnav a:hover,
+.lri-topnav a:focus {
+  color: #f47c1f;
 }
 
 .lri-topnav a:hover,
