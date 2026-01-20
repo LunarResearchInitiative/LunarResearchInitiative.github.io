@@ -432,6 +432,17 @@ body {
   text-align: center;
   margin-bottom: 16px;
 }
+/* Institutional announcement accent */
+.lri-announcement {
+  background-color: #fff8f2; /* very light LRI orange tint */
+  border-left: 4px solid #e46a1f;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.lri-announcement .lri-section-inner {
+  padding-left: 20px;
+}
 
 .lri-section-text {
   text-align: center;
