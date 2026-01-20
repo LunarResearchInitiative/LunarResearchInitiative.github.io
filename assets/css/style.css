@@ -403,6 +403,13 @@ body {
 .lri-btn-outline:hover {
   background: #fff3e5;
 }
+/* Call-to-action row (used in announcements and featured sections) */
+.lri-cta-row {
+  margin-top: 0.75rem;
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
 
 .lri-hero-caption {
   font-size: 0.95rem;
