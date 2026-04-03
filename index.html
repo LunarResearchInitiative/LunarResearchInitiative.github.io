@@ -15,8 +15,9 @@
       --lri-muted: #5a5a5a;
       --lri-border: rgba(0, 0, 0, 0.08);
       --lri-bg: #ffffff;
-      --lri-soft: #fff7f2;
+      --lri-soft: #fffaf7;
       --lri-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+      --lri-shadow-soft: 0 2px 10px rgba(0, 0, 0, 0.03);
       --lri-radius: 14px;
       --lri-max: 1120px;
     }
@@ -25,10 +26,16 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       color: var(--lri-text);
       background: #ffffff;
+      font-size: 16px;
+      line-height: 1.6;
     }
 
     main {
@@ -47,7 +54,7 @@
     }
 
     .lri-section {
-      padding: 26px 24px;
+      padding: 22px 24px;
     }
 
     .lri-hero-inner,
@@ -70,17 +77,18 @@
 
     .lri-hero h1 {
       max-width: 860px;
-      margin: 0 auto 18px;
+      margin: 0 auto 20px;
       text-align: center;
       line-height: 1.12;
+      font-size: 2.35rem;
     }
 
     .lri-hero-subtitle {
-      max-width: 820px;
+      max-width: 760px;
       margin: 0 auto 28px;
       text-align: center;
       line-height: 1.7;
-      font-size: 1.05rem;
+      font-size: 1.08rem;
       color: var(--lri-muted);
     }
 
@@ -140,7 +148,7 @@
 
     .lri-section-title {
       text-align: center;
-      margin: 0 0 22px;
+      margin: 0 0 18px;
     }
 
     .lri-start-here-layout {
@@ -172,6 +180,8 @@
 
     .lri-side-panel {
       background: var(--lri-soft);
+      border: 1px solid rgba(228, 106, 31, 0.18);
+      box-shadow: var(--lri-shadow-soft);
       position: sticky;
       top: 24px;
     }
@@ -181,6 +191,14 @@
     .lri-card h3 {
       margin-top: 0;
       margin-bottom: 12px;
+    }
+
+    .lri-opening-copy,
+    .lri-side-panel p,
+    .lri-card p,
+    .lri-section-note,
+    .lri-credibility-line p {
+      font-size: 1rem;
     }
 
     .lri-opening-copy {
@@ -252,7 +270,12 @@
     }
 
     .lri-card {
-      padding: 20px;
+      padding: 22px;
+    }
+
+    .lri-card h3 {
+      font-size: 1rem;
+      margin-bottom: 10px;
     }
 
     .lri-card p:last-child {
@@ -286,8 +309,9 @@
 
     .lri-featured-card {
       border-left: 4px solid var(--lri-orange);
-      max-width: 820px;
+      max-width: 900px;
       margin: 0 auto;
+      padding: 28px;
     }
 
     .lri-featured-card .lri-cta-row {
@@ -340,6 +364,14 @@
 
       .lri-section {
         padding: 24px 20px;
+      }
+
+      .lri-hero h1 {
+        font-size: 2rem;
+      }
+
+      .lri-hero-subtitle {
+        font-size: 1rem;
       }
     }
   </style>
@@ -398,7 +430,7 @@
                 </p>
 
                 <p>
-                  If this is your first visit, start with the guide at the side and the paths below. They will help you understand the core ideas, find the most useful reading, and decide where to go next.
+                  If this is your first visit, start with the guide on the right and the paths below. They will help you understand the core ideas, find the most useful reading, and decide where to go next.
                 </p>
               </div>
             </div>
