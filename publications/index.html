@@ -2,265 +2,399 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Publications – Lunar Research Initiative</title>
+  <title>Publications | Lunar Research Initiative</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <style>
+    main {
+      max-width: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .lri-hero,
+    .lri-section {
+      width: 100%;
+    }
+
+    .lri-hero {
+      padding: 88px 24px 56px;
+    }
+
+    .lri-section {
+      padding: 44px 24px;
+    }
+
+    .lri-hero-inner,
+    .lri-section-inner,
+    .lri-topbar-inner,
+    .lri-footer-inner {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .lri-hero h1 {
+      max-width: 900px;
+      margin: 0 auto 18px;
+      text-align: center;
+    }
+
+    .lri-hero-subtitle {
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+      line-height: 1.7;
+    }
+
+    .lri-section-title {
+      text-align: center;
+      margin-bottom: 22px;
+    }
+
+    .lri-section-text {
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+      line-height: 1.75;
+    }
+
+    .lri-card-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 20px;
+    }
+
+    .lri-card {
+      background: #ffffff;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      border-radius: 14px;
+      padding: 24px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+    }
+
+    .lri-card h3 {
+      margin-top: 0;
+      margin-bottom: 12px;
+    }
+
+    .lri-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .lri-featured-card {
+      border-left: 4px solid #e46a1f;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .lri-badge {
+      display: inline-block;
+      margin-top: 0.2rem;
+      margin-bottom: 0.8rem;
+      padding: 0.2rem 0.55rem;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      border-radius: 4px;
+    }
+
+    .lri-badge-published {
+      background-color: #e46a1f;
+      color: #ffffff;
+    }
+
+    .lri-meta {
+      margin-top: 12px;
+      font-size: 0.98rem;
+      line-height: 1.7;
+    }
+
+    .lri-meta strong {
+      font-weight: 700;
+    }
+
+    .lri-card a,
+    .lri-meta a {
+      color: #e46a1f;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .lri-card a:hover,
+    .lri-meta a:hover {
+      text-decoration: underline;
+    }
+
+    .lri-btn {
+      display: inline-block;
+      padding: 0.85rem 1.4rem;
+      border-radius: 999px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .lri-btn-primary {
+      background-color: #e46a1f;
+      color: #ffffff;
+      border: 1px solid #e46a1f;
+    }
+
+    .lri-btn-primary:visited {
+      color: #ffffff;
+    }
+
+    .lri-btn-primary:hover,
+    .lri-btn-primary:focus {
+      background-color: #cf5d18;
+      color: #ffffff;
+      border-color: #cf5d18;
+      text-decoration: none;
+    }
+
+    .lri-btn-outline {
+      background-color: transparent;
+      color: #e46a1f;
+      border: 1px solid #e46a1f;
+    }
+
+    .lri-btn-outline:visited {
+      color: #e46a1f;
+    }
+
+    .lri-btn-outline:hover,
+    .lri-btn-outline:focus {
+      background-color: rgba(228, 106, 31, 0.08);
+      color: #e46a1f;
+      text-decoration: none;
+    }
+
+    .lri-cta-row {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+
+    .lri-note {
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+      color: #444444;
+      line-height: 1.7;
+    }
+
+    .lri-footer {
+      padding: 28px 24px 40px;
+    }
+
+    .lri-footer p {
+      text-align: center;
+      margin: 0;
+    }
+
+    @media (max-width: 900px) {
+      .lri-card-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .lri-hero {
+        padding: 72px 20px 48px;
+      }
+
+      .lri-section {
+        padding: 34px 20px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
-<header class="lri-topbar">
-  <div class="lri-topbar-inner">
-    <div class="lri-topbar-left">
-      <img src="/assets/img/LRI LOGO.jpeg" alt="Lunar Research Initiative seal" class="lri-seal">
+  <header class="lri-topbar">
+    <div class="lri-topbar-inner">
+      <div class="lri-topbar-left">
+        <img src="../assets/img/LRI LOGO.jpeg" alt="Lunar Research Initiative seal" class="lri-seal">
+      </div>
+
+      <nav class="lri-topnav">
+        <a href="../">Home</a>
+        <a href="../about/">About</a>
+        <a href="../research/">Research</a>
+        <a href="../initiatives/">Initiatives</a>
+        <a href="../standards/">Standards</a>
+        <a href="./">Publications</a>
+        <a href="../books/">Books</a>
+        <a href="../newsletter/">Newsletter</a>
+        <a href="../partnerships/">Partnerships</a>
+        <a href="../contact/">Contact</a>
+      </nav>
     </div>
-    <nav class="lri-topnav">
-  <a href="/">Home</a>
-  <a href="/about/">About</a>
-  <a href="/research/">Research</a>
-  <a href="/initiatives/">Initiatives</a>
-  <a href="/standards/">Standards</a>
-  <a href="/publications/">Publications</a>
-  <a href="/newsletter/">Newsletter</a>
-  <a href="/partnerships/">Partnerships</a>
-  <a href="/contact/">Contact</a>
-</nav>
+  </header>
 
-  </div>
-</header>
-
-<main>
-
-<!-- TITLE SECTION -->
-<section class="lri-section">
-  <div class="lri-section-inner">
-    <h1 class="lri-section-title">Publications</h1>
-    <p class="lri-section-text">
-      The Lunar Research Initiative publishes open-access technical papers that advance quality engineering,
-      regolith manufacturing, predictive analytics, risk-based architectures, and mission assurance for lunar
-      surface operations. All publications are freely available for researchers, mission planners, and industry.
-    </p>
-  </div>
-</section>
-<!-- FOR REVIEWERS NOTE -->
-<section class="lri-section">
-  <div class="lri-section-inner">
-    <p class="lri-section-text" style="max-width: 900px;">
-      <strong>For reviewers and editors:</strong>
-      LRI publications are presented as applied research contributions addressing quality,
-      risk, and manufacturing readiness challenges in lunar and autonomous systems.
-      All papers are released as open-access preprints to support early technical review,
-      cross-disciplinary feedback, and standards-aligned discussion prior to or alongside
-      formal journal publication.
-    </p>
-<p class="lri-section-text" style="max-width: 900px; font-size: 0.95em; margin-top: 6px;">
-  <strong>How to cite:</strong> Please cite the DOI shown on each publication record.
-</p>
-<p class="lri-section-text" style="max-width: 900px;">
-  <a href="/cite/">Cite this site</a>
-</p>
-<p class="lri-section-text" style="max-width: 900px;">
-  <a href="/publications/changelog/">Publications changelog</a>
-</p>
-
-    <p class="lri-section-text" style="max-width: 900px; margin-top: 10px;">
-  <strong>LRI Overview (PDF):</strong>
-  <a href="/assets/docs/LRI_Overview_Print.pdf" target="_blank" rel="noopener">Print version</a>
-  ·
-  <a href="/assets/docs/LRI_Overview_Screen.pdf" target="_blank" rel="noopener">Screen version</a>
-</p>
-
-  </div>
-</section>
-
-<!-- ULQF SERIES -->
-<section class="lri-section">
-  <div class="lri-section-inner">
-    <h2 class="lri-section-title">Unified Lunar Quality Framework (ULQF) Series</h2>
-
-    <div class="lri-card-grid">
-<article class="lri-card">
-  <h3>Governance Beyond Earth: Decision Authority, Verification, and Evidence Integrity for Lunar Operations</h3>
-
-  <span class="lri-badge lri-badge-published">Book Published</span>
-
-  <p>
-    This book examines governance failure modes unique to lunar and deep-space operations,
-    where delayed authority, degraded evidence, and constrained verification environments
-    challenge traditional terrestrial decision frameworks. It establishes a rigorously
-    technical foundation for decision authority, evidence integrity, and verification logic
-    under extreme operational latency.
-  </p>
-
-  <p class="lri-meta">
-    ISBN: 979-8243257398
-  </p>
-</article>
-
-      <article class="lri-card">
-        <h3>A Risk-Based Quality Architecture for Lunar Production Systems</h3>
-       <span class="lri-badge lri-badge-published">Published</span>
-        <p>
-          Defines a mission-ready quality architecture for lunar surface manufacturing, linking CTQs,
-          verification, reliability, and risk.
+  <main>
+    <section class="lri-hero">
+      <div class="lri-hero-inner">
+        <h1>Publications</h1>
+        <p class="lri-hero-subtitle">
+          Peer-reviewed articles, preprints, and formal research outputs from the Lunar Research Initiative.
         </p>
-        <p>
-          Engineering Archive (engrXiv) · 2025 · DOI:
-          <a href="https://doi.org/10.31224/5845" target="_blank" rel="noopener">10.31224/5845</a>
-        </p>
-        <p>
-          <a href="https://doi.org/10.31224/5845" target="_blank" rel="noopener">Read this publication</a>
-        </p>
-      </article>
+      </div>
+    </section>
 
-      <article class="lri-card">
-        <h3>Data Integrity as Mission Assurance: How the Unified Lunar Quality Framework Prevents QMS Data Errors in Aerospace and Lunar Manufacturing</h3>
-       <span class="lri-badge lri-badge-published">Published</span>
-        <p>
-          Reframes QMS data integrity as a mission-assurance function and introduces ULQF controls that prevent
-          incorrect or incomplete data from entering mission-critical decision flows.
-        </p>
-        <p>
-          Zenodo · 2025 · DOI:
-          <a href="https://doi.org/10.5281/zenodo.17823802" target="_blank" rel="noopener">10.5281/zenodo.17823802</a>
-        </p>
-        <p>
-          <a href="https://doi.org/10.5281/zenodo.17823802" target="_blank" rel="noopener">Read this publication</a>
-        </p>
-      </article>
+    <section class="lri-section">
+      <div class="lri-section-inner">
+        <h2 class="lri-section-title">Latest Publication</h2>
 
-      <article class="lri-card">
-        <h3>Predictive Quality for Autonomous Lunar Manufacturing</h3>
-       <span class="lri-badge lri-badge-published">Published</span>
-        <p>
-          Explores predictive signatures, time-shifted decision loops, and autonomy boundaries for lunar operations.
-        </p>
-        <p>
-          Zenodo · 2025 · DOI:
-          <a href="https://doi.org/10.5281/zenodo.17867798" target="_blank" rel="noopener">10.5281/zenodo.17867798</a>
-        </p>
-        <p>
-          <a href="https://doi.org/10.5281/zenodo.17867798" target="_blank" rel="noopener">Read this publication</a>
-        </p>
-      </article>
+        <article class="lri-card lri-featured-card">
+          <h3>Delay-Informed Decision Authority for Lunar Operations: A Unified Lunar Quality Framework</h3>
+          <span class="lri-badge lri-badge-published">Published</span>
 
-      <article class="lri-card">
-        <h3>Regolith CTQ-Capability-Reliability Integration for Lunar Regolith Manufacturing</h3>
-        <span class="lri-badge lri-badge-review">In Review</span>
-        <p>
-          Introduces an integrated structure connecting regolith critical-to-quality attributes, capability limits,
-          and reliability signatures.
-        </p>
-        <p>
-          <a href="#" target="_blank" rel="noopener">In Review at DCE</a>
-        </p>
-      </article>
+          <p>
+            Published in the <em>Journal of Space Safety Engineering</em>, this article presents the Unified Lunar Quality Framework for decision authority, verification timing, and evidence integrity under communication delay.
+          </p>
 
+          <p class="lri-meta">
+            <strong>Journal:</strong> Journal of Space Safety Engineering<br>
+            <strong>Date:</strong> 2026-03<br>
+            <strong>Type:</strong> Journal article<br>
+            <strong>DOI:</strong>
+            <a href="https://doi.org/10.1016/j.jsse.2026.03.004" target="_blank" rel="noopener">
+              10.1016/j.jsse.2026.03.004
+            </a>
+          </p>
+
+          <div class="lri-cta-row">
+            <a href="https://doi.org/10.1016/j.jsse.2026.03.004" target="_blank" rel="noopener" class="lri-btn lri-btn-primary">View Publication</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="lri-section">
+      <div class="lri-section-inner">
+        <h2 class="lri-section-title">Journal Articles</h2>
+
+        <div class="lri-card-grid">
+          <article class="lri-card">
+            <h3>Delay-Informed Decision Authority for Lunar Operations: A Unified Lunar Quality Framework</h3>
+            <span class="lri-badge lri-badge-published">Published</span>
+
+            <p>
+              A journal article on decision authority allocation, verification timing, and evidence integrity under delayed lunar supervision.
+            </p>
+
+            <p class="lri-meta">
+              <strong>Figueroa, R.</strong> (2026). <em>Delay-Informed Decision Authority for Lunar Operations: A Unified Lunar Quality Framework</em>. <em>Journal of Space Safety Engineering</em>.<br>
+              <strong>DOI:</strong>
+              <a href="https://doi.org/10.1016/j.jsse.2026.03.004" target="_blank" rel="noopener">
+                10.1016/j.jsse.2026.03.004
+              </a>
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="lri-section">
+      <div class="lri-section-inner">
+        <h2 class="lri-section-title">Regolith Manufacturing Research</h2>
+
+        <div class="lri-card-grid">
+          <article class="lri-card">
+            <h3>CTQ Decomposition for Lunar Additive Manufacturing</h3>
+            <span class="lri-badge lri-badge-published">Published</span>
+
+            <p>
+              Develops a CTQ map for lunar additive manufacturing processes, including environmental modifiers, process drift, and verification load design.
+            </p>
+
+            <p class="lri-meta">
+              <strong>Figueroa, R.</strong> (2025). <em>CTQ decomposition for lunar additive manufacturing: Environmental modifiers, process drift, and verification load design</em> (Version 1.0). Zenodo.<br>
+              <strong>DOI:</strong>
+              <a href="https://doi.org/10.5281/zenodo.18048071" target="_blank" rel="noopener">
+                10.5281/zenodo.18048071
+              </a>
+            </p>
+
+            <div class="lri-cta-row">
+              <a href="https://doi.org/10.5281/zenodo.18048071" target="_blank" rel="noopener" class="lri-btn lri-btn-primary">View Publication</a>
+            </div>
+          </article>
+
+          <article class="lri-card">
+            <h3>Regolith Material Behavior and Process Drift in Lunar Manufacturing</h3>
+
+            <p>
+              Analyzes drift mechanisms within regolith-based processes and the verification structures required to maintain stability.
+            </p>
+
+            <p><em>Manuscript in preparation.</em></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="lri-section">
+      <div class="lri-section-inner">
+        <h2 class="lri-section-title">Additional Research Outputs</h2>
+
+        <div class="lri-card-grid">
+          <article class="lri-card">
+            <h3>Predictive Signatures for Lunar Manufacturing Systems</h3>
+            <span class="lri-badge lri-badge-published">Published</span>
+
+            <p>
+              Introduces predictive signature constructs for lunar manufacturing systems, including drift detection, verification overload, and decision latency under environmental constraints.
+            </p>
+
+            <p class="lri-meta">
+              <strong>DOI:</strong>
+              <a href="https://doi.org/10.5281/zenodo.18307522" target="_blank" rel="noopener">
+                10.5281/zenodo.18307522
+              </a>
+            </p>
+          </article>
+
+          <article class="lri-card">
+            <h3>Governance Beyond Earth: Decision Authority, Verification, and Evidence Integrity for Lunar Operations</h3>
+            <span class="lri-badge lri-badge-published">Published</span>
+
+            <p>
+              A book-length treatment of governance failure modes unique to lunar missions, including delay, degraded evidence, and constrained verification.
+            </p>
+
+            <p class="lri-meta">
+              <strong>ISBN:</strong> 979-8243257398
+            </p>
+
+            <div class="lri-cta-row">
+              <a href="../books/" class="lri-btn lri-btn-outline">View Book</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="lri-section">
+      <div class="lri-section-inner">
+        <p class="lri-note">
+          This page highlights selected published and active research outputs. You can also follow new releases through the newsletter and homepage publication highlights.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="lri-footer">
+    <div class="lri-footer-inner">
+      <p>© 2025 Lunar Research Initiative. All rights reserved.</p>
     </div>
-  </div>
-</section>
-
-<!-- REGOLITH & MANUFACTURING PAPERS -->
-<section class="lri-section">
-  <div class="lri-section-inner">
-    <h2 class="lri-section-title">Regolith Manufacturing Research</h2>
-
-    <div class="lri-card-grid">
-
-      <article class="lri-card">
-        <h3>Regolith Material Behavior and Process Drift in Lunar Manufacturing</h3>
-        <p>
-          Analyzes drift mechanisms within regolith-based processes and the verification structures required to maintain stability.
-        </p>
-        <p><em>Manuscript in preparation.</em></p>
-      </article>
-
-      <article class="lri-card">
-  <h3>CTQ Decomposition for Lunar Additive Manufacturing</h3>
-  <span class="lri-badge lri-badge-published">Published</span>
-
-  <p>
-    Develops a CTQ map for lunar additive manufacturing processes, including environmental modifiers, process drift, and verification load design.
-  </p>
-  <p>
-    <strong>Figueroa, R.</strong> (2025).
-    <em>CTQ decomposition for lunar additive manufacturing: Environmental modifiers, process drift, and verification load design</em> (Version 1.0).
-    Zenodo.
-  </p>
-  <p>
-    <a href="https://doi.org/10.5281/zenodo.18048071" target="_blank" rel="noopener">
-      https://doi.org/10.5281/zenodo.18048071
-    </a>
-  </p>
-</article>
-
-    </div>
-  </div>
-</section>
-
-
-<!-- PREDICTIVE + RISK PAPERS -->
-<section class="lri-section">
-  <div class="lri-section-inner">
-    <h2 class="lri-section-title">Predictive Quality and Risk Modeling</h2>
-
-    <div class="lri-card-grid">
-<article class="lri-card">
-  <h3>Predictive Signatures for Lunar Manufacturing Systems</h3>
-
-  <span class="lri-badge lri-badge-published">Published</span>
-
-  <p>
-    This paper introduces predictive signature constructs for lunar manufacturing systems, 
-    focusing on early detection of process drift, verification overload, and decision latency 
-    under extreme environmental and communication constraints.
-  </p>
-
-  <p class="lri-meta">
-    DOI: <a href="https://doi.org/10.5281/zenodo.18307522" target="_blank" rel="noopener">
-    10.5281/ZENODO.18307522
-    </a>
-  </p>
-</article>
-
-      <article class="lri-card">
-        <h3>Delay-Driven Decision Loops in Lunar Surface Operations</h3>
-        <p>
-          A quality and risk perspective on communication delay, autonomy modes, and verification structures
-          for lunar operations.
-        </p>
-       <p><em>Manuscript in preparation.</em></p>
-
-      
-      </article>
-
-      <article class="lri-card">
-        <h3>Temporal Risk Signatures: Hazard Drift and Decision Fidelity in Lunar Surface Operations</h3>
-        <span class="lri-badge lri-badge-published">Published</span>
-        <p>
-          Introduces hazard drift and decision fidelity to describe how communication delay changes operational risk
-          on the lunar surface. The framework helps mission planners identify safe autonomy transitions and maintain
-          coherent control during time-shifted operations.
-        </p>
-        <p>
-          Zenodo · 2025 · DOI:
-          <a href="https://doi.org/10.5281/zenodo.17807601" target="_blank" rel="noopener">10.5281/zenodo.17807601</a>
-        </p>
-        <p>
-          <a href="https://doi.org/10.5281/zenodo.17807601" target="_blank" rel="noopener">Read this publication</a>
-        </p>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-</main>
-
-<footer class="lri-footer">
-  <p>© 2025 Lunar Research Initiative. All rights reserved.</p>
-</footer>
+  </footer>
 
 </body>
 </html>
