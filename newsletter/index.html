@@ -2,9 +2,308 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Newsletter – Aerospace Quality Brief</title>
+  <title>Newsletter | Aerospace Quality Brief</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Aerospace Quality Brief is the LinkedIn newsletter from Ralph Figueroa and LRI, with 17 published editions on decision quality, verification, risk, compliance, and aerospace operations.">
   <link rel="stylesheet" href="/assets/css/style.css">
+
+  <style>
+    :root {
+      --lri-orange: #e46a1f;
+      --lri-orange-dark: #cf5d18;
+      --lri-text: #111111;
+      --lri-muted: #5a5a5a;
+      --lri-border: rgba(0, 0, 0, 0.08);
+      --lri-bg: #ffffff;
+      --lri-soft: #fffaf7;
+      --lri-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+      --lri-radius: 14px;
+      --lri-max: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: var(--lri-text);
+      background: #ffffff;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    main {
+      max-width: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .lri-section {
+      width: 100%;
+      padding: 28px 24px;
+    }
+
+    .lri-section-inner,
+    .lri-topbar-inner,
+    .lri-footer-inner {
+      max-width: var(--lri-max);
+      margin: 0 auto;
+    }
+
+    .lri-hero {
+      padding: 82px 24px 30px;
+    }
+
+    .lri-hero-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .lri-hero h1 {
+      margin: 0 0 18px;
+      line-height: 1.15;
+      font-size: 2.3rem;
+    }
+
+    .lri-hero-subtitle {
+      max-width: 820px;
+      margin: 0 auto 16px;
+      color: var(--lri-muted);
+      line-height: 1.75;
+      font-size: 1.05rem;
+    }
+
+    .lri-hero-subtitle:last-of-type {
+      margin-bottom: 0;
+    }
+
+    .lri-hero-actions,
+    .lri-cta-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+
+    .lri-btn {
+      display: inline-block;
+      padding: 0.9rem 1.45rem;
+      border-radius: 999px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      border: 1px solid transparent;
+    }
+
+    .lri-btn-primary {
+      background-color: var(--lri-orange);
+      color: #ffffff;
+      border-color: var(--lri-orange);
+    }
+
+    .lri-btn-primary:visited {
+      color: #ffffff;
+    }
+
+    .lri-btn-primary:hover,
+    .lri-btn-primary:focus {
+      background-color: var(--lri-orange-dark);
+      border-color: var(--lri-orange-dark);
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .lri-btn-outline {
+      background-color: transparent;
+      color: var(--lri-orange);
+      border-color: var(--lri-orange);
+    }
+
+    .lri-btn-outline:visited {
+      color: var(--lri-orange);
+    }
+
+    .lri-btn-outline:hover,
+    .lri-btn-outline:focus {
+      background-color: rgba(228, 106, 31, 0.08);
+      color: var(--lri-orange);
+      text-decoration: none;
+    }
+
+    .lri-section-title {
+      text-align: center;
+      margin: 0 0 18px;
+    }
+
+    .lri-section-note {
+      max-width: 860px;
+      margin: 0 auto;
+      text-align: center;
+      color: var(--lri-muted);
+      line-height: 1.75;
+    }
+
+    .lri-stats-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 26px;
+    }
+
+    .lri-stat-card,
+    .lri-card {
+      background: var(--lri-bg);
+      border: 1px solid var(--lri-border);
+      border-radius: var(--lri-radius);
+      box-shadow: var(--lri-shadow);
+    }
+
+    .lri-stat-card {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .lri-stat-number {
+      display: block;
+      font-size: 1.8rem;
+      font-weight: 700;
+      line-height: 1.1;
+      color: var(--lri-orange);
+      margin-bottom: 8px;
+    }
+
+    .lri-stat-label {
+      color: var(--lri-muted);
+      font-size: 0.98rem;
+    }
+
+    .lri-card-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+      align-items: start;
+    }
+
+    .lri-card {
+      padding: 22px;
+    }
+
+    .lri-card h3 {
+      margin-top: 0;
+      margin-bottom: 12px;
+      font-size: 1.08rem;
+    }
+
+    .lri-card p {
+      line-height: 1.7;
+    }
+
+    .lri-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .lri-card a {
+      color: var(--lri-orange);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .lri-card a:hover {
+      text-decoration: underline;
+    }
+
+    .lri-card-featured {
+      border-left: 4px solid var(--lri-orange);
+      background: #fffdfb;
+    }
+
+    .lri-badge {
+      display: inline-block;
+      margin-top: 0.2rem;
+      margin-bottom: 0.9rem;
+      padding: 0.2rem 0.55rem;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      border-radius: 4px;
+    }
+
+    .lri-badge-published {
+      background-color: var(--lri-orange);
+      color: #ffffff;
+    }
+
+    .lri-link-list {
+      margin: 0;
+      padding-left: 1.15rem;
+    }
+
+    .lri-link-list li {
+      margin-bottom: 0.7rem;
+      line-height: 1.6;
+    }
+
+    .lri-link-list li:last-child {
+      margin-bottom: 0;
+    }
+
+    .lri-highlight-box {
+      max-width: 920px;
+      margin: 0 auto;
+      background: var(--lri-soft);
+      border: 1px solid rgba(228, 106, 31, 0.18);
+      border-radius: var(--lri-radius);
+      padding: 22px;
+    }
+
+    .lri-highlight-box p {
+      margin: 0;
+      line-height: 1.75;
+    }
+
+    .lri-footer {
+      padding: 28px 24px 40px;
+    }
+
+    .lri-footer p {
+      text-align: center;
+      margin: 0;
+    }
+
+    @media (max-width: 1100px) {
+      .lri-card-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 760px) {
+      .lri-hero {
+        padding: 72px 20px 26px;
+      }
+
+      .lri-section {
+        padding: 22px 20px;
+      }
+
+      .lri-hero h1 {
+        font-size: 1.95rem;
+      }
+
+      .lri-hero-subtitle {
+        font-size: 1rem;
+      }
+
+      .lri-card-grid,
+      .lri-stats-row {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -14,57 +313,87 @@
       <img src="/assets/img/LRI LOGO.jpeg" alt="Lunar Research Initiative seal" class="lri-seal">
     </div>
     <nav class="lri-topnav">
-  <a href="/">Home</a>
-  <a href="/about/">About</a>
-  <a href="/research/">Research</a>
-  <a href="/initiatives/">Initiatives</a>
-  <a href="/standards/">Standards</a>
-  <a href="/publications/">Publications</a>
-  <a href="/newsletter/">Newsletter</a>
-  <a href="/partnerships/">Partnerships</a>
-  <a href="/contact/">Contact</a>
-</nav>
-
+      <a href="/">Home</a>
+      <a href="/about/">About</a>
+      <a href="/research/">Research</a>
+      <a href="/initiatives/">Initiatives</a>
+      <a href="/standards/">Standards</a>
+      <a href="/publications/">Publications</a>
+      <a href="/newsletter/">Newsletter</a>
+      <a href="/partnerships/">Partnerships</a>
+      <a href="/contact/">Contact</a>
+    </nav>
   </div>
 </header>
 
 <main>
 
-  <!-- Hero / intro -->
-  <section class="lri-section">
-    <div class="lri-section-inner">
-      <h1 class="lri-section-title">Aerospace Quality Brief</h1>
-      <p class="lri-section-text">
-        Aerospace Quality Brief is a weekly LinkedIn newsletter that applies quality, operations, and
-        risk tools to aerospace and lunar manufacturing. Each edition focuses on the intersection of
-        cost, speed, and compliance so engineers can move faster without losing control of quality.
-      </p>
-<p class="lri-section-text" style="max-width: 900px; font-size: 0.95em;">
-  The newsletter complements formal publications by translating concepts into practical,
-  field-ready checklists.
-</p>
+  <section class="lri-section lri-hero">
+    <div class="lri-hero-inner">
+      <h1>Aerospace Quality Brief</h1>
 
-      <!-- SUBSCRIBE CTA -->
-      <p style="margin-top: 24px;">
+      <p class="lri-hero-subtitle">
+        Aerospace Quality Brief is a LinkedIn newsletter that applies quality, operations, and risk tools to aerospace and lunar manufacturing. Each edition focuses on the intersection of cost, speed, and compliance so engineers can move faster without losing control of quality.
+      </p>
+
+      <p class="lri-hero-subtitle">
+        The newsletter complements formal publications by translating concepts into practical, field-ready articles that teams can use in day-to-day decisions.
+      </p>
+
+      <div class="lri-hero-actions">
         <a href="https://www.linkedin.com/newsletters/7402028860193796097/"
            class="lri-btn lri-btn-primary"
            target="_blank"
            rel="noopener">
           Subscribe on LinkedIn
         </a>
-      </p>
+
+        <a href="/newsletter/archive/"
+           class="lri-btn lri-btn-outline">
+          Browse the archive
+        </a>
+      </div>
     </div>
   </section>
 
-  <!-- Four-card layout -->
+  <section class="lri-section">
+    <div class="lri-section-inner">
+      <div class="lri-stats-row">
+        <div class="lri-stat-card">
+          <span class="lri-stat-number">17</span>
+          <span class="lri-stat-label">Published editions</span>
+        </div>
+
+        <div class="lri-stat-card">
+          <span class="lri-stat-number">LinkedIn</span>
+          <span class="lri-stat-label">Primary publication platform</span>
+        </div>
+
+        <div class="lri-stat-card">
+          <span class="lri-stat-number">AQB</span>
+          <span class="lri-stat-label">Focused on cost, speed, and compliance</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="lri-section">
+    <div class="lri-section-inner">
+      <div class="lri-highlight-box">
+        <p>
+          LRI has published 17 newsletter editions on LinkedIn, covering supplier resilience, verification strategy, configuration control, documentation risk, traceability, quality metrics, software-dominant systems, and decision quality in high-risk environments.
+        </p>
+      </div>
+    </div>
+  </section>
+
   <section class="lri-section">
     <div class="lri-section-inner lri-card-grid">
 
       <article class="lri-card">
         <h3>Read the Latest Edition</h3>
         <p>
-          Visit the live newsletter on LinkedIn to read the newest case studies, checklists,
-          and tools.
+          Visit the live newsletter on LinkedIn to read the newest editions, practical case breakdowns, and decision-quality articles.
         </p>
         <p>
           <a href="https://www.linkedin.com/newsletters/7402028860193796097/"
@@ -74,41 +403,38 @@
           </a>
         </p>
       </article>
-<article class="lri-card">
-  <h3>Aerospace Quality Brief</h3>
 
-  <span class="lri-badge lri-badge-published">New Edition</span>
+      <article class="lri-card lri-card-featured">
+        <h3>Aerospace Quality Brief</h3>
+        <span class="lri-badge lri-badge-published">17 Editions Published</span>
 
-  <ul class="lri-link-list">
-    <li>
-      <a href="https://www.linkedin.com/posts/ralph-figueroa-283335273_aerospacequality-supplierquality-as9100-activity-7419381959904124928-_AAH" 
-         target="_blank" rel="noopener">
-        The Silent Failure Mode of “Equivalent” Supplier Substitutions
-      </a>
-    </li>
-
-    <li>
-      <a href="https://www.linkedin.com/posts/ralph-figueroa-283335273_aerospaceengineering-systemsengineering-missionassurance-activity-7419098196381069312-4agf" 
-         target="_blank" rel="noopener">
-        Decision Latency as a Hidden Mission Risk
-      </a>
-    </li>
-
-    <li>
-      <a href="https://www.linkedin.com/posts/ralph-figueroa-283335273_qualitysignal-qualityleadership-medtech-activity-7417573803733622784-z59f" 
-         target="_blank" rel="noopener">
-        When Leadership Delays Become Quality Defects
-      </a>
-    </li>
-
-    <li>
-      <a href="https://www.linkedin.com/posts/ralph-figueroa-283335273_aerospacequality-configurationmanagement-activity-7416864135579328512-c5z7" 
-         target="_blank" rel="noopener">
-        Configuration Control Under Operational Drift
-      </a>
-    </li>
-  </ul>
-</article>
+        <ul class="lri-link-list">
+          <li>
+            <a href="https://www.linkedin.com/posts/ralph-figueroa-283335273_aerospacequality-supplierquality-as9100-activity-7419381959904124928-_AAH"
+               target="_blank" rel="noopener">
+              The Silent Failure Mode of “Equivalent” Supplier Substitutions
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/posts/ralph-figueroa-283335273_aerospaceengineering-systemsengineering-missionassurance-activity-7419098196381069312-4agf"
+               target="_blank" rel="noopener">
+              Decision Latency as a Hidden Mission Risk
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/posts/ralph-figueroa-283335273_qualitysignal-qualityleadership-medtech-activity-7417573803733622784-z59f"
+               target="_blank" rel="noopener">
+              When Leadership Delays Become Quality Defects
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/posts/ralph-figueroa-283335273_aerospacequality-configurationmanagement-activity-7416864135579328512-c5z7"
+               target="_blank" rel="noopener">
+              Configuration Control Under Operational Drift
+            </a>
+          </li>
+        </ul>
+      </article>
 
       <article class="lri-card">
         <h3>What You Can Expect</h3>
@@ -116,28 +442,51 @@
         <ul>
           <li>Use validation to gain speed and prevent rework.</li>
           <li>Balance regulatory expectations with rapid iteration.</li>
-          <li>Translate medtech and aerospace quality lessons to lunar projects.</li>
+          <li>Translate aerospace and medtech quality lessons into usable operational choices.</li>
+          <li>Spot timing, evidence, and verification failures before they become bigger risks.</li>
         </ul>
       </article>
 
       <article class="lri-card">
         <h3>Using the Newsletter in Your Work</h3>
         <p>
-          Teams use the newsletter as a lightweight training tool, a source of practical checklists,
-          and a way to spark conversations about improving their own processes.
+          Teams use the newsletter as a lightweight training tool, a source of practical checklists, and a way to spark conversations about improving their own processes.
+        </p>
+        <p>
+          It works especially well for short team discussions, onboarding, quality refreshers, and cross-functional conversations about operational risk.
         </p>
       </article>
 
       <article class="lri-card">
         <h3>Newsletter Archive</h3>
         <p>
-          Browse all past editions of Aerospace Quality Brief, organized by release date with
-          direct access to each LinkedIn article.
+          Browse all 17 editions of Aerospace Quality Brief, organized by release date with direct access to each LinkedIn article.
         </p>
         <p>
           <a href="/newsletter/archive/" class="lri-link">
             View all editions
           </a>
+        </p>
+      </article>
+
+      <article class="lri-card">
+        <h3>Why It Matters</h3>
+        <p>
+          Formal papers explain the frameworks. The newsletter shows how those same ideas appear in supplier decisions, validation choices, configuration drift, documentation overload, and production pressure.
+        </p>
+      </article>
+
+      <article class="lri-card">
+        <h3>Topics Covered</h3>
+        <p>
+          Recent editions have addressed thermal cycling, supplier maturity, verification validity, aging evidence, certification hold periods, KPI weakness, traceability drag, and documentation failure modes.
+        </p>
+      </article>
+
+      <article class="lri-card">
+        <h3>For New Readers</h3>
+        <p>
+          Start with the latest edition, then move to the archive. That gives you the fastest view of how the newsletter connects daily engineering work to bigger questions of speed, cost, and control.
         </p>
       </article>
 
@@ -147,9 +496,10 @@
 </main>
 
 <footer class="lri-footer">
-  <p>© 2025 Lunar Research Initiative. All rights reserved.</p>
+  <div class="lri-footer-inner">
+    <p>© 2025 Lunar Research Initiative. All rights reserved.</p>
+  </div>
 </footer>
 
 </body>
 </html>
-
