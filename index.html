@@ -2,11 +2,35 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Lunar Research Initiative</title>
+  <title>Start Here | Decision Quality, Verification, and Risk in High-Risk Systems</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="New to the site? Start here for the core frameworks, flagship articles, publications, and newsletter insights on evidence, timing, verification, and decision authority.">
   <link rel="stylesheet" href="assets/css/style.css">
 
   <style>
+    :root {
+      --lri-orange: #e46a1f;
+      --lri-orange-dark: #cf5d18;
+      --lri-text: #111111;
+      --lri-muted: #5a5a5a;
+      --lri-border: rgba(0, 0, 0, 0.08);
+      --lri-bg: #ffffff;
+      --lri-soft: #fff7f2;
+      --lri-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+      --lri-radius: 14px;
+      --lri-max: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: var(--lri-text);
+      background: #ffffff;
+    }
+
     main {
       max-width: none;
       margin: 0;
@@ -19,36 +43,48 @@
     }
 
     .lri-hero {
-      padding: 88px 24px 64px;
+      padding: 84px 24px 40px;
     }
 
     .lri-section {
-      padding: 44px 24px;
+      padding: 36px 24px;
     }
 
     .lri-hero-inner,
     .lri-section-inner,
     .lri-topbar-inner,
     .lri-footer-inner {
-      max-width: 960px;
+      max-width: var(--lri-max);
       margin: 0 auto;
     }
 
-    .lri-hero h1 {
-      max-width: 900px;
-      margin: 0 auto 20px;
+    .lri-eyebrow {
+      margin: 0 0 12px;
+      color: var(--lri-orange);
+      font-size: 0.84rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
       text-align: center;
+    }
+
+    .lri-hero h1 {
+      max-width: 860px;
+      margin: 0 auto 18px;
+      text-align: center;
+      line-height: 1.12;
     }
 
     .lri-hero-subtitle {
-      max-width: 720px;
+      max-width: 820px;
       margin: 0 auto 28px;
       text-align: center;
       line-height: 1.7;
+      font-size: 1.05rem;
+      color: var(--lri-muted);
     }
 
     .lri-hero-buttons,
-    .lri-hero-actions,
     .lri-cta-row {
       display: flex;
       justify-content: center;
@@ -57,54 +93,163 @@
       flex-wrap: wrap;
     }
 
-    .lri-hero-caption {
-      max-width: 780px;
-      margin: 22px auto 0;
-      text-align: center;
-      line-height: 1.7;
+    .lri-btn {
+      display: inline-block;
+      padding: 0.9rem 1.45rem;
+      border-radius: 999px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      border: 1px solid transparent;
+    }
+
+    .lri-btn-primary {
+      background-color: var(--lri-orange);
+      color: #ffffff;
+      border-color: var(--lri-orange);
+    }
+
+    .lri-btn-primary:visited {
+      color: #ffffff;
+    }
+
+    .lri-btn-primary:hover,
+    .lri-btn-primary:focus {
+      background-color: var(--lri-orange-dark);
+      border-color: var(--lri-orange-dark);
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .lri-btn-outline {
+      background-color: transparent;
+      color: var(--lri-orange);
+      border-color: var(--lri-orange);
+    }
+
+    .lri-btn-outline:visited {
+      color: var(--lri-orange);
+    }
+
+    .lri-btn-outline:hover,
+    .lri-btn-outline:focus {
+      background-color: rgba(228, 106, 31, 0.08);
+      color: var(--lri-orange);
+      text-decoration: none;
     }
 
     .lri-section-title {
       text-align: center;
-      margin-bottom: 22px;
+      margin: 0 0 22px;
     }
 
-    .lri-section-text {
-      max-width: 760px;
+    .lri-opening-copy {
+      max-width: 880px;
       margin: 0 auto;
-      text-align: center;
-      line-height: 1.75;
+      text-align: left;
+      line-height: 1.8;
+      color: var(--lri-text);
     }
 
-    .lri-card-grid,
-    .lri-card-grid-3 {
+    .lri-opening-copy p {
+      margin: 0 0 16px;
+    }
+
+    .lri-start-here-layout {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-      margin-top: 20px;
+      grid-template-columns: minmax(0, 2fr) minmax(280px, 0.95fr);
+      gap: 24px;
+      align-items: start;
     }
 
+    .lri-main-panel,
+    .lri-side-panel,
     .lri-card {
-      background: #ffffff;
-      border: 1px solid rgba(0, 0, 0, 0.08);
-      border-radius: 14px;
-      padding: 24px;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+      background: var(--lri-bg);
+      border: 1px solid var(--lri-border);
+      border-radius: var(--lri-radius);
+      box-shadow: var(--lri-shadow);
     }
 
+    .lri-main-panel,
+    .lri-side-panel {
+      padding: 24px;
+    }
+
+    .lri-side-panel {
+      background: var(--lri-soft);
+      position: sticky;
+      top: 24px;
+    }
+
+    .lri-side-panel h3,
+    .lri-main-panel h3,
     .lri-card h3 {
       margin-top: 0;
       margin-bottom: 12px;
+    }
+
+    .lri-side-panel p,
+    .lri-main-panel p,
+    .lri-card p {
+      line-height: 1.7;
+    }
+
+    .lri-side-list {
+      margin: 16px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .lri-side-list li {
+      margin: 0 0 12px;
+      padding: 0 0 12px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+    }
+
+    .lri-side-list li:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    .lri-side-list a,
+    .lri-card a,
+    .lri-main-panel a,
+    .lri-side-panel a {
+      color: var(--lri-orange);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .lri-side-list a:hover,
+    .lri-card a:hover,
+    .lri-main-panel a:hover,
+    .lri-side-panel a:hover {
+      text-decoration: underline;
+    }
+
+    .lri-audience-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .lri-card {
+      padding: 22px;
     }
 
     .lri-card p:last-child {
       margin-bottom: 0;
     }
 
-    .lri-featured-card {
-      border-left: 4px solid #e46a1f;
-      max-width: 760px;
-      margin: 0 auto;
+    .lri-card-goal {
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px solid rgba(0, 0, 0, 0.07);
+      color: var(--lri-muted);
+      font-size: 0.96rem;
     }
 
     .lri-badge {
@@ -120,102 +265,34 @@
     }
 
     .lri-badge-published {
-      background-color: #e46a1f;
+      background-color: var(--lri-orange);
       color: #ffffff;
     }
 
-    .lri-path-link {
-      margin-top: 16px;
+    .lri-featured-card {
+      border-left: 4px solid var(--lri-orange);
+      max-width: 820px;
+      margin: 0 auto;
     }
 
-    .lri-path-link a,
-    .lri-card a {
-      color: #e46a1f;
-      font-weight: 600;
-      text-decoration: none;
+    .lri-featured-card .lri-cta-row {
+      justify-content: flex-start;
+      margin-top: 20px;
     }
 
-    .lri-path-link a:hover,
-    .lri-card a:hover {
-      text-decoration: underline;
-    }
-
-    .lri-btn {
-      display: inline-block;
-      padding: 0.85rem 1.4rem;
-      border-radius: 999px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.2s ease;
-    }
-
-    .lri-btn-primary {
-      background-color: #e46a1f;
-      color: #ffffff;
-      border: 1px solid #e46a1f;
-    }
-
-    .lri-btn-primary:visited {
-      color: #ffffff;
-    }
-
-    .lri-btn-primary:hover,
-    .lri-btn-primary:focus {
-      background-color: #cf5d18;
-      color: #ffffff;
-      border-color: #cf5d18;
-      text-decoration: none;
-    }
-
-    .lri-btn-outline {
-      background-color: transparent;
-      color: #e46a1f;
-      border: 1px solid #e46a1f;
-    }
-
-    .lri-btn-outline:visited {
-      color: #e46a1f;
-    }
-
-    .lri-btn-outline:hover,
-    .lri-btn-outline:focus {
-      background-color: rgba(228, 106, 31, 0.08);
-      color: #e46a1f;
-      text-decoration: none;
-    }
-
-    .lri-conversion-block {
-      text-align: center;
-    }
-
-    .lri-conversion-text {
-      max-width: 720px;
-      margin: 0 auto 24px;
-      line-height: 1.75;
-    }
-
-    .lri-credibility-line {
-      padding-top: 12px;
-      padding-bottom: 18px;
-    }
-
-    .lri-credibility-line p {
-      max-width: 760px;
+    .lri-section-note {
+      max-width: 800px;
       margin: 0 auto;
       text-align: center;
       line-height: 1.75;
+      color: var(--lri-muted);
     }
 
-    .lri-home-footer-note {
-      padding-top: 6px;
-      padding-bottom: 10px;
-    }
-
-    .lri-home-footer-note p {
+    .lri-credibility-line p {
+      max-width: 820px;
+      margin: 0 auto;
       text-align: center;
-      font-size: 0.95rem;
-      color: #444444;
-      margin: 0;
+      line-height: 1.75;
     }
 
     .lri-footer {
@@ -227,18 +304,27 @@
       margin: 0;
     }
 
-    @media (max-width: 900px) {
-      .lri-card-grid,
-      .lri-card-grid-3 {
+    @media (max-width: 980px) {
+      .lri-start-here-layout {
         grid-template-columns: 1fr;
       }
 
+      .lri-side-panel {
+        position: static;
+      }
+
+      .lri-audience-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 900px) {
       .lri-hero {
-        padding: 72px 20px 48px;
+        padding: 72px 20px 36px;
       }
 
       .lri-section {
-        padding: 34px 20px;
+        padding: 30px 20px;
       }
     }
   </style>
@@ -270,56 +356,99 @@
   <main>
     <section class="lri-hero">
       <div class="lri-hero-inner">
-        <h1>Engineering the Quality Foundations of Lunar Exploration</h1>
+        <p class="lri-eyebrow">Start Here</p>
+
+        <h1>Engineering decision quality for real systems</h1>
 
         <p class="lri-hero-subtitle">
-          Building the research, standards, and tools that make lunar manufacturing safe, reliable, and mission ready.
+          If you work in quality, verification, aerospace, or other high-risk environments, this page will show you the fastest path into the ideas, frameworks, and research on this site.
         </p>
 
         <div class="lri-hero-buttons">
-          <a href="/research/" class="lri-btn lri-btn-primary">Explore Our Research</a>
-          <a href="/publications/" class="lri-btn lri-btn-outline">View Publications</a>
-          <a href="/newsletter/" class="lri-btn lri-btn-outline">Read the Newsletter</a>
+          <a href="/newsletter/" class="lri-btn lri-btn-primary">Read the latest insight</a>
+          <a href="/publications/" class="lri-btn lri-btn-outline">Explore publications</a>
         </div>
-
-        <p class="lri-hero-caption">
-          LRI develops practical research and applied frameworks for lunar governance, verification, quality, and operational decision-making under real mission constraints.
-        </p>
       </div>
     </section>
 
     <section class="lri-section">
       <div class="lri-section-inner">
-        <h2 class="lri-section-title">Choose Your Starting Point</h2>
+        <div class="lri-start-here-layout">
 
-        <div class="lri-card-grid-3">
-          <article class="lri-card">
-            <h3>Research</h3>
+          <div class="lri-main-panel">
+            <div class="lri-opening-copy">
+              <p>
+                Most failures in complex systems do not begin as obvious defects. They begin as timing problems, evidence gaps, and decision mismatches that look harmless until they are not. This site brings those patterns into focus so engineers, leaders, and researchers can make better calls under real conditions.
+              </p>
+
+              <p>
+                If this is your first visit, start with the sections below. They will help you understand the core ideas, find the most useful reading, and decide where to go next.
+              </p>
+            </div>
+          </div>
+
+          <aside class="lri-side-panel">
+            <h3>Best Starting Points</h3>
             <p>
-              Explore technical work on lunar manufacturing, verification systems, mission assurance, and operational control under delay.
+              New readers usually get the most value by starting with one framework, one publication, and one recent insight.
             </p>
-            <p class="lri-path-link">
-              <a href="/research/">Explore Research</a>
+
+            <ul class="lri-side-list">
+              <li>
+                <a href="/research/">Framework explainer</a><br>
+                A practical entry into evidence, timing, verification, and decision quality.
+              </li>
+              <li>
+                <a href="https://doi.org/10.1016/j.jsse.2026.03.004" target="_blank" rel="noopener">Flagship journal article</a><br>
+                The JSSE paper on delayed supervision and lunar decision authority.
+              </li>
+              <li>
+                <a href="/newsletter/archive/">Latest insight archive</a><br>
+                Shorter, faster reads that connect theory to operational choices.
+              </li>
+              <li>
+                <a href="/publications/">All publications</a><br>
+                A full view of papers, preprints, and formal outputs.
+              </li>
+            </ul>
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="lri-section">
+      <div class="lri-section-inner">
+        <h2 class="lri-section-title">If You Are Here for a Specific Reason</h2>
+
+        <div class="lri-audience-grid">
+          <article class="lri-card">
+            <h3>Engineers</h3>
+            <p>
+              Start with the framework explainer, then read one case breakdown.
+            </p>
+            <p class="lri-card-goal">
+              Goal: show how evidence, timing, and verification interact in practice.
             </p>
           </article>
 
           <article class="lri-card">
-            <h3>Publications</h3>
+            <h3>Leaders</h3>
             <p>
-              Access published papers, formal outputs, and preprints across lunar quality systems, governance, and manufacturing research.
+              Start with the decision authority article and the newsletter archive.
             </p>
-            <p class="lri-path-link">
-              <a href="/publications/">View Publications</a>
+            <p class="lri-card-goal">
+              Goal: connect technical signal to operational choices and risk posture.
             </p>
           </article>
 
           <article class="lri-card">
-            <h3>Newsletter</h3>
+            <h3>Researchers</h3>
             <p>
-              Read accessible insights on lunar policy, quality, standards, and mission assurance without starting from the technical literature.
+              Start with the publications list, flagship paper summary, and key definitions.
             </p>
-            <p class="lri-path-link">
-              <a href="/newsletter/">Read the Newsletter</a>
+            <p class="lri-card-goal">
+              Goal: understand the intellectual structure behind the work.
             </p>
           </article>
         </div>
@@ -348,23 +477,23 @@
           </p>
 
           <div class="lri-cta-row">
-            <a href="https://doi.org/10.1016/j.jsse.2026.03.004" target="_blank" rel="noopener" class="lri-btn lri-btn-primary">View Publication</a>
-            <a href="/publications/" class="lri-btn lri-btn-outline">All Publications</a>
+            <a href="https://doi.org/10.1016/j.jsse.2026.03.004" target="_blank" rel="noopener" class="lri-btn lri-btn-primary">View publication</a>
+            <a href="/publications/" class="lri-btn lri-btn-outline">All publications</a>
           </div>
         </article>
       </div>
     </section>
 
-    <section class="lri-section lri-conversion-block">
+    <section class="lri-section">
       <div class="lri-section-inner">
         <h2 class="lri-section-title">Stay Connected</h2>
 
-        <p class="lri-conversion-text">
+        <p class="lri-section-note">
           Follow new publications, research updates, and newsletter releases from the Lunar Research Initiative.
         </p>
 
-        <div class="lri-hero-actions">
-          <a href="/newsletter/" class="lri-btn lri-btn-primary">Read the Newsletter</a>
+        <div class="lri-cta-row" style="margin-top: 22px;">
+          <a href="/newsletter/" class="lri-btn lri-btn-primary">Read the newsletter</a>
           <a href="/contact/" class="lri-btn lri-btn-outline">Contact LRI</a>
         </div>
       </div>
@@ -374,14 +503,6 @@
       <div class="lri-section-inner">
         <p>
           The Lunar Research Initiative is led by Ralph Figueroa, author and researcher focused on lunar governance, mission assurance, verification, and quality systems for space operations.
-        </p>
-      </div>
-    </section>
-
-    <section class="lri-section lri-home-footer-note">
-      <div class="lri-section-inner">
-        <p>
-          New visitors start here. Returning readers can jump straight to the latest insight, publication, or newsletter issue.
         </p>
       </div>
     </section>
