@@ -43,11 +43,11 @@
     }
 
     .lri-hero {
-      padding: 84px 24px 40px;
+      padding: 84px 24px 34px;
     }
 
     .lri-section {
-      padding: 36px 24px;
+      padding: 26px 24px;
     }
 
     .lri-hero-inner,
@@ -143,23 +143,17 @@
       margin: 0 0 22px;
     }
 
-    .lri-opening-copy {
-      max-width: 880px;
-      margin: 0 auto;
-      text-align: left;
-      line-height: 1.8;
-      color: var(--lri-text);
-    }
-
-    .lri-opening-copy p {
-      margin: 0 0 16px;
-    }
-
     .lri-start-here-layout {
       display: grid;
       grid-template-columns: minmax(0, 2fr) minmax(280px, 0.95fr);
       gap: 24px;
       align-items: start;
+    }
+
+    .lri-main-column {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
     }
 
     .lri-main-panel,
@@ -187,6 +181,18 @@
     .lri-card h3 {
       margin-top: 0;
       margin-bottom: 12px;
+    }
+
+    .lri-opening-copy {
+      line-height: 1.8;
+    }
+
+    .lri-opening-copy p {
+      margin: 0 0 16px;
+    }
+
+    .lri-opening-copy p:last-child {
+      margin-bottom: 0;
     }
 
     .lri-side-panel p,
@@ -229,15 +235,24 @@
       text-decoration: underline;
     }
 
+    .lri-inline-audience {
+      padding: 22px;
+    }
+
+    .lri-inline-audience h2 {
+      margin: 0 0 18px;
+      font-size: 1.2rem;
+      text-align: left;
+    }
+
     .lri-audience-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-      margin-top: 18px;
+      gap: 16px;
     }
 
     .lri-card {
-      padding: 22px;
+      padding: 20px;
     }
 
     .lri-card p:last-child {
@@ -320,11 +335,11 @@
 
     @media (max-width: 900px) {
       .lri-hero {
-        padding: 72px 20px 36px;
+        padding: 72px 20px 30px;
       }
 
       .lri-section {
-        padding: 30px 20px;
+        padding: 24px 20px;
       }
     }
   </style>
@@ -375,15 +390,53 @@
       <div class="lri-section-inner">
         <div class="lri-start-here-layout">
 
-          <div class="lri-main-panel">
-            <div class="lri-opening-copy">
-              <p>
-                Most failures in complex systems do not begin as obvious defects. They begin as timing problems, evidence gaps, and decision mismatches that look harmless until they are not. This site brings those patterns into focus so engineers, leaders, and researchers can make better calls under real conditions.
-              </p>
+          <div class="lri-main-column">
+            <div class="lri-main-panel">
+              <div class="lri-opening-copy">
+                <p>
+                  Most failures in complex systems do not begin as obvious defects. They begin as timing problems, evidence gaps, and decision mismatches that look harmless until they are not. This site brings those patterns into focus so engineers, leaders, and researchers can make better calls under real conditions.
+                </p>
 
-              <p>
-                If this is your first visit, start with the sections below. They will help you understand the core ideas, find the most useful reading, and decide where to go next.
-              </p>
+                <p>
+                  If this is your first visit, start with the guide at the side and the paths below. They will help you understand the core ideas, find the most useful reading, and decide where to go next.
+                </p>
+              </div>
+            </div>
+
+            <div class="lri-main-panel lri-inline-audience">
+              <h2>If You Are Here for a Specific Reason</h2>
+
+              <div class="lri-audience-grid">
+                <article class="lri-card">
+                  <h3>Engineers</h3>
+                  <p>
+                    Start with the framework explainer, then read one case breakdown.
+                  </p>
+                  <p class="lri-card-goal">
+                    Goal: show how evidence, timing, and verification interact in practice.
+                  </p>
+                </article>
+
+                <article class="lri-card">
+                  <h3>Leaders</h3>
+                  <p>
+                    Start with the decision authority article and the newsletter archive.
+                  </p>
+                  <p class="lri-card-goal">
+                    Goal: connect technical signal to operational choices and risk posture.
+                  </p>
+                </article>
+
+                <article class="lri-card">
+                  <h3>Researchers</h3>
+                  <p>
+                    Start with the publications list, flagship paper summary, and key definitions.
+                  </p>
+                  <p class="lri-card-goal">
+                    Goal: understand the intellectual structure behind the work.
+                  </p>
+                </article>
+              </div>
             </div>
           </div>
 
@@ -413,44 +466,6 @@
             </ul>
           </aside>
 
-        </div>
-      </div>
-    </section>
-
-    <section class="lri-section">
-      <div class="lri-section-inner">
-        <h2 class="lri-section-title">If You Are Here for a Specific Reason</h2>
-
-        <div class="lri-audience-grid">
-          <article class="lri-card">
-            <h3>Engineers</h3>
-            <p>
-              Start with the framework explainer, then read one case breakdown.
-            </p>
-            <p class="lri-card-goal">
-              Goal: show how evidence, timing, and verification interact in practice.
-            </p>
-          </article>
-
-          <article class="lri-card">
-            <h3>Leaders</h3>
-            <p>
-              Start with the decision authority article and the newsletter archive.
-            </p>
-            <p class="lri-card-goal">
-              Goal: connect technical signal to operational choices and risk posture.
-            </p>
-          </article>
-
-          <article class="lri-card">
-            <h3>Researchers</h3>
-            <p>
-              Start with the publications list, flagship paper summary, and key definitions.
-            </p>
-            <p class="lri-card-goal">
-              Goal: understand the intellectual structure behind the work.
-            </p>
-          </article>
         </div>
       </div>
     </section>
