@@ -6,32 +6,202 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="assets/css/style.css">
 
-  <!-- Home page layout fixes -->
   <style>
     main {
       max-width: none;
       margin: 0;
       padding: 0;
     }
-    .lri-hero {
+
+    .lri-hero,
+    .lri-section {
       width: 100%;
+    }
+
+    .lri-hero {
       padding: 88px 24px 64px;
     }
+
     .lri-section {
-      padding: 40px 24px;
+      padding: 44px 24px;
     }
+
     .lri-hero-inner,
     .lri-section-inner,
-    .lri-topbar-inner {
+    .lri-topbar-inner,
+    .lri-footer-inner {
       max-width: 960px;
       margin: 0 auto;
+    }
+
+    .lri-hero h1 {
+      max-width: 900px;
+      margin: 0 auto 20px;
+      text-align: center;
+    }
+
+    .lri-hero-subtitle {
+      max-width: 720px;
+      margin: 0 auto 28px;
+      text-align: center;
+      line-height: 1.7;
+    }
+
+    .lri-hero-buttons,
+    .lri-hero-actions,
+    .lri-cta-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .lri-hero-caption {
+      max-width: 780px;
+      margin: 22px auto 0;
+      text-align: center;
+      line-height: 1.7;
+    }
+
+    .lri-section-title {
+      text-align: center;
+      margin-bottom: 22px;
+    }
+
+    .lri-section-text {
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+      line-height: 1.75;
+    }
+
+    .lri-card-grid,
+    .lri-card-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 20px;
+    }
+
+    .lri-card {
+      background: #ffffff;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      border-radius: 14px;
+      padding: 24px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+    }
+
+    .lri-card h3 {
+      margin-top: 0;
+      margin-bottom: 12px;
+    }
+
+    .lri-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .lri-featured-card {
+      border-left: 4px solid #e46a1f;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .lri-badge {
+      display: inline-block;
+      margin-top: 0.2rem;
+      margin-bottom: 0.8rem;
+      padding: 0.2rem 0.55rem;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      border-radius: 4px;
+    }
+
+    .lri-badge-published {
+      background-color: #e46a1f;
+      color: #ffffff;
+    }
+
+    .lri-path-link {
+      margin-top: 16px;
+    }
+
+    .lri-path-link a,
+    .lri-card a {
+      color: #e46a1f;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .lri-path-link a:hover,
+    .lri-card a:hover {
+      text-decoration: underline;
+    }
+
+    .lri-conversion-block {
+      text-align: center;
+    }
+
+    .lri-conversion-text {
+      max-width: 720px;
+      margin: 0 auto 24px;
+      line-height: 1.75;
+    }
+
+    .lri-credibility-line {
+      padding-top: 12px;
+      padding-bottom: 18px;
+    }
+
+    .lri-credibility-line p {
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+      line-height: 1.75;
+    }
+
+    .lri-home-footer-note {
+      padding-top: 6px;
+      padding-bottom: 10px;
+    }
+
+    .lri-home-footer-note p {
+      text-align: center;
+      font-size: 0.95rem;
+      color: #444444;
+      margin: 0;
+    }
+
+    .lri-footer {
+      padding: 28px 24px 40px;
+    }
+
+    .lri-footer p {
+      text-align: center;
+      margin: 0;
+    }
+
+    @media (max-width: 900px) {
+      .lri-card-grid,
+      .lri-card-grid-3 {
+        grid-template-columns: 1fr;
+      }
+
+      .lri-hero {
+        padding: 72px 20px 48px;
+      }
+
+      .lri-section {
+        padding: 34px 20px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- Top navigation bar -->
   <header class="lri-topbar">
     <div class="lri-topbar-inner">
       <div class="lri-topbar-left">
@@ -40,22 +210,20 @@
 
       <nav class="lri-topnav">
         <a href="./">Home</a>
-<a href="about/">About</a>
-<a href="research/">Research</a>
-<a href="initiatives/">Initiatives</a>
-<a href="standards/">Standards</a>
-<a href="publications/">Publications</a>
-<a href="books/">Books</a>
-<a href="newsletter/">Newsletter</a>
-<a href="partnerships/">Partnerships</a>
-<a href="contact/">Contact</a>
-
+        <a href="about/">About</a>
+        <a href="research/">Research</a>
+        <a href="initiatives/">Initiatives</a>
+        <a href="standards/">Standards</a>
+        <a href="publications/">Publications</a>
+        <a href="books/">Books</a>
+        <a href="newsletter/">Newsletter</a>
+        <a href="partnerships/">Partnerships</a>
+        <a href="contact/">Contact</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <!-- Hero section -->
     <section class="lri-hero">
       <div class="lri-hero-inner">
         <h1>Engineering the Quality Foundations of Lunar Exploration</h1>
@@ -66,138 +234,114 @@
 
         <div class="lri-hero-buttons">
           <a href="/research/" class="lri-btn lri-btn-primary">Explore Our Research</a>
-          <a href="/partnerships/" class="lri-btn lri-btn-outline">Partner With LRI</a>
+          <a href="/publications/" class="lri-btn lri-btn-outline">View Publications</a>
+          <a href="/newsletter/" class="lri-btn lri-btn-outline">Read the Newsletter</a>
         </div>
 
         <p class="lri-hero-caption">
-          Lunar Research Initiative is a nonprofit scientific and educational organization focused on the next generation of lunar infrastructure.
+          LRI develops practical research and applied frameworks for lunar governance, verification, quality, and operational decision-making under real mission constraints.
         </p>
       </div>
     </section>
 
-    <!-- What is LRI -->
     <section class="lri-section">
       <div class="lri-section-inner">
-        <h2 class="lri-section-title">What is the Lunar Research Initiative</h2>
-        <p class="lri-section-text">
-          The Lunar Research Initiative (LRI) develops the scientific foundations that future lunar missions need to build safe and reliable
-          infrastructure on the Moon. We combine quality engineering, reliability science, and lunar manufacturing research to create methods
-          that mission planners can trust.
-        </p>
-      </div>
-    </section>
+        <h2 class="lri-section-title">Choose Your Starting Point</h2>
 
-    <!-- Featured Publication (Paper) -->
-    <section class="lri-section lri-featured">
-      <div class="lri-section-inner">
-        <h2 class="lri-section-title">Featured Publication</h2>
-
-        <article class="lri-card">
-          <h3>Predictive Signatures for Lunar Manufacturing Systems</h3>
-
-          <span class="lri-badge lri-badge-published">Published</span>
-
-          <p>
-            This paper introduces predictive signature constructs for lunar manufacturing systems, focusing on early detection of drift,
-            verification overload, and decision latency under environmental constraints and communication delay.
-          </p>
-
-          <p class="lri-meta">
-            DOI:
-            <a href="https://doi.org/10.5281/zenodo.18307522" target="_blank" rel="noopener">
-              10.5281/ZENODO.18307522
-            </a>
-          </p>
-
-          <div class="lri-cta-row">
-            <a href="/publications/" class="lri-btn lri-btn-primary">View Publications</a>
-            <a href="https://doi.org/10.5281/zenodo.18307522" target="_blank" rel="noopener" class="lri-btn lri-btn-outline">Open DOI</a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- Institutional Announcement (Book stays here, only once) -->
-    <section class="lri-section lri-announcement">
-      <div class="lri-section-inner">
-        <h2 class="lri-section-title">Announcement</h2>
-
-        <article class="lri-card">
-          <h3>New Book Publication: Governance Beyond Earth</h3>
-
-          <p>
-            The Lunar Research Initiative announces the publication of
-            <em>Governance Beyond Earth: Decision Authority, Verification, and Evidence Integrity for Lunar Operations</em>.
-            The book examines governance failure modes unique to lunar missions, where communication delay,
-            degraded evidence, and constrained verification challenge traditional decision models.
-          </p>
-
-          <p class="lri-meta">
-            ISBN: 979-8243257398
-          </p>
-
-          <div class="lri-cta-row">
-            <a href="/books/" class="lri-btn lri-btn-primary">View Books</a>
-            <a href="/publications/" class="lri-btn lri-btn-outline">View Publications</a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- Latest Updates -->
-    <section class="lri-section lri-latest">
-      <div class="lri-section-inner">
-        <h2 class="lri-section-title">Latest Updates</h2>
-
-        <p class="lri-section-text">
-          New research published on predictive quality signatures for lunar manufacturing systems,
-          alongside four new Aerospace Quality Brief editions addressing supplier equivalence,
-          decision latency, leadership risk, and configuration drift.
-        </p>
-      </div>
-    </section>
-
-    <!-- What We Do cards -->
-    <section class="lri-section">
-      <div class="lri-section-inner">
-        <h2 class="lri-section-title">What We Do</h2>
-
-        <div class="lri-card-grid">
+        <div class="lri-card-grid-3">
           <article class="lri-card">
-            <h3>Quality Architectures</h3>
+            <h3>Research</h3>
             <p>
-              Designing mission tier quality structures that connect requirements, risk, and verification for lunar systems.
+              Explore technical work on lunar manufacturing, verification systems, mission assurance, and operational control under delay.
+            </p>
+            <p class="lri-path-link">
+              <a href="/research/">Explore Research</a>
             </p>
           </article>
 
           <article class="lri-card">
-            <h3>Regolith Manufacturing Research</h3>
+            <h3>Publications</h3>
             <p>
-              Studying regolith based processes, capability, and reliability for construction and production on the lunar surface.
+              Access published papers, formal outputs, and preprints across lunar quality systems, governance, and manufacturing research.
+            </p>
+            <p class="lri-path-link">
+              <a href="/publications/">View Publications</a>
             </p>
           </article>
 
           <article class="lri-card">
-            <h3>Predictive Quality</h3>
+            <h3>Newsletter</h3>
             <p>
-              Developing predictive signatures, drift detection, and decision structures for time shifted lunar operations.
+              Read accessible insights on lunar policy, quality, standards, and mission assurance without starting from the technical literature.
             </p>
-          </article>
-
-          <article class="lri-card">
-            <h3>Standards and Frameworks</h3>
-            <p>
-              Publishing open frameworks like ULQF that help unify quality practices across lunar missions and organizations.
+            <p class="lri-path-link">
+              <a href="/newsletter/">Read the Newsletter</a>
             </p>
           </article>
         </div>
       </div>
     </section>
 
+    <section class="lri-section">
+      <div class="lri-section-inner">
+        <h2 class="lri-section-title">Latest Publication</h2>
+
+        <article class="lri-card lri-featured-card">
+          <h3>CTQ Decomposition for Lunar Additive Manufacturing</h3>
+          <span class="lri-badge lri-badge-published">Published</span>
+
+          <p>
+            Introduces a CTQ-based architecture for lunar additive manufacturing, addressing environmental modifiers, process drift, and verification load design.
+          </p>
+
+          <p>
+            <strong>Figueroa, R.</strong> (2025). <em>CTQ Decomposition for Lunar Additive Manufacturing: Environmental Modifiers, Process Drift, and Verification Load Design</em> (Version 1.0). Zenodo.
+          </p>
+
+          <div class="lri-cta-row">
+            <a href="https://doi.org/10.5281/zenodo.18048071" target="_blank" rel="noopener" class="lri-btn lri-btn-primary">View Publication</a>
+            <a href="/publications/" class="lri-btn lri-btn-outline">All Publications</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="lri-section lri-conversion-block">
+      <div class="lri-section-inner">
+        <h2 class="lri-section-title">Stay Connected</h2>
+
+        <p class="lri-conversion-text">
+          Follow new publications, research updates, and newsletter releases from the Lunar Research Initiative.
+        </p>
+
+        <div class="lri-hero-actions">
+          <a href="/newsletter/" class="lri-btn lri-btn-primary">Read the Newsletter</a>
+          <a href="/contact/" class="lri-btn lri-btn-outline">Contact LRI</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="lri-section lri-credibility-line">
+      <div class="lri-section-inner">
+        <p>
+          The Lunar Research Initiative is led by Ralph Figueroa, author and researcher focused on lunar governance, mission assurance, verification, and quality systems for space operations.
+        </p>
+      </div>
+    </section>
+
+    <section class="lri-section lri-home-footer-note">
+      <div class="lri-section-inner">
+        <p>
+          New visitors start here. Returning readers can jump straight to the latest insight, publication, or newsletter issue.
+        </p>
+      </div>
+    </section>
   </main>
 
   <footer class="lri-footer">
-    <p>© 2025 Lunar Research Initiative. All rights reserved.</p>
+    <div class="lri-footer-inner">
+      <p>© 2025 Lunar Research Initiative. All rights reserved.</p>
+    </div>
   </footer>
 
 </body>
