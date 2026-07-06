@@ -2,15 +2,110 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Publications | Lunar Research Initiative</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Publications | Lunar Research Initiative</title>
+
+  <meta
+    name="description"
+    content="Peer-reviewed journal articles, preprints, books, and selected research outputs from the Lunar Research Initiative on lunar quality, evidence integrity, verification, decision authority, and manufacturing assurance."
+  >
+
+  <meta name="author" content="Lunar Research Initiative">
+  <meta name="robots" content="index, follow">
+
+  <link
+    rel="canonical"
+    href="https://lunarresearchinitiative.github.io/publications/"
+  >
+
   <link rel="stylesheet" href="../assets/css/style.css">
 
+  <meta property="og:type" content="website">
+
+  <meta
+    property="og:title"
+    content="Publications | Lunar Research Initiative"
+  >
+
+  <meta
+    property="og:description"
+    content="Peer-reviewed journal articles, preprints, books, and research outputs on lunar quality and decision assurance."
+  >
+
+  <meta
+    property="og:url"
+    content="https://lunarresearchinitiative.github.io/publications/"
+  >
+
+  <meta
+    property="og:site_name"
+    content="Lunar Research Initiative"
+  >
+
+  <meta
+    property="og:image"
+    content="https://lunarresearchinitiative.github.io/assets/img/LRI%20LOGO.jpeg"
+  >
+
+  <meta name="twitter:card" content="summary_large_image">
+
+  <meta
+    name="twitter:title"
+    content="Publications | Lunar Research Initiative"
+  >
+
+  <meta
+    name="twitter:description"
+    content="Peer-reviewed journal articles, preprints, books, and research outputs on lunar quality and decision assurance."
+  >
+
+  <meta
+    name="twitter:image"
+    content="https://lunarresearchinitiative.github.io/assets/img/LRI%20LOGO.jpeg"
+  >
+
   <style>
+    :root {
+      --lri-orange: #e46a1f;
+      --lri-orange-dark: #cf5d18;
+      --lri-text: #111111;
+      --lri-muted: #5a5a5a;
+      --lri-border: rgba(0, 0, 0, 0.08);
+      --lri-bg: #ffffff;
+      --lri-soft: #fffaf7;
+      --lri-soft-gray: #f7f7f7;
+      --lri-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+      --lri-shadow-soft: 0 2px 10px rgba(0, 0, 0, 0.03);
+      --lri-radius: 14px;
+      --lri-max: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--lri-text);
+      background: #ffffff;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
     main {
       max-width: none;
       margin: 0;
       padding: 0;
+    }
+
+    a:focus-visible {
+      outline: 3px solid rgba(228, 106, 31, 0.35);
+      outline-offset: 3px;
     }
 
     .lri-hero,
@@ -23,114 +118,71 @@
     }
 
     .lri-section {
-      padding: 44px 24px;
+      padding: 40px 24px;
+    }
+
+    .lri-section-soft {
+      background: var(--lri-soft-gray);
     }
 
     .lri-hero-inner,
     .lri-section-inner,
     .lri-topbar-inner,
     .lri-footer-inner {
-      max-width: 960px;
+      max-width: var(--lri-max);
       margin: 0 auto;
+    }
+
+    .lri-hero-inner {
+      max-width: 900px;
+      text-align: center;
+    }
+
+    .lri-kicker {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--lri-orange);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
 
     .lri-hero h1 {
-      max-width: 900px;
-      margin: 0 auto 18px;
-      text-align: center;
+      margin: 0 0 18px;
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
+      line-height: 1.12;
     }
 
     .lri-hero-subtitle {
-      max-width: 760px;
+      max-width: 780px;
       margin: 0 auto;
-      text-align: center;
-      line-height: 1.7;
-    }
-
-    .lri-section-title {
-      text-align: center;
-      margin-bottom: 22px;
-    }
-
-    .lri-section-text {
-      max-width: 760px;
-      margin: 0 auto;
-      text-align: center;
+      color: var(--lri-muted);
+      font-size: 1.06rem;
       line-height: 1.75;
     }
 
-    .lri-card-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-      margin-top: 20px;
+    .lri-hero-actions,
+    .lri-cta-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 22px;
     }
 
-    .lri-card {
-      background: #ffffff;
-      border: 1px solid rgba(0, 0, 0, 0.08);
-      border-radius: 14px;
-      padding: 24px;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+    .lri-hero-actions {
+      justify-content: center;
     }
 
-    .lri-card h3 {
-      margin-top: 0;
-      margin-bottom: 12px;
-    }
-
-    .lri-card p:last-child {
-      margin-bottom: 0;
-    }
-
-    .lri-featured-card {
-      border-left: 4px solid #e46a1f;
-      max-width: 760px;
-      margin: 0 auto;
-    }
-
-    .lri-badge {
-      display: inline-block;
-      margin-top: 0.2rem;
-      margin-bottom: 0.8rem;
-      padding: 0.2rem 0.55rem;
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      border-radius: 4px;
-    }
-
-    .lri-badge-published {
-      background-color: #e46a1f;
-      color: #ffffff;
-    }
-
-    .lri-meta {
-      margin-top: 12px;
-      font-size: 0.98rem;
-      line-height: 1.7;
-    }
-
-    .lri-meta strong {
-      font-weight: 700;
-    }
-
-    .lri-card a,
-    .lri-meta a {
-      color: #e46a1f;
-      font-weight: 600;
-      text-decoration: none;
-    }
-
-    .lri-card a:hover,
-    .lri-meta a:hover {
-      text-decoration: underline;
+    .lri-cta-row {
+      justify-content: flex-start;
     }
 
     .lri-btn {
       display: inline-block;
-      padding: 0.85rem 1.4rem;
+      padding: 0.86rem 1.4rem;
+      border: 1px solid transparent;
       border-radius: 999px;
       font-weight: 600;
       text-decoration: none;
@@ -138,9 +190,9 @@
     }
 
     .lri-btn-primary {
-      background-color: #e46a1f;
+      background: var(--lri-orange);
       color: #ffffff;
-      border: 1px solid #e46a1f;
+      border-color: var(--lri-orange);
     }
 
     .lri-btn-primary:visited {
@@ -149,53 +201,184 @@
 
     .lri-btn-primary:hover,
     .lri-btn-primary:focus {
-      background-color: #cf5d18;
+      background: var(--lri-orange-dark);
+      border-color: var(--lri-orange-dark);
       color: #ffffff;
-      border-color: #cf5d18;
       text-decoration: none;
     }
 
     .lri-btn-outline {
-      background-color: transparent;
-      color: #e46a1f;
-      border: 1px solid #e46a1f;
+      background: transparent;
+      color: var(--lri-orange);
+      border-color: var(--lri-orange);
     }
 
     .lri-btn-outline:visited {
-      color: #e46a1f;
+      color: var(--lri-orange);
     }
 
     .lri-btn-outline:hover,
     .lri-btn-outline:focus {
-      background-color: rgba(228, 106, 31, 0.08);
-      color: #e46a1f;
+      background: rgba(228, 106, 31, 0.08);
+      color: var(--lri-orange);
       text-decoration: none;
     }
 
-    .lri-cta-row {
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-top: 18px;
+    .lri-section-heading {
+      max-width: 840px;
+      margin: 0 auto 28px;
+      text-align: center;
     }
 
-    .lri-note {
-      max-width: 760px;
+    .lri-section-title {
+      margin: 0 0 10px;
+      font-size: clamp(1.6rem, 3vw, 2.15rem);
+      line-height: 1.25;
+    }
+
+    .lri-section-text {
+      margin: 0;
+      color: var(--lri-muted);
+      line-height: 1.75;
+    }
+
+    .lri-card-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .lri-card,
+    .lri-featured-card,
+    .lri-note-card {
+      background: var(--lri-bg);
+      border: 1px solid var(--lri-border);
+      border-radius: var(--lri-radius);
+      box-shadow: var(--lri-shadow);
+    }
+
+    .lri-card {
+      display: flex;
+      flex-direction: column;
+      padding: 24px;
+    }
+
+    .lri-card h3,
+    .lri-featured-card h2 {
+      margin-top: 0;
+      margin-bottom: 12px;
+      line-height: 1.4;
+    }
+
+    .lri-card h3 {
+      font-size: 1.1rem;
+    }
+
+    .lri-featured-card h2 {
+      font-size: clamp(1.4rem, 3vw, 1.9rem);
+    }
+
+    .lri-card p,
+    .lri-featured-card p,
+    .lri-note-card p {
+      line-height: 1.72;
+    }
+
+    .lri-card p:last-of-type,
+    .lri-featured-card p:last-of-type,
+    .lri-note-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .lri-featured-card {
+      max-width: 940px;
       margin: 0 auto;
+      padding: 30px;
+      border-left: 5px solid var(--lri-orange);
+      background: #fffdfb;
+    }
+
+    .lri-badge {
+      display: inline-block;
+      align-self: flex-start;
+      margin: 0 0 12px;
+      padding: 0.25rem 0.65rem;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .lri-badge-published {
+      background: var(--lri-orange);
+      color: #ffffff;
+    }
+
+    .lri-badge-secondary {
+      background: rgba(228, 106, 31, 0.11);
+      color: var(--lri-orange-dark);
+      border: 1px solid rgba(228, 106, 31, 0.2);
+    }
+
+    .lri-badge-progress {
+      background: #eeeeee;
+      color: #4d4d4d;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .lri-meta {
+      margin: 14px 0 0;
+      color: var(--lri-muted);
+      font-size: 0.96rem;
+      line-height: 1.72;
+    }
+
+    .lri-meta strong {
+      color: var(--lri-text);
+      font-weight: 700;
+    }
+
+    .lri-card a,
+    .lri-featured-card a,
+    .lri-meta a {
+      color: var(--lri-orange);
+      font-weight: 600;
+      text-decoration: none;
+      overflow-wrap: anywhere;
+    }
+
+    .lri-card a:hover,
+    .lri-card a:focus,
+    .lri-featured-card a:hover,
+    .lri-featured-card a:focus,
+    .lri-meta a:hover,
+    .lri-meta a:focus {
+      text-decoration: underline;
+    }
+
+    .lri-card .lri-cta-row {
+      margin-top: auto;
+      padding-top: 20px;
+    }
+
+    .lri-note-card {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 24px;
+      background: var(--lri-soft);
+      border-color: rgba(228, 106, 31, 0.18);
+      box-shadow: var(--lri-shadow-soft);
       text-align: center;
-      color: #444444;
-      line-height: 1.7;
     }
 
     .lri-footer {
-      padding: 28px 24px 40px;
+      padding: 30px 24px 42px;
     }
 
     .lri-footer p {
-      text-align: center;
       margin: 0;
+      text-align: center;
     }
 
     @media (max-width: 900px) {
@@ -211,188 +394,564 @@
         padding: 34px 20px;
       }
     }
+
+    @media (max-width: 600px) {
+      .lri-card,
+      .lri-featured-card,
+      .lri-note-card {
+        padding: 21px;
+      }
+    }
   </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Lunar Research Initiative Publications",
+    "url": "https://lunarresearchinitiative.github.io/publications/",
+    "description": "Peer-reviewed journal articles, preprints, books, and selected research outputs from the Lunar Research Initiative.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Lunar Research Initiative",
+      "url": "https://lunarresearchinitiative.github.io/"
+    }
+  }
+  </script>
 </head>
 
 <body>
 
   <header class="lri-topbar">
     <div class="lri-topbar-inner">
+
       <div class="lri-topbar-left">
-        <img src="../assets/img/LRI LOGO.jpeg" alt="Lunar Research Initiative seal" class="lri-seal">
+        <a href="../" aria-label="Lunar Research Initiative home">
+          <img
+            src="../assets/img/LRI LOGO.jpeg"
+            alt="Lunar Research Initiative seal"
+            class="lri-seal"
+          >
+        </a>
       </div>
 
-      <nav class="lri-topnav">
+      <nav class="lri-topnav" aria-label="Primary navigation">
         <a href="../">Home</a>
         <a href="../about/">About</a>
         <a href="../research/">Research</a>
         <a href="../initiatives/">Initiatives</a>
         <a href="../standards/">Standards</a>
-        <a href="./">Publications</a>
+        <a href="./" aria-current="page">Publications</a>
         <a href="../books/">Books</a>
         <a href="../newsletter/">Newsletter</a>
         <a href="../partnerships/">Partnerships</a>
         <a href="../contact/">Contact</a>
       </nav>
+
     </div>
   </header>
 
   <main>
+
     <section class="lri-hero">
       <div class="lri-hero-inner">
+
+        <span class="lri-kicker">
+          Lunar Quality and Decision Assurance
+        </span>
+
         <h1>Publications</h1>
+
         <p class="lri-hero-subtitle">
-          Peer-reviewed articles, preprints, and formal research outputs from the Lunar Research Initiative.
+          Peer-reviewed journal articles, preprints, books, and selected
+          research outputs from the Lunar Research Initiative.
         </p>
+
+        <div class="lri-hero-actions">
+
+          <a
+            href="#journal-articles"
+            class="lri-btn lri-btn-primary"
+          >
+            View Journal Articles
+          </a>
+
+          <a
+            href="../research/"
+            class="lri-btn lri-btn-outline"
+          >
+            Explore Research
+          </a>
+
+        </div>
       </div>
     </section>
 
-    <section class="lri-section">
+    <section class="lri-section lri-section-soft">
       <div class="lri-section-inner">
-        <h2 class="lri-section-title">Latest Publication</h2>
 
-        <article class="lri-card lri-featured-card">
-          <h3>Delay-Informed Decision Authority for Lunar Operations: A Unified Lunar Quality Framework</h3>
-          <span class="lri-badge lri-badge-published">Published</span>
+        <div class="lri-section-heading">
+
+          <span class="lri-kicker">
+            Latest Peer-Reviewed Publication
+          </span>
+
+          <h2 class="lri-section-title">
+            Temporal Misalignment Under Delayed Supervision
+          </h2>
+
+          <p class="lri-section-text">
+            The latest LRI journal article examines how delayed supervision
+            can create a safety-relevant mismatch between current lunar
+            operating conditions and the evidence available to remote
+            decision-makers.
+          </p>
+
+        </div>
+
+        <article class="lri-featured-card">
+
+          <span class="lri-badge lri-badge-published">
+            Published
+          </span>
+
+          <h2>
+            Temporal Misalignment Under Delayed Supervision in Lunar Surface Operations
+          </h2>
 
           <p>
-            Published in the <em>Journal of Space Safety Engineering</em>, this article presents the Unified Lunar Quality Framework for decision authority, verification timing, and evidence integrity under communication delay.
+            Lunar hazards can change faster than delayed ground supervision
+            can observe, interpret, and respond. This article examines temporal
+            validity, evidence aging, local operating authority, and the risk
+            of decisions based on an outdated operational picture.
           </p>
 
           <p class="lri-meta">
+            <strong>Author:</strong> Ralph Figueroa<br>
             <strong>Journal:</strong> Journal of Space Safety Engineering<br>
-            <strong>Date:</strong> 2026-03<br>
-            <strong>Type:</strong> Journal article<br>
+            <strong>Year:</strong> 2026<br>
+            <strong>Type:</strong> Peer-reviewed journal article<br>
             <strong>DOI:</strong>
-            <a href="https://doi.org/10.1016/j.jsse.2026.03.004" target="_blank" rel="noopener">
-              10.1016/j.jsse.2026.03.004
+            <a
+              href="https://doi.org/10.1016/j.jsse.2026.05.008"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              10.1016/j.jsse.2026.05.008
             </a>
           </p>
 
           <div class="lri-cta-row">
-            <a href="https://doi.org/10.1016/j.jsse.2026.03.004" target="_blank" rel="noopener" class="lri-btn lri-btn-primary">View Publication</a>
+
+            <a
+              href="https://doi.org/10.1016/j.jsse.2026.05.008"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="lri-btn lri-btn-primary"
+            >
+              View Publication
+            </a>
+
           </div>
         </article>
       </div>
     </section>
 
-    <section class="lri-section">
+    <section class="lri-section" id="journal-articles">
       <div class="lri-section-inner">
-        <h2 class="lri-section-title">Journal Articles</h2>
+
+        <div class="lri-section-heading">
+
+          <span class="lri-kicker">
+            Peer-Reviewed Research
+          </span>
+
+          <h2 class="lri-section-title">
+            Journal Articles
+          </h2>
+
+          <p class="lri-section-text">
+            Published research on communication delay, evidence integrity,
+            verification timing, and decision authority in lunar operations.
+          </p>
+
+        </div>
 
         <div class="lri-card-grid">
+
           <article class="lri-card">
-            <h3>Delay-Informed Decision Authority for Lunar Operations: A Unified Lunar Quality Framework</h3>
-            <span class="lri-badge lri-badge-published">Published</span>
+
+            <span class="lri-badge lri-badge-published">
+              Published
+            </span>
+
+            <h3>
+              Temporal Misalignment Under Delayed Supervision in Lunar Surface Operations
+            </h3>
 
             <p>
-              A journal article on decision authority allocation, verification timing, and evidence integrity under delayed lunar supervision.
+              Examines the mismatch between changing lunar hazards and the
+              delayed operational picture available to remote supervisors.
             </p>
 
             <p class="lri-meta">
-              <strong>Figueroa, R.</strong> (2026). <em>Delay-Informed Decision Authority for Lunar Operations: A Unified Lunar Quality Framework</em>. <em>Journal of Space Safety Engineering</em>.<br>
+              <strong>Figueroa, R.</strong> (2026).
+              <em>Temporal Misalignment Under Delayed Supervision in Lunar Surface Operations</em>.
+              <em>Journal of Space Safety Engineering</em>.<br>
+
               <strong>DOI:</strong>
-              <a href="https://doi.org/10.1016/j.jsse.2026.03.004" target="_blank" rel="noopener">
+              <a
+                href="https://doi.org/10.1016/j.jsse.2026.05.008"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                10.1016/j.jsse.2026.05.008
+              </a>
+            </p>
+
+            <div class="lri-cta-row">
+
+              <a
+                href="https://doi.org/10.1016/j.jsse.2026.05.008"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="lri-btn lri-btn-primary"
+              >
+                View Publication
+              </a>
+
+            </div>
+          </article>
+
+          <article class="lri-card">
+
+            <span class="lri-badge lri-badge-secondary">
+              Published
+            </span>
+
+            <h3>
+              Delay-Informed Decision Authority for Lunar Operations:
+              A Unified Lunar Quality Framework
+            </h3>
+
+            <p>
+              Presents a quality framework for allocating decision authority,
+              setting verification boundaries, and preserving evidence
+              integrity under communication delay and partial observability.
+            </p>
+
+            <p class="lri-meta">
+              <strong>Figueroa, R.</strong> (2026).
+              <em>Delay-Informed Decision Authority for Lunar Operations:
+              A Unified Lunar Quality Framework</em>.
+              <em>Journal of Space Safety Engineering</em>.<br>
+
+              <strong>DOI:</strong>
+              <a
+                href="https://doi.org/10.1016/j.jsse.2026.03.004"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 10.1016/j.jsse.2026.03.004
               </a>
             </p>
+
+            <div class="lri-cta-row">
+
+              <a
+                href="https://doi.org/10.1016/j.jsse.2026.03.004"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="lri-btn lri-btn-outline"
+              >
+                View Publication
+              </a>
+
+            </div>
           </article>
+
         </div>
       </div>
     </section>
 
-    <section class="lri-section">
+    <section class="lri-section lri-section-soft">
       <div class="lri-section-inner">
-        <h2 class="lri-section-title">Regolith Manufacturing Research</h2>
+
+        <div class="lri-section-heading">
+
+          <span class="lri-kicker">
+            Open Research Outputs
+          </span>
+
+          <h2 class="lri-section-title">
+            Lunar Manufacturing and Verification Research
+          </h2>
+
+          <p class="lri-section-text">
+            Selected open research outputs addressing critical-to-quality
+            decomposition, process drift, predictive signatures, and
+            verification design.
+          </p>
+
+        </div>
 
         <div class="lri-card-grid">
+
           <article class="lri-card">
-            <h3>CTQ Decomposition for Lunar Additive Manufacturing</h3>
-            <span class="lri-badge lri-badge-published">Published</span>
+
+            <span class="lri-badge lri-badge-published">
+              Published
+            </span>
+
+            <h3>
+              CTQ Decomposition for Lunar Additive Manufacturing
+            </h3>
 
             <p>
-              Develops a CTQ map for lunar additive manufacturing processes, including environmental modifiers, process drift, and verification load design.
+              Develops a critical-to-quality map for lunar additive
+              manufacturing, including environmental modifiers, process drift,
+              and verification-load design.
             </p>
 
             <p class="lri-meta">
-              <strong>Figueroa, R.</strong> (2025). <em>CTQ decomposition for lunar additive manufacturing: Environmental modifiers, process drift, and verification load design</em> (Version 1.0). Zenodo.<br>
+              <strong>Figueroa, R.</strong> (2025).
+              <em>CTQ Decomposition for Lunar Additive Manufacturing:
+              Environmental Modifiers, Process Drift, and Verification Load Design</em>.
+              Zenodo.<br>
+
               <strong>DOI:</strong>
-              <a href="https://doi.org/10.5281/zenodo.18048071" target="_blank" rel="noopener">
+              <a
+                href="https://doi.org/10.5281/zenodo.18048071"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 10.5281/zenodo.18048071
               </a>
             </p>
 
             <div class="lri-cta-row">
-              <a href="https://doi.org/10.5281/zenodo.18048071" target="_blank" rel="noopener" class="lri-btn lri-btn-primary">View Publication</a>
+
+              <a
+                href="https://doi.org/10.5281/zenodo.18048071"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="lri-btn lri-btn-primary"
+              >
+                View Publication
+              </a>
+
             </div>
           </article>
 
           <article class="lri-card">
-            <h3>Regolith Material Behavior and Process Drift in Lunar Manufacturing</h3>
+
+            <span class="lri-badge lri-badge-published">
+              Published
+            </span>
+
+            <h3>
+              Predictive Signatures for Lunar Manufacturing Systems
+            </h3>
 
             <p>
-              Analyzes drift mechanisms within regolith-based processes and the verification structures required to maintain stability.
+              Introduces predictive-signature constructs for lunar
+              manufacturing systems, including drift detection, verification
+              overload, and decision latency under environmental constraints.
             </p>
 
-            <p><em>Manuscript in preparation.</em></p>
+            <p class="lri-meta">
+              <strong>Type:</strong> Open research output<br>
+
+              <strong>DOI:</strong>
+              <a
+                href="https://doi.org/10.5281/zenodo.18307522"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                10.5281/zenodo.18307522
+              </a>
+            </p>
+
+            <div class="lri-cta-row">
+
+              <a
+                href="https://doi.org/10.5281/zenodo.18307522"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="lri-btn lri-btn-outline"
+              >
+                View Publication
+              </a>
+
+            </div>
           </article>
+
+          <article class="lri-card">
+
+            <span class="lri-badge lri-badge-progress">
+              Research in Development
+            </span>
+
+            <h3>
+              Regolith Material Behavior and Process Drift in Lunar Manufacturing
+            </h3>
+
+            <p>
+              Examines process-drift mechanisms in regolith-based
+              manufacturing and the verification structures required to
+              preserve process stability as materials and operating conditions
+              change.
+            </p>
+
+            <p class="lri-meta">
+              <strong>Status:</strong> Manuscript in preparation
+            </p>
+
+          </article>
+
         </div>
       </div>
     </section>
 
     <section class="lri-section">
       <div class="lri-section-inner">
-        <h2 class="lri-section-title">Additional Research Outputs</h2>
+
+        <div class="lri-section-heading">
+
+          <span class="lri-kicker">
+            Long-Form Research
+          </span>
+
+          <h2 class="lri-section-title">
+            Books
+          </h2>
+
+          <p class="lri-section-text">
+            Book-length treatments of lunar systems, governance, evidence,
+            verification, and decision authority.
+          </p>
+
+        </div>
 
         <div class="lri-card-grid">
+
           <article class="lri-card">
-            <h3>Predictive Signatures for Lunar Manufacturing Systems</h3>
-            <span class="lri-badge lri-badge-published">Published</span>
+
+            <span class="lri-badge lri-badge-published">
+              Published
+            </span>
+
+            <h3>
+              Governance Beyond Earth: Decision Authority, Verification,
+              and Evidence Integrity for Lunar Operations
+            </h3>
 
             <p>
-              Introduces predictive signature constructs for lunar manufacturing systems, including drift detection, verification overload, and decision latency under environmental constraints.
+              Examines governance failure modes unique to lunar missions,
+              including communication delay, degraded evidence, constrained
+              verification, and distributed decision authority.
             </p>
 
             <p class="lri-meta">
-              <strong>DOI:</strong>
-              <a href="https://doi.org/10.5281/zenodo.18307522" target="_blank" rel="noopener">
-                10.5281/zenodo.18307522
-              </a>
-            </p>
-          </article>
-
-          <article class="lri-card">
-            <h3>Governance Beyond Earth: Decision Authority, Verification, and Evidence Integrity for Lunar Operations</h3>
-            <span class="lri-badge lri-badge-published">Published</span>
-
-            <p>
-              A book-length treatment of governance failure modes unique to lunar missions, including delay, degraded evidence, and constrained verification.
-            </p>
-
-            <p class="lri-meta">
+              <strong>Author:</strong> Ralph Figueroa<br>
+              <strong>Type:</strong> Book<br>
               <strong>ISBN:</strong> 979-8243257398
             </p>
 
             <div class="lri-cta-row">
-              <a href="../books/" class="lri-btn lri-btn-outline">View Book</a>
+
+              <a
+                href="../books/"
+                class="lri-btn lri-btn-outline"
+              >
+                View Book
+              </a>
+
             </div>
           </article>
+
+          <article class="lri-card">
+
+            <span class="lri-badge lri-badge-published">
+              Published
+            </span>
+
+            <h3>
+              The Moon: Our Celestial Neighbor
+            </h3>
+
+            <p>
+              Introduces the Moon’s origin, physical environment, exploration
+              history, resources, scientific value, and role in the future of
+              sustained human space activity.
+            </p>
+
+            <p class="lri-meta">
+              <strong>Author:</strong> Ralph Figueroa<br>
+              <strong>Type:</strong> Book<br>
+              <strong>ISBN:</strong> 979-8271695391
+            </p>
+
+            <div class="lri-cta-row">
+
+              <a
+                href="../books/"
+                class="lri-btn lri-btn-outline"
+              >
+                View Book
+              </a>
+
+            </div>
+          </article>
+
         </div>
       </div>
     </section>
 
-    <section class="lri-section">
+    <section class="lri-section lri-section-soft">
       <div class="lri-section-inner">
-        <p class="lri-note">
-          This page highlights selected published and active research outputs. You can also follow new releases through the newsletter and homepage publication highlights.
-        </p>
+
+        <div class="lri-note-card">
+
+          <span class="lri-kicker">
+            Research Portfolio
+          </span>
+
+          <p>
+            This page highlights selected published and developing research
+            outputs. Follow the Aerospace Quality Brief and the LRI research
+            pages for new publications, framework updates, and project
+            announcements.
+          </p>
+
+          <div class="lri-hero-actions">
+
+            <a
+              href="../newsletter/"
+              class="lri-btn lri-btn-primary"
+            >
+              Read the Newsletter
+            </a>
+
+            <a
+              href="../research/"
+              class="lri-btn lri-btn-outline"
+            >
+              Explore Active Research
+            </a>
+
+          </div>
+        </div>
       </div>
     </section>
+
   </main>
 
   <footer class="lri-footer">
     <div class="lri-footer-inner">
-      <p>© 2025 Lunar Research Initiative. All rights reserved.</p>
+      <p>
+        &copy; 2026 Lunar Research Initiative. All rights reserved.
+      </p>
     </div>
   </footer>
 
