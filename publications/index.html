@@ -8,7 +8,7 @@
 
   <meta
     name="description"
-    content="Peer-reviewed journal articles, preprints, books, and selected research outputs from the Lunar Research Initiative on lunar quality, evidence integrity, verification, decision authority, and manufacturing assurance."
+    content="Peer-reviewed journal articles, open research outputs, books, and selected publications from the Lunar Research Initiative on lunar quality, decision quality, evidence integrity, verification, decision authority, supervisory autonomy, and manufacturing assurance."
   >
 
   <meta name="author" content="Lunar Research Initiative">
@@ -30,7 +30,7 @@
 
   <meta
     property="og:description"
-    content="Peer-reviewed journal articles, preprints, books, and research outputs on lunar quality and decision assurance."
+    content="Peer-reviewed journal articles, open research outputs, books, and research outputs on lunar quality, decision quality, evidence integrity, verification, and decision assurance."
   >
 
   <meta
@@ -57,7 +57,7 @@
 
   <meta
     name="twitter:description"
-    content="Peer-reviewed journal articles, preprints, books, and research outputs on lunar quality and decision assurance."
+    content="Peer-reviewed journal articles, open research outputs, books, and research outputs on lunar quality, decision quality, evidence integrity, verification, and decision assurance."
   >
 
   <meta
@@ -248,6 +248,10 @@
       gap: 20px;
     }
 
+    .lri-card-grid-three {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
     .lri-card,
     .lri-featured-card,
     .lri-note-card {
@@ -381,8 +385,15 @@
       text-align: center;
     }
 
+    @media (max-width: 1020px) {
+      .lri-card-grid-three {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
     @media (max-width: 900px) {
-      .lri-card-grid {
+      .lri-card-grid,
+      .lri-card-grid-three {
         grid-template-columns: 1fr;
       }
 
@@ -410,7 +421,7 @@
     "@type": "CollectionPage",
     "name": "Lunar Research Initiative Publications",
     "url": "https://lunarresearchinitiative.github.io/publications/",
-    "description": "Peer-reviewed journal articles, preprints, books, and selected research outputs from the Lunar Research Initiative.",
+    "description": "Peer-reviewed journal articles, open research outputs, books, and selected publications from the Lunar Research Initiative.",
     "publisher": {
       "@type": "Organization",
       "name": "Lunar Research Initiative",
@@ -463,8 +474,8 @@
         <h1>Publications</h1>
 
         <p class="lri-hero-subtitle">
-          Peer-reviewed journal articles, preprints, books, and selected
-          research outputs from the Lunar Research Initiative.
+          Peer-reviewed journal articles, open research outputs, books, and
+          selected publications from the Lunar Research Initiative.
         </p>
 
         <div class="lri-hero-actions">
@@ -477,10 +488,10 @@
           </a>
 
           <a
-            href="../research/"
+            href="#open-research"
             class="lri-btn lri-btn-outline"
           >
-            Explore Research
+            View Open Research Outputs
           </a>
 
         </div>
@@ -497,14 +508,13 @@
           </span>
 
           <h2 class="lri-section-title">
-            Temporal Misalignment Under Delayed Supervision
+            Decision Freshness Boundaries Under Delayed Supervision
           </h2>
 
           <p class="lri-section-text">
-            The latest LRI journal article examines how delayed supervision
-            can create a safety-relevant mismatch between current lunar
-            operating conditions and the evidence available to remote
-            decision-makers.
+            The newest JBIS publication reframes delayed lunar supervision as
+            a decision-freshness problem and distinguishes corrective,
+            advisory, and historical supervisory roles under communication delay.
           </p>
 
         </div>
@@ -516,40 +526,50 @@
           </span>
 
           <h2>
-            Temporal Misalignment Under Delayed Supervision in Lunar Surface Operations
+            Decision Freshness Boundaries Under Delayed Supervision in Lunar Surface Operations
           </h2>
 
           <p>
-            Lunar hazards can change faster than delayed ground supervision
-            can observe, interpret, and respond. This article examines temporal
-            validity, evidence aging, local operating authority, and the risk
-            of decisions based on an outdated operational picture.
+            This article examines when delayed supervisory input remains useful
+            for local action during lunar surface operations. It argues that
+            task-dependent freshness boundaries provide a more operationally
+            meaningful concept than a universal delay threshold.
           </p>
 
           <p class="lri-meta">
             <strong>Author:</strong> Ralph Figueroa<br>
-            <strong>Journal:</strong> Journal of Space Safety Engineering<br>
+            <strong>Journal:</strong> Journal of the British Interplanetary Society<br>
             <strong>Year:</strong> 2026<br>
+            <strong>Reference:</strong> 2026.79.0291<br>
             <strong>Type:</strong> Peer-reviewed journal article<br>
             <strong>DOI:</strong>
             <a
-              href="https://doi.org/10.1016/j.jsse.2026.05.008"
+              href="https://doi.org/10.59332/jbis-079-08-0291"
               target="_blank"
               rel="noopener noreferrer"
             >
-              10.1016/j.jsse.2026.05.008
+              10.59332/jbis-079-08-0291
             </a>
           </p>
 
           <div class="lri-cta-row">
 
             <a
-              href="https://doi.org/10.1016/j.jsse.2026.05.008"
+              href="https://doi.org/10.59332/jbis-079-08-0291"
               target="_blank"
               rel="noopener noreferrer"
               class="lri-btn lri-btn-primary"
             >
-              View Publication
+              View DOI
+            </a>
+
+            <a
+              href="https://bis-space.com/shop/product/jbis-079-08-0291/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="lri-btn lri-btn-outline"
+            >
+              View BIS Record
             </a>
 
           </div>
@@ -572,7 +592,8 @@
 
           <p class="lri-section-text">
             Published research on communication delay, evidence integrity,
-            verification timing, and decision authority in lunar operations.
+            verification timing, supervisory autonomy, and decision authority
+            in lunar operations.
           </p>
 
         </div>
@@ -582,6 +603,118 @@
           <article class="lri-card">
 
             <span class="lri-badge lri-badge-published">
+              Published
+            </span>
+
+            <h3>
+              Decision Freshness Boundaries Under Delayed Supervision in Lunar Surface Operations
+            </h3>
+
+            <p>
+              Reframes delayed lunar supervision as a decision-freshness
+              problem and distinguishes corrective, advisory, and historical
+              supervisory roles.
+            </p>
+
+            <p class="lri-meta">
+              <strong>Figueroa, R.</strong> (2026).
+              <em>Decision Freshness Boundaries Under Delayed Supervision in Lunar Surface Operations</em>.
+              <em>Journal of the British Interplanetary Society</em>.<br>
+              <strong>Reference:</strong> 2026.79.0291<br>
+              <strong>DOI:</strong>
+              <a
+                href="https://doi.org/10.59332/jbis-079-08-0291"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                10.59332/jbis-079-08-0291
+              </a>
+            </p>
+
+            <div class="lri-cta-row">
+
+              <a
+                href="https://doi.org/10.59332/jbis-079-08-0291"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="lri-btn lri-btn-primary"
+              >
+                View DOI
+              </a>
+
+              <a
+                href="https://bis-space.com/shop/product/jbis-079-08-0291/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="lri-btn lri-btn-outline"
+              >
+                BIS Record
+              </a>
+
+            </div>
+          </article>
+
+          <article class="lri-card">
+
+            <span class="lri-badge lri-badge-published">
+              Published
+            </span>
+
+            <h3>
+              When Performance Persists Beyond Admissibility: A Comparative
+              Modeling Study of Supervisory Autonomy Under Delay in Lunar
+              Surface Operations
+            </h3>
+
+            <p>
+              Compares a simplified performance-only continuation policy with
+              an assurance-bounded policy, showing why continued performance
+              should not alone define acceptable autonomous continuation.
+            </p>
+
+            <p class="lri-meta">
+              <strong>Figueroa, R.</strong> (2026).
+              <em>When Performance Persists Beyond Admissibility: A Comparative
+              Modeling Study of Supervisory Autonomy Under Delay in Lunar
+              Surface Operations</em>.
+              <em>Journal of the British Interplanetary Society</em>.<br>
+              <strong>Reference:</strong> 2026.79.0280<br>
+              <strong>DOI:</strong>
+              <a
+                href="https://doi.org/10.59332/jbis-079-08-0280"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                10.59332/jbis-079-08-0280
+              </a>
+            </p>
+
+            <div class="lri-cta-row">
+
+              <a
+                href="https://doi.org/10.59332/jbis-079-08-0280"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="lri-btn lri-btn-primary"
+              >
+                View DOI
+              </a>
+
+              <a
+                href="https://bis-space.com/shop/product/jbis-079-08-0280/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="lri-btn lri-btn-outline"
+              >
+                BIS Record
+              </a>
+
+            </div>
+          </article>
+
+          <article class="lri-card">
+
+            <span class="lri-badge lri-badge-secondary">
               Published
             </span>
 
@@ -598,7 +731,6 @@
               <strong>Figueroa, R.</strong> (2026).
               <em>Temporal Misalignment Under Delayed Supervision in Lunar Surface Operations</em>.
               <em>Journal of Space Safety Engineering</em>.<br>
-
               <strong>DOI:</strong>
               <a
                 href="https://doi.org/10.1016/j.jsse.2026.05.008"
@@ -615,7 +747,7 @@
                 href="https://doi.org/10.1016/j.jsse.2026.05.008"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="lri-btn lri-btn-primary"
+                class="lri-btn lri-btn-outline"
               >
                 View Publication
               </a>
@@ -645,7 +777,6 @@
               <em>Delay-Informed Decision Authority for Lunar Operations:
               A Unified Lunar Quality Framework</em>.
               <em>Journal of Space Safety Engineering</em>.<br>
-
               <strong>DOI:</strong>
               <a
                 href="https://doi.org/10.1016/j.jsse.2026.03.004"
@@ -674,7 +805,7 @@
       </div>
     </section>
 
-    <section class="lri-section lri-section-soft">
+    <section class="lri-section lri-section-soft" id="open-research">
       <div class="lri-section-inner">
 
         <div class="lri-section-heading">
@@ -684,18 +815,106 @@
           </span>
 
           <h2 class="lri-section-title">
-            Lunar Manufacturing and Verification Research
+            Decision Quality and Lunar Manufacturing Research
           </h2>
 
           <p class="lri-section-text">
-            Selected open research outputs addressing critical-to-quality
-            decomposition, process drift, predictive signatures, and
-            verification design.
+            Selected open outputs addressing decision quality, delayed
+            authority, critical-to-quality decomposition, process drift,
+            predictive signatures, and verification design.
           </p>
 
         </div>
 
-        <div class="lri-card-grid">
+        <div class="lri-card-grid lri-card-grid-three">
+
+          <article class="lri-card">
+
+            <span class="lri-badge lri-badge-published">
+              Published
+            </span>
+
+            <h3>
+              Decision Quality System in High-Risk Environments
+            </h3>
+
+            <p>
+              A practical decision-quality reference for high-risk contexts
+              where evidence, authority, timing, and accountability must remain
+              aligned before action.
+            </p>
+
+            <p class="lri-meta">
+              <strong>Figueroa, R.</strong> (2026).
+              <em>Decision Quality System in High-Risk Environments</em>.
+              Zenodo.<br>
+              <strong>DOI:</strong>
+              <a
+                href="https://doi.org/10.5281/zenodo.19580949"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                10.5281/zenodo.19580949
+              </a>
+            </p>
+
+            <div class="lri-cta-row">
+
+              <a
+                href="https://doi.org/10.5281/zenodo.19580949"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="lri-btn lri-btn-primary"
+              >
+                View Publication
+              </a>
+
+            </div>
+          </article>
+
+          <article class="lri-card">
+
+            <span class="lri-badge lri-badge-published">
+              Published
+            </span>
+
+            <h3>
+              A Practical Guide to Decision Authority Under Delay
+            </h3>
+
+            <p>
+              A practical guide for assigning, bounding, and reviewing decision
+              authority when communication delay prevents continuous real-time
+              supervision.
+            </p>
+
+            <p class="lri-meta">
+              <strong>Figueroa, R.</strong> (2026).
+              <em>A Practical Guide to Decision Authority Under Delay</em>.
+              Zenodo.<br>
+              <strong>DOI:</strong>
+              <a
+                href="https://doi.org/10.5281/zenodo.19580581"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                10.5281/zenodo.19580581
+              </a>
+            </p>
+
+            <div class="lri-cta-row">
+
+              <a
+                href="https://doi.org/10.5281/zenodo.19580581"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="lri-btn lri-btn-primary"
+              >
+                View Publication
+              </a>
+
+            </div>
+          </article>
 
           <article class="lri-card">
 
@@ -718,7 +937,6 @@
               <em>CTQ Decomposition for Lunar Additive Manufacturing:
               Environmental Modifiers, Process Drift, and Verification Load Design</em>.
               Zenodo.<br>
-
               <strong>DOI:</strong>
               <a
                 href="https://doi.org/10.5281/zenodo.18048071"
@@ -735,7 +953,7 @@
                 href="https://doi.org/10.5281/zenodo.18048071"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="lri-btn lri-btn-primary"
+                class="lri-btn lri-btn-outline"
               >
                 View Publication
               </a>
@@ -761,7 +979,6 @@
 
             <p class="lri-meta">
               <strong>Type:</strong> Open research output<br>
-
               <strong>DOI:</strong>
               <a
                 href="https://doi.org/10.5281/zenodo.18307522"
