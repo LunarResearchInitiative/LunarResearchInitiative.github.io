@@ -1,75 +1,2529 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
-  <title>Cite LRI – Lunar Research Initiative</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Citation Information | Lunar Research Initiative</title>
+
+  <meta name="description" content="Recommended citation formats and scholarly referencing guidance for Lunar Research Initiative website content, scientific publications, technical resources, books, and research outputs.">
+
+  <meta name="author" content="Lunar Research Initiative">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0b1420">
+
+  <link rel="canonical" href="https://lunarresearchinitiative.github.io/cite/">
+
   <link rel="stylesheet" href="/assets/css/style.css">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Citation Information | Lunar Research Initiative">
+  <meta property="og:description" content="Scholarly citation formats and referencing guidance for LRI scientific and technical contributions.">
+  <meta property="og:url" content="https://lunarresearchinitiative.github.io/cite/">
+  <meta property="og:image" content="https://lunarresearchinitiative.github.io/assets/img/lunar-hero.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+
+  <style>
+
+    /* ========================================
+       PAGE LAYOUT
+    ======================================== */
+
+    :root {
+      --lri-navy: #0b1420;
+      --lri-navy-light: #142334;
+      --lri-navy-dark: #080d14;
+      --lri-gold: #ddbb7a;
+      --lri-white: #f1f3f6;
+      --lri-muted: #aab8c8;
+      --lri-border: #344354;
+    }
+
+    [hidden] {
+      display: none !important;
+    }
+
+    main {
+      max-width: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .citation-container {
+      width: min(calc(100% - 64px), 1320px);
+      margin: 0 auto;
+    }
+
+    /* ========================================
+       HEADER AND NAVIGATION
+    ======================================== */
+
+    .site-header {
+      position: relative;
+      z-index: 100;
+      padding: 0;
+      background: var(--lri-navy-dark);
+    }
+
+    .header-inner {
+      min-height: 96px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .site-header .brand {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 0;
+      color: var(--lri-white);
+      text-decoration: none;
+    }
+
+    .brand-logo {
+      width: 66px;
+      height: 66px;
+      object-fit: contain;
+      border-radius: 50%;
+    }
+
+    .brand-name {
+      font-size: 1.04rem;
+      font-weight: 700;
+      line-height: 1.35;
+      letter-spacing: 0.065em;
+      text-transform: uppercase;
+    }
+
+    .brand-subtitle {
+      display: block;
+      color: var(--lri-muted);
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.025em;
+      text-transform: none;
+      margin-top: 5px;
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .main-nav > a,
+    .nav-dropdown > summary {
+      color: var(--lri-white);
+      font-size: 0.92rem;
+      font-weight: 500;
+      padding: 14px 0;
+      white-space: nowrap;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .main-nav > a:hover,
+    .nav-dropdown > summary:hover {
+      color: var(--lri-gold);
+    }
+
+    .nav-dropdown {
+      position: relative;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      background: transparent;
+    }
+
+    .nav-dropdown summary {
+      list-style: none;
+      border: 0 !important;
+    }
+
+    .nav-dropdown summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .nav-dropdown summary::after {
+      content: " \25BE";
+      font-size: 0.75rem;
+      color: var(--lri-gold);
+    }
+
+    .nav-dropdown.active > summary {
+      color: var(--lri-gold);
+      border-bottom: 2px solid var(--lri-gold) !important;
+    }
+
+    .nav-dropdown > .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      min-width: 230px;
+      margin: 0;
+      padding: 10px;
+      background: var(--lri-navy-light);
+      border: 1px solid var(--lri-border);
+      border-radius: 5px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+      z-index: 100;
+    }
+
+    .dropdown-menu a {
+      display: block;
+      color: var(--lri-white);
+      font-size: 0.92rem;
+      padding: 12px 14px;
+      text-decoration: none;
+    }
+
+    .dropdown-menu a:hover,
+    .dropdown-menu a[aria-current="page"] {
+      background: rgba(221,187,122,0.08);
+      color: var(--lri-gold);
+    }
+
+    .menu-toggle {
+      display: none;
+      color: var(--lri-gold);
+      background: transparent;
+      border: 1px solid var(--lri-border);
+    }
+
+    /* ========================================
+       CINEMATIC HERO
+    ======================================== */
+
+    .citation-hero {
+      min-height: 360px;
+      display: flex;
+      align-items: center;
+      background-color: var(--lri-navy-dark);
+
+      background-image:
+        linear-gradient(
+          90deg,
+          rgba(8,13,20,0.98),
+          rgba(8,13,20,0.80),
+          rgba(8,13,20,0.28)
+        ),
+        url("/assets/img/lunar-hero.jpg");
+
+      background-size: cover;
+      background-position: center;
+      border-bottom: 1px solid var(--lri-border);
+    }
+
+    .citation-hero-content {
+      padding: 65px 0;
+    }
+
+    .citation-hero h1 {
+      max-width: 850px;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      line-height: 1.12;
+      margin-bottom: 24px;
+    }
+
+    .citation-hero p {
+      max-width: 760px;
+      color: #d5dde7;
+      font-size: 1.15rem;
+      line-height: 1.8;
+      margin-bottom: 0;
+    }
+
+    /* ========================================
+       SECTION DESIGN
+    ======================================== */
+
+    .citation-section {
+      padding: 65px 0;
+    }
+
+    .citation-section-alt {
+      background: var(--lri-navy-light);
+      border-top: 1px solid var(--lri-border);
+      border-bottom: 1px solid var(--lri-border);
+    }
+
+    .section-heading {
+      max-width: 850px;
+      margin-bottom: 35px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(1.9rem, 3vw, 2.6rem);
+      margin-bottom: 16px;
+    }
+
+    .section-heading p {
+      color: var(--lri-muted);
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+
+    /* ========================================
+       CITATION GUIDANCE
+    ======================================== */
+
+    .overview-layout {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .overview-heading {
+      border-left: 3px solid var(--lri-gold);
+      padding-left: 25px;
+    }
+
+    .overview-heading h2 {
+      font-size: clamp(1.9rem, 3vw, 2.5rem);
+      margin-bottom: 0;
+    }
+
+    .overview-copy p {
+      color: #d2dce7;
+      font-size: 1.05rem;
+      line-height: 1.85;
+    }
+
+    .overview-copy p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ========================================
+       CITATION FORMAT CARDS
+    ======================================== */
+
+    .citation-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .citation-card {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      padding: 28px;
+      background: linear-gradient(145deg, #172638, #101b29);
+      border: 1px solid var(--lri-border);
+      border-radius: 6px;
+    }
+
+    .citation-card:hover {
+      border-color: rgba(221,187,122,0.55);
+    }
+
+    .citation-card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-bottom: 18px;
+    }
+
+    .citation-card h3 {
+      font-size: 1.3rem;
+      margin: 0;
+    }
+
+    .format-label {
+      color: var(--lri-gold);
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .format-description {
+      color: var(--lri-muted);
+      font-size: 0.88rem;
+      line-height: 1.75;
+      margin-bottom: 18px;
+    }
+
+    .citation-text {
+      padding: 20px;
+      background: var(--lri-navy-dark);
+      border: 1px solid var(--lri-border);
+      border-radius: 4px;
+      color: #d5dde7;
+      font-size: 0.95rem;
+      line-height: 1.9;
+      overflow-wrap: anywhere;
+      user-select: text;
+      margin-bottom: 22px;
+      flex: 1;
+    }
+
+    .citation-text a {
+      color: var(--lri-gold);
+      overflow-wrap: anywhere;
+    }
+
+    .citation-actions {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: auto;
+    }
+
+    .copy-button {
+      padding: 10px 18px;
+      background: transparent;
+      color: var(--lri-gold);
+      border: 1px solid var(--lri-border);
+      border-radius: 4px;
+      font-size: 0.85rem;
+      cursor: pointer;
+    }
+
+    .copy-button:hover {
+      border-color: var(--lri-gold);
+      background: rgba(221,187,122,0.08);
+    }
+
+    /* ========================================
+       BIBTEX RECORD
+    ======================================== */
+
+    .bibtex-panel {
+      padding: 30px;
+      background: linear-gradient(145deg, #172638, #101b29);
+      border: 1px solid var(--lri-border);
+      border-radius: 6px;
+      margin-top: 28px;
+    }
+
+    .bibtex-panel h3 {
+      font-size: 1.35rem;
+      margin-bottom: 14px;
+    }
+
+    .bibtex-panel p {
+      color: var(--lri-muted);
+      font-size: 0.95rem;
+      line-height: 1.75;
+      margin-bottom: 20px;
+    }
+
+    .bibtex-code {
+      padding: 24px;
+      margin: 0 0 22px;
+      color: #d5dde7;
+      background: var(--lri-navy-dark);
+      border: 1px solid var(--lri-border);
+      border-radius: 4px;
+      font-family: Consolas, Monaco, monospace;
+      font-size: 0.88rem;
+      line-height: 1.8;
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+      overflow-x: auto;
+      user-select: text;
+    }
+
+    .citation-status {
+      min-height: 24px;
+      margin-top: 15px;
+      color: var(--lri-gold);
+      font-size: 0.86rem;
+    }
+
+    /* ========================================
+       ACCESS DATE CONTROL
+    ======================================== */
+
+    .access-date-panel {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 22px 26px;
+      margin-bottom: 28px;
+      background: var(--lri-navy);
+      border: 1px solid var(--lri-border);
+      border-radius: 6px;
+    }
+
+    .access-date-panel h3 {
+      font-size: 1.05rem;
+      margin-bottom: 7px;
+    }
+
+    .access-date-panel p {
+      color: var(--lri-muted);
+      font-size: 0.87rem;
+      margin: 0;
+    }
+
+    .access-date-control {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .access-date-control input {
+      width: auto;
+      margin: 0;
+      padding: 11px 14px;
+      background: var(--lri-navy-dark);
+      color: var(--lri-white);
+      border: 1px solid var(--lri-border);
+      border-radius: 4px;
+      color-scheme: dark;
+    }
+
+    /* ========================================
+       CITING INDIVIDUAL RESOURCES
+    ======================================== */
+
+    .resource-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .resource-card {
+      display: flex;
+      flex-direction: column;
+      padding: 28px;
+      background: var(--lri-navy);
+      border: 1px solid var(--lri-border);
+      border-radius: 6px;
+    }
+
+    .resource-number {
+      color: var(--lri-gold);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      margin-bottom: 14px;
+    }
+
+    .resource-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 14px;
+    }
+
+    .resource-card p {
+      color: var(--lri-muted);
+      font-size: 0.95rem;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .resource-card a {
+      margin-top: auto;
+    }
+
+    /* ========================================
+       REFERENCE EXAMPLE
+    ======================================== */
+
+    .example-panel {
+      margin-top: 30px;
+      padding: 30px;
+      background: var(--lri-navy-dark);
+      border: 1px solid var(--lri-border);
+      border-left: 3px solid var(--lri-gold);
+      border-radius: 0 6px 6px 0;
+    }
+
+    .example-panel h3 {
+      font-size: 1.25rem;
+      margin-bottom: 16px;
+    }
+
+    .example-panel p {
+      color: var(--lri-muted);
+      line-height: 1.85;
+      margin-bottom: 18px;
+    }
+
+    .example-reference {
+      padding: 20px;
+      color: var(--lri-white);
+      background: var(--lri-navy);
+      border: 1px solid var(--lri-border);
+      border-radius: 4px;
+      line-height: 1.9;
+      overflow-wrap: anywhere;
+      margin-bottom: 18px;
+    }
+
+    .example-reference a {
+      color: var(--lri-gold);
+    }
+
+    /* ========================================
+       SCHOLARLY REFERENCING PRINCIPLES
+    ======================================== */
+
+    .principle-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 28px;
+    }
+
+    .principle {
+      padding-top: 22px;
+      border-top: 2px solid var(--lri-gold);
+    }
+
+    .principle-number {
+      display: block;
+      color: var(--lri-gold);
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      margin-bottom: 15px;
+    }
+
+    .principle h3 {
+      font-size: 1.16rem;
+      margin-bottom: 12px;
+    }
+
+    .principle p {
+      color: var(--lri-muted);
+      font-size: 0.94rem;
+      line-height: 1.8;
+      margin-bottom: 0;
+    }
+
+    /* ========================================
+       ATTRIBUTION NOTICE
+    ======================================== */
+
+    .attribution-notice {
+      padding: 26px 30px;
+      margin-top: 35px;
+      background: var(--lri-navy-dark);
+      border-left: 3px solid var(--lri-gold);
+      border-radius: 0 6px 6px 0;
+    }
+
+    .attribution-notice h3 {
+      color: var(--lri-gold);
+      font-size: 1.12rem;
+      margin-bottom: 12px;
+    }
+
+    .attribution-notice p {
+      color: var(--lri-muted);
+      font-size: 0.93rem;
+      line-height: 1.8;
+      margin-bottom: 0;
+    }
+
+    /* ========================================
+       SCIENTIFIC RESOURCES
+    ======================================== */
+
+    .citation-closing {
+      padding: 80px 24px;
+      text-align: center;
+      background-color: var(--lri-navy-dark);
+
+      background-image:
+        linear-gradient(
+          rgba(11,20,32,0.94),
+          rgba(11,20,32,0.68)
+        ),
+        url("/assets/img/lunar-landscape.jpg");
+
+      background-size: cover;
+      background-position: center 65%;
+      border-top: 1px solid var(--lri-border);
+    }
+
+    .citation-closing h2 {
+      font-size: clamp(1.9rem, 4vw, 2.8rem);
+      margin-bottom: 20px;
+    }
+
+    .citation-closing p {
+      max-width: 740px;
+      margin: 0 auto 28px;
+      color: #d5dde7;
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+
+    /* ========================================
+       FOOTER
+    ======================================== */
+
+    .site-footer {
+      padding: 50px 0 25px;
+      text-align: left;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.8fr 1fr 1fr 1fr;
+      gap: 35px;
+      padding-bottom: 35px;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .footer-brand img {
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+    }
+
+    .footer-brand strong {
+      color: var(--lri-white);
+      font-size: 0.92rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      line-height: 1.4;
+    }
+
+    .footer-description {
+      max-width: 340px;
+      color: var(--lri-muted);
+      font-size: 0.88rem;
+    }
+
+    .footer-column h3 {
+      color: var(--lri-gold);
+      font-size: 0.95rem;
+      margin-bottom: 18px;
+    }
+
+    .footer-column a {
+      display: block;
+      color: var(--lri-muted);
+      margin-bottom: 10px;
+      font-size: 0.88rem;
+    }
+
+    .footer-column a:hover {
+      color: var(--lri-gold);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      padding-top: 24px;
+      border-top: 1px solid var(--lri-border);
+      color: var(--lri-muted);
+      font-size: 0.8rem;
+    }
+
+    /* ========================================
+       RESPONSIVE DESIGN
+    ======================================== */
+
+    @media (max-width: 1100px) {
+
+      .main-nav {
+        gap: 17px;
+      }
+
+      .brand-subtitle {
+        display: none;
+      }
+
+    }
+
+    @media (max-width: 900px) {
+
+      .citation-container {
+        width: calc(100% - 48px);
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .main-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        padding: 24px;
+        background: var(--lri-navy-dark);
+        border-bottom: 1px solid var(--lri-border);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        max-height: 80vh;
+        overflow-y: auto;
+      }
+
+      .main-nav.is-open {
+        display: flex;
+      }
+
+      .main-nav > a,
+      .nav-dropdown > summary {
+        display: block;
+        padding: 14px 0;
+      }
+
+      .nav-dropdown > .dropdown-menu {
+        position: static;
+        box-shadow: none;
+      }
+
+      .overview-layout {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .principle-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+    }
+
+    @media (max-width: 650px) {
+
+      .citation-container {
+        width: calc(100% - 36px);
+      }
+
+      .header-inner {
+        min-height: 82px;
+        gap: 12px;
+      }
+
+      .brand-logo {
+        width: 48px;
+        height: 48px;
+      }
+
+      .brand-name {
+        font-size: 0.8rem;
+      }
+
+      .site-header .brand {
+        gap: 10px;
+      }
+
+      .citation-hero {
+        min-height: 340px;
+
+        background-image:
+          linear-gradient(
+            rgba(8,13,20,0.78),
+            rgba(8,13,20,0.88)
+          ),
+          url("/assets/img/lunar-hero.jpg");
+      }
+
+      .citation-hero-content {
+        padding: 50px 0;
+      }
+
+      .citation-hero h1 {
+        font-size: 2.4rem;
+      }
+
+      .citation-hero p {
+        font-size: 1.05rem;
+      }
+
+      .citation-section {
+        padding: 45px 0;
+      }
+
+      .citation-grid,
+      .resource-grid,
+      .principle-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .citation-card,
+      .bibtex-panel,
+      .resource-card,
+      .example-panel,
+      .attribution-notice {
+        padding: 22px;
+      }
+
+      .access-date-panel {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .citation-closing {
+        padding: 60px 18px;
+      }
+
+      .footer-about {
+        grid-column: 1 / -1;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+    }
+
+    @media print {
+
+      .site-header,
+      .site-footer,
+      .citation-closing,
+      .citation-actions,
+      .access-date-control,
+      .citation-status {
+        display: none !important;
+      }
+
+      main,
+      main * {
+        color: #111111 !important;
+      }
+
+      .citation-hero,
+      .citation-section,
+      .citation-section-alt,
+      .citation-card,
+      .citation-text,
+      .bibtex-panel,
+      .bibtex-code,
+      .resource-card,
+      .example-panel,
+      .example-reference,
+      .attribution-notice,
+      .access-date-panel {
+        background: #ffffff !important;
+        border-color: #cccccc !important;
+      }
+
+      .citation-grid,
+      .resource-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .citation-card,
+      .bibtex-panel,
+      .resource-card {
+        break-inside: avoid;
+      }
+
+      .citation-hero {
+        min-height: auto;
+      }
+
+      .citation-hero-content,
+      .citation-section {
+        padding: 25px 0;
+      }
+
+    }
+
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Citation Information",
+    "url": "https://lunarresearchinitiative.github.io/cite/",
+    "description": "Scholarly citation formats and referencing guidance for Lunar Research Initiative scientific and technical resources.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Lunar Research Initiative",
+      "alternateName": "LRI",
+      "url": "https://lunarresearchinitiative.github.io/"
+    },
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Lunar Research Initiative",
+      "url": "https://lunarresearchinitiative.github.io/"
+    }
+  }
+  </script>
+
 </head>
+
 <body>
 
-<header class="lri-topbar">
-  <div class="lri-topbar-inner">
-    <div class="lri-topbar-left">
-      <img src="/assets/img/LRI LOGO.jpeg" alt="Lunar Research Initiative seal" class="lri-seal">
+  <a class="skip-link" href="#main-content">
+    Skip to main content
+  </a>
+
+  <!-- ========================================
+       HEADER
+  ======================================== -->
+
+  <header class="site-header">
+
+    <div class="citation-container header-inner">
+
+      <a class="brand" href="/" aria-label="Lunar Research Initiative home">
+
+        <img
+          class="brand-logo"
+          src="/assets/img/LRI%20LOGO.jpeg"
+          alt="Lunar Research Initiative emblem"
+          width="66"
+          height="66"
+        >
+
+        <div class="brand-name">
+
+          Lunar Research<br>
+          Initiative
+
+          <span class="brand-subtitle">
+            Lunar Quality and Decision Assurance
+          </span>
+
+        </div>
+
+      </a>
+
+      <button
+        class="menu-toggle"
+        id="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="main-navigation"
+      >
+        &#9776; Menu
+      </button>
+
+      <nav
+        class="main-nav"
+        id="main-navigation"
+        aria-label="Primary navigation"
+      >
+
+        <a href="/">Home</a>
+
+        <a href="/about/">About</a>
+
+        <details class="nav-dropdown">
+
+          <summary>Research</summary>
+
+          <div class="dropdown-menu">
+
+            <a href="/research/">Research Overview</a>
+
+            <a href="/initiatives/">Research Initiatives</a>
+
+          </div>
+
+        </details>
+
+        <a href="/publications/">Publications</a>
+
+        <details class="nav-dropdown active">
+
+          <summary>Resources</summary>
+
+          <div class="dropdown-menu">
+
+            <a href="/standards/">Standards</a>
+
+            <a href="/books/">Books</a>
+
+            <a href="/newsletter/">Aerospace Quality Brief</a>
+
+            <a href="/newsletter/archive/">Newsletter Archive</a>
+
+            <a href="/cite/" aria-current="page">
+              Cite This Site
+            </a>
+
+          </div>
+
+        </details>
+
+        <details class="nav-dropdown">
+
+          <summary>Collaborate</summary>
+
+          <div class="dropdown-menu">
+
+            <a href="/partnerships/">Partnerships</a>
+
+            <a href="/contact/">Contact LRI</a>
+
+          </div>
+
+        </details>
+
+      </nav>
+
     </div>
-    <nav class="lri-topnav">
-      <a href="/">Home</a>
-      <a href="/about/">About</a>
-      <a href="/research/">Research</a>
-      <a href="/initiatives/">Initiatives</a>
-      <a href="/standards/">Standards</a>
-      <a href="/publications/">Publications</a>
-      <a href="/newsletter/">Newsletter</a>
-      <a href="/partnerships/">Partnerships</a>
-      <a href="/contact/">Contact</a>
-    </nav>
-  </div>
-</header>
 
-<main>
+  </header>
 
-<section class="lri-section">
-  <div class="lri-section-inner">
-    <h1 class="lri-section-title">Cite LRI</h1>
-    <p class="lri-section-text" style="max-width: 900px;">
-      If you reference LRI website content, please cite the site. If you reference a specific paper,
-      please cite the DOI shown on that publication record.
-    </p>
+  <main id="main-content">
 
-    <h2 class="lri-section-title">Recommended citation</h2>
-    <p class="lri-section-text" style="max-width: 900px;">
-      <strong>APA:</strong> Lunar Research Initiative. (2025). <em>Lunar Research Initiative</em>. https://lunarresearchinitiative.github.io/
-    </p>
-    <p class="lri-section-text" style="max-width: 900px;">
-      <strong>IEEE:</strong> Lunar Research Initiative, “Lunar Research Initiative,” 2025. [Online]. Available: https://lunarresearchinitiative.github.io/. [Accessed: Month Day, Year].
-    </p>
+    <!-- ========================================
+         HERO
+    ======================================== -->
 
-    <h2 class="lri-section-title">BibTeX</h2>
-    <pre style="max-width: 900px; white-space: pre-wrap; padding: 12px; border: 1px solid #e6e6e6; border-radius: 10px;">
-@misc{LRI_website_2025,
-  author       = {Lunar Research Initiative},
+    <section class="citation-hero" aria-labelledby="citation-title">
+
+      <div class="citation-container citation-hero-content">
+
+        <span class="eyebrow">
+          Scientific Attribution and Referencing
+        </span>
+
+        <h1 id="citation-title">
+          Citation Information
+        </h1>
+
+        <p>
+          Recommended scholarly citation formats and
+          referencing guidance for Lunar Research Initiative
+          publications, technical resources, research
+          frameworks, and institutional website content.
+        </p>
+
+      </div>
+
+    </section>
+
+    <!-- ========================================
+         CITATION GUIDANCE
+    ======================================== -->
+
+    <section
+      class="citation-section"
+      aria-labelledby="guidance-title"
+    >
+
+      <div class="citation-container overview-layout">
+
+        <div class="overview-heading">
+
+          <span class="eyebrow">
+            Research Integrity
+          </span>
+
+          <h2 id="guidance-title">
+            How to Reference LRI
+          </h2>
+
+        </div>
+
+        <div class="overview-copy">
+
+          <p>
+            When referencing information from the Lunar
+            Research Initiative website, identify the
+            relevant webpage or resource and provide
+            sufficient bibliographic information for
+            readers to locate the original source.
+          </p>
+
+          <p>
+            When referencing a specific scientific
+            publication, cite the original journal article,
+            book, repository record, or technical document
+            rather than the general LRI website.
+          </p>
+
+          <p>
+            Use the Digital Object Identifier (DOI)
+            whenever one exists. Consult the official
+            publisher or repository record for the
+            authoritative bibliographic information.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ========================================
+         WEBSITE CITATION FORMATS
+    ======================================== -->
+
+    <section
+      class="citation-section citation-section-alt"
+      aria-labelledby="formats-title"
+    >
+
+      <div class="citation-container">
+
+        <div class="section-heading">
+
+          <span class="eyebrow">
+            Recommended Reference Formats
+          </span>
+
+          <h2 id="formats-title">
+            Citing the LRI Homepage
+          </h2>
+
+          <p>
+            Use the following examples when your work
+            specifically references content on the LRI
+            homepage. For an individual webpage, substitute
+            that page's title, URL, and publication or
+            revision date, if available.
+          </p>
+
+          <p>
+            A general mention of the entire website may
+            not require a formal reference entry,
+            depending on your citation style.
+          </p>
+
+        </div>
+
+        <!-- ACCESS DATE -->
+
+        <div class="access-date-panel" id="access-date-panel" hidden>
+
+          <div>
+
+            <h3>Reference Access Date</h3>
+
+            <p>
+              Change the date to match when you consulted
+              the website. Applicable citations update
+              automatically.
+            </p>
+
+          </div>
+
+          <div class="access-date-control">
+
+            <label for="access-date">
+              Access date
+            </label>
+
+            <input type="date" id="access-date">
+
+            <button
+              type="button"
+              class="copy-button"
+              id="today-button"
+            >
+              Use Today's Date
+            </button>
+
+          </div>
+
+        </div>
+
+        <div class="citation-grid">
+
+          <!-- APA 7 -->
+
+          <article class="citation-card">
+
+            <div class="citation-card-top">
+
+              <h3>APA 7th Edition</h3>
+
+              <span class="format-label">
+                Author-Date
+              </span>
+
+            </div>
+
+            <p class="format-description">
+              Common in academic research, behavioral
+              sciences, education, and interdisciplinary studies.
+            </p>
+
+            <div class="citation-text" id="apa-citation">
+
+              Lunar Research Initiative. (n.d.).
+              <em>Lunar Research Initiative.</em>
+              <a href="https://lunarresearchinitiative.github.io/">
+                https://lunarresearchinitiative.github.io/
+              </a>
+
+            </div>
+
+            <div class="citation-actions">
+
+              <button
+                type="button"
+                class="copy-button"
+                data-copy="apa-citation"
+                hidden
+              >
+                Copy APA Citation
+              </button>
+
+            </div>
+
+          </article>
+
+          <!-- IEEE -->
+
+          <article class="citation-card">
+
+            <div class="citation-card-top">
+
+              <h3>IEEE</h3>
+
+              <span class="format-label">
+                Numbered Reference
+              </span>
+
+            </div>
+
+            <p class="format-description">
+              Widely used in engineering, computer
+              science, telecommunications, and technical research.
+            </p>
+
+            <div class="citation-text" id="ieee-citation">
+
+              Lunar Research Initiative,
+              &ldquo;Lunar Research Initiative.&rdquo;
+              [Online]. Available:
+              https://lunarresearchinitiative.github.io/.
+              [Accessed: Month Day, Year].
+
+            </div>
+
+            <div class="citation-actions">
+
+              <button
+                type="button"
+                class="copy-button"
+                data-copy="ieee-citation"
+                hidden
+              >
+                Copy IEEE Citation
+              </button>
+
+            </div>
+
+          </article>
+
+          <!-- CHICAGO -->
+
+          <article class="citation-card">
+
+            <div class="citation-card-top">
+
+              <h3>Chicago</h3>
+
+              <span class="format-label">
+                Bibliography
+              </span>
+
+            </div>
+
+            <p class="format-description">
+              Useful for scholarly publications,
+              historical analysis, humanities,
+              and interdisciplinary research.
+            </p>
+
+            <div class="citation-text" id="chicago-citation">
+
+              Lunar Research Initiative.
+              &ldquo;Lunar Research Initiative.&rdquo;
+              Accessed Month Day, Year.
+              https://lunarresearchinitiative.github.io/.
+
+            </div>
+
+            <div class="citation-actions">
+
+              <button
+                type="button"
+                class="copy-button"
+                data-copy="chicago-citation"
+                hidden
+              >
+                Copy Chicago Citation
+              </button>
+
+            </div>
+
+          </article>
+
+          <!-- HARVARD -->
+
+          <article class="citation-card">
+
+            <div class="citation-card-top">
+
+              <h3>Harvard</h3>
+
+              <span class="format-label">
+                Author-Date
+              </span>
+
+            </div>
+
+            <p class="format-description">
+              An author-date referencing approach.
+              Formatting conventions may vary among
+              universities and publishers.
+            </p>
+
+            <div class="citation-text" id="harvard-citation">
+
+              Lunar Research Initiative (n.d.)
+              <em>Lunar Research Initiative.</em>
+              Available at:
+              https://lunarresearchinitiative.github.io/
+              (Accessed: Day Month Year).
+
+            </div>
+
+            <div class="citation-actions">
+
+              <button
+                type="button"
+                class="copy-button"
+                data-copy="harvard-citation"
+                hidden
+              >
+                Copy Harvard Citation
+              </button>
+
+            </div>
+
+          </article>
+
+        </div>
+
+        <!-- ========================================
+             BIBTEX
+        ======================================== -->
+
+        <article class="bibtex-panel">
+
+          <span class="format-label">
+            Reference Management
+          </span>
+
+          <h3>BibTeX Citation</h3>
+
+          <p>
+            Import the following reference into a compatible
+            reference manager or LaTeX bibliography.
+          </p>
+
+          <pre class="bibtex-code" id="bibtex-citation">@misc{LRI_website,
+  author       = {{Lunar Research Initiative}},
   title        = {Lunar Research Initiative},
-  year         = {2025},
   howpublished = {\url{https://lunarresearchinitiative.github.io/}},
   note         = {Accessed: Month Day, Year}
-}
-    </pre>
+}</pre>
 
-    <h2 class="lri-section-title">Citing publications</h2>
-    <p class="lri-section-text" style="max-width: 900px;">
-      For preprints and published papers, cite the DOI on the publication record. You can find all DOIs on the
-      <a href="/publications/">Publications</a> page.
-    </p>
+          <div class="citation-actions">
 
-  </div>
-</section>
+            <button
+              type="button"
+              class="copy-button"
+              data-copy="bibtex-citation"
+              hidden
+            >
+              Copy BibTeX
+            </button>
 
-</main>
+            <button
+              type="button"
+              class="lri-btn lri-btn-primary"
+              id="download-bibtex"
+              hidden
+            >
+              Download .bib File
+            </button>
 
-<footer class="lri-footer">
-  <p>© 2025 Lunar Research Initiative. All rights reserved.</p>
-</footer>
+          </div>
+
+          <div
+            class="citation-status"
+            id="citation-status"
+            role="status"
+            aria-live="polite"
+          ></div>
+
+        </article>
+
+        <p style="margin-top: 22px; color: #aab8c8; font-size: 0.86rem;">
+
+          These examples use an undated website reference
+          because the homepage does not identify a formal
+          publication or revision date. Follow the specific
+          requirements of your institution, journal,
+          or citation style.
+
+        </p>
+
+      </div>
+
+    </section>
+
+    <!-- ========================================
+         INDIVIDUAL PUBLICATION REFERENCES
+    ======================================== -->
+
+    <section
+      class="citation-section"
+      aria-labelledby="resources-title"
+    >
+
+      <div class="citation-container">
+
+        <div class="section-heading">
+
+          <span class="eyebrow">
+            Source-Specific Attribution
+          </span>
+
+          <h2 id="resources-title">
+            Citing Individual LRI Resources
+          </h2>
+
+          <p>
+            Select the citation approach that corresponds
+            to the type of scientific or technical resource
+            you consulted.
+          </p>
+
+        </div>
+
+        <div class="resource-grid">
+
+          <!-- JOURNAL ARTICLES -->
+
+          <article class="resource-card">
+
+            <span class="resource-number">01</span>
+
+            <h3>Scientific Journal Articles</h3>
+
+            <p>
+              Cite the original author, publication year,
+              article title, journal name, volume, issue,
+              pagination or article number, and DOI,
+              where applicable. Use the official publisher
+              record to confirm bibliographic details.
+            </p>
+
+            <a
+              href="/publications/#journal-articles"
+              class="text-link"
+            >
+              Browse Scientific Journal Articles &rarr;
+            </a>
+
+          </article>
+
+          <!-- OPEN RESEARCH -->
+
+          <article class="resource-card">
+
+            <span class="resource-number">02</span>
+
+            <h3>Open Research and Technical Guides</h3>
+
+            <p>
+              Cite the author, resource title, publication
+              date, applicable version, repository,
+              and persistent identifier. Use a
+              version-specific DOI when referencing
+              a particular archived version.
+            </p>
+
+            <a
+              href="/publications/#open-research"
+              class="text-link"
+            >
+              Browse Open Research Outputs &rarr;
+            </a>
+
+          </article>
+
+          <!-- BOOKS -->
+
+          <article class="resource-card">
+
+            <span class="resource-number">03</span>
+
+            <h3>Published Books</h3>
+
+            <p>
+              Reference the author, publication year,
+              complete book title, edition when applicable,
+              and publisher. Confirm the bibliographic
+              information against the edition you consulted.
+              An ISBN can help identify the correct edition.
+            </p>
+
+            <a href="/books/" class="text-link">
+              Browse Published Books &rarr;
+            </a>
+
+          </article>
+
+          <!-- NEWSLETTER -->
+
+          <article class="resource-card">
+
+            <span class="resource-number">04</span>
+
+            <h3>Aerospace Quality Brief</h3>
+
+            <p>
+              Cite the individual article author, publication
+              date, article title, newsletter or platform,
+              and direct article URL rather than the
+              general newsletter archive.
+            </p>
+
+            <a href="/newsletter/archive/" class="text-link">
+              Browse Newsletter Editions &rarr;
+            </a>
+
+          </article>
+
+          <!-- POLICY -->
+
+          <article class="resource-card">
+
+            <span class="resource-number">05</span>
+
+            <h3>Public Policy and Regulatory Contributions</h3>
+
+            <p>
+              Identify the submitting author or organization,
+              submission date, document title, relevant agency,
+              docket or comment identifier, and official
+              regulatory repository URL.
+            </p>
+
+            <a
+              href="/publications/#policy-contributions"
+              class="text-link"
+            >
+              Browse Regulatory Contributions &rarr;
+            </a>
+
+          </article>
+
+          <!-- TECHNICAL FRAMEWORKS -->
+
+          <article class="resource-card">
+
+            <span class="resource-number">06</span>
+
+            <h3>Research Frameworks and Engineering Methods</h3>
+
+            <p>
+              Cite the original scientific publication
+              or technical document describing the
+              relevant framework. Identify its version
+              and distinguish published research findings
+              from prospective development concepts.
+            </p>
+
+            <a href="/research/" class="text-link">
+              Explore Research Frameworks &rarr;
+            </a>
+
+          </article>
+
+        </div>
+
+        <!-- ========================================
+             APA JOURNAL EXAMPLE
+        ======================================== -->
+
+        <article class="example-panel">
+
+          <span class="format-label">
+            Scholarly Reference Example
+          </span>
+
+          <h3>APA 7 Journal Article Citation</h3>
+
+          <p>
+            The following example illustrates how to cite
+            an LRI scientific journal publication using
+            its persistent DOI.
+          </p>
+
+          <div
+            class="example-reference"
+            id="journal-example"
+          >
+
+            Figueroa, R. (2026).
+            Decision freshness boundaries under delayed
+            supervision in lunar surface operations.
+            <em>Journal of the British Interplanetary Society, 79</em>(8),
+            291&ndash;296.
+            <a
+              href="https://doi.org/10.59332/jbis-079-08-0291"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              https://doi.org/10.59332/jbis-079-08-0291
+            </a>
+
+          </div>
+
+          <div class="citation-actions">
+
+            <button
+              type="button"
+              class="copy-button"
+              data-copy="journal-example"
+              hidden
+            >
+              Copy Citation Example
+            </button>
+
+            <a
+              href="https://doi.org/10.59332/jbis-079-08-0291"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="lri-btn lri-btn-outline"
+            >
+              View Original Publication &rarr;
+            </a>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- ========================================
+         REFERENCING PRINCIPLES
+    ======================================== -->
+
+    <section
+      class="citation-section citation-section-alt"
+      aria-labelledby="principles-title"
+    >
+
+      <div class="citation-container">
+
+        <div class="section-heading">
+
+          <span class="eyebrow">
+            Scientific Integrity
+          </span>
+
+          <h2 id="principles-title">
+            Responsible Scholarly Referencing
+          </h2>
+
+        </div>
+
+        <div class="principle-grid">
+
+          <article class="principle">
+
+            <span class="principle-number">01</span>
+
+            <h3>Cite the Original Source</h3>
+
+            <p>
+              Reference the primary publication
+              or archived technical resource supporting
+              the specific scientific or engineering claim.
+            </p>
+
+          </article>
+
+          <article class="principle">
+
+            <span class="principle-number">02</span>
+
+            <h3>Use Persistent Identifiers</h3>
+
+            <p>
+              Prefer DOIs and other persistent identifiers
+              when available to support reliable
+              identification and retrieval.
+            </p>
+
+          </article>
+
+          <article class="principle">
+
+            <span class="principle-number">03</span>
+
+            <h3>Identify the Correct Version</h3>
+
+            <p>
+              Distinguish preprints, accepted manuscripts,
+              versions of record, revised technical guides,
+              and version-specific repository deposits.
+            </p>
+
+          </article>
+
+          <article class="principle">
+
+            <span class="principle-number">04</span>
+
+            <h3>Preserve Scientific Context</h3>
+
+            <p>
+              Represent research findings accurately
+              and retain the assumptions, limitations,
+              and applicability conditions relevant
+              to the cited contribution.
+            </p>
+
+          </article>
+
+          <article class="principle">
+
+            <span class="principle-number">05</span>
+
+            <h3>Verify Bibliographic Details</h3>
+
+            <p>
+              Confirm publication titles, authors,
+              publication dates, journal details,
+              pagination, and persistent identifiers
+              against authoritative records.
+            </p>
+
+          </article>
+
+          <article class="principle">
+
+            <span class="principle-number">06</span>
+
+            <h3>Respect Publication Rights</h3>
+
+            <p>
+              Follow applicable copyright, licensing,
+              attribution, and publisher requirements
+              when reproducing figures, tables,
+              excerpts, or technical materials.
+            </p>
+
+          </article>
+
+        </div>
+
+        <aside class="attribution-notice">
+
+          <h3>Copyright and Attribution</h3>
+
+          <p>
+            Citation does not automatically grant permission
+            to reproduce copyrighted material. Consult
+            the license or rights statement associated
+            with each publication, repository record,
+            illustration, or technical resource before
+            reproducing or distributing its content.
+          </p>
+
+        </aside>
+
+      </div>
+
+    </section>
+
+    <!-- ========================================
+         SCIENTIFIC RESOURCES
+    ======================================== -->
+
+    <section
+      class="citation-closing"
+      aria-labelledby="closing-title"
+    >
+
+      <span class="eyebrow">
+        Scientific Knowledge and Attribution
+      </span>
+
+      <h2 id="closing-title">
+        Supporting Responsible Research
+      </h2>
+
+      <p>
+        Explore LRI's scientific publications,
+        technical resources, engineering frameworks,
+        and educational contributions. Contact the
+        initiative for questions concerning citation,
+        attribution, or publication information.
+      </p>
+
+      <div class="button-row">
+
+        <a
+          href="/publications/"
+          class="lri-btn lri-btn-primary"
+        >
+          Explore Scientific Publications &rarr;
+        </a>
+
+        <a
+          href="/contact/"
+          class="lri-btn lri-btn-outline"
+        >
+          Contact LRI
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ========================================
+       FOOTER
+  ======================================== -->
+
+  <footer class="site-footer">
+
+    <div class="citation-container">
+
+      <div class="footer-grid">
+
+        <div class="footer-about">
+
+          <div class="footer-brand">
+
+            <img
+              src="/assets/img/LRI%20LOGO.jpeg"
+              alt=""
+              width="55"
+              height="55"
+              loading="lazy"
+            >
+
+            <strong>
+              Lunar Research<br>
+              Initiative
+            </strong>
+
+          </div>
+
+          <p class="footer-description">
+            Advancing scientific research and engineering
+            methods for quality, reliability, and decision
+            assurance beyond Earth.
+          </p>
+
+        </div>
+
+        <div class="footer-column">
+
+          <h3>Organization</h3>
+
+          <a href="/about/">About LRI</a>
+
+          <a href="/research/">Research</a>
+
+          <a href="/initiatives/">Initiatives</a>
+
+          <a href="/partnerships/">Partnerships</a>
+
+        </div>
+
+        <div class="footer-column">
+
+          <h3>Scientific Resources</h3>
+
+          <a href="/publications/">Publications</a>
+
+          <a href="/standards/">Standards</a>
+
+          <a href="/books/">Books</a>
+
+          <a href="/cite/">Cite This Site</a>
+
+        </div>
+
+        <div class="footer-column">
+
+          <h3>Connect</h3>
+
+          <a href="/contact/">Contact LRI</a>
+
+          <a href="/newsletter/">Aerospace Quality Brief</a>
+
+          <a
+            href="https://www.linkedin.com/newsletters/7402028860193796097/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Subscribe on LinkedIn
+          </a>
+
+          <a href="/newsletter/archive/">Newsletter Archive</a>
+
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+
+        <p>
+          &copy; <span id="copyright-year">2026</span>
+          Lunar Research Initiative. All rights reserved.
+        </p>
+
+        <p>
+          Lunar Quality &middot; Verification &middot; Decision Assurance
+        </p>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+  <!-- ========================================
+       NAVIGATION AND CITATION FUNCTIONALITY
+  ======================================== -->
+
+  <script>
+
+    /* MOBILE NAVIGATION */
+
+    const menuToggle =
+      document.getElementById("menu-toggle");
+
+    const navigation =
+      document.getElementById("main-navigation");
+
+    const dropdowns =
+      document.querySelectorAll(".nav-dropdown");
+
+    menuToggle.addEventListener("click", function () {
+
+      const isOpen =
+        navigation.classList.toggle("is-open");
+
+      menuToggle.setAttribute(
+        "aria-expanded",
+        String(isOpen)
+      );
+
+    });
+
+    dropdowns.forEach(function (dropdown) {
+
+      dropdown.addEventListener("toggle", function () {
+
+        if (dropdown.open) {
+
+          dropdowns.forEach(function (otherDropdown) {
+
+            if (otherDropdown !== dropdown) {
+              otherDropdown.open = false;
+            }
+
+          });
+
+        }
+
+      });
+
+    });
+
+    document.addEventListener("click", function (event) {
+
+      dropdowns.forEach(function (dropdown) {
+
+        if (!dropdown.contains(event.target)) {
+          dropdown.open = false;
+        }
+
+      });
+
+    });
+
+    document.addEventListener("keydown", function (event) {
+
+      if (event.key === "Escape") {
+
+        dropdowns.forEach(function (dropdown) {
+
+          if (dropdown.open) {
+
+            dropdown.open = false;
+
+            dropdown.querySelector("summary").focus();
+
+          }
+
+        });
+
+        if (navigation.classList.contains("is-open")) {
+
+          navigation.classList.remove("is-open");
+
+          menuToggle.setAttribute(
+            "aria-expanded",
+            "false"
+          );
+
+          menuToggle.focus();
+
+        }
+
+      }
+
+    });
+
+    window.addEventListener("resize", function () {
+
+      if (window.innerWidth > 900) {
+
+        navigation.classList.remove("is-open");
+
+        menuToggle.setAttribute(
+          "aria-expanded",
+          "false"
+        );
+
+      }
+
+    });
+
+
+    /* ========================================
+       CITATION DATE FUNCTIONS
+    ======================================== */
+
+    const websiteURL =
+      "https://lunarresearchinitiative.github.io/";
+
+    const accessDate =
+      document.getElementById("access-date");
+
+    const citationStatus =
+      document.getElementById("citation-status");
+
+
+    function getLocalDateString() {
+
+      const today = new Date();
+
+      const year = today.getFullYear();
+
+      const month = String(
+        today.getMonth() + 1
+      ).padStart(2, "0");
+
+      const day = String(
+        today.getDate()
+      ).padStart(2, "0");
+
+      return year + "-" + month + "-" + day;
+
+    }
+
+
+    function getSelectedDate() {
+
+      const selected =
+        accessDate.value || getLocalDateString();
+
+      const parts =
+        selected.split("-").map(Number);
+
+      return new Date(
+        parts[0],
+        parts[1] - 1,
+        parts[2]
+      );
+
+    }
+
+
+    function formatLongDate(date) {
+
+      return new Intl.DateTimeFormat("en-US", {
+
+        month: "long",
+        day: "numeric",
+        year: "numeric"
+
+      }).format(date);
+
+    }
+
+
+    function formatIEEEDate(date) {
+
+      return new Intl.DateTimeFormat("en-US", {
+
+        month: "short",
+        day: "numeric",
+        year: "numeric"
+
+      }).format(date);
+
+    }
+
+
+    function formatHarvardDate(date) {
+
+      return new Intl.DateTimeFormat("en-GB", {
+
+        day: "numeric",
+        month: "long",
+        year: "numeric"
+
+      }).format(date);
+
+    }
+
+
+    /* ========================================
+       UPDATE CITATION FORMATS
+    ======================================== */
+
+    function updateCitations() {
+
+      const date = getSelectedDate();
+
+      const longDate =
+        formatLongDate(date);
+
+      const ieeeDate =
+        formatIEEEDate(date);
+
+      const harvardDate =
+        formatHarvardDate(date);
+
+
+      /* IEEE */
+
+      document.getElementById(
+        "ieee-citation"
+      ).textContent =
+
+        'Lunar Research Initiative, ' +
+
+        '“Lunar Research Initiative.” ' +
+
+        '[Online]. Available: ' +
+
+        websiteURL +
+
+        '. [Accessed: ' +
+
+        ieeeDate +
+
+        '].';
+
+
+      /* CHICAGO */
+
+      document.getElementById(
+        "chicago-citation"
+      ).textContent =
+
+        'Lunar Research Initiative. ' +
+
+        '“Lunar Research Initiative.” ' +
+
+        'Accessed ' +
+
+        longDate +
+
+        '. ' +
+
+        websiteURL +
+
+        '.';
+
+
+      /* HARVARD */
+
+      const harvard =
+        document.getElementById("harvard-citation");
+
+      harvard.replaceChildren();
+
+      harvard.append(
+        "Lunar Research Initiative (n.d.) "
+      );
+
+      const title = document.createElement("em");
+
+      title.textContent =
+        "Lunar Research Initiative.";
+
+      harvard.append(title);
+
+      harvard.append(
+
+        " Available at: " +
+
+        websiteURL +
+
+        " (Accessed: " +
+
+        harvardDate +
+
+        ")."
+
+      );
+
+
+      /* BIBTEX */
+
+      document.getElementById(
+        "bibtex-citation"
+      ).textContent = [
+
+        "@misc{LRI_website,",
+
+        "  author       = {{Lunar Research Initiative}},",
+
+        "  title        = {Lunar Research Initiative},",
+
+        "  howpublished = {\\url{" + websiteURL + "}},",
+
+        "  note         = {Accessed: " + longDate + "}",
+
+        "}"
+
+      ].join("\n");
+
+
+      citationStatus.textContent = "";
+
+    }
+
+
+    /* ========================================
+       COPY CITATIONS
+    ======================================== */
+
+    document.querySelectorAll("[data-copy]")
+      .forEach(function (button) {
+
+        button.hidden = false;
+
+        button.addEventListener("click", async function () {
+
+          const source = document.getElementById(
+            button.dataset.copy
+          );
+
+          if (!source) {
+            return;
+          }
+
+          const citation =
+            source.tagName === "PRE"
+              ? source.textContent.trim()
+              : source.textContent.replace(/\s+/g, " ").trim();
+
+          const originalLabel =
+            button.textContent.trim();
+
+          try {
+
+            if (
+              source.tagName !== "PRE" &&
+              navigator.clipboard &&
+              navigator.clipboard.write &&
+              typeof ClipboardItem !== "undefined"
+            ) {
+
+              try {
+
+                await navigator.clipboard.write([
+
+                  new ClipboardItem({
+
+                    "text/plain": new Blob(
+                      [citation],
+                      { type: "text/plain" }
+                    ),
+
+                    "text/html": new Blob(
+                      ["<p>" + source.innerHTML + "</p>"],
+                      { type: "text/html" }
+                    )
+
+                  })
+
+                ]);
+
+              } catch (richCopyError) {
+
+                await navigator.clipboard.writeText(citation);
+
+              }
+
+            } else {
+
+              await navigator.clipboard.writeText(citation);
+
+            }
+
+            button.textContent = "Copied";
+
+            citationStatus.textContent =
+              "Citation copied to your clipboard.";
+
+            setTimeout(function () {
+
+              button.textContent = originalLabel;
+
+            }, 2000);
+
+          } catch (error) {
+
+            window.prompt(
+              "Copy the citation below:",
+              citation
+            );
+
+          }
+
+        });
+
+      });
+
+
+    /* ========================================
+       DOWNLOAD BIBTEX RECORD
+    ======================================== */
+
+    const downloadButton =
+      document.getElementById("download-bibtex");
+
+    downloadButton.hidden = false;
+
+    downloadButton.addEventListener("click", function () {
+
+      const bibtex =
+        document.getElementById(
+          "bibtex-citation"
+        ).textContent.trim() + "\n";
+
+      const file =
+        new Blob(
+          [bibtex],
+          { type: "text/plain;charset=utf-8" }
+        );
+
+      const downloadURL =
+        URL.createObjectURL(file);
+
+      const link =
+        document.createElement("a");
+
+      link.href = downloadURL;
+
+      link.download = "LRI_website_citation.bib";
+
+      document.body.appendChild(link);
+
+      link.click();
+
+      link.remove();
+
+      setTimeout(function () {
+
+        URL.revokeObjectURL(downloadURL);
+
+      }, 1000);
+
+      citationStatus.textContent =
+        "BibTeX file prepared for download.";
+
+    });
+
+
+    /* ========================================
+       ACCESS DATE EVENTS
+    ======================================== */
+
+    accessDate.max =
+      getLocalDateString();
+
+    accessDate.value =
+      getLocalDateString();
+
+    accessDate.addEventListener("change", function () {
+
+      if (!accessDate.value || !accessDate.checkValidity()) {
+
+        accessDate.value = getLocalDateString();
+
+      }
+
+      updateCitations();
+
+    });
+
+    document.getElementById("today-button")
+      .addEventListener("click", function () {
+
+        accessDate.value =
+          getLocalDateString();
+
+        updateCitations();
+
+      });
+
+
+    /* ========================================
+       INITIALIZE PAGE
+    ======================================== */
+
+    document.getElementById(
+      "access-date-panel"
+    ).hidden = false;
+
+    document.getElementById(
+      "copyright-year"
+    ).textContent = new Date().getFullYear();
+
+    updateCitations();
+
+  </script>
 
 </body>
+
 </html>
