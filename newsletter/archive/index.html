@@ -1,8 +1,8 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
 
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -15,7 +15,6 @@
   <meta name="theme-color" content="#0b1420">
 
   <link rel="canonical" href="https://lunarresearchinitiative.github.io/newsletter/archive/">
-
   <link rel="stylesheet" href="/assets/css/style.css">
 
   <meta property="og:type" content="website">
@@ -29,8 +28,26 @@
   <style>
 
     /* ========================================
-       PAGE LAYOUT
+       GLOBAL PAGE SETTINGS
     ======================================== */
+
+    :root {
+      --lri-navy: #0b1420;
+      --lri-navy-light: #142334;
+      --lri-navy-dark: #080d14;
+      --lri-gold: #ddbb7a;
+      --lri-white: #f1f3f6;
+      --lri-muted: #aab8c8;
+      --lri-border: #344354;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    [hidden] {
+      display: none !important;
+    }
 
     main {
       max-width: none;
@@ -39,7 +56,7 @@
     }
 
     .aqb-container {
-      width: min(100% - 64px, 1320px);
+      width: min(calc(100% - 64px), 1320px);
       margin: 0 auto;
     }
 
@@ -48,7 +65,10 @@
     ======================================== */
 
     .site-header {
+      position: relative;
+      z-index: 100;
       padding: 0;
+      background: var(--lri-navy-dark);
     }
 
     .header-inner {
@@ -71,6 +91,8 @@
     .brand-logo {
       width: 66px;
       height: 66px;
+      object-fit: contain;
+      border-radius: 50%;
     }
 
     .brand-name {
@@ -104,8 +126,8 @@
       font-weight: 500;
       padding: 14px 0;
       white-space: nowrap;
-      text-decoration: none;
       cursor: pointer;
+      text-decoration: none;
     }
 
     .main-nav > a:hover,
@@ -132,8 +154,8 @@
 
     .nav-dropdown summary::after {
       content: " \25BE";
-      font-size: 0.75rem;
       color: var(--lri-gold);
+      font-size: 0.75rem;
     }
 
     .nav-dropdown.active > summary {
@@ -141,18 +163,17 @@
       border-bottom: 2px solid var(--lri-gold) !important;
     }
 
-    .nav-dropdown > .dropdown-menu {
+    .dropdown-menu {
       position: absolute;
       top: 100%;
       right: 0;
       min-width: 230px;
-      margin: 0;
       padding: 10px;
       background: var(--lri-navy-light);
       border: 1px solid var(--lri-border);
       border-radius: 5px;
       box-shadow: 0 15px 30px rgba(0,0,0,0.3);
-      z-index: 100;
+      z-index: 110;
     }
 
     .dropdown-menu a {
@@ -165,19 +186,19 @@
 
     .dropdown-menu a:hover,
     .dropdown-menu a[aria-current="page"] {
-      background: rgba(221,187,122,0.08);
       color: var(--lri-gold);
+      background: rgba(221,187,122,0.08);
     }
 
     .menu-toggle {
       display: none;
-      color: var(--lri-gold);
       background: transparent;
+      color: var(--lri-gold);
       border: 1px solid var(--lri-border);
     }
 
     /* ========================================
-       ARCHIVE HERO
+       HERO
     ======================================== */
 
     .aqb-hero {
@@ -185,7 +206,6 @@
       display: flex;
       align-items: center;
       background-color: var(--lri-navy-dark);
-
       background-image:
         linear-gradient(
           90deg,
@@ -194,7 +214,6 @@
           rgba(8,13,20,0.28)
         ),
         url("/assets/img/lunar-hero.jpg");
-
       background-size: cover;
       background-position: center;
       border-bottom: 1px solid var(--lri-border);
@@ -236,13 +255,13 @@
 
     .archive-summary-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(3, minmax(0,1fr));
       padding: 28px 0;
     }
 
     .archive-stat {
+      padding: 12px 20px;
       text-align: center;
-      padding: 10px 20px;
       border-right: 1px solid var(--lri-border);
     }
 
@@ -286,8 +305,36 @@
       line-height: 1.8;
     }
 
+    .editorial-announcement {
+      padding: 25px 30px;
+      margin-bottom: 30px;
+      background: var(--lri-navy-dark);
+      border: 1px solid var(--lri-border);
+      border-left: 3px solid var(--lri-gold);
+      border-radius: 0 6px 6px 0;
+    }
+
+    .editorial-announcement h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    .editorial-announcement p {
+      color: var(--lri-muted);
+      font-size: 0.93rem;
+      line-height: 1.75;
+      margin-bottom: 15px;
+    }
+
+    .editorial-announcement time {
+      display: block;
+      color: var(--lri-gold);
+      font-size: 0.8rem;
+      margin-bottom: 10px;
+    }
+
     /* ========================================
-       SEARCH AND FILTER CONTROLS
+       SEARCH AND FILTERS
     ======================================== */
 
     .aqb-toolbar {
@@ -310,6 +357,7 @@
     }
 
     .archive-control label {
+      display: block;
       color: var(--lri-muted);
       font-size: 0.82rem;
       font-weight: 500;
@@ -325,7 +373,9 @@
       color: var(--lri-white);
       border: 1px solid var(--lri-border);
       border-radius: 4px;
+      font: inherit;
       font-size: 0.92rem;
+      color-scheme: dark;
     }
 
     .topic-filters {
@@ -347,13 +397,12 @@
 
     .topic-filter:hover {
       color: var(--lri-gold);
-      background: rgba(221,187,122,0.08);
       border-color: var(--lri-gold);
     }
 
     .topic-filter.active {
-      background: var(--lri-gold);
       color: var(--lri-navy-dark);
+      background: var(--lri-gold);
       border-color: var(--lri-gold);
     }
 
@@ -369,15 +418,17 @@
     }
 
     .reset-button {
-      padding: 7px 12px;
+      padding: 8px 14px;
       color: var(--lri-gold);
       background: transparent;
       border: 1px solid var(--lri-border);
+      border-radius: 4px;
       font-size: 0.82rem;
+      cursor: pointer;
     }
 
     .reset-button:hover {
-      background: rgba(221,187,122,0.08);
+      border-color: var(--lri-gold);
     }
 
     /* ========================================
@@ -386,7 +437,7 @@
 
     .aqb-editions {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: repeat(2, minmax(0,1fr));
       gap: 22px;
     }
 
@@ -395,7 +446,7 @@
       flex-direction: column;
       min-width: 0;
       padding: 28px;
-      background: linear-gradient(145deg, #172638, #101b29);
+      background: linear-gradient(145deg,#172638,#101b29);
       border: 1px solid var(--lri-border);
       border-radius: 6px;
       overflow-wrap: anywhere;
@@ -412,8 +463,8 @@
 
     .record-top {
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
       flex-wrap: wrap;
       gap: 10px;
       margin-bottom: 15px;
@@ -471,10 +522,10 @@
     }
 
     .record-note {
-      margin-top: 12px;
-      margin-bottom: 0;
       color: var(--lri-muted);
       font-size: 0.8rem;
+      margin-top: 12px;
+      margin-bottom: 0;
     }
 
     .empty-results {
@@ -484,50 +535,6 @@
       border: 1px solid var(--lri-border);
       border-radius: 6px;
     }
-
-    .empty-results p {
-      color: var(--lri-muted);
-    }
-
-    /* ========================================
-       EDITORIAL ANNOUNCEMENT
-    ======================================== */
-
-    .editorial-announcement {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 25px;
-      align-items: center;
-      padding: 25px 30px;
-      background: var(--lri-navy-dark);
-      border: 1px solid var(--lri-border);
-      border-left: 3px solid var(--lri-gold);
-      border-radius: 0 6px 6px 0;
-      margin-bottom: 38px;
-    }
-
-    .editorial-announcement h3 {
-      font-size: 1.2rem;
-      margin-bottom: 10px;
-    }
-
-    .editorial-announcement p {
-      color: var(--lri-muted);
-      font-size: 0.93rem;
-      margin-bottom: 0;
-      line-height: 1.75;
-    }
-
-    .editorial-announcement time {
-      display: block;
-      color: var(--lri-gold);
-      font-size: 0.78rem;
-      margin-bottom: 10px;
-    }
-
-    /* ========================================
-       ARCHIVE INFORMATION
-    ======================================== */
 
     .archive-information {
       padding: 25px 28px;
@@ -546,11 +553,6 @@
       color: var(--lri-muted);
       font-size: 0.92rem;
       line-height: 1.8;
-      margin-bottom: 12px;
-    }
-
-    .archive-information p:last-child {
-      margin-bottom: 0;
     }
 
     /* ========================================
@@ -561,21 +563,19 @@
       padding: 80px 24px;
       text-align: center;
       background-color: var(--lri-navy-dark);
-
       background-image:
         linear-gradient(
           rgba(11,20,32,0.94),
           rgba(11,20,32,0.68)
         ),
         url("/assets/img/lunar-landscape.jpg");
-
       background-size: cover;
       background-position: center 65%;
       border-top: 1px solid var(--lri-border);
     }
 
     .aqb-subscribe h2 {
-      font-size: clamp(1.9rem, 4vw, 2.8rem);
+      font-size: clamp(1.9rem,4vw,2.8rem);
       margin-bottom: 20px;
     }
 
@@ -659,11 +659,23 @@
     }
 
     /* ========================================
+       ACCESSIBILITY
+    ======================================== */
+
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    select:focus-visible,
+    summary:focus-visible {
+      outline: 2px solid var(--lri-gold);
+      outline-offset: 4px;
+    }
+
+    /* ========================================
        RESPONSIVE DESIGN
     ======================================== */
 
     @media (max-width: 1100px) {
-
       .main-nav {
         gap: 17px;
       }
@@ -671,7 +683,6 @@
       .brand-subtitle {
         display: none;
       }
-
     }
 
     @media (max-width: 900px) {
@@ -710,7 +721,7 @@
         padding: 14px 0;
       }
 
-      .nav-dropdown > .dropdown-menu {
+      .dropdown-menu {
         position: static;
         box-shadow: none;
       }
@@ -724,9 +735,8 @@
       }
 
       .footer-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(2,minmax(0,1fr));
       }
-
     }
 
     @media (max-width: 650px) {
@@ -754,8 +764,7 @@
       }
 
       .aqb-hero {
-        min-height: 360px;
-
+        min-height: 350px;
         background-image:
           linear-gradient(
             rgba(8,13,20,0.78),
@@ -764,16 +773,16 @@
           url("/assets/img/lunar-hero.jpg");
       }
 
+      .aqb-hero-content {
+        padding: 50px 0;
+      }
+
       .aqb-hero h1 {
         font-size: 2.4rem;
       }
 
       .aqb-hero p {
         font-size: 1.05rem;
-      }
-
-      .aqb-hero-content {
-        padding: 50px 0;
       }
 
       .aqb-actions {
@@ -800,13 +809,12 @@
       }
 
       .aqb-editions,
-      .archive-controls,
-      .editorial-announcement {
+      .archive-controls {
         grid-template-columns: 1fr;
       }
 
-      .aqb-toolbar,
       .aqb-record,
+      .aqb-toolbar,
       .editorial-announcement {
         padding: 22px;
       }
@@ -823,10 +831,30 @@
         flex-direction: column;
         align-items: flex-start;
       }
+    }
 
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        scroll-behavior: auto !important;
+        transition: none !important;
+      }
     }
 
     @media print {
+
+      .site-header,
+      .site-footer,
+      .aqb-toolbar,
+      .aqb-actions,
+      .aqb-subscribe,
+      .reset-button {
+        display: none !important;
+      }
+
+      main,
+      main * {
+        color: #111111 !important;
+      }
 
       .aqb-hero,
       .archive-summary-bar,
@@ -837,18 +865,6 @@
         border-color: #cccccc !important;
       }
 
-      main * {
-        color: #111111 !important;
-      }
-
-      .aqb-toolbar,
-      .aqb-actions,
-      .aqb-subscribe,
-      .record-actions,
-      .reset-button {
-        display: none !important;
-      }
-
       .aqb-editions {
         grid-template-columns: 1fr;
       }
@@ -856,7 +872,6 @@
       .aqb-record {
         break-inside: avoid;
       }
-
     }
 
   </style>
@@ -889,9 +904,7 @@
     Skip to main content
   </a>
 
-  <!-- ========================================
-       HEADER
-  ======================================== -->
+  <!-- HEADER -->
 
   <header class="site-header">
 
@@ -908,14 +921,12 @@
         >
 
         <div class="brand-name">
-
           Lunar Research<br>
           Initiative
 
           <span class="brand-subtitle">
             Lunar Quality and Decision Assurance
           </span>
-
         </div>
 
       </a>
@@ -937,7 +948,6 @@
       >
 
         <a href="/">Home</a>
-
         <a href="/about/">About</a>
 
         <details class="nav-dropdown">
@@ -945,11 +955,8 @@
           <summary>Research</summary>
 
           <div class="dropdown-menu">
-
             <a href="/research/">Research Overview</a>
-
             <a href="/initiatives/">Research Initiatives</a>
-
           </div>
 
         </details>
@@ -961,22 +968,15 @@
           <summary>Resources</summary>
 
           <div class="dropdown-menu">
-
             <a href="/standards/">Standards</a>
-
             <a href="/books/">Books</a>
-
             <a href="/newsletter/">Aerospace Quality Brief</a>
 
-            <a
-              href="/newsletter/archive/"
-              aria-current="page"
-            >
+            <a href="/newsletter/archive/" aria-current="page">
               Newsletter Archive
             </a>
 
             <a href="/cite/">Cite This Site</a>
-
           </div>
 
         </details>
@@ -986,11 +986,8 @@
           <summary>Collaborate</summary>
 
           <div class="dropdown-menu">
-
             <a href="/partnerships/">Partnerships</a>
-
             <a href="/contact/">Contact LRI</a>
-
           </div>
 
         </details>
@@ -1003,26 +1000,21 @@
 
   <main id="main-content">
 
-    <!-- ========================================
-         HERO
-    ======================================== -->
+    <!-- HERO -->
 
     <section class="aqb-hero">
 
       <div class="aqb-container aqb-hero-content">
 
-        <span class="eyebrow">
-          Aerospace Quality Brief
-        </span>
+        <span class="eyebrow">Aerospace Quality Brief</span>
 
         <h1>Newsletter Archive</h1>
 
         <p>
-          Explore professional engineering perspectives
-          on aerospace quality, verification, evidence
-          integrity, operational risk, configuration
-          management, corrective action, and the
-          decisions that shape mission assurance.
+          Explore professional engineering perspectives on
+          aerospace quality, verification, evidence integrity,
+          operational risk, configuration management,
+          corrective action, and mission assurance.
         </p>
 
         <div class="aqb-actions">
@@ -1049,48 +1041,32 @@
 
     </section>
 
-    <!-- ========================================
-         ARCHIVE SUMMARY
-    ======================================== -->
+    <!-- ARCHIVE SUMMARY -->
 
-    <section
-      class="archive-summary-bar"
-      aria-label="Newsletter archive information"
-    >
+    <section class="archive-summary-bar" aria-label="Archive information">
 
       <div class="aqb-container archive-summary-grid">
 
         <div class="archive-stat">
-
-          <strong id="archive-total">17</strong>
-
+          <strong id="archive-total">28</strong>
           <span>Indexed Archive Records</span>
-
         </div>
 
         <div class="archive-stat">
-
           <strong>2025 &ndash; Present</strong>
-
           <span>Publication Collection</span>
-
         </div>
 
         <div class="archive-stat">
-
           <strong>Biweekly</strong>
-
           <span>Announced Publication Schedule</span>
-
         </div>
 
       </div>
 
     </section>
 
-    <!-- ========================================
-         SEARCHABLE ARCHIVE
-    ======================================== -->
+    <!-- ARCHIVE CATALOGUE -->
 
     <section class="aqb-section">
 
@@ -1105,10 +1081,10 @@
           <h2>Browse Published Editions</h2>
 
           <p>
-            Search articles by title, technical subject,
+            Search the indexed collection by title, subject,
             publication year, or editorial category.
             Follow the original LinkedIn links to read
-            the complete editions.
+            the full editions.
           </p>
 
         </div>
@@ -1117,24 +1093,18 @@
 
         <aside class="editorial-announcement">
 
-          <div>
+          <time datetime="2026-10-21">October 21, 2026</time>
 
-            <time datetime="2026-10-21">
-              October 21, 2026
-            </time>
+          <h3>
+            Aerospace Quality Brief Moves to a Biweekly Schedule
+          </h3>
 
-            <h3>
-              Aerospace Quality Brief Moves to a Biweekly Schedule
-            </h3>
-
-            <p>
-              AQB announced a transition to one edition
-              every two weeks to support deeper research,
-              stronger technical analysis, and more focused
-              engineering insights.
-            </p>
-
-          </div>
+          <p>
+            AQB announced a transition to one edition
+            every two weeks to support deeper research,
+            stronger technical analysis, and more focused
+            engineering insights.
+          </p>
 
           <a
             href="https://www.linkedin.com/pulse/biweekly-schedule-ralph-figueroa-r8f0e"
@@ -1147,7 +1117,7 @@
 
         </aside>
 
-        <!-- SEARCH AND FILTER CONTROLS -->
+        <!-- SEARCH AND FILTERS -->
 
         <div class="aqb-toolbar" id="archive-toolbar" hidden>
 
@@ -1155,9 +1125,7 @@
 
             <div class="archive-control archive-search-control">
 
-              <label for="archive-search">
-                Search the Archive
-              </label>
+              <label for="archive-search">Search the Archive</label>
 
               <input
                 id="archive-search"
@@ -1169,36 +1137,24 @@
 
             <div class="archive-control">
 
-              <label for="archive-year">
-                Publication Year
-              </label>
+              <label for="archive-year">Publication Year</label>
 
               <select id="archive-year">
-
                 <option value="all">All Years</option>
-
                 <option value="2026">2026</option>
-
                 <option value="2025">2025</option>
-
               </select>
 
             </div>
 
             <div class="archive-control">
 
-              <label for="archive-sort">
-                Sort Editions
-              </label>
+              <label for="archive-sort">Sort Editions</label>
 
               <select id="archive-sort">
-
                 <option value="newest">Newest First</option>
-
                 <option value="oldest">Oldest First</option>
-
                 <option value="title">Title A to Z</option>
-
               </select>
 
             </div>
@@ -1207,84 +1163,48 @@
 
           <div class="topic-filters" aria-label="Filter by editorial topic">
 
-            <button
-              type="button"
-              class="topic-filter active"
-              data-filter="all"
-              aria-pressed="true"
-            >
+            <button type="button" class="topic-filter active"
+              data-filter="all" aria-pressed="true">
               All Topics
             </button>
 
-            <button
-              type="button"
-              class="topic-filter"
-              data-filter="evidence"
-              aria-pressed="false"
-            >
+            <button type="button" class="topic-filter"
+              data-filter="evidence" aria-pressed="false">
               Evidence Integrity
             </button>
 
-            <button
-              type="button"
-              class="topic-filter"
-              data-filter="verification"
-              aria-pressed="false"
-            >
+            <button type="button" class="topic-filter"
+              data-filter="verification" aria-pressed="false">
               Verification
             </button>
 
-            <button
-              type="button"
-              class="topic-filter"
-              data-filter="mission"
-              aria-pressed="false"
-            >
+            <button type="button" class="topic-filter"
+              data-filter="mission" aria-pressed="false">
               Mission Assurance
             </button>
 
-            <button
-              type="button"
-              class="topic-filter"
-              data-filter="configuration"
-              aria-pressed="false"
-            >
+            <button type="button" class="topic-filter"
+              data-filter="configuration" aria-pressed="false">
               Configuration Control
             </button>
 
-            <button
-              type="button"
-              class="topic-filter"
-              data-filter="supplier"
-              aria-pressed="false"
-            >
+            <button type="button" class="topic-filter"
+              data-filter="supplier" aria-pressed="false">
               Supplier Quality
             </button>
 
-            <button
-              type="button"
-              class="topic-filter"
-              data-filter="capa"
-              aria-pressed="false"
-            >
+            <button type="button" class="topic-filter"
+              data-filter="capa" aria-pressed="false">
               CAPA and Process Control
             </button>
 
-            <button
-              type="button"
-              class="topic-filter"
-              data-filter="decision"
-              aria-pressed="false"
-            >
+            <button type="button" class="topic-filter"
+              data-filter="decision" aria-pressed="false">
               Decision Assurance
             </button>
 
-            <button
-              type="button"
-              class="topic-filter"
-              data-filter="announcement"
-              aria-pressed="false"
-            >
+            <button type="button" class="topic-filter"
+              data-filter="announcement" aria-pressed="false">
               Special Updates
             </button>
 
@@ -1295,1066 +1215,1012 @@
         <div class="archive-results">
 
           <span id="results-count" aria-live="polite">
-            17 archive records
+            28 archive records
           </span>
 
-          <button
-            type="button"
-            class="reset-button"
-            id="reset-filters"
-            hidden
-          >
+          <button type="button" class="reset-button"
+            id="reset-filters" hidden>
             Reset Filters
           </button>
 
         </div>
 
         <!-- ========================================
-             EDITION COLLECTION
+             COMPLETE 28-RECORD ARCHIVE
         ======================================== -->
 
         <div class="aqb-editions" id="edition-list">
 
-          <!-- EDITION 01 -->
+          <!-- 01 -->
 
-          <article
-            class="aqb-record notice"
-            data-date="2026-10-21"
-            data-year="2026"
-            data-topics="announcement"
-          >
+          <article class="aqb-record notice"
+            data-date="2026-10-21" data-year="2026"
+            data-topics="announcement">
 
             <div class="record-top">
-
-              <span class="record-category">
-                Editorial Announcement
-              </span>
-
-              <time class="record-date" datetime="2026-10-21">
-                October 21, 2026
-              </time>
-
+              <span class="record-category">Editorial Announcement</span>
+              <time class="record-date" datetime="2026-10-21">October 21, 2026</time>
             </div>
 
             <h3>Biweekly Schedule</h3>
 
             <p class="record-description">
               AQB announces a revised publication schedule
-              that prioritizes research depth and technical
-              analysis over publication frequency.
+              emphasizing research depth and focused
+              technical analysis.
             </p>
 
             <div class="record-tags">
-
               <span class="record-tag">Newsletter Update</span>
-
               <span class="record-tag">Editorial Direction</span>
-
             </div>
 
             <div class="record-actions">
-
-              <a
-                href="https://www.linkedin.com/pulse/biweekly-schedule-ralph-figueroa-r8f0e"
-                target="_blank"
-                rel="noopener noreferrer"
+              <a href="https://www.linkedin.com/pulse/biweekly-schedule-ralph-figueroa-r8f0e"
                 class="lri-btn lri-btn-outline"
-              >
+                target="_blank" rel="noopener noreferrer">
                 Read Announcement &rarr;
               </a>
-
             </div>
 
           </article>
 
-          <!-- EDITION 02 -->
+          <!-- 02 -->
 
-          <article
-            class="aqb-record"
-            data-date="2026-10-13"
-            data-year="2026"
-            data-topics="verification mission evidence"
-          >
+          <article class="aqb-record"
+            data-date="2026-10-13" data-year="2026"
+            data-topics="verification mission evidence">
 
             <div class="record-top">
-
-              <span class="record-category">
-                Verification and Qualification
-              </span>
-
-              <time class="record-date" datetime="2026-10-13">
-                October 13, 2026
-              </time>
-
+              <span class="record-category">Verification and Qualification</span>
+              <time class="record-date" datetime="2026-10-13">October 13, 2026</time>
             </div>
 
-            <h3>
-              Flight Data Can Accelerate Assurance.
-              It Cannot Replace Qualification.
-            </h3>
+            <h3>Flight Data Can Accelerate Assurance. It Cannot Replace Qualification.</h3>
 
             <p class="record-description">
-              Examines how flight experiments can inform
-              model validation and progressive verification
-              while preserving the distinction between early
-              operational evidence and formal qualification.
+              Examines the relationship between flight data,
+              model validation, progressive verification,
+              and formal qualification requirements.
             </p>
 
             <div class="record-tags">
-
               <span class="record-tag">Flight Data</span>
-
               <span class="record-tag">Qualification</span>
-
-              <span class="record-tag">Model Validation</span>
-
+              <span class="record-tag">Verification</span>
             </div>
 
             <div class="record-actions">
-
-              <a
-                href="https://www.linkedin.com/pulse/flight-data-can-accelerate-assurance-cannot-replace-ralph-figueroa-5kcse"
-                target="_blank"
-                rel="noopener noreferrer"
+              <a href="https://www.linkedin.com/pulse/flight-data-can-accelerate-assurance-cannot-replace-ralph-figueroa-5kcse"
                 class="lri-btn lri-btn-outline"
-              >
+                target="_blank" rel="noopener noreferrer">
                 Read on LinkedIn &rarr;
               </a>
-
             </div>
 
           </article>
 
-          <!-- EDITION 03 -->
+          <!-- 03 -->
 
-          <article
-            class="aqb-record"
-            data-date="2026-10-06"
-            data-year="2026"
-            data-topics="capa evidence"
-          >
+          <article class="aqb-record"
+            data-date="2026-10-06" data-year="2026"
+            data-topics="capa evidence">
 
             <div class="record-top">
-
-              <span class="record-category">
-                Corrective Action
-              </span>
-
-              <time class="record-date" datetime="2026-10-06">
-                October 6, 2026
-              </time>
-
+              <span class="record-category">Corrective Action</span>
+              <time class="record-date" datetime="2026-10-06">October 6, 2026</time>
             </div>
 
-            <h3>
-              The Corrective Action Closed.
-              Why Did the Problem Come Back?
-            </h3>
+            <h3>The Corrective Action Closed. Why Did the Problem Come Back?</h3>
 
             <p class="record-description">
               Examines recurring problems after corrective
-              action closure and the importance of
-              demonstrating control of the underlying
-              failure mechanism.
+              action closure and the importance of controlling
+              the underlying failure mechanism.
             </p>
 
             <div class="record-tags">
-
               <span class="record-tag">CAPA</span>
-
               <span class="record-tag">Recurrence Prevention</span>
-
               <span class="record-tag">Effectiveness</span>
-
             </div>
 
             <div class="record-actions">
-
-              <a
-                href="https://www.linkedin.com/pulse/corrective-action-closed-why-did-problem-come-back-ralph-figueroa-lsz1e"
-                target="_blank"
-                rel="noopener noreferrer"
+              <a href="https://www.linkedin.com/pulse/corrective-action-closed-why-did-problem-come-back-ralph-figueroa-lsz1e"
                 class="lri-btn lri-btn-outline"
-              >
+                target="_blank" rel="noopener noreferrer">
                 Read on LinkedIn &rarr;
               </a>
-
             </div>
 
           </article>
 
-          <!-- EDITION 04 -->
+          <!-- 04 -->
 
-          <article
-            class="aqb-record"
-            data-date="2026-09-01"
-            data-year="2026"
-            data-topics="mission decision evidence"
-          >
+          <article class="aqb-record"
+            data-date="2026-09-01" data-year="2026"
+            data-topics="mission decision evidence">
 
             <div class="record-top">
-
-              <span class="record-category">
-                Mission Assurance
-              </span>
-
-              <time class="record-date" datetime="2026-09-01">
-                September 1, 2026
-              </time>
-
+              <span class="record-category">Mission Assurance</span>
+              <time class="record-date" datetime="2026-09-01">September 1, 2026</time>
             </div>
 
-            <h3>
-              Space Workforce Is Part of Mission Assurance
-            </h3>
+            <h3>Space Workforce Is Part of Mission Assurance</h3>
 
             <p class="record-description">
-              Explores the need to develop a space workforce
-              capable of evaluating engineering evidence,
-              understanding readiness boundaries, and making
-              defensible decisions under uncertainty.
+              Explores workforce capabilities, engineering
+              judgment, readiness assessment, and decision
+              quality in space operations.
             </p>
 
             <div class="record-tags">
-
               <span class="record-tag">Space Workforce</span>
-
               <span class="record-tag">Readiness</span>
-
               <span class="record-tag">Decision Quality</span>
-
             </div>
 
             <div class="record-actions">
-
-              <a
-                href="https://www.linkedin.com/pulse/space-workforce-part-mission-assurance-ralph-figueroa-jjqqc"
-                target="_blank"
-                rel="noopener noreferrer"
+              <a href="https://www.linkedin.com/pulse/space-workforce-part-mission-assurance-ralph-figueroa-jjqqc"
                 class="lri-btn lri-btn-outline"
-              >
+                target="_blank" rel="noopener noreferrer">
                 Read on LinkedIn &rarr;
               </a>
-
             </div>
 
           </article>
 
-          <!-- EDITION 05 -->
+          <!-- 05 -->
 
-          <article
-            class="aqb-record"
-            data-date="2026-08-25"
-            data-year="2026"
-            data-topics="mission decision evidence"
-          >
+          <article class="aqb-record"
+            data-date="2026-08-25" data-year="2026"
+            data-topics="mission decision evidence">
 
             <div class="record-top">
-
-              <span class="record-category">
-                Safety and Mission Assurance
-              </span>
-
-              <time class="record-date" datetime="2026-08-25">
-                August 25, 2026
-              </time>
-
+              <span class="record-category">Safety and Mission Assurance</span>
+              <time class="record-date" datetime="2026-08-25">August 25, 2026</time>
             </div>
 
-            <h3>
-              When Flight Termination Is Evidence
-              That the Safety System Worked
-            </h3>
+            <h3>When Flight Termination Is Evidence That the Safety System Worked</h3>
 
             <p class="record-description">
               Distinguishes unsuccessful mission execution
-              from ineffective safety assurance and examines
-              the importance of detecting unacceptable
-              conditions and protecting public safety.
+              from ineffective safety assurance and considers
+              the role of flight termination in protecting
+              public safety.
             </p>
 
             <div class="record-tags">
-
               <span class="record-tag">Flight Safety</span>
-
               <span class="record-tag">Mission Assurance</span>
-
               <span class="record-tag">Decision Authority</span>
-
             </div>
 
             <div class="record-actions">
-
-              <a
-                href="https://www.linkedin.com/pulse/when-flight-termination-evidence-safety-system-worked-ralph-figueroa-vim1f"
-                target="_blank"
-                rel="noopener noreferrer"
+              <a href="https://www.linkedin.com/pulse/when-flight-termination-evidence-safety-system-worked-ralph-figueroa-vim1f"
                 class="lri-btn lri-btn-outline"
-              >
+                target="_blank" rel="noopener noreferrer">
                 Read on LinkedIn &rarr;
               </a>
-
             </div>
 
           </article>
 
-          <!-- EDITION 06 -->
+          <!-- 06: RECOVERED LEGACY ARTICLE -->
 
-          <article
-            class="aqb-record"
-            data-date="2026-08-18"
-            data-year="2026"
-            data-topics="decision verification mission"
-          >
+          <article class="aqb-record"
+            data-date="2026-08-20" data-year="2026"
+            data-topics="capa decision evidence">
 
             <div class="record-top">
-
-              <span class="record-category">
-                Autonomous Systems
-              </span>
-
-              <time class="record-date" datetime="2026-08-18">
-                August 18, 2026
-              </time>
-
+              <span class="record-category">Organizational Learning</span>
+              <time class="record-date" datetime="2026-08-20">August 20, 2026</time>
             </div>
 
-            <h3>
-              Fifty Test Days Before Authority
-              Transfers to the Spacecraft
-            </h3>
+            <h3>When Lessons Learned Become Lessons Stored</h3>
+
+            <p class="record-description">
+              Addresses the distinction between documenting
+              lessons learned and integrating those lessons
+              into organizational practices and decisions.
+            </p>
+
+            <div class="record-tags">
+              <span class="record-tag">Lessons Learned</span>
+              <span class="record-tag">Knowledge Management</span>
+              <span class="record-tag">Continuous Improvement</span>
+            </div>
+
+            <div class="record-actions">
+              <a href="https://www.linkedin.com/pulse/when-lessons-learned-become-stored-ralph-figueroa-kfmoc"
+                class="lri-btn lri-btn-outline"
+                target="_blank" rel="noopener noreferrer">
+                Read on LinkedIn &rarr;
+              </a>
+            </div>
+
+          </article>
+
+          <!-- 07 -->
+
+          <article class="aqb-record"
+            data-date="2026-08-18" data-year="2026"
+            data-topics="decision verification mission">
+
+            <div class="record-top">
+              <span class="record-category">Autonomous Systems</span>
+              <time class="record-date" datetime="2026-08-18">August 18, 2026</time>
+            </div>
+
+            <h3>Fifty Test Days Before Authority Transfers to the Spacecraft</h3>
 
             <p class="record-description">
               Examines the distinction between demonstrating
-              autonomous capability and establishing
-              sufficient evidence to authorize autonomous
-              spacecraft operations.
+              autonomous capability and establishing sufficient
+              evidence to authorize spacecraft autonomy.
             </p>
 
             <div class="record-tags">
-
               <span class="record-tag">Autonomy</span>
-
               <span class="record-tag">Verification</span>
-
               <span class="record-tag">Authority Transfer</span>
-
             </div>
 
             <div class="record-actions">
-
-              <a
-                href="https://www.linkedin.com/pulse/fifty-test-days-before-authority-transfers-spacecraft-ralph-figueroa-apy8c"
-                target="_blank"
-                rel="noopener noreferrer"
+              <a href="https://www.linkedin.com/pulse/fifty-test-days-before-authority-transfers-spacecraft-ralph-figueroa-apy8c"
                 class="lri-btn lri-btn-outline"
-              >
+                target="_blank" rel="noopener noreferrer">
                 Read on LinkedIn &rarr;
               </a>
-
             </div>
 
           </article>
 
-          <!-- EDITION 07 -->
+          <!-- 08: RECOVERED LEGACY ARTICLE -->
 
-          <article
-            class="aqb-record"
-            data-date="2026-08-11"
-            data-year="2026"
-            data-topics="mission evidence verification"
-          >
+          <article class="aqb-record"
+            data-date="2026-08-13" data-year="2026"
+            data-topics="capa decision">
 
             <div class="record-top">
-
-              <span class="record-category">
-                Reliability Engineering
-              </span>
-
-              <time class="record-date" datetime="2026-08-11">
-                August 11, 2026
-              </time>
-
+              <span class="record-category">Organizational Effectiveness</span>
+              <time class="record-date" datetime="2026-08-13">August 13, 2026</time>
             </div>
 
-            <h3>
-              Reliability Predictions Fail When Assumptions Age
-            </h3>
+            <h3>When Organizations Keep Solving the Same Problems</h3>
 
             <p class="record-description">
-              Investigates how changing operating conditions
+              Examines recurring organizational problems
+              and the need to connect problem solving
+              with sustained systemic improvement.
+            </p>
+
+            <div class="record-tags">
+              <span class="record-tag">Problem Solving</span>
+              <span class="record-tag">Recurrence</span>
+              <span class="record-tag">Organizational Learning</span>
+            </div>
+
+            <div class="record-actions">
+              <a href="https://www.linkedin.com/pulse/when-organizations-keep-solving-same-problems-ralph-figueroa-l7zkc"
+                class="lri-btn lri-btn-outline"
+                target="_blank" rel="noopener noreferrer">
+                Read on LinkedIn &rarr;
+              </a>
+            </div>
+
+          </article>
+
+          <!-- 09 -->
+
+          <article class="aqb-record"
+            data-date="2026-08-11" data-year="2026"
+            data-topics="mission evidence verification">
+
+            <div class="record-top">
+              <span class="record-category">Reliability Engineering</span>
+              <time class="record-date" datetime="2026-08-11">August 11, 2026</time>
+            </div>
+
+            <h3>Reliability Predictions Fail When Assumptions Age</h3>
+
+            <p class="record-description">
+              Explores how changing operating conditions
               and aging assumptions can weaken the relevance
-              of reliability predictions used to support
-              engineering decisions.
+              of reliability predictions.
             </p>
 
             <div class="record-tags">
-
               <span class="record-tag">Reliability</span>
-
               <span class="record-tag">Evidence Validity</span>
-
               <span class="record-tag">Model Assumptions</span>
-
             </div>
 
             <div class="record-actions">
-
-              <a
-                href="https://www.linkedin.com/pulse/reliability-predictions-fail-when-assumptions-age-ralph-figueroa-ndecc"
-                target="_blank"
-                rel="noopener noreferrer"
+              <a href="https://www.linkedin.com/pulse/reliability-predictions-fail-when-assumptions-age-ralph-figueroa-ndecc"
                 class="lri-btn lri-btn-outline"
-              >
+                target="_blank" rel="noopener noreferrer">
                 Read on LinkedIn &rarr;
               </a>
-
             </div>
 
           </article>
 
-          <!-- EDITION 08 -->
+          <!-- 10: RECOVERED LEGACY ARTICLE -->
 
-          <article
-            class="aqb-record"
-            data-date="2026-07-29"
-            data-year="2026"
-            data-topics="mission capa verification"
-          >
+          <article class="aqb-record"
+            data-date="2026-07-30" data-year="2026"
+            data-topics="capa decision mission">
 
             <div class="record-top">
-
-              <span class="record-category">
-                Return-to-Flight Assurance
-              </span>
-
-              <time class="record-date" datetime="2026-07-29">
-                July 29, 2026
-              </time>
-
+              <span class="record-category">Systems Performance</span>
+              <time class="record-date" datetime="2026-07-30">July 30, 2026</time>
             </div>
 
-            <h3>
-              Return to Flight Requires More Than a Corrected Part
-            </h3>
+            <h3>Why Optimizing Individual Processes Does Not Guarantee Organizational Performance</h3>
 
             <p class="record-description">
-              Examines why return-to-flight readiness requires
-              evidence of effective design changes, process
-              controls, implementation, and corrective-action
-              effectiveness throughout the launch system.
+              Explores the relationship between local
+              process optimization, interconnected operations,
+              and overall organizational performance.
             </p>
 
             <div class="record-tags">
+              <span class="record-tag">Systems Thinking</span>
+              <span class="record-tag">Process Optimization</span>
+              <span class="record-tag">Performance</span>
+            </div>
 
+            <div class="record-actions">
+              <a href="https://www.linkedin.com/pulse/why-optimizing-individual-processes-does-guarantee-ralph-figueroa-q93ic"
+                class="lri-btn lri-btn-outline"
+                target="_blank" rel="noopener noreferrer">
+                Read on LinkedIn &rarr;
+              </a>
+            </div>
+
+          </article>
+
+          <!-- 11 -->
+
+          <article class="aqb-record"
+            data-date="2026-07-29" data-year="2026"
+            data-topics="mission capa verification">
+
+            <div class="record-top">
+              <span class="record-category">Return-to-Flight Assurance</span>
+              <time class="record-date" datetime="2026-07-29">July 29, 2026</time>
+            </div>
+
+            <h3>Return to Flight Requires More Than a Corrected Part</h3>
+
+            <p class="record-description">
+              Examines return-to-flight readiness through
+              design changes, process controls, implementation,
+              and corrective-action effectiveness.
+            </p>
+
+            <div class="record-tags">
               <span class="record-tag">Launch Readiness</span>
-
               <span class="record-tag">CAPA</span>
-
               <span class="record-tag">System Assurance</span>
-
             </div>
 
             <div class="record-actions">
-
-              <a
-                href="https://www.linkedin.com/pulse/return-flight-requires-more-than-corrected-part-ralph-figueroa-2gpde"
-                target="_blank"
-                rel="noopener noreferrer"
+              <a href="https://www.linkedin.com/pulse/return-flight-requires-more-than-corrected-part-ralph-figueroa-2gpde"
                 class="lri-btn lri-btn-outline"
-              >
+                target="_blank" rel="noopener noreferrer">
                 Read on LinkedIn &rarr;
               </a>
-
             </div>
 
           </article>
 
-          <!-- EDITION 09 -->
+          <!-- 12 -->
 
-          <article
-            class="aqb-record"
-            data-date="2026-07-28"
-            data-year="2026"
-            data-topics="configuration verification evidence"
-          >
+          <article class="aqb-record"
+            data-date="2026-07-28" data-year="2026"
+            data-topics="configuration verification evidence">
 
             <div class="record-top">
-
-              <span class="record-category">
-                Configuration and Verification
-              </span>
-
-              <time class="record-date" datetime="2026-07-28">
-                July 28, 2026
-              </time>
-
+              <span class="record-category">Configuration and Verification</span>
+              <time class="record-date" datetime="2026-07-28">July 28, 2026</time>
             </div>
 
-            <h3>
-              Software Updates Can Invalidate Hardware Assurance
-            </h3>
+            <h3>Software Updates Can Invalidate Hardware Assurance</h3>
 
             <p class="record-description">
-              Explores how software or firmware changes can
-              alter the operational conditions of unchanged
-              hardware and create a need to reassess earlier
-              verification evidence.
+              Explores how software and firmware changes
+              can alter hardware operating conditions and
+              affect previously established verification evidence.
             </p>
 
             <div class="record-tags">
-
               <span class="record-tag">Software Assurance</span>
-
               <span class="record-tag">Configuration</span>
-
               <span class="record-tag">Hardware Verification</span>
-
             </div>
 
             <div class="record-actions">
-
-              <a
-                href="https://www.linkedin.com/pulse/software-updates-can-invalidate-hardware-assurance-ralph-figueroa-sr4ec"
-                target="_blank"
-                rel="noopener noreferrer"
+              <a href="https://www.linkedin.com/pulse/software-updates-can-invalidate-hardware-assurance-ralph-figueroa-sr4ec"
                 class="lri-btn lri-btn-outline"
-              >
+                target="_blank" rel="noopener noreferrer">
                 Read on LinkedIn &rarr;
               </a>
-
             </div>
 
           </article>
 
-          <!-- EDITION 10 -->
+          <!-- 13: RECOVERED LEGACY ARTICLE -->
 
-          <article
-            class="aqb-record notice"
-            data-date="2026-07-01"
-            data-year="2026"
-            data-topics="announcement mission"
-          >
+          <article class="aqb-record"
+            data-date="2026-07-23" data-year="2026"
+            data-topics="decision mission evidence">
 
             <div class="record-top">
-
-              <span class="record-category">
-                Special Update
-              </span>
-
-              <time class="record-date" datetime="2026-07-01">
-                July 1, 2026
-              </time>
-
+              <span class="record-category">Decision Assurance</span>
+              <time class="record-date" datetime="2026-07-23">July 23, 2026</time>
             </div>
 
-            <h3>
-              NASA's New Moon Lander Contracts,
-              LinkedIn News Top Perspective
-            </h3>
+            <h3>When Fast Decisions Become Expensive Decisions</h3>
+
+            <p class="record-description">
+              Examines trade-offs between decision speed,
+              information quality, operational risk,
+              and the consequences of premature action.
+            </p>
+
+            <div class="record-tags">
+              <span class="record-tag">Decision Quality</span>
+              <span class="record-tag">Operational Risk</span>
+              <span class="record-tag">Decision Timing</span>
+            </div>
+
+            <div class="record-actions">
+              <a href="https://www.linkedin.com/pulse/when-fast-decisions-become-expensive-ralph-figueroa-nqjle"
+                class="lri-btn lri-btn-outline"
+                target="_blank" rel="noopener noreferrer">
+                Read on LinkedIn &rarr;
+              </a>
+            </div>
+
+          </article>
+
+          <!-- 14: RECOVERED LEGACY ARTICLE -->
+
+          <article class="aqb-record"
+            data-date="2026-07-21" data-year="2026"
+            data-topics="evidence verification decision">
+
+            <div class="record-top">
+              <span class="record-category">Evidence and Decision Assurance</span>
+              <time class="record-date" datetime="2026-07-21">July 21, 2026</time>
+            </div>
+
+            <h3>Test Data Can Be Accurate and Still Support the Wrong Decision</h3>
+
+            <p class="record-description">
+              Addresses the distinction between accurate
+              test measurements and evidence appropriate
+              for the decision or engineering claim under review.
+            </p>
+
+            <div class="record-tags">
+              <span class="record-tag">Test Evidence</span>
+              <span class="record-tag">Decision Validity</span>
+              <span class="record-tag">Verification</span>
+            </div>
+
+            <div class="record-actions">
+              <a href="https://www.linkedin.com/pulse/test-data-can-accurate-still-support-wrong-decision-ralph-figueroa-kb2ce"
+                class="lri-btn lri-btn-outline"
+                target="_blank" rel="noopener noreferrer">
+                Read on LinkedIn &rarr;
+              </a>
+            </div>
+
+          </article>
+
+          <!-- 15 -->
+
+          <article class="aqb-record notice"
+            data-date="2026-07-01" data-year="2026"
+            data-topics="announcement mission">
+
+            <div class="record-top">
+              <span class="record-category">Special Update</span>
+              <time class="record-date" datetime="2026-07-01">July 1, 2026</time>
+            </div>
+
+            <h3>NASA's New Moon Lander Contracts, LinkedIn News Top Perspective</h3>
 
             <p class="record-description">
               Reports the recognition of Ralph Figueroa's
               Artemis analysis as a LinkedIn News Top
-              Perspective concerning NASA's Moon lander
-              contracts.
+              Perspective concerning NASA's Moon lander contracts.
             </p>
 
             <div class="record-tags">
-
               <span class="record-tag">Artemis</span>
-
               <span class="record-tag">Lunar Exploration</span>
-
               <span class="record-tag">Professional Recognition</span>
-
             </div>
 
             <div class="record-actions">
-
-              <a
-                href="https://www.linkedin.com/pulse/nasas-new-moon-lander-contracts-linkedin-news-top-ralph-figueroa-ffqke"
-                target="_blank"
-                rel="noopener noreferrer"
+              <a href="https://www.linkedin.com/pulse/nasas-new-moon-lander-contracts-linkedin-news-top-ralph-figueroa-ffqke"
                 class="lri-btn lri-btn-outline"
-              >
+                target="_blank" rel="noopener noreferrer">
                 Read Special Update &rarr;
               </a>
-
             </div>
 
           </article>
 
-          <!-- EDITION 11 -->
+          <!-- 16 -->
 
-          <article
-            class="aqb-record"
-            data-date="2026-06-30"
-            data-year="2026"
-            data-topics="capa verification evidence"
-          >
+          <article class="aqb-record"
+            data-date="2026-06-30" data-year="2026"
+            data-topics="capa verification evidence">
 
             <div class="record-top">
-
-              <span class="record-category">
-                Process Control
-              </span>
-
-              <time class="record-date" datetime="2026-06-30">
-                June 30, 2026
-              </time>
-
+              <span class="record-category">Process Control</span>
+              <time class="record-date" datetime="2026-06-30">June 30, 2026</time>
             </div>
 
-            <h3>
-              Teams Can Detect Nonconformance and
-              Still Fail to Control the Process
-            </h3>
+            <h3>Teams Can Detect Nonconformance and Still Fail to Control the Process</h3>
 
             <p class="record-description">
-              Distinguishes inspection and nonconformance
-              detection from sustained process control.
-              Examines the risks of repeatedly detecting
-              defects without correcting their causes.
+              Distinguishes effective inspection from
+              sustained process control and examines the risks
+              of detecting defects without correcting their causes.
             </p>
 
             <div class="record-tags">
-
               <span class="record-tag">Process Capability</span>
-
               <span class="record-tag">Nonconformance</span>
-
               <span class="record-tag">Verification</span>
-
             </div>
 
             <div class="record-actions">
-
-              <a
-                href="https://www.linkedin.com/pulse/teams-can-detect-nonconformance-still-fail-control-process-figueroa-3rtgf"
-                target="_blank"
-                rel="noopener noreferrer"
+              <a href="https://www.linkedin.com/pulse/teams-can-detect-nonconformance-still-fail-control-process-figueroa-3rtgf"
                 class="lri-btn lri-btn-outline"
-              >
+                target="_blank" rel="noopener noreferrer">
                 Read on LinkedIn &rarr;
               </a>
-
             </div>
 
           </article>
 
-          <!-- EDITION 12 -->
+          <!-- 17 -->
 
-          <article
-            class="aqb-record"
-            data-date="2026-06-23"
-            data-year="2026"
-            data-topics="capa evidence"
-          >
+          <article class="aqb-record"
+            data-date="2026-06-23" data-year="2026"
+            data-topics="capa evidence">
 
             <div class="record-top">
-
-              <span class="record-category">
-                Corrective Action
-              </span>
-
-              <time class="record-date" datetime="2026-06-23">
-                June 23, 2026
-              </time>
-
+              <span class="record-category">Corrective Action</span>
+              <time class="record-date" datetime="2026-06-23">June 23, 2026</time>
             </div>
 
-            <h3>
-              Why Paperwork Closure Does Not Prove
-              System Correction
-            </h3>
+            <h3>Why Paperwork Closure Does Not Prove System Correction</h3>
 
             <p class="record-description">
-              Explains why corrective action requires
-              evidence of reduced recurrence risk rather
-              than administrative completion of a quality
-              record.
+              Explains why corrective action requires evidence
+              of reduced recurrence risk rather than
+              administrative completion of a quality record.
             </p>
 
             <div class="record-tags">
-
               <span class="record-tag">CAPA</span>
-
               <span class="record-tag">Risk Reduction</span>
-
               <span class="record-tag">Quality Systems</span>
-
             </div>
 
             <div class="record-actions">
-
-              <a
-                href="https://www.linkedin.com/pulse/why-paperwork-closure-does-prove-system-correction-ralph-figueroa-bgnve"
-                target="_blank"
-                rel="noopener noreferrer"
+              <a href="https://www.linkedin.com/pulse/why-paperwork-closure-does-prove-system-correction-ralph-figueroa-bgnve"
                 class="lri-btn lri-btn-outline"
-              >
+                target="_blank" rel="noopener noreferrer">
                 Read on LinkedIn &rarr;
               </a>
-
             </div>
 
           </article>
 
-          <!-- EDITION 13 -->
+          <!-- 18 -->
 
-          <article
-            class="aqb-record"
-            data-date="2026-06-16"
-            data-year="2026"
-            data-topics="verification evidence mission"
-          >
+          <article class="aqb-record"
+            data-date="2026-06-16" data-year="2026"
+            data-topics="verification evidence mission">
 
             <div class="record-top">
-
-              <span class="record-category">
-                Qualification and Test Fidelity
-              </span>
-
-              <time class="record-date" datetime="2026-06-16">
-                June 16, 2026
-              </time>
-
+              <span class="record-category">Qualification and Test Fidelity</span>
+              <time class="record-date" datetime="2026-06-16">June 16, 2026</time>
             </div>
 
-            <h3>
-              Why Aerospace Qualification Evidence Can Fail
-              When Operational Reality Is Messier Than
-              the Test Environment
-            </h3>
+            <h3>Why Aerospace Qualification Evidence Can Fail When Operational Reality Is Messier Than the Test Environment</h3>
 
             <p class="record-description">
-              Examines the limits of qualification evidence
-              when controlled test environments do not
-              adequately represent operational stressors
-              and mission conditions.
+              Examines qualification evidence when controlled
+              test environments do not adequately represent
+              operational stressors and mission conditions.
             </p>
 
             <div class="record-tags">
-
               <span class="record-tag">Test Fidelity</span>
-
               <span class="record-tag">Qualification</span>
-
               <span class="record-tag">Evidence Integrity</span>
-
             </div>
 
             <div class="record-actions">
-
-              <a
-                href="https://www.linkedin.com/pulse/why-aerospace-qualification-evidence-can-fail-when-reality-figueroa-bwpke"
-                target="_blank"
-                rel="noopener noreferrer"
+              <a href="https://www.linkedin.com/pulse/why-aerospace-qualification-evidence-can-fail-when-reality-figueroa-bwpke"
                 class="lri-btn lri-btn-outline"
-              >
+                target="_blank" rel="noopener noreferrer">
                 Read on LinkedIn &rarr;
               </a>
-
             </div>
 
           </article>
 
-          <!-- EDITION 14 -->
+          <!-- 19 -->
 
-          <article
-            class="aqb-record"
-            data-date="2026-06-09"
-            data-year="2026"
-            data-topics="configuration evidence supplier"
-          >
+          <article class="aqb-record"
+            data-date="2026-06-09" data-year="2026"
+            data-topics="configuration evidence supplier">
 
             <div class="record-top">
-
-              <span class="record-category">
-                Configuration Management
-              </span>
-
-              <time class="record-date" datetime="2026-06-09">
-                June 9, 2026
-              </time>
-
+              <span class="record-category">Configuration Management</span>
+              <time class="record-date" datetime="2026-06-09">June 9, 2026</time>
             </div>
 
-            <h3>
-              When Approved Data No Longer Represents
-              the Product Being Built
-            </h3>
+            <h3>When Approved Data No Longer Represents the Product Being Built</h3>
 
             <p class="record-description">
               Examines how configuration drift separates
               approved engineering information from actual
-              manufacturing activities, supplier processes,
-              and inspection evidence.
+              manufacturing activities and inspection evidence.
             </p>
 
             <div class="record-tags">
-
               <span class="record-tag">Configuration Control</span>
-
               <span class="record-tag">Digital Thread</span>
-
               <span class="record-tag">Traceability</span>
-
             </div>
 
             <div class="record-actions">
-
-              <a
-                href="https://www.linkedin.com/pulse/when-approved-data-longer-represents-product-being-built-figueroa-pzn8e"
-                target="_blank"
-                rel="noopener noreferrer"
+              <a href="https://www.linkedin.com/pulse/when-approved-data-longer-represents-product-being-built-figueroa-pzn8e"
                 class="lri-btn lri-btn-outline"
-              >
+                target="_blank" rel="noopener noreferrer">
                 Read on LinkedIn &rarr;
               </a>
-
             </div>
 
           </article>
 
-          <!-- EDITION 15 -->
+          <!-- 20 -->
 
-          <article
-            class="aqb-record"
-            data-date="2026-05-26"
-            data-year="2026"
-            data-topics="supplier mission evidence"
-          >
+          <article class="aqb-record"
+            data-date="2026-05-26" data-year="2026"
+            data-topics="supplier mission evidence">
 
             <div class="record-top">
-
-              <span class="record-category">
-                Supplier Quality
-              </span>
-
-              <time class="record-date" datetime="2026-05-26">
-                May 26, 2026
-              </time>
-
+              <span class="record-category">Supplier Quality</span>
+              <time class="record-date" datetime="2026-05-26">May 26, 2026</time>
             </div>
 
-            <h3>
-              Why Sub-Tier Risk Hides Behind Approved Supplier Status
-            </h3>
+            <h3>Why Sub-Tier Risk Hides Behind Approved Supplier Status</h3>
 
             <p class="record-description">
-              Investigates the visibility and control gaps
-              that can emerge across lower-tier suppliers,
-              outsourced operations, and special processes
-              despite formal supplier approval.
+              Investigates visibility and control gaps
+              across lower-tier suppliers, outsourced
+              operations, and special processes.
             </p>
 
             <div class="record-tags">
-
               <span class="record-tag">Supply Chain Risk</span>
-
               <span class="record-tag">Supplier Oversight</span>
-
               <span class="record-tag">Flow-Down</span>
-
             </div>
 
             <div class="record-actions">
-
-              <a
-                href="https://www.linkedin.com/pulse/why-sub-tier-risk-hides-behind-approved-supplier-status-figueroa-ufvoe"
-                target="_blank"
-                rel="noopener noreferrer"
+              <a href="https://www.linkedin.com/pulse/why-sub-tier-risk-hides-behind-approved-supplier-status-figueroa-ufvoe"
                 class="lri-btn lri-btn-outline"
-              >
+                target="_blank" rel="noopener noreferrer">
                 Read on LinkedIn &rarr;
               </a>
-
             </div>
 
           </article>
 
-          <!-- EDITION 16 -->
+          <!-- 21: RECOVERED LEGACY ARTICLE -->
 
-          <article
-            class="aqb-record"
-            data-date="2026-01-20"
-            data-year="2026"
-            data-topics="supplier configuration verification"
-          >
+          <article class="aqb-record"
+            data-date="2026-04-30" data-year="2026"
+            data-topics="evidence decision mission">
 
             <div class="record-top">
-
-              <span class="record-category">
-                Supplier and Engineering Assurance
-              </span>
-
-              <time class="record-date" datetime="2026-01-20">
-                January 20, 2026
-              </time>
-
+              <span class="record-category">Compliance and Evidence Integrity</span>
+              <time class="record-date" datetime="2026-04-30">April 30, 2026</time>
             </div>
 
-            <h3>
-              How Technical Equivalence Becomes
-              Operational Non-Equivalence Over Time
-            </h3>
+            <h3>Why Compliance Persists After Credibility Disappears</h3>
+
+            <p class="record-description">
+              Examines the distinction between continuing
+              formal compliance and maintaining credible
+              evidence that supports engineering assurance.
+            </p>
+
+            <div class="record-tags">
+              <span class="record-tag">Compliance</span>
+              <span class="record-tag">Evidence Credibility</span>
+              <span class="record-tag">Assurance</span>
+            </div>
+
+            <div class="record-actions">
+              <a href="https://www.linkedin.com/pulse/why-compliance-persists-after-credibility-disappears-ralph-figueroa-skdse"
+                class="lri-btn lri-btn-outline"
+                target="_blank" rel="noopener noreferrer">
+                Read on LinkedIn &rarr;
+              </a>
+            </div>
+
+          </article>
+
+          <!-- 22: RECOVERED LEGACY ARTICLE -->
+
+          <article class="aqb-record"
+            data-date="2026-04-28" data-year="2026"
+            data-topics="mission configuration decision verification">
+
+            <div class="record-top">
+              <span class="record-category">Reliability and Systems Engineering</span>
+              <time class="record-date" datetime="2026-04-28">April 28, 2026</time>
+            </div>
+
+            <h3>Why Probability Models Struggle When Failure Behavior Comes from Timing, Logic, Updates, and Hidden State Interactions</h3>
+
+            <p class="record-description">
+              Explores reliability modeling challenges involving
+              timing dependencies, software logic, system updates,
+              and interacting operational states.
+            </p>
+
+            <div class="record-tags">
+              <span class="record-tag">Probability Models</span>
+              <span class="record-tag">System Interactions</span>
+              <span class="record-tag">Reliability</span>
+            </div>
+
+            <div class="record-actions">
+              <a href="https://www.linkedin.com/pulse/why-probability-models-struggle-when-failure-behavior-ralph-figueroa-jwr7e"
+                class="lri-btn lri-btn-outline"
+                target="_blank" rel="noopener noreferrer">
+                Read on LinkedIn &rarr;
+              </a>
+            </div>
+
+          </article>
+
+          <!-- 23: RECOVERED LEGACY ARTICLE -->
+
+          <article class="aqb-record"
+            data-date="2026-04-23" data-year="2026"
+            data-topics="capa decision mission evidence">
+
+            <div class="record-top">
+              <span class="record-category">Predictive Quality Management</span>
+              <time class="record-date" datetime="2026-04-23">April 23, 2026</time>
+            </div>
+
+            <h3>Why Leaders Should Track Drift, Delay, Backlog, and Rework Before the Nonconformance Arrives</h3>
+
+            <p class="record-description">
+              Examines leading operational indicators that
+              can help quality leaders recognize deteriorating
+              conditions before a nonconformance occurs.
+            </p>
+
+            <div class="record-tags">
+              <span class="record-tag">Leading Indicators</span>
+              <span class="record-tag">Process Drift</span>
+              <span class="record-tag">Predictive Quality</span>
+            </div>
+
+            <div class="record-actions">
+              <a href="https://www.linkedin.com/pulse/why-leaders-should-track-drift-delay-backlog-rework-before-figueroa-oshae"
+                class="lri-btn lri-btn-outline"
+                target="_blank" rel="noopener noreferrer">
+                Read on LinkedIn &rarr;
+              </a>
+            </div>
+
+          </article>
+
+          <!-- 24: RECOVERED LEGACY ARTICLE -->
+
+          <article class="aqb-record"
+            data-date="2026-04-14" data-year="2026"
+            data-topics="evidence configuration verification">
+
+            <div class="record-top">
+              <span class="record-category">Data and Evidence Integrity</span>
+              <time class="record-date" datetime="2026-04-14">April 14, 2026</time>
+            </div>
+
+            <h3>The Problem Is Not Missing Data. It Is Broken Data Structure.</h3>
+
+            <p class="record-description">
+              Examines the importance of data relationships,
+              structure, traceability, and context in making
+              engineering information useful for decisions.
+            </p>
+
+            <div class="record-tags">
+              <span class="record-tag">Data Structure</span>
+              <span class="record-tag">Evidence Integrity</span>
+              <span class="record-tag">Traceability</span>
+            </div>
+
+            <div class="record-actions">
+              <a href="https://www.linkedin.com/pulse/problem-missing-data-broken-structure-ralph-figueroa-hwb6e"
+                class="lri-btn lri-btn-outline"
+                target="_blank" rel="noopener noreferrer">
+                Read on LinkedIn &rarr;
+              </a>
+            </div>
+
+          </article>
+
+          <!-- 25: RECOVERED LEGACY ARTICLE -->
+
+          <article class="aqb-record"
+            data-date="2026-04-07" data-year="2026"
+            data-topics="decision mission evidence">
+
+            <div class="record-top">
+              <span class="record-category">Communication and Human Factors</span>
+              <time class="record-date" datetime="2026-04-07">April 7, 2026</time>
+            </div>
+
+            <h3>Why Delay, Blocked Calls, and Crowded Frequencies Push Pilots and Controllers into Assumption-Driven Decisions</h3>
+
+            <p class="record-description">
+              Examines communication constraints, delayed
+              information, and the assumptions that can
+              influence pilot and controller decisions.
+            </p>
+
+            <div class="record-tags">
+              <span class="record-tag">Communication Delay</span>
+              <span class="record-tag">Human Factors</span>
+              <span class="record-tag">Decision Assurance</span>
+            </div>
+
+            <div class="record-actions">
+              <a href="https://www.linkedin.com/pulse/why-delay-blocked-calls-crowded-frequencies-push-pilots-figueroa-wyilf"
+                class="lri-btn lri-btn-outline"
+                target="_blank" rel="noopener noreferrer">
+                Read on LinkedIn &rarr;
+              </a>
+            </div>
+
+          </article>
+
+          <!-- 26 -->
+
+          <article class="aqb-record"
+            data-date="2026-01-20" data-year="2026"
+            data-topics="supplier configuration verification">
+
+            <div class="record-top">
+              <span class="record-category">Supplier and Engineering Assurance</span>
+              <time class="record-date" datetime="2026-01-20">January 20, 2026</time>
+            </div>
+
+            <h3>How Technical Equivalence Becomes Operational Non-Equivalence Over Time</h3>
 
             <p class="record-description">
               Explores how technically compliant supplier
-              substitutions can introduce differences in
-              manufacturing behavior and operational
-              performance that emerge over time.
+              substitutions can introduce manufacturing and
+              operational differences that emerge over time.
             </p>
 
             <div class="record-tags">
-
               <span class="record-tag">Supplier Substitution</span>
-
               <span class="record-tag">Technical Equivalence</span>
-
               <span class="record-tag">Operational Risk</span>
-
             </div>
 
             <div class="record-actions">
-
-              <a
-                href="https://www.linkedin.com/pulse/how-technical-equivalence-becomes-operational-over-time-figueroa-a7f5e"
-                target="_blank"
-                rel="noopener noreferrer"
+              <a href="https://www.linkedin.com/pulse/how-technical-equivalence-becomes-operational-over-time-figueroa-a7f5e"
                 class="lri-btn lri-btn-outline"
-              >
+                target="_blank" rel="noopener noreferrer">
                 Read on LinkedIn &rarr;
               </a>
-
             </div>
 
           </article>
 
-          <!-- EDITION 17 -->
+          <!-- 27 -->
 
-          <article
-            class="aqb-record"
-            data-date=""
-            data-year="2025"
-            data-topics="evidence configuration capa"
-          >
+          <article class="aqb-record"
+            data-date="" data-year="2025"
+            data-topics="evidence configuration capa">
 
             <div class="record-top">
-
-              <span class="record-category">
-                Traceability and Process Control
-              </span>
-
+              <span class="record-category">Traceability and Process Control</span>
               <span class="record-date">2025</span>
-
             </div>
 
-            <h3>
-              When Traceability Slows Production
-              Instead of Protecting It
-            </h3>
+            <h3>When Traceability Slows Production Instead of Protecting It</h3>
 
             <p class="record-description">
-              An early AQB article examining the relationship
-              between traceability requirements, production
-              efficiency, and effective quality control.
+              Examines the relationship between traceability
+              requirements, production efficiency,
+              and effective quality control.
             </p>
 
             <div class="record-tags">
-
               <span class="record-tag">Traceability</span>
-
               <span class="record-tag">Production Efficiency</span>
-
             </div>
 
             <div class="record-actions">
-
-              <a
-                href="https://www.linkedin.com/newsletters/7402028860193796097/"
-                target="_blank"
-                rel="noopener noreferrer"
+              <a href="https://www.linkedin.com/newsletters/7402028860193796097/"
                 class="lri-btn lri-btn-outline"
-              >
+                target="_blank" rel="noopener noreferrer">
                 Browse LinkedIn Editions &rarr;
               </a>
 
               <p class="record-note">
                 Individual article link not yet indexed.
               </p>
-
             </div>
 
           </article>
 
-          <!-- EDITION 18 -->
+          <!-- 28 -->
 
-          <article
-            class="aqb-record"
-            data-date=""
-            data-year="2025"
-            data-topics="evidence configuration verification"
-          >
+          <article class="aqb-record"
+            data-date="" data-year="2025"
+            data-topics="evidence configuration verification">
 
             <div class="record-top">
-
-              <span class="record-category">
-                Aerospace Case Studies
-              </span>
-
+              <span class="record-category">Aerospace Case Studies</span>
               <span class="record-date">2025</span>
-
             </div>
 
-            <h3>
-              Three Case Studies: Traceability and
-              Documentation Failures in Aerospace
-            </h3>
+            <h3>Three Case Studies: Traceability and Documentation Failures in Aerospace</h3>
 
             <p class="record-description">
               An early AQB case-study article addressing
               traceability, documentation failures,
-              and their consequences for aerospace
-              quality assurance.
+              and aerospace quality assurance.
             </p>
 
             <div class="record-tags">
-
               <span class="record-tag">Case Studies</span>
-
               <span class="record-tag">Documentation</span>
-
               <span class="record-tag">Traceability</span>
-
             </div>
 
             <div class="record-actions">
-
-              <a
-                href="https://www.linkedin.com/newsletters/7402028860193796097/"
-                target="_blank"
-                rel="noopener noreferrer"
+              <a href="https://www.linkedin.com/newsletters/7402028860193796097/"
                 class="lri-btn lri-btn-outline"
-              >
+                target="_blank" rel="noopener noreferrer">
                 Browse LinkedIn Editions &rarr;
               </a>
 
               <p class="record-note">
                 Individual article link not yet indexed.
               </p>
-
             </div>
 
           </article>
 
         </div>
 
-        <!-- ========================================
-             EMPTY SEARCH RESULTS
-        ======================================== -->
+        <!-- END OF ARCHIVE RECORDS -->
 
         <div class="empty-results" id="empty-results" hidden>
 
@@ -2365,31 +2231,35 @@
             or editorial topic.
           </p>
 
-          <button type="button" id="empty-reset">
+          <button type="button" id="empty-reset" class="reset-button">
             Clear Search and Filters
           </button>
 
         </div>
 
-        <!-- ========================================
-             ARCHIVE INFORMATION
-        ======================================== -->
+        <noscript>
+          <p>
+            Enable JavaScript to use archive search,
+            filtering, and sorting. All indexed editions
+            remain available above.
+          </p>
+        </noscript>
+
+        <!-- ARCHIVE INFORMATION -->
 
         <aside class="archive-information">
 
           <h3>About This Archive</h3>
 
           <p>
-            This collection indexes Aerospace Quality Brief
-            articles and editorial updates available through
-            LRI's records and publicly accessible LinkedIn
-            publication pages.
+            This collection consolidates known Aerospace
+            Quality Brief articles and editorial updates
+            from LRI's newsletter records.
           </p>
 
           <p>
-            For additional editions and the latest articles,
-            visit the original Aerospace Quality Brief
-            newsletter on LinkedIn.
+            For additional editions and the newest publications,
+            visit the original newsletter on LinkedIn.
           </p>
 
           <a
@@ -2398,7 +2268,7 @@
             rel="noopener noreferrer"
             class="text-link"
           >
-            Visit the Complete LinkedIn Newsletter &rarr;
+            Visit Aerospace Quality Brief on LinkedIn &rarr;
           </a>
 
         </aside>
@@ -2407,19 +2277,13 @@
 
     </section>
 
-    <!-- ========================================
-         SUBSCRIPTION
-    ======================================== -->
+    <!-- SUBSCRIPTION -->
 
     <section class="aqb-subscribe">
 
-      <span class="eyebrow">
-        Stay Connected
-      </span>
+      <span class="eyebrow">Stay Connected</span>
 
-      <h2>
-        Advance Your Engineering Perspective
-      </h2>
+      <h2>Advance Your Engineering Perspective</h2>
 
       <p>
         Subscribe to Aerospace Quality Brief for focused
@@ -2452,9 +2316,7 @@
 
   </main>
 
-  <!-- ========================================
-       FOOTER
-  ======================================== -->
+  <!-- FOOTER -->
 
   <footer class="site-footer">
 
@@ -2474,10 +2336,7 @@
               loading="lazy"
             >
 
-            <strong>
-              Lunar Research<br>
-              Initiative
-            </strong>
+            <strong>Lunar Research<br>Initiative</strong>
 
           </div>
 
@@ -2494,11 +2353,8 @@
           <h3>Organization</h3>
 
           <a href="/about/">About LRI</a>
-
           <a href="/research/">Research</a>
-
           <a href="/initiatives/">Initiatives</a>
-
           <a href="/partnerships/">Partnerships</a>
 
         </div>
@@ -2508,11 +2364,8 @@
           <h3>Scientific Resources</h3>
 
           <a href="/publications/">Publications</a>
-
           <a href="/standards/">Standards</a>
-
           <a href="/books/">Books</a>
-
           <a href="/cite/">Cite This Site</a>
 
         </div>
@@ -2522,7 +2375,6 @@
           <h3>Connect</h3>
 
           <a href="/contact/">Contact LRI</a>
-
           <a href="/newsletter/">Aerospace Quality Brief</a>
 
           <a
@@ -2564,24 +2416,20 @@
 
     /* MOBILE NAVIGATION */
 
-    const menuToggle =
-      document.getElementById("menu-toggle");
+    const menuToggle = document.getElementById("menu-toggle");
+    const navigation = document.getElementById("main-navigation");
+    const dropdowns = document.querySelectorAll(".nav-dropdown");
 
-    const navigation =
-      document.getElementById("main-navigation");
-
-    const dropdowns =
-      document.querySelectorAll(".nav-dropdown");
+    function closeMobileMenu() {
+      navigation.classList.remove("is-open");
+      menuToggle.setAttribute("aria-expanded", "false");
+    }
 
     menuToggle.addEventListener("click", function () {
 
-      const isOpen =
-        navigation.classList.toggle("is-open");
+      const isOpen = navigation.classList.toggle("is-open");
 
-      menuToggle.setAttribute(
-        "aria-expanded",
-        String(isOpen)
-      );
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
 
     });
 
@@ -2591,10 +2439,10 @@
 
         if (dropdown.open) {
 
-          dropdowns.forEach(function (otherDropdown) {
+          dropdowns.forEach(function (other) {
 
-            if (otherDropdown !== dropdown) {
-              otherDropdown.open = false;
+            if (other !== dropdown) {
+              other.open = false;
             }
 
           });
@@ -2615,36 +2463,31 @@
 
       });
 
+      if (
+        !navigation.contains(event.target) &&
+        !menuToggle.contains(event.target)
+      ) {
+        closeMobileMenu();
+      }
+
     });
 
     document.addEventListener("keydown", function (event) {
 
-      if (event.key === "Escape") {
+      if (event.key !== "Escape") return;
 
-        dropdowns.forEach(function (dropdown) {
+      const openDropdown = Array.from(dropdowns)
+        .find(dropdown => dropdown.open);
 
-          if (dropdown.open) {
+      if (openDropdown) {
 
-            dropdown.open = false;
+        openDropdown.open = false;
+        openDropdown.querySelector("summary").focus();
 
-            dropdown.querySelector("summary").focus();
+      } else if (navigation.classList.contains("is-open")) {
 
-          }
-
-        });
-
-        if (navigation.classList.contains("is-open")) {
-
-          navigation.classList.remove("is-open");
-
-          menuToggle.setAttribute(
-            "aria-expanded",
-            "false"
-          );
-
-          menuToggle.focus();
-
-        }
+        closeMobileMenu();
+        menuToggle.focus();
 
       }
 
@@ -2653,53 +2496,29 @@
     window.addEventListener("resize", function () {
 
       if (window.innerWidth > 900) {
-
-        navigation.classList.remove("is-open");
-
-        menuToggle.setAttribute(
-          "aria-expanded",
-          "false"
-        );
-
+        closeMobileMenu();
       }
 
     });
 
+    /* ARCHIVE CONTROLS */
 
-    /* ========================================
-       ARCHIVE SEARCH AND FILTERING
-    ======================================== */
+    const archiveSearch = document.getElementById("archive-search");
+    const archiveYear = document.getElementById("archive-year");
+    const archiveSort = document.getElementById("archive-sort");
+    const editionList = document.getElementById("edition-list");
 
-    const archiveSearch =
-      document.getElementById("archive-search");
+    const archiveRecords = Array.from(
+      document.querySelectorAll(".aqb-record")
+    );
 
-    const archiveYear =
-      document.getElementById("archive-year");
-
-    const archiveSort =
-      document.getElementById("archive-sort");
-
-    const editionList =
-      document.getElementById("edition-list");
-
-    const archiveRecords =
-      Array.from(
-        document.querySelectorAll(".aqb-record")
-      );
-
-    const topicFilters =
-      document.querySelectorAll(".topic-filter");
-
-    const resultsCount =
-      document.getElementById("results-count");
-
-    const emptyResults =
-      document.getElementById("empty-results");
+    const topicFilters = document.querySelectorAll(".topic-filter");
+    const resultsCount = document.getElementById("results-count");
+    const emptyResults = document.getElementById("empty-results");
 
     let activeTopic = "all";
 
-
-    /* UPDATE YEAR OPTIONS AUTOMATICALLY */
+    /* AUTOMATIC PUBLICATION YEAR OPTIONS */
 
     function updateYearOptions() {
 
@@ -2710,10 +2529,8 @@
       archiveYear.replaceChildren();
 
       const allYears = document.createElement("option");
-
       allYears.value = "all";
       allYears.textContent = "All Years";
-
       archiveYear.appendChild(allYears);
 
       years.forEach(function (year) {
@@ -2729,8 +2546,7 @@
 
     }
 
-
-    /* APPLY SEARCH AND FILTERS */
+    /* SEARCH AND FILTERING */
 
     function applyFilters() {
 
@@ -2747,12 +2563,11 @@
       archiveRecords.forEach(function (record) {
 
         const text =
-          record.textContent.toLowerCase()
-          + " "
-          + record.dataset.topics.toLowerCase();
+          record.textContent.toLowerCase() +
+          " " +
+          record.dataset.topics.toLowerCase();
 
-        const topics =
-          record.dataset.topics.split(/\s+/);
+        const topics = record.dataset.topics.split(/\s+/);
 
         const matchesTopic =
           activeTopic === "all" ||
@@ -2779,81 +2594,49 @@
       });
 
       resultsCount.textContent =
-        visibleCount +
-        " of " +
-        archiveRecords.length +
-        " archive records";
+        visibleCount + " of " +
+        archiveRecords.length + " archive records";
 
-      emptyResults.hidden =
-        visibleCount !== 0;
+      emptyResults.hidden = visibleCount !== 0;
 
     }
 
-
-    /* SORT ARCHIVE RECORDS */
+    /* DATE AND TITLE SORTING */
 
     function getDateValue(record) {
 
       if (record.dataset.date) {
-
         return Date.parse(record.dataset.date);
-
       }
 
       if (record.dataset.year) {
-
-        return Date.parse(
-          record.dataset.year + "-01-01"
-        );
-
+        return Date.parse(record.dataset.year + "-01-01");
       }
 
-      return null;
+      return 0;
 
     }
-
 
     function sortRecords() {
 
       const sortType = archiveSort.value;
 
-      const sortedRecords =
-        [...archiveRecords];
+      const sortedRecords = [...archiveRecords];
 
       sortedRecords.sort(function (a, b) {
 
-        const titleA =
-          a.querySelector("h3").textContent.trim();
-
-        const titleB =
-          b.querySelector("h3").textContent.trim();
+        const titleA = a.querySelector("h3").textContent.trim();
+        const titleB = b.querySelector("h3").textContent.trim();
 
         if (sortType === "title") {
-
           return titleA.localeCompare(titleB);
-
         }
 
         const dateA = getDateValue(a);
-
         const dateB = getDateValue(b);
 
-        const validA =
-          dateA !== null && !Number.isNaN(dateA);
-
-        const validB =
-          dateB !== null && !Number.isNaN(dateB);
-
-        if (!validA && !validB) {
+        if (dateA === dateB) {
           return titleA.localeCompare(titleB);
-        }
-
-        if (!validA) {
-          return 1;
-        }
-
-        if (!validB) {
-          return -1;
         }
 
         return sortType === "oldest"
@@ -2863,17 +2646,28 @@
       });
 
       sortedRecords.forEach(function (record) {
-
         editionList.appendChild(record);
-
       });
 
       applyFilters();
 
     }
 
-
     /* TOPIC FILTER BUTTONS */
+
+    function updateTopicButtons() {
+
+      topicFilters.forEach(function (button) {
+
+        const isActive =
+          button.dataset.filter === activeTopic;
+
+        button.classList.toggle("active", isActive);
+        button.setAttribute("aria-pressed", String(isActive));
+
+      });
+
+    }
 
     topicFilters.forEach(function (button) {
 
@@ -2881,103 +2675,45 @@
 
         activeTopic = button.dataset.filter;
 
-        topicFilters.forEach(function (item) {
-
-          const isActive =
-            item.dataset.filter === activeTopic;
-
-          item.classList.toggle(
-            "active",
-            isActive
-          );
-
-          item.setAttribute(
-            "aria-pressed",
-            String(isActive)
-          );
-
-        });
-
+        updateTopicButtons();
         applyFilters();
 
       });
 
     });
 
-
-    /* SEARCH AND SELECT EVENTS */
-
-    archiveSearch.addEventListener(
-      "input",
-      applyFilters
-    );
-
-    archiveYear.addEventListener(
-      "change",
-      applyFilters
-    );
-
-    archiveSort.addEventListener(
-      "change",
-      sortRecords
-    );
-
-
     /* RESET ALL FILTERS */
 
     function resetFilters() {
 
       archiveSearch.value = "";
-
       archiveYear.value = "all";
-
       archiveSort.value = "newest";
-
       activeTopic = "all";
 
-      topicFilters.forEach(function (button) {
-
-        const isActive =
-          button.dataset.filter === "all";
-
-        button.classList.toggle(
-          "active",
-          isActive
-        );
-
-        button.setAttribute(
-          "aria-pressed",
-          String(isActive)
-        );
-
-      });
-
+      updateTopicButtons();
       sortRecords();
 
       archiveSearch.focus();
 
     }
 
+    /* EVENT HANDLERS */
+
+    archiveSearch.addEventListener("input", applyFilters);
+    archiveYear.addEventListener("change", applyFilters);
+    archiveSort.addEventListener("change", sortRecords);
 
     document.getElementById("reset-filters")
-      .addEventListener(
-        "click",
-        resetFilters
-      );
-
+      .addEventListener("click", resetFilters);
 
     document.getElementById("empty-reset")
-      .addEventListener(
-        "click",
-        resetFilters
-      );
-
+      .addEventListener("click", resetFilters);
 
     /* AUTOMATIC COPYRIGHT YEAR */
 
     document.getElementById("copyright-year").textContent =
       new Date().getFullYear();
-
 
     /* INITIALIZE ARCHIVE */
 
@@ -2986,11 +2722,8 @@
 
     updateYearOptions();
 
-    document.getElementById("archive-toolbar").hidden =
-      false;
-
-    document.getElementById("reset-filters").hidden =
-      false;
+    document.getElementById("archive-toolbar").hidden = false;
+    document.getElementById("reset-filters").hidden = false;
 
     sortRecords();
 
