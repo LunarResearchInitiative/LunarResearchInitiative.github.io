@@ -1,76 +1,2008 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
-  <title>Standards – Lunar Research Initiative</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Standards and Frameworks | Lunar Research Initiative</title>
+
+  <meta name="description" content="Explore the Lunar Research Initiative approach to aerospace standards, quality management systems, mission assurance, verification, risk management, and lunar engineering frameworks.">
+
+  <meta name="author" content="Lunar Research Initiative">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0b1420">
+
+  <link rel="canonical" href="https://lunarresearchinitiative.github.io/standards/">
+
   <link rel="stylesheet" href="/assets/css/style.css">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Standards and Frameworks | Lunar Research Initiative">
+  <meta property="og:description" content="Connecting established engineering standards with emerging lunar operational requirements.">
+  <meta property="og:url" content="https://lunarresearchinitiative.github.io/standards/">
+  <meta property="og:image" content="https://lunarresearchinitiative.github.io/assets/img/lunar-hero.jpg">
+
+  <style>
+
+    /* ========================================
+       PAGE LAYOUT
+    ======================================== */
+
+    main {
+      max-width: none;
+      padding: 0;
+    }
+
+    .standards-container {
+      width: min(100% - 64px, 1320px);
+      margin: 0 auto;
+    }
+
+    /* ========================================
+       HEADER AND NAVIGATION
+    ======================================== */
+
+    .site-header {
+      padding: 0;
+    }
+
+    .header-inner {
+      min-height: 96px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .site-header .brand {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 0;
+      color: var(--lri-white);
+      text-decoration: none;
+    }
+
+    .brand-logo {
+      width: 66px;
+      height: 66px;
+    }
+
+    .brand-name {
+      font-size: 1.04rem;
+      font-weight: 700;
+      line-height: 1.35;
+      letter-spacing: 0.065em;
+      text-transform: uppercase;
+    }
+
+    .brand-subtitle {
+      display: block;
+      color: var(--lri-muted);
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.025em;
+      text-transform: none;
+      margin-top: 5px;
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .main-nav > a,
+    .nav-dropdown > summary {
+      color: var(--lri-white);
+      font-size: 0.92rem;
+      font-weight: 500;
+      padding: 14px 0;
+      white-space: nowrap;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .main-nav > a:hover,
+    .nav-dropdown > summary:hover {
+      color: var(--lri-gold);
+    }
+
+    .main-nav > a[aria-current="page"],
+    .nav-dropdown.active > summary {
+      color: var(--lri-gold);
+    }
+
+    .nav-dropdown {
+      position: relative;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      background: transparent;
+    }
+
+    .nav-dropdown summary {
+      list-style: none;
+      border: 0 !important;
+    }
+
+    .nav-dropdown summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .nav-dropdown summary::after {
+      content: " \25BE";
+      font-size: 0.75rem;
+      color: var(--lri-gold);
+    }
+
+    .nav-dropdown.active > summary {
+      border-bottom: 2px solid var(--lri-gold) !important;
+    }
+
+    .nav-dropdown > .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      min-width: 230px;
+      margin: 0;
+      padding: 10px;
+      background: var(--lri-navy-light);
+      border: 1px solid var(--lri-border);
+      border-radius: 5px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+      z-index: 100;
+    }
+
+    .dropdown-menu a {
+      display: block;
+      color: var(--lri-white);
+      padding: 12px 14px;
+      font-size: 0.92rem;
+      text-decoration: none;
+    }
+
+    .dropdown-menu a:hover,
+    .dropdown-menu a[aria-current="page"] {
+      background: rgba(221, 187, 122, 0.08);
+      color: var(--lri-gold);
+    }
+
+    .menu-toggle {
+      display: none;
+      color: var(--lri-gold);
+      background: transparent;
+      border: 1px solid var(--lri-border);
+    }
+
+    /* ========================================
+       CINEMATIC HERO
+    ======================================== */
+
+    .standards-hero {
+      min-height: 420px;
+      display: flex;
+      align-items: center;
+      background-color: var(--lri-navy-dark);
+
+      background-image:
+        linear-gradient(
+          90deg,
+          rgba(8, 13, 20, 0.98),
+          rgba(8, 13, 20, 0.82),
+          rgba(8, 13, 20, 0.30)
+        ),
+        url("/assets/img/lunar-hero.jpg");
+
+      background-size: cover;
+      background-position: center;
+      border-bottom: 1px solid var(--lri-border);
+    }
+
+    .standards-hero-content {
+      padding: 75px 0;
+    }
+
+    .standards-hero h1 {
+      max-width: 850px;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      line-height: 1.12;
+      margin-bottom: 24px;
+    }
+
+    .standards-hero p {
+      max-width: 720px;
+      color: #d5dde7;
+      font-size: 1.18rem;
+      line-height: 1.8;
+      margin-bottom: 0;
+    }
+
+    /* ========================================
+       SECTION DESIGN
+    ======================================== */
+
+    .standards-section {
+      padding: 75px 0;
+    }
+
+    .standards-section-alt {
+      background: var(--lri-navy-light);
+      border-top: 1px solid var(--lri-border);
+      border-bottom: 1px solid var(--lri-border);
+    }
+
+    .section-heading {
+      max-width: 850px;
+      margin-bottom: 35px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(1.9rem, 3vw, 2.7rem);
+      margin-bottom: 16px;
+    }
+
+    .section-heading p {
+      color: var(--lri-muted);
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+
+    /* ========================================
+       INSTITUTIONAL OVERVIEW
+    ======================================== */
+
+    .overview-layout {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 65px;
+      align-items: start;
+    }
+
+    .overview-heading {
+      border-left: 3px solid var(--lri-gold);
+      padding-left: 25px;
+    }
+
+    .overview-heading h2 {
+      margin-bottom: 0;
+      font-size: clamp(1.9rem, 3vw, 2.6rem);
+    }
+
+    .overview-copy p {
+      color: #d2dce7;
+      font-size: 1.08rem;
+      line-height: 1.85;
+    }
+
+    .overview-copy p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ========================================
+       STANDARDS REFERENCE CARDS
+    ======================================== */
+
+    .standards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .standard-card {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      padding: 28px;
+
+      background:
+        linear-gradient(
+          145deg,
+          #172638,
+          #101b29
+        );
+
+      border: 1px solid var(--lri-border);
+      border-radius: 6px;
+      transition: border-color 0.2s ease;
+    }
+
+    .standard-card:hover {
+      border-color: var(--lri-gold);
+    }
+
+    .standard-icon {
+      width: 42px;
+      height: 42px;
+      color: var(--lri-gold);
+      margin-bottom: 22px;
+    }
+
+    .standard-icon svg {
+      width: 100%;
+      height: 100%;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .standard-category {
+      display: block;
+      color: var(--lri-gold);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .standard-card h3 {
+      font-size: 1.3rem;
+      line-height: 1.35;
+      margin-bottom: 14px;
+    }
+
+    .standard-card p {
+      color: var(--lri-muted);
+      font-size: 0.95rem;
+      line-height: 1.8;
+      margin-bottom: 22px;
+    }
+
+    .standard-card .text-link {
+      margin-top: auto;
+      font-size: 0.9rem;
+    }
+
+    /* ========================================
+       FRAMEWORK APPLICATION TABLE
+    ======================================== */
+
+    .crosswalk-table {
+      width: 100%;
+      overflow-x: auto;
+      border: 1px solid var(--lri-border);
+      border-radius: 6px;
+    }
+
+    .crosswalk-table table {
+      width: 100%;
+      min-width: 720px;
+      margin: 0;
+      border-collapse: collapse;
+    }
+
+    .crosswalk-table th {
+      padding: 18px 22px;
+      background: #172638;
+      color: var(--lri-gold);
+      font-size: 0.88rem;
+      font-weight: 600;
+      text-align: left;
+    }
+
+    .crosswalk-table td {
+      padding: 18px 22px;
+      color: var(--lri-muted);
+      font-size: 0.93rem;
+      line-height: 1.7;
+      vertical-align: top;
+    }
+
+    .crosswalk-table td:first-child {
+      color: var(--lri-white);
+      font-weight: 600;
+      width: 24%;
+    }
+
+    .table-note {
+      margin-top: 18px;
+      color: var(--lri-muted);
+      font-size: 0.85rem;
+      line-height: 1.75;
+    }
+
+    /* ========================================
+       LRI RESEARCH FRAMEWORKS
+    ======================================== */
+
+    .framework-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 26px;
+    }
+
+    .framework-card {
+      display: flex;
+      flex-direction: column;
+      padding: 32px;
+      background: var(--lri-navy);
+      border: 1px solid var(--lri-border);
+      border-radius: 6px;
+    }
+
+    .framework-card h3 {
+      font-size: 1.35rem;
+      line-height: 1.4;
+      margin-bottom: 16px;
+    }
+
+    .framework-card p {
+      color: var(--lri-muted);
+      font-size: 0.97rem;
+      line-height: 1.8;
+      margin-bottom: 22px;
+    }
+
+    .framework-label {
+      display: block;
+      color: var(--lri-gold);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    .framework-card .text-link {
+      margin-top: auto;
+    }
+
+    /* ========================================
+       TECHNICAL DEVELOPMENT
+    ======================================== */
+
+    .development-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 30px;
+    }
+
+    .development-item {
+      padding-top: 22px;
+      border-top: 2px solid var(--lri-gold);
+    }
+
+    .development-number {
+      display: block;
+      color: var(--lri-gold);
+      font-size: 0.82rem;
+      letter-spacing: 0.12em;
+      margin-bottom: 16px;
+    }
+
+    .development-item h3 {
+      font-size: 1.18rem;
+      margin-bottom: 12px;
+    }
+
+    .development-item p {
+      color: var(--lri-muted);
+      font-size: 0.95rem;
+      line-height: 1.8;
+      margin-bottom: 0;
+    }
+
+    /* ========================================
+       INSTITUTIONAL INDEPENDENCE
+    ======================================== */
+
+    .standards-notice {
+      background: var(--lri-navy-dark);
+      border-left: 3px solid var(--lri-gold);
+      border-radius: 0 6px 6px 0;
+      padding: 28px 32px;
+    }
+
+    .standards-notice h3 {
+      color: var(--lri-gold);
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+    }
+
+    .standards-notice p {
+      color: var(--lri-muted);
+      font-size: 0.94rem;
+      line-height: 1.8;
+      margin-bottom: 0;
+    }
+
+    /* ========================================
+       COLLABORATION
+    ======================================== */
+
+    .standards-collaboration {
+      padding: 85px 24px;
+      text-align: center;
+      background-color: var(--lri-navy-light);
+
+      background-image:
+        linear-gradient(
+          rgba(11, 20, 32, 0.92),
+          rgba(11, 20, 32, 0.68)
+        ),
+        url("/assets/img/lunar-landscape.jpg");
+
+      background-size: cover;
+      background-position: center 65%;
+      border-top: 1px solid var(--lri-border);
+    }
+
+    .standards-collaboration h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 20px;
+    }
+
+    .standards-collaboration p {
+      max-width: 720px;
+      margin: 0 auto 28px;
+      color: #d5dde7;
+      font-size: 1.08rem;
+      line-height: 1.8;
+    }
+
+    /* ========================================
+       FOOTER
+    ======================================== */
+
+    .site-footer {
+      padding: 50px 0 25px;
+      text-align: left;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.8fr 1fr 1fr 1fr;
+      gap: 35px;
+      padding-bottom: 35px;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .footer-brand img {
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+    }
+
+    .footer-brand strong {
+      color: var(--lri-white);
+      font-size: 0.92rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      line-height: 1.4;
+    }
+
+    .footer-description {
+      max-width: 340px;
+      color: var(--lri-muted);
+      font-size: 0.88rem;
+    }
+
+    .footer-column h3 {
+      color: var(--lri-gold);
+      font-size: 0.95rem;
+      margin-bottom: 18px;
+    }
+
+    .footer-column a {
+      display: block;
+      color: var(--lri-muted);
+      margin-bottom: 10px;
+      font-size: 0.88rem;
+    }
+
+    .footer-column a:hover {
+      color: var(--lri-gold);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      padding-top: 24px;
+      border-top: 1px solid var(--lri-border);
+      color: var(--lri-muted);
+      font-size: 0.8rem;
+    }
+
+    /* ========================================
+       RESPONSIVE DESIGN
+    ======================================== */
+
+    @media (max-width: 1100px) {
+
+      .main-nav {
+        gap: 17px;
+      }
+
+      .brand-subtitle {
+        display: none;
+      }
+
+      .standards-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+    }
+
+    @media (max-width: 900px) {
+
+      .standards-container {
+        width: calc(100% - 48px);
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .main-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        padding: 24px;
+        background: var(--lri-navy-dark);
+        border-bottom: 1px solid var(--lri-border);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        max-height: 80vh;
+        overflow-y: auto;
+      }
+
+      .main-nav.is-open {
+        display: flex;
+      }
+
+      .main-nav > a,
+      .nav-dropdown > summary {
+        display: block;
+        padding: 14px 0;
+      }
+
+      .nav-dropdown > .dropdown-menu {
+        position: static;
+        box-shadow: none;
+      }
+
+      .overview-layout {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .development-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+    }
+
+    @media (max-width: 650px) {
+
+      .standards-container {
+        width: calc(100% - 36px);
+      }
+
+      .header-inner {
+        min-height: 82px;
+        gap: 12px;
+      }
+
+      .brand-logo {
+        width: 48px;
+        height: 48px;
+      }
+
+      .brand-name {
+        font-size: 0.8rem;
+      }
+
+      .site-header .brand {
+        gap: 10px;
+      }
+
+      .standards-hero {
+        min-height: 380px;
+
+        background-image:
+          linear-gradient(
+            rgba(8, 13, 20, 0.78),
+            rgba(8, 13, 20, 0.88)
+          ),
+          url("/assets/img/lunar-hero.jpg");
+
+        background-size: cover;
+        background-position: center;
+      }
+
+      .standards-hero h1 {
+        font-size: 2.35rem;
+      }
+
+      .standards-hero p {
+        font-size: 1.05rem;
+      }
+
+      .standards-section {
+        padding: 50px 0;
+      }
+
+      .standards-grid,
+      .framework-grid,
+      .development-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .standard-card,
+      .framework-card,
+      .standards-notice {
+        padding: 24px;
+      }
+
+      .standards-collaboration {
+        padding: 65px 18px;
+      }
+
+      .footer-about {
+        grid-column: 1 / -1;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+    }
+
+    @media print {
+
+      .standards-hero,
+      .standards-section-alt,
+      .standard-card,
+      .framework-card,
+      .standards-notice,
+      .standards-collaboration {
+        background: #ffffff !important;
+        color: #111111 !important;
+        border-color: #cccccc !important;
+      }
+
+      .crosswalk-table table {
+        min-width: 0;
+      }
+
+    }
+
+  </style>
+
 </head>
+
 <body>
 
-<header class="lri-topbar">
-  <div class="lri-topbar-inner">
-    <div class="lri-topbar-left">
-      <img src="/assets/img/LRI LOGO.jpeg" alt="Lunar Research Initiative seal" class="lri-seal">
+  <a class="skip-link" href="#main-content">
+    Skip to main content
+  </a>
+
+  <!-- ========================================
+       HEADER
+  ======================================== -->
+
+  <header class="site-header">
+
+    <div class="standards-container header-inner">
+
+      <a class="brand" href="/" aria-label="Lunar Research Initiative home">
+
+        <img
+          class="brand-logo"
+          src="/assets/img/LRI%20LOGO.jpeg"
+          alt="Lunar Research Initiative emblem"
+          width="66"
+          height="66"
+        >
+
+        <div class="brand-name">
+
+          Lunar Research<br>
+          Initiative
+
+          <span class="brand-subtitle">
+            Lunar Quality and Decision Assurance
+          </span>
+
+        </div>
+
+      </a>
+
+      <button
+        class="menu-toggle"
+        id="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="main-navigation"
+      >
+        &#9776; Menu
+      </button>
+
+      <nav
+        class="main-nav"
+        id="main-navigation"
+        aria-label="Primary navigation"
+      >
+
+        <a href="/">Home</a>
+
+        <a href="/about/">About</a>
+
+        <details class="nav-dropdown">
+
+          <summary>Research</summary>
+
+          <div class="dropdown-menu">
+
+            <a href="/research/">Research Overview</a>
+
+            <a href="/initiatives/">Research Initiatives</a>
+
+          </div>
+
+        </details>
+
+        <a href="/publications/">Publications</a>
+
+        <details class="nav-dropdown active">
+
+          <summary>Resources</summary>
+
+          <div class="dropdown-menu">
+
+            <a href="/standards/" aria-current="page">
+              Standards
+            </a>
+
+            <a href="/books/">Books</a>
+
+            <a href="/newsletter/">Aerospace Quality Brief</a>
+
+            <a href="/newsletter/archive/">Newsletter Archive</a>
+
+            <a href="/cite/">Cite This Site</a>
+
+          </div>
+
+        </details>
+
+        <details class="nav-dropdown">
+
+          <summary>Collaborate</summary>
+
+          <div class="dropdown-menu">
+
+            <a href="/partnerships/">Partnerships</a>
+
+            <a href="/contact/">Contact LRI</a>
+
+          </div>
+
+        </details>
+
+      </nav>
+
     </div>
-  <nav class="lri-topnav">
-  <a href="/">Home</a>
-  <a href="/about/">About</a>
-  <a href="/research/">Research</a>
-  <a href="/initiatives/">Initiatives</a>
-  <a href="/standards/">Standards</a>
-  <a href="/publications/">Publications</a>
-  <a href="/newsletter/">Newsletter</a>
-  <a href="/partnerships/">Partnerships</a>
-  <a href="/contact/">Contact</a>
-</nav>
 
+  </header>
 
-  </div>
-</header>
+  <main id="main-content">
 
-<main>
-  <section class="lri-section">
-    <div class="lri-section-inner">
-      <h1 class="lri-section-title">Standards and Frameworks</h1>
-      <p class="lri-section-text">
-        LRI does not replace existing standards. Instead, it builds bridges between lunar operations and
-        frameworks like NASA mission assurance rules, ISO 9001, ISO 13485, AS9100, and reliability standards.
+    <!-- ========================================
+         HERO
+    ======================================== -->
+
+    <section
+      class="standards-hero"
+      aria-labelledby="standards-title"
+    >
+
+      <div class="standards-container standards-hero-content">
+
+        <span class="eyebrow">
+          Engineering Standards and Technical Foundations
+        </span>
+
+        <h1 id="standards-title">
+          Standards and Frameworks for Operations Beyond Earth
+        </h1>
+
+        <p>
+          Connecting established engineering principles,
+          quality management standards, and mission assurance
+          practices with the emerging requirements of
+          lunar and autonomous aerospace operations.
+        </p>
+
+      </div>
+
+    </section>
+
+    <!-- ========================================
+         STANDARDS PHILOSOPHY
+    ======================================== -->
+
+    <section
+      class="standards-section"
+      aria-labelledby="overview-title"
+    >
+
+      <div class="standards-container overview-layout">
+
+        <div class="overview-heading">
+
+          <span class="eyebrow">
+            Technical Foundations
+          </span>
+
+          <h2 id="overview-title">
+            Our Approach to Standards
+          </h2>
+
+        </div>
+
+        <div class="overview-copy">
+
+          <p>
+            Established aerospace, quality management,
+            systems engineering, and reliability standards
+            provide essential foundations for the design,
+            verification, qualification, and operation
+            of complex engineering systems.
+          </p>
+
+          <p>
+            Lunar Research Initiative examines how these
+            foundations can inform engineering methods
+            for environments characterized by communication
+            delay, limited intervention, constrained
+            verification, environmental uncertainty,
+            and evolving operational conditions.
+          </p>
+
+          <p>
+            LRI does not seek to replace existing standards.
+            Its research investigates how established
+            engineering practices can inform scientifically
+            defensible approaches to emerging lunar
+            operational challenges.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ========================================
+         EXTERNAL STANDARDS REFERENCES
+    ======================================== -->
+
+    <section
+      class="standards-section standards-section-alt"
+      aria-labelledby="references-title"
+    >
+
+      <div class="standards-container">
+
+        <div class="section-heading">
+
+          <span class="eyebrow">
+            Established Technical References
+          </span>
+
+          <h2 id="references-title">
+            Standards and Engineering Reference Families
+          </h2>
+
+          <p>
+            LRI draws on established engineering disciplines
+            and technical references when investigating
+            quality, verification, reliability, risk,
+            and mission assurance.
+          </p>
+
+        </div>
+
+        <div class="standards-grid">
+
+          <!-- NASA -->
+
+          <article class="standard-card">
+
+            <div class="standard-icon" aria-hidden="true">
+
+              <svg viewBox="0 0 48 48">
+
+                <circle cx="24" cy="24" r="17"/>
+
+                <ellipse
+                  cx="24"
+                  cy="24"
+                  rx="23"
+                  ry="9"
+                  transform="rotate(-35 24 24)"
+                />
+
+                <circle cx="34" cy="9" r="3"/>
+
+              </svg>
+
+            </div>
+
+            <span class="standard-category">
+              Spaceflight Engineering
+            </span>
+
+            <h3>NASA Technical Standards</h3>
+
+            <p>
+              Technical standards and engineering resources
+              relevant to system safety, mission assurance,
+              systems engineering, verification,
+              risk management, and spaceflight operations.
+            </p>
+
+            <a
+              href="https://standards.nasa.gov/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-link"
+            >
+              NASA Technical Standards &rarr;
+            </a>
+
+          </article>
+
+          <!-- ISO 9001 -->
+
+          <article class="standard-card">
+
+            <div class="standard-icon" aria-hidden="true">
+
+              <svg viewBox="0 0 48 48">
+
+                <path d="M24 4 41 11v12c0 10-7 17-17 21C14 40 7 33 7 23V11Z"/>
+
+                <path d="m16 24 6 6 11-13"/>
+
+              </svg>
+
+            </div>
+
+            <span class="standard-category">
+              Quality Management
+            </span>
+
+            <h3>ISO 9001</h3>
+
+            <p>
+              Quality management system requirements that
+              address organizational processes, risk-based
+              thinking, performance evaluation,
+              and continual improvement.
+            </p>
+
+            <a
+              href="https://www.iso.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-link"
+            >
+              International Organization for Standardization &rarr;
+            </a>
+
+          </article>
+
+          <!-- AS9100 -->
+
+          <article class="standard-card">
+
+            <div class="standard-icon" aria-hidden="true">
+
+              <svg viewBox="0 0 48 48">
+
+                <path d="M24 5v38"/>
+
+                <path d="m24 15-18 11v5l18-5 18 5v-5Z"/>
+
+                <path d="m24 35-9 5v3l9-2 9 2v-3Z"/>
+
+              </svg>
+
+            </div>
+
+            <span class="standard-category">
+              Aerospace Quality Management
+            </span>
+
+            <h3>AS9100 Series</h3>
+
+            <p>
+              Aerospace quality management requirements
+              relevant to product safety, configuration
+              management, operational risk, supplier
+              controls, and engineering process assurance.
+            </p>
+
+            <a
+              href="https://iaqg.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-link"
+            >
+              International Aerospace Quality Group &rarr;
+            </a>
+
+          </article>
+
+          <!-- ECSS -->
+
+          <article class="standard-card">
+
+            <div class="standard-icon" aria-hidden="true">
+
+              <svg viewBox="0 0 48 48">
+
+                <rect x="17" y="17" width="14" height="14" rx="2"/>
+
+                <path d="M17 24H4v-9h13"/>
+
+                <path d="M31 24h13v9H31"/>
+
+                <path d="M24 17V6"/>
+
+                <path d="M24 31v11"/>
+
+                <circle cx="24" cy="6" r="2"/>
+
+              </svg>
+
+            </div>
+
+            <span class="standard-category">
+              Space Product Assurance
+            </span>
+
+            <h3>ECSS Standards</h3>
+
+            <p>
+              Space engineering, project management,
+              product assurance, dependability, safety,
+              and verification references supporting
+              the development of space systems.
+            </p>
+
+            <a
+              href="https://ecss.nl/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-link"
+            >
+              European Cooperation for Space Standardization &rarr;
+            </a>
+
+          </article>
+
+          <!-- ISO 13485 -->
+
+          <article class="standard-card">
+
+            <div class="standard-icon" aria-hidden="true">
+
+              <svg viewBox="0 0 48 48">
+
+                <rect x="8" y="8" width="32" height="32" rx="5"/>
+
+                <path d="M24 14v20"/>
+
+                <path d="M14 24h20"/>
+
+              </svg>
+
+            </div>
+
+            <span class="standard-category">
+              Cross-Industry Engineering Reference
+            </span>
+
+            <h3>ISO 13485</h3>
+
+            <p>
+              Medical device quality management requirements
+              that provide comparative engineering insights
+              into process validation, documented controls,
+              traceability, and regulated manufacturing.
+            </p>
+
+            <a
+              href="https://www.iso.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-link"
+            >
+              ISO Standards Catalogue &rarr;
+            </a>
+
+          </article>
+
+          <!-- RELIABILITY -->
+
+          <article class="standard-card">
+
+            <div class="standard-icon" aria-hidden="true">
+
+              <svg viewBox="0 0 48 48">
+
+                <path d="M7 7v34h34"/>
+
+                <path d="m10 33 9-13 8 7 13-17"/>
+
+                <circle cx="19" cy="20" r="2"/>
+
+                <circle cx="27" cy="27" r="2"/>
+
+              </svg>
+
+            </div>
+
+            <span class="standard-category">
+              Reliability and Risk
+            </span>
+
+            <h3>Reliability and Risk Management</h3>
+
+            <p>
+              Engineering methods and technical references
+              for failure analysis, hazard identification,
+              reliability assessment, dependability,
+              and risk-informed decision-making.
+            </p>
+
+            <a
+              href="https://www.iec.ch/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-link"
+            >
+              International Electrotechnical Commission &rarr;
+            </a>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ========================================
+         CONCEPTUAL APPLICATION MATRIX
+    ======================================== -->
+
+    <section
+      class="standards-section"
+      aria-labelledby="crosswalk-title"
+    >
+
+      <div class="standards-container">
+
+        <div class="section-heading">
+
+          <span class="eyebrow">
+            Research Application
+          </span>
+
+          <h2 id="crosswalk-title">
+            Connecting Standards With Lunar Engineering
+          </h2>
+
+          <p>
+            The following conceptual matrix illustrates
+            how established engineering disciplines
+            can inform LRI research questions.
+          </p>
+
+        </div>
+
+        <div
+          class="crosswalk-table"
+          role="region"
+          aria-label="Conceptual standards application matrix"
+          tabindex="0"
+        >
+
+          <table>
+
+            <thead>
+
+              <tr>
+
+                <th scope="col">Engineering Domain</th>
+
+                <th scope="col">Reference Foundations</th>
+
+                <th scope="col">Lunar Research Application</th>
+
+              </tr>
+
+            </thead>
+
+            <tbody>
+
+              <tr>
+
+                <td>Quality Management</td>
+
+                <td>
+                  ISO 9001 and AS9100
+                </td>
+
+                <td>
+                  Integrated quality architectures,
+                  operational controls, process capability,
+                  and engineering accountability.
+                </td>
+
+              </tr>
+
+              <tr>
+
+                <td>Mission Assurance</td>
+
+                <td>
+                  NASA technical standards and ECSS
+                  product assurance references
+                </td>
+
+                <td>
+                  Assurance boundaries, system reliability,
+                  operational risk, and mission-specific
+                  engineering evidence.
+                </td>
+
+              </tr>
+
+              <tr>
+
+                <td>Verification</td>
+
+                <td>
+                  NASA and ECSS systems engineering
+                  and verification references
+                </td>
+
+                <td>
+                  Requirements traceability,
+                  CTQ-to-verification planning,
+                  evidence validity, and qualification claims.
+                </td>
+
+              </tr>
+
+              <tr>
+
+                <td>Evidence Integrity</td>
+
+                <td>
+                  Quality management, configuration
+                  management, and verification practices
+                </td>
+
+                <td>
+                  Evidence provenance, traceability,
+                  temporal relevance, and admissibility
+                  for engineering decisions.
+                </td>
+
+              </tr>
+
+              <tr>
+
+                <td>Risk and Reliability</td>
+
+                <td>
+                  ISO, IEC, NASA, and ECSS risk
+                  and dependability references
+                </td>
+
+                <td>
+                  Evolving hazards, constrained intervention,
+                  communication delay, and operational
+                  decision boundaries.
+                </td>
+
+              </tr>
+
+              <tr>
+
+                <td>Manufacturing Qualification</td>
+
+                <td>
+                  Aerospace quality management and
+                  process validation practices
+                </td>
+
+                <td>
+                  Regolith manufacturing,
+                  process capability, testbed fidelity,
+                  and supporting qualification evidence.
+                </td>
+
+              </tr>
+
+              <tr>
+
+                <td>Supervisory Autonomy</td>
+
+                <td>
+                  Systems engineering, human factors,
+                  and system safety practices
+                </td>
+
+                <td>
+                  Decision authority, delayed supervision,
+                  autonomous continuation,
+                  and escalation boundaries.
+                </td>
+
+              </tr>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+        <p class="table-note">
+
+          This matrix provides a conceptual research overview.
+          It does not constitute a clause-level standards
+          crosswalk, compliance determination, or demonstration
+          of conformity with any particular standard.
+
+        </p>
+
+      </div>
+
+    </section>
+
+    <!-- ========================================
+         LRI FRAMEWORKS
+    ======================================== -->
+
+    <section
+      class="standards-section standards-section-alt"
+      aria-labelledby="frameworks-title"
+    >
+
+      <div class="standards-container">
+
+        <div class="section-heading">
+
+          <span class="eyebrow">
+            LRI Scientific Contributions
+          </span>
+
+          <h2 id="frameworks-title">
+            Research Frameworks and Engineering Methods
+          </h2>
+
+          <p>
+            LRI investigates research-based frameworks
+            that connect established engineering practices
+            with specific challenges of lunar operations.
+          </p>
+
+        </div>
+
+        <div class="framework-grid">
+
+          <article class="framework-card">
+
+            <span class="framework-label">
+              Quality Architecture
+            </span>
+
+            <h3>
+              Unified Lunar Quality Framework (ULQF)
+            </h3>
+
+            <p>
+              A research framework connecting quality
+              requirements, verification, evidence integrity,
+              operational timing, and decision authority
+              within lunar operational environments.
+            </p>
+
+            <a href="/research/#quality-systems" class="text-link">
+              Explore Related Research &rarr;
+            </a>
+
+          </article>
+
+          <article class="framework-card">
+
+            <span class="framework-label">
+              Risk Management Development
+            </span>
+
+            <h3>
+              Lunar Risk Management System (LRMS)
+            </h3>
+
+            <p>
+              A research initiative investigating structured
+              relationships among mission hazards,
+              quality controls, engineering evidence,
+              and operational constraints.
+            </p>
+
+            <a href="/initiatives/#lrms" class="text-link">
+              Explore the Initiative &rarr;
+            </a>
+
+          </article>
+
+          <article class="framework-card">
+
+            <span class="framework-label">
+              Evidence and Verification
+            </span>
+
+            <h3>
+              Verification and Evidence Integrity Methods
+            </h3>
+
+            <p>
+              Research approaches addressing evidence
+              traceability, temporal admissibility,
+              verification planning, and defensible
+              engineering qualification claims.
+            </p>
+
+            <a href="/research/#evidence-verification" class="text-link">
+              Explore Related Research &rarr;
+            </a>
+
+          </article>
+
+          <article class="framework-card">
+
+            <span class="framework-label">
+              Decision Science
+            </span>
+
+            <h3>
+              Decision Quality and Supervisory Authority
+            </h3>
+
+            <p>
+              Analytical methods and technical resources
+              investigating decision freshness,
+              communication delay, evidence relevance,
+              and supervisory authority boundaries.
+            </p>
+
+            <a href="/research/#autonomy-decision-assurance" class="text-link">
+              Explore Related Research &rarr;
+            </a>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ========================================
+         TECHNICAL RESOURCE DEVELOPMENT
+    ======================================== -->
+
+    <section
+      class="standards-section"
+      aria-labelledby="development-title"
+    >
+
+      <div class="standards-container">
+
+        <div class="section-heading">
+
+          <span class="eyebrow">
+            Technical Resource Development
+          </span>
+
+          <h2 id="development-title">
+            From Standards to Engineering Applications
+          </h2>
+
+        </div>
+
+        <div class="development-grid">
+
+          <article class="development-item">
+
+            <span class="development-number">01</span>
+
+            <h3>Standards Crosswalks</h3>
+
+            <p>
+              Investigate relationships between existing
+              technical requirements and emerging
+              lunar quality, verification,
+              and mission assurance research.
+            </p>
+
+          </article>
+
+          <article class="development-item">
+
+            <span class="development-number">02</span>
+
+            <h3>Quality Architecture Patterns</h3>
+
+            <p>
+              Develop conceptual engineering patterns
+              connecting requirements, risk, verification,
+              evidence, and decision authority.
+            </p>
+
+          </article>
+
+          <article class="development-item">
+
+            <span class="development-number">03</span>
+
+            <h3>Open Technical References</h3>
+
+            <p>
+              Share research findings, technical guides,
+              reference models, and practical engineering
+              concepts through accessible publications
+              and scientific resources.
+            </p>
+
+          </article>
+
+        </div>
+
+        <div
+          class="lri-cta-row"
+          style="justify-content: flex-start; margin-top: 35px;"
+        >
+
+          <a href="/publications/" class="lri-btn lri-btn-primary">
+            Explore Scientific Publications &rarr;
+          </a>
+
+          <a href="/initiatives/" class="lri-btn lri-btn-outline">
+            View Research Initiatives
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ========================================
+         INDEPENDENCE STATEMENT
+    ======================================== -->
+
+    <section class="standards-section standards-section-alt">
+
+      <div class="standards-container">
+
+        <aside class="standards-notice">
+
+          <h3>
+            Standards Authority and Institutional Independence
+          </h3>
+
+          <p>
+            Lunar Research Initiative operates independently
+            of standards development, certification,
+            regulatory, and approval authorities.
+            LRI research frameworks and technical resources
+            do not constitute formal standards, certification
+            requirements, or regulatory approvals.
+            Users should consult the applicable official
+            standards, contractual requirements, and
+            mission-specific qualification procedures
+            before making engineering compliance decisions.
+          </p>
+
+        </aside>
+
+      </div>
+
+    </section>
+
+    <!-- ========================================
+         COLLABORATION
+    ======================================== -->
+
+    <section
+      class="standards-collaboration"
+      aria-labelledby="collaboration-title"
+    >
+
+      <span class="eyebrow">
+        Scientific and Technical Collaboration
+      </span>
+
+      <h2 id="collaboration-title">
+        Strengthening the Engineering Foundations of Lunar Exploration
+      </h2>
+
+      <p>
+        LRI welcomes collaboration with researchers,
+        engineering professionals, academic institutions,
+        and organizations interested in advancing
+        quality, verification, reliability, and
+        mission assurance for operations beyond Earth.
       </p>
-     <p class="lri-section-text" style="max-width: 900px; margin-top: 24px;">
 
-  LRI research and technical frameworks are developed with explicit reference to
-  established aerospace and quality standards, including ISO 9001, AS9100,
-  ECSS product assurance standards, and NASA system safety and risk management practices.
-  The intent is not to redefine standards, but to extend their practical application
-  to autonomous, communication-delayed, and extreme-environment operations such as
-  lunar surface manufacturing.
-</p>
+      <div class="button-row">
+
+        <a href="/partnerships/" class="lri-btn lri-btn-primary">
+          Explore Partnerships &rarr;
+        </a>
+
+        <a href="/contact/" class="lri-btn lri-btn-outline">
+          Contact the Initiative
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ========================================
+       FOOTER
+  ======================================== -->
+
+  <footer class="site-footer">
+
+    <div class="standards-container">
+
+      <div class="footer-grid">
+
+        <div class="footer-about">
+
+          <div class="footer-brand">
+
+            <img
+              src="/assets/img/LRI%20LOGO.jpeg"
+              alt=""
+              width="55"
+              height="55"
+              loading="lazy"
+            >
+
+            <strong>
+              Lunar Research<br>
+              Initiative
+            </strong>
+
+          </div>
+
+          <p class="footer-description">
+            Advancing scientific research and engineering
+            methods for quality, reliability, and decision
+            assurance beyond Earth.
+          </p>
+
+        </div>
+
+        <div class="footer-column">
+
+          <h3>Organization</h3>
+
+          <a href="/about/">About LRI</a>
+
+          <a href="/research/">Research</a>
+
+          <a href="/initiatives/">Initiatives</a>
+
+          <a href="/partnerships/">Partnerships</a>
+
+        </div>
+
+        <div class="footer-column">
+
+          <h3>Scientific Resources</h3>
+
+          <a href="/publications/">Publications</a>
+
+          <a href="/standards/">Standards</a>
+
+          <a href="/books/">Books</a>
+
+          <a href="/cite/">Cite This Site</a>
+
+        </div>
+
+        <div class="footer-column">
+
+          <h3>Connect</h3>
+
+          <a href="/contact/">Contact LRI</a>
+
+          <a href="/newsletter/">Aerospace Quality Brief</a>
+
+          <a
+            href="https://www.linkedin.com/newsletters/7402028860193796097/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Subscribe on LinkedIn
+          </a>
+
+          <a href="/newsletter/archive/">Newsletter Archive</a>
+
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+
+        <p>
+          &copy; <span id="copyright-year">2026</span>
+          Lunar Research Initiative. All rights reserved.
+        </p>
+
+        <p>
+          Lunar Quality &middot; Verification &middot; Decision Assurance
+        </p>
+
+      </div>
 
     </div>
-  </section>
 
-  <section class="lri-section">
-    <div class="lri-section-inner lri-card-grid">
-      <article class="lri-card">
-        <h3>Crosswalks</h3>
-        <p>Mapping ULQF and LRMS concepts to NASA, ISO, and AS standards used in aerospace and medtech programs.</p>
-      </article>
-      <article class="lri-card">
-        <h3>Quality Architecture Patterns</h3>
-        <p>Reusable patterns that show how to combine requirements, risk, and verification for lunar factories.</p>
-      </article>
-      <article class="lri-card">
-        <h3>Open References</h3>
-        <p>Publishing checklists and reference models that agencies, universities, and companies can adapt.</p>
-      </article>
-    </div>
-  </section>
-</main>
+  </footer>
 
-<footer class="lri-footer">
-  <p>© 2025 Lunar Research Initiative. All rights reserved.</p>
-</footer>
+  <!-- ========================================
+       NAVIGATION SCRIPT
+  ======================================== -->
+
+  <script>
+
+    const menuToggle =
+      document.getElementById("menu-toggle");
+
+    const navigation =
+      document.getElementById("main-navigation");
+
+    const dropdowns =
+      document.querySelectorAll(".nav-dropdown");
+
+    menuToggle.addEventListener("click", function () {
+
+      const isOpen =
+        navigation.classList.toggle("is-open");
+
+      menuToggle.setAttribute(
+        "aria-expanded",
+        String(isOpen)
+      );
+
+    });
+
+    dropdowns.forEach(function (dropdown) {
+
+      dropdown.addEventListener("toggle", function () {
+
+        if (dropdown.open) {
+
+          dropdowns.forEach(function (otherDropdown) {
+
+            if (otherDropdown !== dropdown) {
+
+              otherDropdown.open = false;
+
+            }
+
+          });
+
+        }
+
+      });
+
+    });
+
+    document.addEventListener("click", function (event) {
+
+      dropdowns.forEach(function (dropdown) {
+
+        if (!dropdown.contains(event.target)) {
+
+          dropdown.open = false;
+
+        }
+
+      });
+
+    });
+
+    document.addEventListener("keydown", function (event) {
+
+      if (event.key === "Escape") {
+
+        dropdowns.forEach(function (dropdown) {
+
+          if (dropdown.open) {
+
+            dropdown.open = false;
+
+            dropdown.querySelector("summary").focus();
+
+          }
+
+        });
+
+        if (navigation.classList.contains("is-open")) {
+
+          navigation.classList.remove("is-open");
+
+          menuToggle.setAttribute(
+            "aria-expanded",
+            "false"
+          );
+
+          menuToggle.focus();
+
+        }
+
+      }
+
+    });
+
+    window.addEventListener("resize", function () {
+
+      if (window.innerWidth > 900) {
+
+        navigation.classList.remove("is-open");
+
+        menuToggle.setAttribute(
+          "aria-expanded",
+          "false"
+        );
+
+      }
+
+    });
+
+    document.getElementById("copyright-year").textContent =
+      new Date().getFullYear();
+
+  </script>
 
 </body>
+
 </html>
