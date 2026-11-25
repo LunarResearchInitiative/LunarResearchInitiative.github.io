@@ -1,65 +1,2023 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
-  <title>Partnerships – Lunar Research Initiative</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Partnerships | Lunar Research Initiative</title>
+
+  <meta name="description" content="Explore scientific research partnerships, academic collaboration, engineering development, and institutional engagement opportunities with the Lunar Research Initiative.">
+
+  <meta name="author" content="Lunar Research Initiative">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0b1420">
+
+  <link rel="canonical" href="https://lunarresearchinitiative.github.io/partnerships/">
+
   <link rel="stylesheet" href="/assets/css/style.css">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Partnerships | Lunar Research Initiative">
+  <meta property="og:description" content="Advancing lunar science, engineering, verification, quality, and mission assurance through interdisciplinary research collaboration.">
+  <meta property="og:url" content="https://lunarresearchinitiative.github.io/partnerships/">
+  <meta property="og:image" content="https://lunarresearchinitiative.github.io/assets/img/lunar-hero.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+
+  <style>
+
+    /* ========================================
+       PAGE LAYOUT
+    ======================================== */
+
+    main {
+      max-width: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .partnership-container {
+      width: min(100% - 64px, 1320px);
+      margin: 0 auto;
+    }
+
+    /* ========================================
+       HEADER AND NAVIGATION
+    ======================================== */
+
+    .site-header {
+      padding: 0;
+    }
+
+    .header-inner {
+      min-height: 96px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .site-header .brand {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 0;
+      color: var(--lri-white);
+      text-decoration: none;
+    }
+
+    .brand-logo {
+      width: 66px;
+      height: 66px;
+    }
+
+    .brand-name {
+      font-size: 1.04rem;
+      font-weight: 700;
+      line-height: 1.35;
+      letter-spacing: 0.065em;
+      text-transform: uppercase;
+    }
+
+    .brand-subtitle {
+      display: block;
+      color: var(--lri-muted);
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.025em;
+      text-transform: none;
+      margin-top: 5px;
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .main-nav > a,
+    .nav-dropdown > summary {
+      color: var(--lri-white);
+      font-size: 0.92rem;
+      font-weight: 500;
+      padding: 14px 0;
+      white-space: nowrap;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .main-nav > a:hover,
+    .nav-dropdown > summary:hover {
+      color: var(--lri-gold);
+    }
+
+    .nav-dropdown {
+      position: relative;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      background: transparent;
+    }
+
+    .nav-dropdown summary {
+      list-style: none;
+      border: 0 !important;
+    }
+
+    .nav-dropdown summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .nav-dropdown summary::after {
+      content: " \25BE";
+      font-size: 0.75rem;
+      color: var(--lri-gold);
+    }
+
+    .nav-dropdown.active > summary {
+      color: var(--lri-gold);
+      border-bottom: 2px solid var(--lri-gold) !important;
+    }
+
+    .nav-dropdown > .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      min-width: 230px;
+      margin: 0;
+      padding: 10px;
+      background: var(--lri-navy-light);
+      border: 1px solid var(--lri-border);
+      border-radius: 5px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+      z-index: 100;
+    }
+
+    .dropdown-menu a {
+      display: block;
+      color: var(--lri-white);
+      padding: 12px 14px;
+      font-size: 0.92rem;
+      text-decoration: none;
+    }
+
+    .dropdown-menu a:hover,
+    .dropdown-menu a[aria-current="page"] {
+      background: rgba(221,187,122,0.08);
+      color: var(--lri-gold);
+    }
+
+    .menu-toggle {
+      display: none;
+      color: var(--lri-gold);
+      background: transparent;
+      border: 1px solid var(--lri-border);
+    }
+
+    /* ========================================
+       CINEMATIC HERO
+    ======================================== */
+
+    .partnership-hero {
+      min-height: 440px;
+      display: flex;
+      align-items: center;
+      background-color: var(--lri-navy-dark);
+
+      background-image:
+        linear-gradient(
+          90deg,
+          rgba(8,13,20,0.98),
+          rgba(8,13,20,0.80),
+          rgba(8,13,20,0.28)
+        ),
+        url("/assets/img/lunar-hero.jpg");
+
+      background-size: cover;
+      background-position: center;
+      border-bottom: 1px solid var(--lri-border);
+    }
+
+    .partnership-hero-content {
+      padding: 75px 0;
+    }
+
+    .partnership-hero h1 {
+      max-width: 850px;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      line-height: 1.12;
+      margin-bottom: 24px;
+    }
+
+    .partnership-hero p {
+      max-width: 740px;
+      color: #d5dde7;
+      font-size: 1.18rem;
+      line-height: 1.8;
+      margin-bottom: 28px;
+    }
+
+    .partnership-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 14px;
+    }
+
+    /* ========================================
+       SECTION DESIGN
+    ======================================== */
+
+    .partnership-section {
+      padding: 70px 0;
+    }
+
+    .partnership-section-alt {
+      background: var(--lri-navy-light);
+      border-top: 1px solid var(--lri-border);
+      border-bottom: 1px solid var(--lri-border);
+    }
+
+    .section-heading {
+      max-width: 850px;
+      margin-bottom: 38px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(1.9rem, 3vw, 2.7rem);
+      margin-bottom: 16px;
+    }
+
+    .section-heading p {
+      color: var(--lri-muted);
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+
+    /* ========================================
+       COLLABORATION PHILOSOPHY
+    ======================================== */
+
+    .overview-layout {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 65px;
+      align-items: start;
+    }
+
+    .overview-heading {
+      border-left: 3px solid var(--lri-gold);
+      padding-left: 25px;
+    }
+
+    .overview-heading h2 {
+      margin-bottom: 0;
+      font-size: clamp(1.9rem, 3vw, 2.6rem);
+    }
+
+    .overview-copy p {
+      color: #d2dce7;
+      font-size: 1.08rem;
+      line-height: 1.85;
+    }
+
+    .overview-copy p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ========================================
+       COLLABORATION OPPORTUNITIES
+    ======================================== */
+
+    .partner-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 26px;
+    }
+
+    .partner-card {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      padding: 32px;
+      background: linear-gradient(145deg, #172638, #101b29);
+      border: 1px solid var(--lri-border);
+      border-radius: 6px;
+      transition: border-color 0.2s ease;
+    }
+
+    .partner-card:hover {
+      border-color: var(--lri-gold);
+    }
+
+    .partner-icon {
+      width: 48px;
+      height: 48px;
+      color: var(--lri-gold);
+      margin-bottom: 22px;
+    }
+
+    .partner-icon svg {
+      width: 100%;
+      height: 100%;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .partner-category {
+      display: block;
+      color: var(--lri-gold);
+      font-size: 0.73rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 12px;
+    }
+
+    .partner-card h3 {
+      font-size: 1.45rem;
+      line-height: 1.4;
+      margin-bottom: 15px;
+    }
+
+    .partner-card p {
+      color: var(--lri-muted);
+      font-size: 0.97rem;
+      line-height: 1.8;
+      margin-bottom: 22px;
+    }
+
+    .partner-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .partner-list li {
+      position: relative;
+      padding: 9px 0 9px 19px;
+      margin: 0;
+      color: #d2dce7;
+      font-size: 0.94rem;
+      border-bottom: 1px solid rgba(170,184,200,0.12);
+    }
+
+    .partner-list li::before {
+      content: "";
+      position: absolute;
+      top: 17px;
+      left: 0;
+      width: 5px;
+      height: 5px;
+      background: var(--lri-gold);
+      border-radius: 50%;
+    }
+
+    .partner-list li:last-child {
+      border-bottom: 0;
+    }
+
+    /* ========================================
+       RESEARCH COLLABORATION AREAS
+    ======================================== */
+
+    .collaboration-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 30px;
+    }
+
+    .collaboration-area {
+      padding-top: 22px;
+      border-top: 2px solid var(--lri-gold);
+    }
+
+    .area-number {
+      display: block;
+      color: var(--lri-gold);
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      margin-bottom: 15px;
+    }
+
+    .collaboration-area h3 {
+      font-size: 1.2rem;
+      line-height: 1.4;
+      margin-bottom: 13px;
+    }
+
+    .collaboration-area p {
+      color: var(--lri-muted);
+      font-size: 0.95rem;
+      line-height: 1.8;
+      margin-bottom: 14px;
+    }
+
+    .collaboration-area a {
+      font-size: 0.88rem;
+    }
+
+    /* ========================================
+       LRI CONTRIBUTIONS
+    ======================================== */
+
+    .contribution-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .contribution-card {
+      padding: 26px;
+      background: var(--lri-navy);
+      border: 1px solid var(--lri-border);
+      border-radius: 6px;
+    }
+
+    .contribution-card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 12px;
+    }
+
+    .contribution-card p {
+      color: var(--lri-muted);
+      font-size: 0.94rem;
+      line-height: 1.8;
+      margin-bottom: 0;
+    }
+
+    /* ========================================
+       COLLABORATION PROCESS
+    ======================================== */
+
+    .engagement-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 25px;
+    }
+
+    .engagement-step {
+      padding-top: 22px;
+      border-top: 2px solid var(--lri-gold);
+    }
+
+    .step-number {
+      display: block;
+      color: var(--lri-gold);
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin-bottom: 15px;
+      line-height: 1;
+    }
+
+    .engagement-step h3 {
+      font-size: 1.15rem;
+      margin-bottom: 12px;
+    }
+
+    .engagement-step p {
+      color: var(--lri-muted);
+      font-size: 0.94rem;
+      line-height: 1.8;
+      margin-bottom: 0;
+    }
+
+    /* ========================================
+       INSTITUTIONAL PRINCIPLES
+    ======================================== */
+
+    .principles-panel {
+      padding: 32px;
+      background: var(--lri-navy-dark);
+      border: 1px solid var(--lri-border);
+      border-left: 3px solid var(--lri-gold);
+      border-radius: 0 6px 6px 0;
+    }
+
+    .principles-panel h3 {
+      color: var(--lri-gold);
+      font-size: 1.25rem;
+      margin-bottom: 18px;
+    }
+
+    .principles-panel p {
+      color: var(--lri-muted);
+      font-size: 0.96rem;
+      line-height: 1.8;
+      margin-bottom: 18px;
+    }
+
+    .principles-panel p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ========================================
+       PARTNERSHIP CALL TO ACTION
+    ======================================== */
+
+    .partnership-contact {
+      padding: 85px 24px;
+      text-align: center;
+      background-color: var(--lri-navy-dark);
+
+      background-image:
+        linear-gradient(
+          rgba(11,20,32,0.94),
+          rgba(11,20,32,0.68)
+        ),
+        url("/assets/img/lunar-landscape.jpg");
+
+      background-size: cover;
+      background-position: center 65%;
+      border-top: 1px solid var(--lri-border);
+    }
+
+    .partnership-contact h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 20px;
+    }
+
+    .partnership-contact p {
+      max-width: 760px;
+      margin: 0 auto 28px;
+      color: #d5dde7;
+      font-size: 1.08rem;
+      line-height: 1.8;
+    }
+
+    /* ========================================
+       FOOTER
+    ======================================== */
+
+    .site-footer {
+      padding: 50px 0 25px;
+      text-align: left;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.8fr 1fr 1fr 1fr;
+      gap: 35px;
+      padding-bottom: 35px;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .footer-brand img {
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+    }
+
+    .footer-brand strong {
+      color: var(--lri-white);
+      font-size: 0.92rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      line-height: 1.4;
+    }
+
+    .footer-description {
+      max-width: 340px;
+      color: var(--lri-muted);
+      font-size: 0.88rem;
+    }
+
+    .footer-column h3 {
+      color: var(--lri-gold);
+      font-size: 0.95rem;
+      margin-bottom: 18px;
+    }
+
+    .footer-column a {
+      display: block;
+      color: var(--lri-muted);
+      margin-bottom: 10px;
+      font-size: 0.88rem;
+    }
+
+    .footer-column a:hover {
+      color: var(--lri-gold);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      padding-top: 24px;
+      border-top: 1px solid var(--lri-border);
+      color: var(--lri-muted);
+      font-size: 0.8rem;
+    }
+
+    /* ========================================
+       RESPONSIVE DESIGN
+    ======================================== */
+
+    @media (max-width: 1100px) {
+
+      .main-nav {
+        gap: 17px;
+      }
+
+      .brand-subtitle {
+        display: none;
+      }
+
+      .engagement-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+    }
+
+    @media (max-width: 900px) {
+
+      .partnership-container {
+        width: calc(100% - 48px);
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .main-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        padding: 24px;
+        background: var(--lri-navy-dark);
+        border-bottom: 1px solid var(--lri-border);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        max-height: 80vh;
+        overflow-y: auto;
+      }
+
+      .main-nav.is-open {
+        display: flex;
+      }
+
+      .main-nav > a,
+      .nav-dropdown > summary {
+        display: block;
+        padding: 14px 0;
+      }
+
+      .nav-dropdown > .dropdown-menu {
+        position: static;
+        box-shadow: none;
+      }
+
+      .overview-layout {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .collaboration-grid,
+      .contribution-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+    }
+
+    @media (max-width: 650px) {
+
+      .partnership-container {
+        width: calc(100% - 36px);
+      }
+
+      .header-inner {
+        min-height: 82px;
+        gap: 12px;
+      }
+
+      .brand-logo {
+        width: 48px;
+        height: 48px;
+      }
+
+      .brand-name {
+        font-size: 0.8rem;
+      }
+
+      .site-header .brand {
+        gap: 10px;
+      }
+
+      .partnership-hero {
+        min-height: 400px;
+
+        background-image:
+          linear-gradient(
+            rgba(8,13,20,0.78),
+            rgba(8,13,20,0.88)
+          ),
+          url("/assets/img/lunar-hero.jpg");
+      }
+
+      .partnership-hero-content {
+        padding: 50px 0;
+      }
+
+      .partnership-hero h1 {
+        font-size: 2.35rem;
+      }
+
+      .partnership-hero p {
+        font-size: 1.05rem;
+      }
+
+      .partnership-section {
+        padding: 48px 0;
+      }
+
+      .partner-grid,
+      .collaboration-grid,
+      .contribution-grid,
+      .engagement-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .partner-card,
+      .contribution-card,
+      .principles-panel {
+        padding: 24px;
+      }
+
+      .partnership-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .partnership-contact {
+        padding: 65px 18px;
+      }
+
+      .footer-about {
+        grid-column: 1 / -1;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+    }
+
+    @media print {
+
+      .partnership-hero,
+      .partnership-section-alt,
+      .partner-card,
+      .contribution-card,
+      .principles-panel {
+        background: #ffffff !important;
+        border-color: #cccccc !important;
+      }
+
+      main * {
+        color: #111111 !important;
+      }
+
+      .partnership-actions,
+      .partnership-contact {
+        display: none !important;
+      }
+
+      .partner-card,
+      .contribution-card {
+        break-inside: avoid;
+      }
+
+    }
+
+  </style>
+
 </head>
+
 <body>
 
-<header class="lri-topbar">
-  <div class="lri-topbar-inner">
-    <div class="lri-topbar-left">
-      <img src="/assets/img/LRI LOGO.jpeg" alt="Lunar Research Initiative seal" class="lri-seal">
+  <a class="skip-link" href="#main-content">
+    Skip to main content
+  </a>
+
+  <!-- ========================================
+       HEADER
+  ======================================== -->
+
+  <header class="site-header">
+
+    <div class="partnership-container header-inner">
+
+      <a class="brand" href="/" aria-label="Lunar Research Initiative home">
+
+        <img
+          class="brand-logo"
+          src="/assets/img/LRI%20LOGO.jpeg"
+          alt="Lunar Research Initiative emblem"
+          width="66"
+          height="66"
+        >
+
+        <div class="brand-name">
+
+          Lunar Research<br>
+          Initiative
+
+          <span class="brand-subtitle">
+            Lunar Quality and Decision Assurance
+          </span>
+
+        </div>
+
+      </a>
+
+      <button
+        class="menu-toggle"
+        id="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="main-navigation"
+      >
+        &#9776; Menu
+      </button>
+
+      <nav
+        class="main-nav"
+        id="main-navigation"
+        aria-label="Primary navigation"
+      >
+
+        <a href="/">Home</a>
+
+        <a href="/about/">About</a>
+
+        <details class="nav-dropdown">
+
+          <summary>Research</summary>
+
+          <div class="dropdown-menu">
+
+            <a href="/research/">Research Overview</a>
+
+            <a href="/initiatives/">Research Initiatives</a>
+
+          </div>
+
+        </details>
+
+        <a href="/publications/">Publications</a>
+
+        <details class="nav-dropdown">
+
+          <summary>Resources</summary>
+
+          <div class="dropdown-menu">
+
+            <a href="/standards/">Standards</a>
+
+            <a href="/books/">Books</a>
+
+            <a href="/newsletter/">Aerospace Quality Brief</a>
+
+            <a href="/newsletter/archive/">Newsletter Archive</a>
+
+            <a href="/cite/">Cite This Site</a>
+
+          </div>
+
+        </details>
+
+        <details class="nav-dropdown active">
+
+          <summary>Collaborate</summary>
+
+          <div class="dropdown-menu">
+
+            <a href="/partnerships/" aria-current="page">
+              Partnerships
+            </a>
+
+            <a href="/contact/">Contact LRI</a>
+
+          </div>
+
+        </details>
+
+      </nav>
+
     </div>
-   <nav class="lri-topnav">
-  <a href="/">Home</a>
-  <a href="/about/">About</a>
-  <a href="/research/">Research</a>
-  <a href="/initiatives/">Initiatives</a>
-  <a href="/standards/">Standards</a>
-  <a href="/publications/">Publications</a>
-  <a href="/newsletter/">Newsletter</a>
-  <a href="/partnerships/">Partnerships</a>
-  <a href="/contact/">Contact</a>
-</nav>
 
-  </div>
-</header>
+  </header>
 
-<main>
-  <section class="lri-section">
-    <div class="lri-section-inner">
-      <h1 class="lri-section-title">Partnerships</h1>
-      <p class="lri-section-text">
-        LRI collaborates with agencies, universities, and companies that want to mature the quality foundations
-        of lunar infrastructure. Partnerships range from joint research to method reviews and training.
+  <main id="main-content">
+
+    <!-- ========================================
+         HERO
+    ======================================== -->
+
+    <section
+      class="partnership-hero"
+      aria-labelledby="partnership-title"
+    >
+
+      <div class="partnership-container partnership-hero-content">
+
+        <span class="eyebrow">
+          Scientific and Institutional Collaboration
+        </span>
+
+        <h1 id="partnership-title">
+          Advancing Lunar Exploration Through Collaboration
+        </h1>
+
+        <p>
+          Connecting scientific research, engineering expertise,
+          and institutional capabilities to strengthen the
+          foundations of safe, reliable, verifiable, and
+          sustainable operations beyond Earth.
+        </p>
+
+        <div class="partnership-actions">
+
+          <a
+            href="/contact/"
+            class="lri-btn lri-btn-primary"
+          >
+            Discuss Collaboration &rarr;
+          </a>
+
+          <a
+            href="#collaboration-opportunities"
+            class="lri-btn lri-btn-outline"
+          >
+            Explore Opportunities
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ========================================
+         COLLABORATION PHILOSOPHY
+    ======================================== -->
+
+    <section
+      class="partnership-section"
+      aria-labelledby="overview-title"
+    >
+
+      <div class="partnership-container overview-layout">
+
+        <div class="overview-heading">
+
+          <span class="eyebrow">
+            Shared Scientific Objectives
+          </span>
+
+          <h2 id="overview-title">
+            Why Collaborate With LRI?
+          </h2>
+
+        </div>
+
+        <div class="overview-copy">
+
+          <p>
+            Sustained lunar exploration presents interconnected
+            scientific and engineering challenges that extend
+            across traditional disciplinary boundaries.
+            Quality engineering, systems engineering,
+            verification, reliability, autonomy, and human
+            decision-making all influence mission outcomes.
+          </p>
+
+          <p>
+            The Lunar Research Initiative welcomes opportunities
+            to investigate these challenges with organizations
+            and researchers who bring complementary expertise,
+            operational knowledge, analytical capabilities,
+            and technical perspectives.
+          </p>
+
+          <p>
+            LRI seeks collaborations that produce meaningful
+            scientific contributions, strengthen engineering
+            methods, and advance the evidence supporting
+            future lunar operations.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ========================================
+         POTENTIAL COLLABORATORS
+    ======================================== -->
+
+    <section
+      class="partnership-section partnership-section-alt"
+      id="collaboration-opportunities"
+      aria-labelledby="opportunities-title"
+    >
+
+      <div class="partnership-container">
+
+        <div class="section-heading">
+
+          <span class="eyebrow">
+            Institutional Engagement
+          </span>
+
+          <h2 id="opportunities-title">
+            Collaboration Opportunities
+          </h2>
+
+          <p>
+            LRI welcomes exploratory discussions with
+            organizations and individuals across four
+            complementary scientific and engineering communities.
+          </p>
+
+        </div>
+
+        <div class="partner-grid">
+
+          <!-- GOVERNMENT AND SPACE AGENCIES -->
+
+          <article class="partner-card">
+
+            <div class="partner-icon" aria-hidden="true">
+
+              <svg viewBox="0 0 48 48">
+
+                <path d="M5 18 24 5 43 18Z"/>
+
+                <path d="M10 20v18"/>
+
+                <path d="M19 20v18"/>
+
+                <path d="M29 20v18"/>
+
+                <path d="M38 20v18"/>
+
+                <path d="M5 39h38v5H5Z"/>
+
+              </svg>
+
+            </div>
+
+            <span class="partner-category">
+              Public Sector and Space Programs
+            </span>
+
+            <h3>
+              Government Agencies and Space Programs
+            </h3>
+
+            <p>
+              Opportunities to examine emerging mission
+              assurance requirements, lunar operational
+              constraints, verification challenges,
+              and engineering decision boundaries.
+            </p>
+
+            <ul class="partner-list">
+
+              <li>Mission assurance research</li>
+
+              <li>System safety and operational risk analysis</li>
+
+              <li>Quality and verification architecture development</li>
+
+              <li>Technical and policy research discussions</li>
+
+              <li>Lunar infrastructure planning concepts</li>
+
+            </ul>
+
+          </article>
+
+          <!-- UNIVERSITIES AND LABORATORIES -->
+
+          <article class="partner-card">
+
+            <div class="partner-icon" aria-hidden="true">
+
+              <svg viewBox="0 0 48 48">
+
+                <path d="M18 5h12"/>
+
+                <path d="M20 5v15L8 38c-2 4 0 6 4 6h24c4 0 6-2 4-6L28 20V5"/>
+
+                <path d="M15 29h18"/>
+
+                <circle cx="21" cy="35" r="2"/>
+
+                <circle cx="29" cy="38" r="2"/>
+
+              </svg>
+
+            </div>
+
+            <span class="partner-category">
+              Academic and Scientific Research
+            </span>
+
+            <h3>
+              Universities and Research Laboratories
+            </h3>
+
+            <p>
+              Interdisciplinary research opportunities
+              connecting academic expertise with quality
+              engineering, verification science,
+              computational modeling, and lunar systems.
+            </p>
+
+            <ul class="partner-list">
+
+              <li>Joint scientific research</li>
+
+              <li>Computational and analytical studies</li>
+
+              <li>Research methodology development</li>
+
+              <li>Independent technical evaluation</li>
+
+              <li>Scholarly publications and knowledge exchange</li>
+
+            </ul>
+
+          </article>
+
+          <!-- AEROSPACE INDUSTRY -->
+
+          <article class="partner-card">
+
+            <div class="partner-icon" aria-hidden="true">
+
+              <svg viewBox="0 0 48 48">
+
+                <path d="m24 4 18 10v20L24 44 6 34V14Z"/>
+
+                <path d="m6 14 18 10 18-10"/>
+
+                <path d="M24 24v20"/>
+
+                <path d="m15 9 18 10"/>
+
+              </svg>
+
+            </div>
+
+            <span class="partner-category">
+              Engineering and Industrial Development
+            </span>
+
+            <h3>
+              Aerospace and Technology Companies
+            </h3>
+
+            <p>
+              Research engagement with organizations
+              developing spacecraft, autonomous systems,
+              lunar manufacturing technologies,
+              infrastructure, and advanced engineering
+              capabilities.
+            </p>
+
+            <ul class="partner-list">
+
+              <li>Verification and qualification strategies</li>
+
+              <li>Manufacturing quality architectures</li>
+
+              <li>Engineering evidence and traceability</li>
+
+              <li>Testbed fidelity and operational readiness</li>
+
+              <li>Risk-based decision assurance</li>
+
+            </ul>
+
+          </article>
+
+          <!-- INDEPENDENT PROFESSIONALS -->
+
+          <article class="partner-card">
+
+            <div class="partner-icon" aria-hidden="true">
+
+              <svg viewBox="0 0 48 48">
+
+                <circle cx="24" cy="11" r="6"/>
+
+                <circle cx="10" cy="18" r="5"/>
+
+                <circle cx="38" cy="18" r="5"/>
+
+                <path d="M13 41v-8c0-7 4-11 11-11s11 4 11 11v8"/>
+
+                <path d="M3 39v-8c0-5 3-8 8-8"/>
+
+                <path d="M45 39v-8c0-5-3-8-8-8"/>
+
+              </svg>
+
+            </div>
+
+            <span class="partner-category">
+              Professional Scientific Exchange
+            </span>
+
+            <h3>
+              Researchers and Engineering Professionals
+            </h3>
+
+            <p>
+              Opportunities for independent researchers,
+              subject matter experts, quality professionals,
+              and engineers to contribute complementary
+              perspectives to scientific investigation.
+            </p>
+
+            <ul class="partner-list">
+
+              <li>Technical research discussions</li>
+
+              <li>Methodological review and critique</li>
+
+              <li>Interdisciplinary knowledge exchange</li>
+
+              <li>Collaborative scientific writing</li>
+
+              <li>Professional and educational engagement</li>
+
+            </ul>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ========================================
+         RESEARCH COLLABORATION AREAS
+    ======================================== -->
+
+    <section
+      class="partnership-section"
+      aria-labelledby="research-areas-title"
+    >
+
+      <div class="partnership-container">
+
+        <div class="section-heading">
+
+          <span class="eyebrow">
+            Scientific Alignment
+          </span>
+
+          <h2 id="research-areas-title">
+            Priority Areas for Research Collaboration
+          </h2>
+
+          <p>
+            LRI particularly welcomes discussions that
+            align with its established research direction
+            and ongoing scientific investigations.
+          </p>
+
+        </div>
+
+        <div class="collaboration-grid">
+
+          <article class="collaboration-area">
+
+            <span class="area-number">01</span>
+
+            <h3>
+              Lunar Quality and Mission Assurance
+            </h3>
+
+            <p>
+              Integrated quality architectures, reliability,
+              mission risk, system assurance, and engineering
+              accountability under lunar operational constraints.
+            </p>
+
+            <a
+              href="/research/#quality-systems"
+              class="text-link"
+            >
+              Related Research &rarr;
+            </a>
+
+          </article>
+
+          <article class="collaboration-area">
+
+            <span class="area-number">02</span>
+
+            <h3>
+              Evidence Integrity and Verification
+            </h3>
+
+            <p>
+              Evidence provenance, verification planning,
+              temporal admissibility, traceability,
+              and defensible engineering qualification claims.
+            </p>
+
+            <a
+              href="/research/#evidence-verification"
+              class="text-link"
+            >
+              Related Research &rarr;
+            </a>
+
+          </article>
+
+          <article class="collaboration-area">
+
+            <span class="area-number">03</span>
+
+            <h3>
+              Autonomy and Decision Assurance
+            </h3>
+
+            <p>
+              Communication delay, authority transitions,
+              operational timing, autonomous continuation,
+              and human-system decision coordination.
+            </p>
+
+            <a
+              href="/research/#autonomy-decision-assurance"
+              class="text-link"
+            >
+              Related Research &rarr;
+            </a>
+
+          </article>
+
+          <article class="collaboration-area">
+
+            <span class="area-number">04</span>
+
+            <h3>
+              Lunar Manufacturing Qualification
+            </h3>
+
+            <p>
+              Regolith-derived materials, critical-to-quality
+              characteristics, process capability,
+              manufacturing verification, and testbed fidelity.
+            </p>
+
+            <a
+              href="/research/#lunar-manufacturing"
+              class="text-link"
+            >
+              Related Research &rarr;
+            </a>
+
+          </article>
+
+          <article class="collaboration-area">
+
+            <span class="area-number">05</span>
+
+            <h3>
+              Computational and Historical Mission Analysis
+            </h3>
+
+            <p>
+              Mathematical modeling, simulation,
+              operational evidence analysis, and historical
+              mission studies addressing decision reliability
+              and engineering performance.
+            </p>
+
+            <a
+              href="/research/"
+              class="text-link"
+            >
+              Research Methodology &rarr;
+            </a>
+
+          </article>
+
+          <article class="collaboration-area">
+
+            <span class="area-number">06</span>
+
+            <h3>
+              Standards and Engineering Frameworks
+            </h3>
+
+            <p>
+              Research connecting established standards,
+              quality management principles, verification
+              requirements, and emerging aerospace
+              operational needs.
+            </p>
+
+            <a
+              href="/standards/"
+              class="text-link"
+            >
+              Standards and Frameworks &rarr;
+            </a>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ========================================
+         LRI CONTRIBUTIONS
+    ======================================== -->
+
+    <section
+      class="partnership-section partnership-section-alt"
+      aria-labelledby="contributions-title"
+    >
+
+      <div class="partnership-container">
+
+        <div class="section-heading">
+
+          <span class="eyebrow">
+            Complementary Capabilities
+          </span>
+
+          <h2 id="contributions-title">
+            What LRI Can Contribute
+          </h2>
+
+          <p>
+            Potential contributions depend on the objectives,
+            resources, technical requirements, and agreed
+            scope of each collaborative activity.
+          </p>
+
+        </div>
+
+        <div class="contribution-grid">
+
+          <article class="contribution-card">
+
+            <h3>
+              Quality Engineering Expertise
+            </h3>
+
+            <p>
+              Quality systems, risk management,
+              corrective action, process capability,
+              manufacturing controls, and verification planning.
+            </p>
+
+          </article>
+
+          <article class="contribution-card">
+
+            <h3>
+              Scientific Framework Development
+            </h3>
+
+            <p>
+              Structured engineering architectures,
+              analytical definitions, decision models,
+              and evidence-supported research methods.
+            </p>
+
+          </article>
+
+          <article class="contribution-card">
+
+            <h3>
+              Computational Research
+            </h3>
+
+            <p>
+              Mathematical modeling, comparative simulation,
+              sensitivity analysis, and analytical exploration
+              of engineering decision policies.
+            </p>
+
+          </article>
+
+          <article class="contribution-card">
+
+            <h3>
+              Structured Evidence Analysis
+            </h3>
+
+            <p>
+              Systematic literature investigation,
+              technical evidence extraction,
+              historical records analysis,
+              and research gap identification.
+            </p>
+
+          </article>
+
+          <article class="contribution-card">
+
+            <h3>
+              Scholarly and Technical Communication
+            </h3>
+
+            <p>
+              Research publications, technical guides,
+              scientific presentations, educational
+              resources, and interdisciplinary
+              knowledge dissemination.
+            </p>
+
+          </article>
+
+          <article class="contribution-card">
+
+            <h3>
+              Verification and Assurance Research
+            </h3>
+
+            <p>
+              Investigation of requirement traceability,
+              evidence readiness, verification feasibility,
+              qualification boundaries, and decision confidence.
+            </p>
+
+          </article>
+
+        </div>
+
+        <div class="lri-cta-row">
+
+          <a
+            href="/publications/"
+            class="lri-btn lri-btn-outline"
+          >
+            Review LRI Publications &rarr;
+          </a>
+
+          <a
+            href="/initiatives/"
+            class="lri-btn lri-btn-outline"
+          >
+            Explore Research Initiatives
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ========================================
+         ENGAGEMENT PROCESS
+    ======================================== -->
+
+    <section
+      class="partnership-section"
+      aria-labelledby="engagement-title"
+    >
+
+      <div class="partnership-container">
+
+        <div class="section-heading">
+
+          <span class="eyebrow">
+            Establishing Collaboration
+          </span>
+
+          <h2 id="engagement-title">
+            How to Begin
+          </h2>
+
+          <p>
+            The following process provides a starting point
+            for exploring potential scientific and
+            engineering collaborations.
+          </p>
+
+        </div>
+
+        <div class="engagement-grid">
+
+          <article class="engagement-step">
+
+            <span class="step-number">01</span>
+
+            <h3>
+              Initial Contact
+            </h3>
+
+            <p>
+              Introduce your organization, research interests,
+              technical challenge, and potential collaboration
+              objectives.
+            </p>
+
+          </article>
+
+          <article class="engagement-step">
+
+            <span class="step-number">02</span>
+
+            <h3>
+              Scientific Alignment
+            </h3>
+
+            <p>
+              Identify shared research questions,
+              complementary expertise, and opportunities
+              for meaningful scientific contributions.
+            </p>
+
+          </article>
+
+          <article class="engagement-step">
+
+            <span class="step-number">03</span>
+
+            <h3>
+              Define the Scope
+            </h3>
+
+            <p>
+              Discuss research methods, responsibilities,
+              available resources, expected outcomes,
+              timelines, and applicable research requirements.
+            </p>
+
+          </article>
+
+          <article class="engagement-step">
+
+            <span class="step-number">04</span>
+
+            <h3>
+              Establish an Agreement
+            </h3>
+
+            <p>
+              Where appropriate, establish mutually acceptable
+              arrangements addressing research responsibilities,
+              data access, confidentiality, intellectual property,
+              and dissemination.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ========================================
+         INSTITUTIONAL PRINCIPLES
+    ======================================== -->
+
+    <section
+      class="partnership-section partnership-section-alt"
+      aria-labelledby="principles-title"
+    >
+
+      <div class="partnership-container">
+
+        <div class="principles-panel">
+
+          <h3 id="principles-title">
+            Scientific Independence and Collaboration Principles
+          </h3>
+
+          <p>
+            LRI approaches research collaboration through
+            scientific integrity, transparent methodology,
+            responsible evidence management, appropriate
+            attribution, and respect for intellectual property.
+          </p>
+
+          <p>
+            Collaborative activities should preserve the
+            independence of scientific conclusions and
+            comply with applicable research ethics,
+            confidentiality, contractual, and institutional
+            requirements.
+          </p>
+
+          <p>
+            LRI does not act as a certification, regulatory,
+            or approval authority. The collaboration
+            opportunities described on this page do not
+            imply an existing institutional affiliation,
+            formal partnership, endorsement, funding
+            commitment, or certification relationship.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ========================================
+         CONTACT AND COLLABORATION
+    ======================================== -->
+
+    <section
+      class="partnership-contact"
+      aria-labelledby="contact-title"
+    >
+
+      <span class="eyebrow">
+        Build the Future Together
+      </span>
+
+      <h2 id="contact-title">
+        Start a Scientific Conversation
+      </h2>
+
+      <p>
+        Whether your interests involve lunar infrastructure,
+        manufacturing qualification, verification,
+        autonomous systems, mission assurance, or scientific
+        research, LRI welcomes opportunities to explore
+        shared objectives.
       </p>
-    </div>
-  </section>
 
-  <section class="lri-section">
-    <div class="lri-section-inner lri-card-grid">
-      <article class="lri-card">
-        <h3>Agencies and Programs</h3>
-        <p>Supporting mission assurance teams as they evaluate concepts for lunar construction and production.</p>
-      </article>
-      <article class="lri-card">
-        <h3>Universities and Labs</h3>
-        <p>Connecting academic regolith and autonomy research to practical quality and reliability structures.</p>
-      </article>
-      <article class="lri-card">
-        <h3>Industry Collaborations</h3>
-        <p>Working with startups and established companies on architectures, test strategies, and risk models.</p>
-      </article>
-    </div>
-  </section>
-</main>
+      <div class="button-row">
 
-<footer class="lri-footer">
-  <p>© 2025 Lunar Research Initiative. All rights reserved.</p>
-</footer>
+        <a
+          href="/contact/"
+          class="lri-btn lri-btn-primary"
+        >
+          Contact the Initiative &rarr;
+        </a>
+
+        <a
+          href="/publications/"
+          class="lri-btn lri-btn-outline"
+        >
+          Review Our Scientific Work
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ========================================
+       FOOTER
+  ======================================== -->
+
+  <footer class="site-footer">
+
+    <div class="partnership-container">
+
+      <div class="footer-grid">
+
+        <div class="footer-about">
+
+          <div class="footer-brand">
+
+            <img
+              src="/assets/img/LRI%20LOGO.jpeg"
+              alt=""
+              width="55"
+              height="55"
+              loading="lazy"
+            >
+
+            <strong>
+              Lunar Research<br>
+              Initiative
+            </strong>
+
+          </div>
+
+          <p class="footer-description">
+            Advancing scientific research and engineering
+            methods for quality, reliability, and decision
+            assurance beyond Earth.
+          </p>
+
+        </div>
+
+        <div class="footer-column">
+
+          <h3>Organization</h3>
+
+          <a href="/about/">About LRI</a>
+
+          <a href="/research/">Research</a>
+
+          <a href="/initiatives/">Initiatives</a>
+
+          <a href="/partnerships/">Partnerships</a>
+
+        </div>
+
+        <div class="footer-column">
+
+          <h3>Scientific Resources</h3>
+
+          <a href="/publications/">Publications</a>
+
+          <a href="/standards/">Standards</a>
+
+          <a href="/books/">Books</a>
+
+          <a href="/cite/">Cite This Site</a>
+
+        </div>
+
+        <div class="footer-column">
+
+          <h3>Connect</h3>
+
+          <a href="/contact/">Contact LRI</a>
+
+          <a href="/newsletter/">Aerospace Quality Brief</a>
+
+          <a
+            href="https://www.linkedin.com/newsletters/7402028860193796097/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Subscribe on LinkedIn
+          </a>
+
+          <a href="/newsletter/archive/">Newsletter Archive</a>
+
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+
+        <p>
+          &copy; <span id="copyright-year">2026</span>
+          Lunar Research Initiative. All rights reserved.
+        </p>
+
+        <p>
+          Lunar Quality &middot; Verification &middot; Decision Assurance
+        </p>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+  <!-- ========================================
+       NAVIGATION SCRIPT
+  ======================================== -->
+
+  <script>
+
+    const menuToggle =
+      document.getElementById("menu-toggle");
+
+    const navigation =
+      document.getElementById("main-navigation");
+
+    const dropdowns =
+      document.querySelectorAll(".nav-dropdown");
+
+    menuToggle.addEventListener("click", function () {
+
+      const isOpen =
+        navigation.classList.toggle("is-open");
+
+      menuToggle.setAttribute(
+        "aria-expanded",
+        String(isOpen)
+      );
+
+    });
+
+    dropdowns.forEach(function (dropdown) {
+
+      dropdown.addEventListener("toggle", function () {
+
+        if (dropdown.open) {
+
+          dropdowns.forEach(function (otherDropdown) {
+
+            if (otherDropdown !== dropdown) {
+              otherDropdown.open = false;
+            }
+
+          });
+
+        }
+
+      });
+
+    });
+
+    document.addEventListener("click", function (event) {
+
+      dropdowns.forEach(function (dropdown) {
+
+        if (!dropdown.contains(event.target)) {
+          dropdown.open = false;
+        }
+
+      });
+
+    });
+
+    document.addEventListener("keydown", function (event) {
+
+      if (event.key === "Escape") {
+
+        dropdowns.forEach(function (dropdown) {
+
+          if (dropdown.open) {
+
+            dropdown.open = false;
+
+            dropdown.querySelector("summary").focus();
+
+          }
+
+        });
+
+        if (navigation.classList.contains("is-open")) {
+
+          navigation.classList.remove("is-open");
+
+          menuToggle.setAttribute(
+            "aria-expanded",
+            "false"
+          );
+
+          menuToggle.focus();
+
+        }
+
+      }
+
+    });
+
+    window.addEventListener("resize", function () {
+
+      if (window.innerWidth > 900) {
+
+        navigation.classList.remove("is-open");
+
+        menuToggle.setAttribute(
+          "aria-expanded",
+          "false"
+        );
+
+      }
+
+    });
+
+    document.getElementById("copyright-year").textContent =
+      new Date().getFullYear();
+
+  </script>
 
 </body>
+
 </html>
