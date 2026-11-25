@@ -1,71 +1,1812 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
-  <title>Books | Lunar Research Initiative</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <title>Books | Lunar Research Initiative</title>
+
+  <meta name="description" content="Explore books by Ralph Figueroa and the Lunar Research Initiative covering lunar science, space exploration, engineering, decision authority, verification, evidence integrity, and mission assurance.">
+
+  <meta name="author" content="Lunar Research Initiative">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0b1420">
+
+  <link rel="canonical" href="https://lunarresearchinitiative.github.io/books/">
+
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Books | Lunar Research Initiative">
+
+  <meta property="og:description" content="Scientific, technical, and educational books exploring the Moon and the engineering foundations of sustained space operations.">
+
+  <meta property="og:url" content="https://lunarresearchinitiative.github.io/books/">
+
+  <meta property="og:image" content="https://lunarresearchinitiative.github.io/assets/img/lunar-hero.jpg">
+
+  <style>
+
+    /* ========================================
+       PAGE LAYOUT
+    ======================================== */
+
+    main {
+      max-width: none;
+      padding: 0;
+    }
+
+    .books-container {
+      width: min(100% - 64px, 1320px);
+      margin: 0 auto;
+    }
+
+    /* ========================================
+       HEADER AND NAVIGATION
+    ======================================== */
+
+    .site-header {
+      padding: 0;
+    }
+
+    .header-inner {
+      min-height: 96px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .site-header .brand {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 0;
+      color: var(--lri-white);
+      text-decoration: none;
+    }
+
+    .brand-logo {
+      width: 66px;
+      height: 66px;
+    }
+
+    .brand-name {
+      font-size: 1.04rem;
+      font-weight: 700;
+      line-height: 1.35;
+      letter-spacing: 0.065em;
+      text-transform: uppercase;
+    }
+
+    .brand-subtitle {
+      display: block;
+      color: var(--lri-muted);
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.025em;
+      text-transform: none;
+      margin-top: 5px;
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .main-nav > a,
+    .nav-dropdown > summary {
+      color: var(--lri-white);
+      font-size: 0.92rem;
+      font-weight: 500;
+      padding: 14px 0;
+      white-space: nowrap;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .main-nav > a:hover,
+    .nav-dropdown > summary:hover {
+      color: var(--lri-gold);
+    }
+
+    .main-nav > a[aria-current="page"],
+    .nav-dropdown.active > summary {
+      color: var(--lri-gold);
+    }
+
+    .nav-dropdown {
+      position: relative;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      background: transparent;
+    }
+
+    .nav-dropdown summary {
+      list-style: none;
+      border: 0 !important;
+    }
+
+    .nav-dropdown summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .nav-dropdown summary::after {
+      content: " \25BE";
+      font-size: 0.75rem;
+      color: var(--lri-gold);
+    }
+
+    .nav-dropdown.active > summary {
+      border-bottom: 2px solid var(--lri-gold) !important;
+    }
+
+    .nav-dropdown > .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      min-width: 230px;
+      margin: 0;
+      padding: 10px;
+      background: var(--lri-navy-light);
+      border: 1px solid var(--lri-border);
+      border-radius: 5px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+      z-index: 100;
+    }
+
+    .dropdown-menu a {
+      display: block;
+      color: var(--lri-white);
+      font-size: 0.92rem;
+      padding: 12px 14px;
+      text-decoration: none;
+    }
+
+    .dropdown-menu a:hover,
+    .dropdown-menu a[aria-current="page"] {
+      background: rgba(221,187,122,0.08);
+      color: var(--lri-gold);
+    }
+
+    .menu-toggle {
+      display: none;
+      color: var(--lri-gold);
+      background: transparent;
+      border: 1px solid var(--lri-border);
+    }
+
+    /* ========================================
+       CINEMATIC HERO
+    ======================================== */
+
+    .books-hero {
+      min-height: 390px;
+      display: flex;
+      align-items: center;
+      background-color: var(--lri-navy-dark);
+
+      background-image:
+        linear-gradient(
+          90deg,
+          rgba(8,13,20,0.98),
+          rgba(8,13,20,0.80),
+          rgba(8,13,20,0.28)
+        ),
+        url("/assets/img/lunar-hero.jpg");
+
+      background-size: cover;
+      background-position: center;
+      border-bottom: 1px solid var(--lri-border);
+    }
+
+    .books-hero-content {
+      padding: 70px 0;
+    }
+
+    .books-hero h1 {
+      max-width: 850px;
+      font-size: clamp(2.6rem, 5vw, 4.2rem);
+      line-height: 1.12;
+      margin-bottom: 24px;
+    }
+
+    .books-hero p {
+      max-width: 720px;
+      color: #d5dde7;
+      font-size: 1.18rem;
+      line-height: 1.8;
+      margin-bottom: 0;
+    }
+
+    /* ========================================
+       SECTION DESIGN
+    ======================================== */
+
+    .books-section {
+      padding: 65px 0;
+    }
+
+    .books-section-alt {
+      background: var(--lri-navy-light);
+      border-top: 1px solid var(--lri-border);
+      border-bottom: 1px solid var(--lri-border);
+    }
+
+    .section-heading {
+      max-width: 850px;
+      margin-bottom: 35px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(1.9rem, 3vw, 2.7rem);
+      margin-bottom: 16px;
+    }
+
+    .section-heading p {
+      color: var(--lri-muted);
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+
+    /* ========================================
+       BOOK COLLECTION
+    ======================================== */
+
+    .book-collection {
+      display: grid;
+      gap: 32px;
+    }
+
+    .book-record {
+      display: grid;
+      grid-template-columns: minmax(220px, 300px) minmax(0, 1fr);
+      align-items: start;
+      gap: 42px;
+      padding: 35px;
+      background: linear-gradient(145deg, #172638, #101b29);
+      border: 1px solid var(--lri-border);
+      border-radius: 6px;
+      overflow-wrap: anywhere;
+    }
+
+    .book-record:hover {
+      border-color: rgba(221,187,122,0.55);
+    }
+
+    .book-visual {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 350px;
+      padding: 22px;
+      background: var(--lri-navy-dark);
+      border: 1px solid var(--lri-border);
+      border-radius: 5px;
+    }
+
+    .book-image {
+      display: block;
+      width: 100%;
+      max-height: 420px;
+      object-fit: contain;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.35);
+    }
+
+    /* Display the book title if a cover is unavailable */
+
+    .book-fallback {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      min-height: 320px;
+      padding: 26px;
+      text-align: center;
+      background:
+        linear-gradient(
+          rgba(8,13,20,0.82),
+          rgba(8,13,20,0.92)
+        ),
+        url("/assets/img/lunar-landscape.jpg");
+      background-size: cover;
+      background-position: center;
+      border: 1px solid rgba(221,187,122,0.40);
+    }
+
+    .book-fallback img {
+      width: 65px;
+      height: 65px;
+      border-radius: 50%;
+      margin-bottom: 30px;
+    }
+
+    .book-fallback-title {
+      display: block;
+      color: var(--lri-gold);
+      font-size: 1.6rem;
+      font-weight: 600;
+      line-height: 1.35;
+      margin-bottom: 18px;
+    }
+
+    .book-fallback-author {
+      color: var(--lri-muted);
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .book-category {
+      display: block;
+      color: var(--lri-gold);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .book-content h2 {
+      font-size: clamp(1.6rem, 3vw, 2.25rem);
+      line-height: 1.3;
+      margin-bottom: 12px;
+    }
+
+    .book-subtitle {
+      color: #d5dde7;
+      font-size: 1.05rem;
+      line-height: 1.6;
+      margin-bottom: 18px;
+    }
+
+    .book-author {
+      color: var(--lri-muted);
+      font-size: 0.92rem;
+      margin-bottom: 18px;
+    }
+
+    .book-description {
+      color: var(--lri-muted);
+      font-size: 0.98rem;
+      line-height: 1.85;
+      margin-bottom: 20px;
+    }
+
+    .book-topic-label {
+      display: block;
+      color: var(--lri-gold);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .book-topics {
+      list-style: none;
+      margin: 0 0 24px;
+      padding: 0;
+    }
+
+    .book-topics li {
+      position: relative;
+      padding: 8px 0 8px 19px;
+      margin: 0;
+      color: #d2dce7;
+      border-bottom: 1px solid rgba(170,184,200,0.12);
+      font-size: 0.94rem;
+    }
+
+    .book-topics li::before {
+      content: "";
+      position: absolute;
+      top: 17px;
+      left: 0;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--lri-gold);
+    }
+
+    .book-topics li:last-child {
+      border-bottom: 0;
+    }
+
+    .book-metadata {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px 24px;
+      padding: 20px 0;
+      margin-bottom: 22px;
+      border-top: 1px solid var(--lri-border);
+      border-bottom: 1px solid var(--lri-border);
+    }
+
+    .metadata-item {
+      color: var(--lri-muted);
+      font-size: 0.89rem;
+    }
+
+    .metadata-item strong {
+      display: block;
+      color: var(--lri-white);
+      font-size: 0.79rem;
+      margin-bottom: 5px;
+    }
+
+    .book-actions {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    /* ========================================
+       READER AUDIENCES
+    ======================================== */
+
+    .audience-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 28px;
+    }
+
+    .audience-card {
+      padding: 25px 0;
+      border-top: 2px solid var(--lri-gold);
+    }
+
+    .audience-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+    }
+
+    .audience-card p {
+      color: var(--lri-muted);
+      font-size: 0.95rem;
+      line-height: 1.8;
+      margin-bottom: 0;
+    }
+
+    .audience-number {
+      display: block;
+      color: var(--lri-gold);
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      margin-bottom: 16px;
+    }
+
+    /* ========================================
+       ABOUT THE AUTHOR
+    ======================================== */
+
+    .author-layout {
+      display: grid;
+      grid-template-columns: 180px minmax(0, 1fr);
+      gap: 45px;
+      align-items: center;
+    }
+
+    .author-emblem {
+      padding: 22px;
+      background: var(--lri-navy-dark);
+      border: 1px solid var(--lri-border);
+      border-radius: 6px;
+    }
+
+    .author-emblem img {
+      display: block;
+      width: 100%;
+      border-radius: 50%;
+    }
+
+    .author-copy h2 {
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
+
+    .author-role {
+      color: var(--lri-gold);
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+    }
+
+    .author-copy p {
+      color: var(--lri-muted);
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    /* ========================================
+       BOOK INQUIRIES
+    ======================================== */
+
+    .books-collaboration {
+      padding: 80px 24px;
+      text-align: center;
+      background-color: var(--lri-navy-dark);
+
+      background-image:
+        linear-gradient(
+          rgba(11,20,32,0.94),
+          rgba(11,20,32,0.70)
+        ),
+        url("/assets/img/lunar-landscape.jpg");
+
+      background-size: cover;
+      background-position: center 65%;
+      border-top: 1px solid var(--lri-border);
+    }
+
+    .books-collaboration h2 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      margin-bottom: 20px;
+    }
+
+    .books-collaboration p {
+      max-width: 720px;
+      color: #d5dde7;
+      font-size: 1.05rem;
+      margin: 0 auto 25px;
+    }
+
+    /* ========================================
+       FOOTER
+    ======================================== */
+
+    .site-footer {
+      padding: 50px 0 25px;
+      text-align: left;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.8fr 1fr 1fr 1fr;
+      gap: 35px;
+      padding-bottom: 35px;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .footer-brand img {
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+    }
+
+    .footer-brand strong {
+      color: var(--lri-white);
+      font-size: 0.92rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      line-height: 1.4;
+    }
+
+    .footer-description {
+      max-width: 340px;
+      color: var(--lri-muted);
+      font-size: 0.88rem;
+    }
+
+    .footer-column h3 {
+      color: var(--lri-gold);
+      font-size: 0.95rem;
+      margin-bottom: 18px;
+    }
+
+    .footer-column a {
+      display: block;
+      color: var(--lri-muted);
+      margin-bottom: 10px;
+      font-size: 0.88rem;
+    }
+
+    .footer-column a:hover {
+      color: var(--lri-gold);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      padding-top: 24px;
+      border-top: 1px solid var(--lri-border);
+      color: var(--lri-muted);
+      font-size: 0.8rem;
+    }
+
+    /* ========================================
+       RESPONSIVE DESIGN
+    ======================================== */
+
+    @media (max-width: 1100px) {
+
+      .main-nav {
+        gap: 17px;
+      }
+
+      .brand-subtitle {
+        display: none;
+      }
+
+      .book-record {
+        grid-template-columns: 240px minmax(0, 1fr);
+        gap: 30px;
+      }
+
+    }
+
+    @media (max-width: 900px) {
+
+      .books-container {
+        width: calc(100% - 48px);
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .main-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        padding: 24px;
+        background: var(--lri-navy-dark);
+        border-bottom: 1px solid var(--lri-border);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        max-height: 80vh;
+        overflow-y: auto;
+      }
+
+      .main-nav.is-open {
+        display: flex;
+      }
+
+      .main-nav > a,
+      .nav-dropdown > summary {
+        display: block;
+        padding: 14px 0;
+      }
+
+      .nav-dropdown > .dropdown-menu {
+        position: static;
+        box-shadow: none;
+      }
+
+      .audience-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+    }
+
+    @media (max-width: 700px) {
+
+      .book-record {
+        grid-template-columns: 1fr;
+        padding: 24px;
+        gap: 28px;
+      }
+
+      .book-visual {
+        max-width: 310px;
+        width: 100%;
+        margin: 0 auto;
+      }
+
+      .author-layout {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+
+      .author-emblem {
+        max-width: 160px;
+      }
+
+    }
+
+    @media (max-width: 650px) {
+
+      .books-container {
+        width: calc(100% - 36px);
+      }
+
+      .header-inner {
+        min-height: 82px;
+        gap: 12px;
+      }
+
+      .brand-logo {
+        width: 48px;
+        height: 48px;
+      }
+
+      .brand-name {
+        font-size: 0.8rem;
+      }
+
+      .site-header .brand {
+        gap: 10px;
+      }
+
+      .books-hero {
+        min-height: 350px;
+        background-image:
+          linear-gradient(
+            rgba(8,13,20,0.78),
+            rgba(8,13,20,0.88)
+          ),
+          url("/assets/img/lunar-hero.jpg");
+      }
+
+      .books-hero h1 {
+        font-size: 2.6rem;
+      }
+
+      .books-hero p {
+        font-size: 1.05rem;
+      }
+
+      .books-section {
+        padding: 45px 0;
+      }
+
+      .book-metadata,
+      .audience-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .book-actions {
+        align-items: stretch;
+      }
+
+      .book-actions a {
+        flex: 1 1 150px;
+        text-align: center;
+      }
+
+      .books-collaboration {
+        padding: 60px 18px;
+      }
+
+      .footer-about {
+        grid-column: 1 / -1;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+    }
+
+    @media print {
+
+      .books-hero,
+      .book-record,
+      .books-section-alt,
+      .books-collaboration {
+        background: #ffffff !important;
+        color: #111111 !important;
+        border-color: #cccccc !important;
+      }
+
+      .book-record {
+        break-inside: avoid;
+      }
+
+      .book-record *,
+      .author-copy * {
+        color: #111111 !important;
+      }
+
+      .book-visual,
+      .book-actions,
+      .books-collaboration {
+        display: none !important;
+      }
+
+      .book-record {
+        display: block;
+      }
+
+    }
+
+  </style>
+
 </head>
+
 <body>
 
-  <header class="lri-topbar">
-    <div class="lri-topbar-inner">
-      <div class="lri-topbar-left">
-        <img src="../assets/img/LRI LOGO.jpeg" alt="Lunar Research Initiative seal" class="lri-seal">
-      </div>
+  <a class="skip-link" href="#main-content">
+    Skip to main content
+  </a>
 
-      <nav class="lri-topnav">
-        <a href="../">Home</a>
-        <a href="../about/">About</a>
-        <a href="../research/">Research</a>
-        <a href="../initiatives/">Initiatives</a>
-        <a href="../standards/">Standards</a>
-        <a href="../publications/">Publications</a>
-        <a href="./">Books</a>
-        <a href="../newsletter/">Newsletter</a>
-        <a href="../partnerships/">Partnerships</a>
-        <a href="../contact/">Contact</a>
+  <!-- ========================================
+       HEADER
+  ======================================== -->
+
+  <header class="site-header">
+
+    <div class="books-container header-inner">
+
+      <a class="brand" href="/" aria-label="Lunar Research Initiative home">
+
+        <img
+          class="brand-logo"
+          src="/assets/img/LRI%20LOGO.jpeg"
+          alt="Lunar Research Initiative emblem"
+          width="66"
+          height="66"
+        >
+
+        <div class="brand-name">
+
+          Lunar Research<br>
+          Initiative
+
+          <span class="brand-subtitle">
+            Lunar Quality and Decision Assurance
+          </span>
+
+        </div>
+
+      </a>
+
+      <button
+        class="menu-toggle"
+        id="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="main-navigation"
+      >
+        &#9776; Menu
+      </button>
+
+      <nav
+        class="main-nav"
+        id="main-navigation"
+        aria-label="Primary navigation"
+      >
+
+        <a href="/">Home</a>
+
+        <a href="/about/">About</a>
+
+        <details class="nav-dropdown">
+
+          <summary>Research</summary>
+
+          <div class="dropdown-menu">
+
+            <a href="/research/">Research Overview</a>
+
+            <a href="/initiatives/">Research Initiatives</a>
+
+          </div>
+
+        </details>
+
+        <a href="/publications/">Publications</a>
+
+        <details class="nav-dropdown active">
+
+          <summary>Resources</summary>
+
+          <div class="dropdown-menu">
+
+            <a href="/standards/">Standards</a>
+
+            <a href="/books/" aria-current="page">Books</a>
+
+            <a href="/newsletter/">Aerospace Quality Brief</a>
+
+            <a href="/newsletter/archive/">Newsletter Archive</a>
+
+            <a href="/cite/">Cite This Site</a>
+
+          </div>
+
+        </details>
+
+        <details class="nav-dropdown">
+
+          <summary>Collaborate</summary>
+
+          <div class="dropdown-menu">
+
+            <a href="/partnerships/">Partnerships</a>
+
+            <a href="/contact/">Contact LRI</a>
+
+          </div>
+
+        </details>
+
       </nav>
+
     </div>
+
   </header>
 
-  <main>
-    <section class="lri-section">
-      <div class="lri-section-inner">
-        <h1 class="lri-section-title">Books</h1>
-        <p class="lri-section-text">
-          Published books from the Lunar Research Initiative, focused on decision authority, verification, evidence integrity,
-          and mission assurance under lunar operational constraints.
+  <main id="main-content">
+
+    <!-- ========================================
+         HERO
+    ======================================== -->
+
+    <section class="books-hero" aria-labelledby="books-title">
+
+      <div class="books-container books-hero-content">
+
+        <span class="eyebrow">
+          Scientific and Educational Publications
+        </span>
+
+        <h1 id="books-title">
+          Books
+        </h1>
+
+        <p>
+          Exploring the Moon, advancing engineering knowledge,
+          and examining the scientific foundations of safe,
+          reliable, and sustainable operations beyond Earth.
         </p>
 
-        <div class="lri-book-grid">
-          <article class="lri-book-card">
-            <h3>Governance Beyond Earth: Decision Authority, Verification, and Evidence Integrity for Lunar Operations</h3>
-            <span class="lri-badge lri-badge-published">Book Published</span>
+      </div>
 
-            <p>
-              A technical examination of governance failure modes unique to lunar and deep-space operations,
-              where delayed authority and degraded evidence challenge terrestrial decision practices.
-            </p>
+    </section>
 
-            <p class="lri-book-meta">
-              ISBN: 979-8243257398
-            </p>
+    <!-- ========================================
+         BOOK COLLECTION
+    ======================================== -->
 
-            <div class="lri-book-actions">
-              <a class="lri-btn lri-btn-primary" href="../contact/">Request Details</a>
-              <a class="lri-btn lri-btn-outline" href="../publications/">Related Publications</a>
+    <section class="books-section" aria-labelledby="collection-title">
+
+      <div class="books-container">
+
+        <div class="section-heading">
+
+          <span class="eyebrow">
+            LRI Book Collection
+          </span>
+
+          <h2 id="collection-title">
+            Scientific Knowledge Beyond Earth
+          </h2>
+
+          <p>
+            Books connecting lunar science, space exploration,
+            engineering research, quality assurance,
+            verification, and the future of human activity
+            beyond our planet.
+          </p>
+
+        </div>
+
+        <div class="book-collection">
+
+          <!-- ========================================
+               BOOK 01: GOVERNANCE BEYOND EARTH
+          ======================================== -->
+
+          <article class="book-record" id="governance-beyond-earth">
+
+            <div class="book-visual">
+
+              <img
+                class="book-image"
+                src="/assets/img/governance-beyond-earth.jpg"
+                alt="Governance Beyond Earth book cover"
+                loading="lazy"
+                hidden
+              >
+
+              <div class="book-fallback">
+
+                <img
+                  src="/assets/img/LRI%20LOGO.jpeg"
+                  alt=""
+                  loading="lazy"
+                >
+
+                <span class="book-fallback-title">
+                  Governance Beyond Earth
+                </span>
+
+                <span class="book-fallback-author">
+                  Ralph Figueroa
+                </span>
+
+              </div>
+
             </div>
+
+            <div class="book-content">
+
+              <span class="book-category">
+                Technical and Engineering Research
+              </span>
+
+              <h2>
+                Governance Beyond Earth
+              </h2>
+
+              <p class="book-subtitle">
+                Decision Authority, Verification, and Evidence
+                Integrity for Lunar Operations
+              </p>
+
+              <p class="book-author">
+                By Ralph Figueroa
+              </p>
+
+              <span class="lri-badge lri-badge-published">
+                Published Book
+              </span>
+
+              <p class="book-description">
+                Sustained operations beyond Earth introduce
+                governance challenges that conventional
+                terrestrial decision systems cannot always
+                address. Communication delay, environmental
+                uncertainty, degraded evidence, and limited
+                intervention opportunities fundamentally
+                influence how organizations allocate authority
+                and maintain operational assurance.
+              </p>
+
+              <p class="book-description">
+                Governance Beyond Earth examines these
+                challenges through the interconnected disciplines
+                of quality engineering, systems engineering,
+                verification, risk management, and decision science.
+                It explores how engineering governance can adapt
+                when remote oversight no longer operates on
+                the same timeline as local conditions.
+              </p>
+
+              <span class="book-topic-label">
+                Principal Topics
+              </span>
+
+              <ul class="book-topics">
+
+                <li>Decision authority under communication delay</li>
+
+                <li>Verification feasibility and timing boundaries</li>
+
+                <li>Evidence integrity and decision confidence</li>
+
+                <li>Distributed and autonomous operational governance</li>
+
+                <li>Mission assurance and operational accountability</li>
+
+                <li>Quality engineering for sustained lunar operations</li>
+
+              </ul>
+
+              <div class="book-metadata">
+
+                <div class="metadata-item">
+
+                  <strong>Author</strong>
+
+                  Ralph Figueroa
+
+                </div>
+
+                <div class="metadata-item">
+
+                  <strong>Publication Year</strong>
+
+                  2026
+
+                </div>
+
+                <div class="metadata-item">
+
+                  <strong>ISBN-13</strong>
+
+                  979-8243257398
+
+                </div>
+
+                <div class="metadata-item">
+
+                  <strong>Subject</strong>
+
+                  Aerospace Engineering and Mission Assurance
+
+                </div>
+
+              </div>
+
+              <div class="book-actions">
+
+                <a
+                  href="https://www.amazon.com/s?k=9798243257398"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="lri-btn lri-btn-primary"
+                >
+                  Find on Amazon &rarr;
+                </a>
+
+                <a
+                  href="/publications/#journal-articles"
+                  class="lri-btn lri-btn-outline"
+                >
+                  Related Research
+                </a>
+
+                <a
+                  href="/contact/"
+                  class="lri-btn lri-btn-outline"
+                >
+                  Book Inquiries
+                </a>
+
+              </div>
+
+            </div>
+
           </article>
+
+          <!-- ========================================
+               BOOK 02: THE MOON
+          ======================================== -->
+
+          <article class="book-record" id="the-moon">
+
+            <div class="book-visual">
+
+              <img
+                class="book-image"
+                src="/assets/img/the-moon-our-celestial-neighbor.jpg"
+                alt="The Moon: Our Celestial Neighbor book cover"
+                loading="lazy"
+                hidden
+              >
+
+              <div class="book-fallback">
+
+                <img
+                  src="/assets/img/LRI%20LOGO.jpeg"
+                  alt=""
+                  loading="lazy"
+                >
+
+                <span class="book-fallback-title">
+                  The Moon:<br>
+                  Our Celestial Neighbor
+                </span>
+
+                <span class="book-fallback-author">
+                  Ralph Figueroa
+                </span>
+
+              </div>
+
+            </div>
+
+            <div class="book-content">
+
+              <span class="book-category">
+                Lunar Science and Education
+              </span>
+
+              <h2>
+                The Moon: Our Celestial Neighbor
+              </h2>
+
+              <p class="book-subtitle">
+                Exploring the science, history, significance,
+                and future of Earth's nearest celestial companion.
+              </p>
+
+              <p class="book-author">
+                By Ralph Figueroa
+              </p>
+
+              <span class="lri-badge lri-badge-published">
+                Published Book
+              </span>
+
+              <p class="book-description">
+                The Moon has shaped Earth's natural environment,
+                influenced human civilization, inspired scientific
+                discovery, and challenged generations of explorers.
+                This book examines our nearest celestial neighbor
+                through the perspectives of astronomy, planetary
+                science, exploration history, culture, and engineering.
+              </p>
+
+              <p class="book-description">
+                Readers explore the Moon's formation, geological
+                evolution, surface characteristics, orbital behavior,
+                and relationship with Earth. The book follows the
+                progression of lunar exploration from early
+                astronomical observations to robotic missions,
+                the Apollo program, and emerging plans for sustained
+                lunar activity.
+              </p>
+
+              <p class="book-description">
+                Scientific explanations, illustrations, historical
+                perspectives, and engineering discussions connect
+                the Moon's natural history with the opportunities
+                and challenges of future exploration, resource
+                utilization, and infrastructure development.
+              </p>
+
+              <span class="book-topic-label">
+                Principal Topics
+              </span>
+
+              <ul class="book-topics">
+
+                <li>Lunar origin and planetary evolution</li>
+
+                <li>Geology, surface features, and lunar environments</li>
+
+                <li>Orbital dynamics and the Earth-Moon relationship</li>
+
+                <li>Lunar mythology and cultural significance</li>
+
+                <li>Robotic and human exploration missions</li>
+
+                <li>Future lunar resources and infrastructure</li>
+
+                <li>Scientific discovery and sustainable exploration</li>
+
+              </ul>
+
+              <div class="book-metadata">
+
+                <div class="metadata-item">
+
+                  <strong>Author</strong>
+
+                  Ralph Figueroa
+
+                </div>
+
+                <div class="metadata-item">
+
+                  <strong>ISBN-13</strong>
+
+                  979-8271695391
+
+                </div>
+
+                <div class="metadata-item">
+
+                  <strong>Subject</strong>
+
+                  Astronomy and Planetary Science
+
+                </div>
+
+                <div class="metadata-item">
+
+                  <strong>Audience</strong>
+
+                  Students, Educators, and Space Enthusiasts
+
+                </div>
+
+              </div>
+
+              <div class="book-actions">
+
+                <a
+                  href="https://www.amazon.com/s?k=9798271695391"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="lri-btn lri-btn-primary"
+                >
+                  Find on Amazon &rarr;
+                </a>
+
+                <a
+                  href="/contact/"
+                  class="lri-btn lri-btn-outline"
+                >
+                  Book Inquiries
+                </a>
+
+              </div>
+
+            </div>
+
+          </article>
+
         </div>
 
       </div>
+
     </section>
+
+    <!-- ========================================
+         INTENDED READERS
+    ======================================== -->
+
+    <section
+      class="books-section books-section-alt"
+      aria-labelledby="audience-title"
+    >
+
+      <div class="books-container">
+
+        <div class="section-heading">
+
+          <span class="eyebrow">
+            Knowledge Across Disciplines
+          </span>
+
+          <h2 id="audience-title">
+            Who These Books Are For
+          </h2>
+
+        </div>
+
+        <div class="audience-grid">
+
+          <article class="audience-card">
+
+            <span class="audience-number">01</span>
+
+            <h3>
+              Researchers and Engineers
+            </h3>
+
+            <p>
+              Professionals interested in aerospace engineering,
+              lunar systems, quality management, mission
+              assurance, autonomy, and verification science.
+            </p>
+
+          </article>
+
+          <article class="audience-card">
+
+            <span class="audience-number">02</span>
+
+            <h3>
+              Students and Educators
+            </h3>
+
+            <p>
+              Readers pursuing knowledge in astronomy,
+              planetary science, engineering, space studies,
+              and the scientific foundations of exploration.
+            </p>
+
+          </article>
+
+          <article class="audience-card">
+
+            <span class="audience-number">03</span>
+
+            <h3>
+              Space Exploration Enthusiasts
+            </h3>
+
+            <p>
+              Individuals interested in lunar history,
+              scientific discovery, emerging space technologies,
+              and humanity's future beyond Earth.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ========================================
+         AUTHOR
+    ======================================== -->
+
+    <section class="books-section" aria-labelledby="author-title">
+
+      <div class="books-container">
+
+        <div class="section-heading">
+
+          <span class="eyebrow">
+            About the Author
+          </span>
+
+        </div>
+
+        <div class="author-layout">
+
+          <div class="author-emblem">
+
+            <img
+              src="/assets/img/LRI%20LOGO.jpeg"
+              alt="Lunar Research Initiative emblem"
+              loading="lazy"
+            >
+
+          </div>
+
+          <div class="author-copy">
+
+            <h2 id="author-title">
+              Ralph Figueroa
+            </h2>
+
+            <p class="author-role">
+              Author, Engineer, Founder and Principal Investigator
+            </p>
+
+            <p>
+              Ralph Figueroa brings more than 25 years of
+              professional engineering and quality management
+              experience across highly regulated industries.
+              His academic background includes chemistry,
+              engineering, and space studies.
+            </p>
+
+            <p>
+              His research examines lunar quality systems,
+              evidence integrity, verification, communication
+              delay, supervisory autonomy, decision authority,
+              and the engineering foundations of sustained
+              lunar operations.
+            </p>
+
+            <p>
+              Through the Lunar Research Initiative, he
+              contributes to scientific literature, technical
+              education, and professional discussions concerning
+              reliable and sustainable space exploration.
+            </p>
+
+            <a href="/about/" class="text-link">
+              Learn More About LRI &rarr;
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ========================================
+         BOOK INQUIRIES
+    ======================================== -->
+
+    <section class="books-collaboration">
+
+      <span class="eyebrow">
+        Scientific and Educational Engagement
+      </span>
+
+      <h2>
+        Connecting Knowledge With Exploration
+      </h2>
+
+      <p>
+        Contact LRI for book inquiries, educational discussions,
+        academic engagement, or questions regarding related
+        scientific research and technical publications.
+      </p>
+
+      <div class="button-row">
+
+        <a href="/contact/" class="lri-btn lri-btn-primary">
+          Contact the Initiative &rarr;
+        </a>
+
+        <a href="/publications/" class="lri-btn lri-btn-outline">
+          Explore Scientific Publications
+        </a>
+
+      </div>
+
+    </section>
+
   </main>
 
-  <footer class="lri-footer">
-    <p>© 2025 Lunar Research Initiative. All rights reserved.</p>
+  <!-- ========================================
+       FOOTER
+  ======================================== -->
+
+  <footer class="site-footer">
+
+    <div class="books-container">
+
+      <div class="footer-grid">
+
+        <div class="footer-about">
+
+          <div class="footer-brand">
+
+            <img
+              src="/assets/img/LRI%20LOGO.jpeg"
+              alt=""
+              width="55"
+              height="55"
+              loading="lazy"
+            >
+
+            <strong>
+              Lunar Research<br>
+              Initiative
+            </strong>
+
+          </div>
+
+          <p class="footer-description">
+            Advancing scientific research and engineering
+            methods for quality, reliability, and decision
+            assurance beyond Earth.
+          </p>
+
+        </div>
+
+        <div class="footer-column">
+
+          <h3>Organization</h3>
+
+          <a href="/about/">About LRI</a>
+
+          <a href="/research/">Research</a>
+
+          <a href="/initiatives/">Initiatives</a>
+
+          <a href="/partnerships/">Partnerships</a>
+
+        </div>
+
+        <div class="footer-column">
+
+          <h3>Scientific Resources</h3>
+
+          <a href="/publications/">Publications</a>
+
+          <a href="/standards/">Standards</a>
+
+          <a href="/books/">Books</a>
+
+          <a href="/cite/">Cite This Site</a>
+
+        </div>
+
+        <div class="footer-column">
+
+          <h3>Connect</h3>
+
+          <a href="/contact/">Contact LRI</a>
+
+          <a href="/newsletter/">Aerospace Quality Brief</a>
+
+          <a
+            href="https://www.linkedin.com/newsletters/7402028860193796097/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Subscribe on LinkedIn
+          </a>
+
+          <a href="/newsletter/archive/">Newsletter Archive</a>
+
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+
+        <p>
+          &copy; <span id="copyright-year">2026</span>
+          Lunar Research Initiative. All rights reserved.
+        </p>
+
+        <p>
+          Lunar Quality &middot; Verification &middot; Decision Assurance
+        </p>
+
+      </div>
+
+    </div>
+
   </footer>
 
+  <!-- ========================================
+       NAVIGATION AND BOOK COVER SCRIPT
+  ======================================== -->
+
+  <script>
+
+    /* MOBILE NAVIGATION */
+
+    const menuToggle =
+      document.getElementById("menu-toggle");
+
+    const navigation =
+      document.getElementById("main-navigation");
+
+    const dropdowns =
+      document.querySelectorAll(".nav-dropdown");
+
+    menuToggle.addEventListener("click", function () {
+
+      const isOpen =
+        navigation.classList.toggle("is-open");
+
+      menuToggle.setAttribute(
+        "aria-expanded",
+        String(isOpen)
+      );
+
+    });
+
+    dropdowns.forEach(function (dropdown) {
+
+      dropdown.addEventListener("toggle", function () {
+
+        if (dropdown.open) {
+
+          dropdowns.forEach(function (otherDropdown) {
+
+            if (otherDropdown !== dropdown) {
+
+              otherDropdown.open = false;
+
+            }
+
+          });
+
+        }
+
+      });
+
+    });
+
+    document.addEventListener("click", function (event) {
+
+      dropdowns.forEach(function (dropdown) {
+
+        if (!dropdown.contains(event.target)) {
+
+          dropdown.open = false;
+
+        }
+
+      });
+
+    });
+
+    document.addEventListener("keydown", function (event) {
+
+      if (event.key === "Escape") {
+
+        dropdowns.forEach(function (dropdown) {
+
+          if (dropdown.open) {
+
+            dropdown.open = false;
+
+            dropdown.querySelector("summary").focus();
+
+          }
+
+        });
+
+        if (navigation.classList.contains("is-open")) {
+
+          navigation.classList.remove("is-open");
+
+          menuToggle.setAttribute(
+            "aria-expanded",
+            "false"
+          );
+
+          menuToggle.focus();
+
+        }
+
+      }
+
+    });
+
+    window.addEventListener("resize", function () {
+
+      if (window.innerWidth > 900) {
+
+        navigation.classList.remove("is-open");
+
+        menuToggle.setAttribute(
+          "aria-expanded",
+          "false"
+        );
+
+      }
+
+    });
+
+
+    /* AUTOMATIC BOOK COVER DISPLAY */
+
+    document.querySelectorAll(".book-image")
+      .forEach(function (image) {
+
+        const fallback =
+          image.parentElement.querySelector(".book-fallback");
+
+        function showCover() {
+
+          image.hidden = false;
+
+          fallback.hidden = true;
+
+        }
+
+        function showFallback() {
+
+          image.hidden = true;
+
+          fallback.hidden = false;
+
+        }
+
+        image.addEventListener("load", showCover);
+
+        image.addEventListener("error", showFallback);
+
+        if (image.complete) {
+
+          if (image.naturalWidth > 0) {
+
+            showCover();
+
+          } else {
+
+            showFallback();
+
+          }
+
+        }
+
+      });
+
+
+    /* AUTOMATIC COPYRIGHT YEAR */
+
+    document.getElementById("copyright-year").textContent =
+      new Date().getFullYear();
+
+  </script>
+
 </body>
+
 </html>
