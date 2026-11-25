@@ -1,416 +1,855 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Publications | Lunar Research Initiative</title>
 
-  <meta
-    name="description"
-    content="Peer-reviewed journal articles, public policy contributions, regulatory submissions, open research outputs, books, and selected publications from the Lunar Research Initiative."
-  >
+  <meta name="description" content="Scientific journal articles, professional publications, regulatory contributions, open research outputs, and books from the Lunar Research Initiative.">
 
   <meta name="author" content="Lunar Research Initiative">
   <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0b1420">
 
-  <link
-    rel="canonical"
-    href="https://lunarresearchinitiative.github.io/publications/"
-  >
-
-  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="canonical" href="https://lunarresearchinitiative.github.io/publications/">
+  <link rel="stylesheet" href="/assets/css/style.css">
 
   <meta property="og:type" content="website">
-  <meta
-    property="og:title"
-    content="Publications | Lunar Research Initiative"
-  >
-  <meta
-    property="og:description"
-    content="Peer-reviewed research, public policy contributions, regulatory submissions, open research outputs, and books from the Lunar Research Initiative."
-  >
-  <meta
-    property="og:url"
-    content="https://lunarresearchinitiative.github.io/publications/"
-  >
-  <meta
-    property="og:site_name"
-    content="Lunar Research Initiative"
-  >
-  <meta
-    property="og:image"
-    content="https://lunarresearchinitiative.github.io/assets/img/LRI%20LOGO.jpeg"
-  >
+  <meta property="og:title" content="Publications | Lunar Research Initiative">
+  <meta property="og:description" content="Scientific research and professional contributions to lunar quality, evidence integrity, verification, autonomy, and mission assurance.">
+  <meta property="og:url" content="https://lunarresearchinitiative.github.io/publications/">
+  <meta property="og:image" content="https://lunarresearchinitiative.github.io/assets/img/lunar-hero.jpg">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta
-    name="twitter:title"
-    content="Publications | Lunar Research Initiative"
-  >
-  <meta
-    name="twitter:description"
-    content="Peer-reviewed research, public policy contributions, regulatory submissions, open research outputs, and books from the Lunar Research Initiative."
-  >
-  <meta
-    name="twitter:image"
-    content="https://lunarresearchinitiative.github.io/assets/img/LRI%20LOGO.jpeg"
-  >
 
   <style>
-    :root {
-      --lri-orange: #e46a1f;
-      --lri-orange-dark: #cf5d18;
-      --lri-text: #111111;
-      --lri-muted: #5a5a5a;
-      --lri-border: rgba(0, 0, 0, 0.08);
-      --lri-bg: #ffffff;
-      --lri-soft: #fffaf7;
-      --lri-soft-gray: #f7f7f7;
-      --lri-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
-      --lri-shadow-soft: 0 2px 10px rgba(0, 0, 0, 0.03);
-      --lri-radius: 14px;
-      --lri-max: 1120px;
-    }
 
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      color: var(--lri-text);
-      background: #ffffff;
-      font-size: 16px;
-      line-height: 1.6;
-    }
+    /* ========================================
+       PAGE LAYOUT
+    ======================================== */
 
     main {
       max-width: none;
-      margin: 0;
       padding: 0;
     }
 
-    a:focus-visible {
-      outline: 3px solid rgba(228, 106, 31, 0.35);
-      outline-offset: 3px;
-    }
-
-    .lri-hero,
-    .lri-section {
-      width: 100%;
-    }
-
-    .lri-hero {
-      padding: 88px 24px 56px;
-    }
-
-    .lri-section {
-      padding: 40px 24px;
-    }
-
-    .lri-section-soft {
-      background: var(--lri-soft-gray);
-    }
-
-    .lri-section-policy {
-      background: var(--lri-soft);
-      border-top: 1px solid rgba(228, 106, 31, 0.12);
-      border-bottom: 1px solid rgba(228, 106, 31, 0.12);
-    }
-
-    .lri-hero-inner,
-    .lri-section-inner,
-    .lri-topbar-inner,
-    .lri-footer-inner {
-      max-width: var(--lri-max);
+    .publication-container {
+      width: min(100% - 64px, 1320px);
       margin: 0 auto;
     }
 
-    .lri-hero-inner {
-      max-width: 900px;
-      text-align: center;
+    /* ========================================
+       HEADER AND NAVIGATION
+    ======================================== */
+
+    .site-header {
+      padding: 0;
     }
 
-    .lri-kicker {
-      display: block;
-      margin-bottom: 10px;
-      color: var(--lri-orange);
-      font-size: 0.78rem;
+    .header-inner {
+      min-height: 96px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .site-header .brand {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 0;
+      color: var(--lri-white);
+      text-decoration: none;
+    }
+
+    .brand-logo {
+      width: 66px;
+      height: 66px;
+    }
+
+    .brand-name {
+      font-size: 1.04rem;
       font-weight: 700;
-      letter-spacing: 0.08em;
+      line-height: 1.35;
+      letter-spacing: 0.065em;
       text-transform: uppercase;
     }
 
-    .lri-hero h1 {
-      margin: 0 0 18px;
-      font-size: clamp(2.2rem, 5vw, 3.2rem);
-      line-height: 1.12;
-    }
-
-    .lri-hero-subtitle {
-      max-width: 780px;
-      margin: 0 auto;
+    .brand-subtitle {
+      display: block;
       color: var(--lri-muted);
-      font-size: 1.06rem;
-      line-height: 1.75;
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.025em;
+      text-transform: none;
+      margin-top: 5px;
     }
 
-    .lri-hero-actions,
-    .lri-cta-row {
+    .main-nav {
       display: flex;
       align-items: center;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-top: 22px;
+      gap: 25px;
     }
 
-    .lri-hero-actions {
-      justify-content: center;
-    }
-
-    .lri-cta-row {
-      justify-content: flex-start;
-    }
-
-    .lri-btn {
-      display: inline-block;
-      padding: 0.86rem 1.4rem;
-      border: 1px solid transparent;
-      border-radius: 999px;
-      font-weight: 600;
+    .main-nav > a,
+    .nav-dropdown > summary {
+      color: var(--lri-white);
+      font-size: 0.92rem;
+      font-weight: 500;
+      padding: 14px 0;
+      white-space: nowrap;
       text-decoration: none;
-      transition: all 0.2s ease;
+      cursor: pointer;
     }
 
-    .lri-btn-primary {
-      background: var(--lri-orange);
-      color: #ffffff;
-      border-color: var(--lri-orange);
+    .main-nav > a:hover,
+    .nav-dropdown > summary:hover {
+      color: var(--lri-gold);
     }
 
-    .lri-btn-primary:visited {
-      color: #ffffff;
+    .main-nav > a[aria-current="page"] {
+      color: var(--lri-gold);
+      border-bottom: 2px solid var(--lri-gold);
     }
 
-    .lri-btn-primary:hover,
-    .lri-btn-primary:focus {
-      background: var(--lri-orange-dark);
-      border-color: var(--lri-orange-dark);
-      color: #ffffff;
-      text-decoration: none;
-    }
-
-    .lri-btn-outline {
-      background: transparent;
-      color: var(--lri-orange);
-      border-color: var(--lri-orange);
-    }
-
-    .lri-btn-outline:visited {
-      color: var(--lri-orange);
-    }
-
-    .lri-btn-outline:hover,
-    .lri-btn-outline:focus {
-      background: rgba(228, 106, 31, 0.08);
-      color: var(--lri-orange);
-      text-decoration: none;
-    }
-
-    .lri-section-heading {
-      max-width: 840px;
-      margin: 0 auto 28px;
-      text-align: center;
-    }
-
-    .lri-section-title {
-      margin: 0 0 10px;
-      font-size: clamp(1.6rem, 3vw, 2.15rem);
-      line-height: 1.25;
-    }
-
-    .lri-section-text {
+    .nav-dropdown {
+      position: relative;
       margin: 0;
-      color: var(--lri-muted);
-      line-height: 1.75;
+      padding: 0;
+      border: 0;
+      background: transparent;
     }
 
-    .lri-card-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 20px;
+    .nav-dropdown summary {
+      list-style: none;
+      border: 0 !important;
     }
 
-    .lri-card-grid-three {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+    .nav-dropdown summary::-webkit-details-marker {
+      display: none;
     }
 
-    .lri-card,
-    .lri-featured-card,
-    .lri-note-card {
-      background: var(--lri-bg);
+    .nav-dropdown summary::after {
+      content: " \25BE";
+      font-size: 0.75rem;
+      color: var(--lri-gold);
+    }
+
+    .nav-dropdown > .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      min-width: 230px;
+      margin: 0;
+      padding: 10px;
+      background: var(--lri-navy-light);
       border: 1px solid var(--lri-border);
-      border-radius: var(--lri-radius);
-      box-shadow: var(--lri-shadow);
+      border-radius: 5px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+      z-index: 100;
     }
 
-    .lri-card {
+    .dropdown-menu a {
+      display: block;
+      color: var(--lri-white);
+      padding: 12px 14px;
+      font-size: 0.92rem;
+      text-decoration: none;
+    }
+
+    .dropdown-menu a:hover {
+      background: rgba(221, 187, 122, 0.08);
+      color: var(--lri-gold);
+    }
+
+    .menu-toggle {
+      display: none;
+      color: var(--lri-gold);
+      background: transparent;
+      border: 1px solid var(--lri-border);
+    }
+
+    /* ========================================
+       PUBLICATIONS HERO
+    ======================================== */
+
+    .publication-hero {
+      min-height: 390px;
       display: flex;
-      flex-direction: column;
-      padding: 24px;
+      align-items: center;
+      background-color: var(--lri-navy-dark);
+      background-image:
+        linear-gradient(
+          90deg,
+          rgba(8, 13, 20, 0.98),
+          rgba(8, 13, 20, 0.80),
+          rgba(8, 13, 20, 0.25)
+        ),
+        url("/assets/img/lunar-hero.jpg");
+
+      background-size: cover;
+      background-position: center;
+      border-bottom: 1px solid var(--lri-border);
     }
 
-    .lri-card h3,
-    .lri-featured-card h2 {
-      margin-top: 0;
-      margin-bottom: 12px;
-      line-height: 1.4;
+    .publication-hero-content {
+      padding: 65px 0;
     }
 
-    .lri-card h3 {
-      font-size: 1.1rem;
+    .publication-hero h1 {
+      font-size: clamp(2.6rem, 5vw, 4.2rem);
+      line-height: 1.12;
+      margin-bottom: 24px;
     }
 
-    .lri-featured-card h2 {
-      font-size: clamp(1.4rem, 3vw, 1.9rem);
-    }
-
-    .lri-card p,
-    .lri-featured-card p,
-    .lri-note-card p {
-      line-height: 1.72;
-    }
-
-    .lri-card p:last-of-type,
-    .lri-featured-card p:last-of-type,
-    .lri-note-card p:last-child {
+    .publication-hero p {
+      max-width: 700px;
+      color: #d5dde7;
+      font-size: 1.18rem;
+      line-height: 1.8;
       margin-bottom: 0;
     }
 
-    .lri-featured-card {
-      max-width: 940px;
-      margin: 0 auto;
-      padding: 30px;
-      border-left: 5px solid var(--lri-orange);
-      background: #fffdfb;
+    /* ========================================
+       PUBLICATION PORTFOLIO SUMMARY
+    ======================================== */
+
+    .publication-summary {
+      background: var(--lri-navy-light);
+      border-bottom: 1px solid var(--lri-border);
     }
 
-    .lri-badge {
-      display: inline-block;
-      align-self: flex-start;
-      margin: 0 0 12px;
-      padding: 0.25rem 0.65rem;
-      border-radius: 999px;
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      padding: 30px 0;
     }
 
-    .lri-badge-published {
-      background: var(--lri-orange);
-      color: #ffffff;
+    .summary-item {
+      text-align: center;
+      padding: 10px 15px;
+      border-right: 1px solid var(--lri-border);
     }
 
-    .lri-badge-secondary {
-      background: rgba(228, 106, 31, 0.11);
-      color: var(--lri-orange-dark);
-      border: 1px solid rgba(228, 106, 31, 0.2);
+    .summary-item:last-child {
+      border-right: 0;
     }
 
-    .lri-badge-progress {
-      background: #eeeeee;
-      color: #4d4d4d;
-      border: 1px solid rgba(0, 0, 0, 0.08);
-    }
-
-    .lri-meta {
-      margin: 14px 0 0;
-      color: var(--lri-muted);
-      font-size: 0.96rem;
-      line-height: 1.72;
-    }
-
-    .lri-meta strong {
-      color: var(--lri-text);
-      font-weight: 700;
-    }
-
-    .lri-card a,
-    .lri-featured-card a,
-    .lri-meta a {
-      color: var(--lri-orange);
+    .summary-number {
+      display: block;
+      color: var(--lri-gold);
+      font-size: 2rem;
       font-weight: 600;
-      text-decoration: none;
+      line-height: 1.3;
+      margin-bottom: 5px;
+    }
+
+    .summary-label {
+      color: var(--lri-muted);
+      font-size: 0.8rem;
+    }
+
+    /* ========================================
+       PUBLICATION CATALOGUE
+    ======================================== */
+
+    .catalogue-section {
+      padding: 65px 0 80px;
+    }
+
+    .catalogue-heading {
+      margin-bottom: 30px;
+    }
+
+    .catalogue-heading h2 {
+      font-size: clamp(1.9rem, 3vw, 2.6rem);
+      margin-bottom: 12px;
+    }
+
+    .catalogue-heading p {
+      max-width: 850px;
+      color: var(--lri-muted);
+    }
+
+    /* ========================================
+       SEARCH AND FILTERS
+    ======================================== */
+
+    .catalogue-toolbar {
+      background: var(--lri-navy-light);
+      border: 1px solid var(--lri-border);
+      border-radius: 6px;
+      padding: 24px;
+      margin-bottom: 30px;
+    }
+
+    .search-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 20px;
+      align-items: end;
+      margin-bottom: 20px;
+    }
+
+    .search-field label,
+    .sort-field label {
+      color: var(--lri-muted);
+      font-size: 0.82rem;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    #publication-search,
+    #publication-sort {
+      width: 100%;
+      margin: 0;
+      padding: 13px 15px;
+      background: var(--lri-navy-dark);
+      color: var(--lri-white);
+      border: 1px solid var(--lri-border);
+      border-radius: 4px;
+      font: inherit;
+      font-size: 0.95rem;
+    }
+
+    .filter-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .filter-button {
+      background: transparent;
+      border: 1px solid var(--lri-border);
+      color: var(--lri-muted);
+      padding: 9px 15px;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    .filter-button:hover {
+      background: rgba(221, 187, 122, 0.08);
+      border-color: var(--lri-gold);
+      color: var(--lri-gold);
+    }
+
+    .filter-button.active {
+      background: var(--lri-gold);
+      border-color: var(--lri-gold);
+      color: var(--lri-navy-dark);
+    }
+
+    .catalogue-results {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-bottom: 25px;
+      color: var(--lri-muted);
+      font-size: 0.88rem;
+    }
+
+    /* ========================================
+       PUBLICATION GROUPS
+    ======================================== */
+
+    .publication-group {
+      margin-bottom: 55px;
+      scroll-margin-top: 25px;
+    }
+
+    .group-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      border-bottom: 1px solid var(--lri-border);
+      padding-bottom: 18px;
+      margin-bottom: 22px;
+    }
+
+    .group-heading h2 {
+      font-size: 1.65rem;
+      margin: 0;
+    }
+
+    .group-count {
+      color: var(--lri-muted);
+      font-size: 0.84rem;
+    }
+
+    .publication-list {
+      display: grid;
+      gap: 18px;
+    }
+
+    /* ========================================
+       PUBLICATION RECORDS
+    ======================================== */
+
+    .publication-record {
+      position: relative;
+      padding: 28px 30px;
+      background: linear-gradient(145deg, #172638, #101b29);
+      border: 1px solid var(--lri-border);
+      border-radius: 6px;
+      transition: border-color 0.2s ease;
       overflow-wrap: anywhere;
     }
 
-    .lri-card a:hover,
-    .lri-card a:focus,
-    .lri-featured-card a:hover,
-    .lri-featured-card a:focus,
-    .lri-meta a:hover,
-    .lri-meta a:focus {
-      text-decoration: underline;
+    .publication-record:hover {
+      border-color: rgba(221, 187, 122, 0.7);
     }
 
-    .lri-card .lri-cta-row {
-      margin-top: auto;
-      padding-top: 20px;
+    .publication-record.featured {
+      border-left: 3px solid var(--lri-gold);
     }
 
-    .lri-note-card {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 24px;
-      background: var(--lri-soft);
-      border-color: rgba(228, 106, 31, 0.18);
-      box-shadow: var(--lri-shadow-soft);
+    .publication-record-top {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .publication-type {
+      color: var(--lri-gold);
+      font-size: 0.73rem;
+      font-weight: 600;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+
+    .publication-date {
+      color: var(--lri-muted);
+      font-size: 0.83rem;
+    }
+
+    .publication-record h3 {
+      max-width: 1120px;
+      font-size: clamp(1.12rem, 2vw, 1.4rem);
+      line-height: 1.45;
+      margin-bottom: 12px;
+    }
+
+    .publication-subtitle {
+      color: var(--lri-white);
+      font-size: 0.97rem;
+      margin-bottom: 14px;
+    }
+
+    .publication-author {
+      color: var(--lri-muted);
+      font-size: 0.91rem;
+      margin-bottom: 4px;
+    }
+
+    .publication-journal {
+      color: #d2dce7;
+      font-size: 0.93rem;
+      margin-bottom: 15px;
+    }
+
+    .publication-description {
+      max-width: 1080px;
+      color: var(--lri-muted);
+      font-size: 0.96rem;
+      line-height: 1.8;
+      margin-bottom: 18px;
+    }
+
+    .publication-doi {
+      font-size: 0.86rem;
+      color: var(--lri-muted);
+      margin-bottom: 17px;
+    }
+
+    .publication-doi a {
+      color: var(--lri-gold);
+    }
+
+    .publication-keywords {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .keyword {
+      padding: 4px 10px;
+      color: var(--lri-muted);
+      background: rgba(170, 184, 200, 0.04);
+      border: 1px solid var(--lri-border);
+      border-radius: 3px;
+      font-size: 0.74rem;
+    }
+
+    .publication-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .publication-actions .lri-btn {
+      font-size: 0.85rem;
+      padding: 10px 18px;
+    }
+
+    .citation-button {
+      background: transparent;
+      color: var(--lri-muted);
+      border: 1px solid var(--lri-border);
+      font-size: 0.85rem;
+      padding: 10px 18px;
+    }
+
+    .citation-button:hover {
+      background: rgba(221, 187, 122, 0.08);
+      color: var(--lri-gold);
+      border-color: var(--lri-gold);
+    }
+
+    .publication-note {
+      color: var(--lri-muted);
+      font-size: 0.83rem;
+      margin-top: 15px;
+      margin-bottom: 0;
+    }
+
+    .empty-results {
       text-align: center;
+      padding: 55px 25px;
+      background: var(--lri-navy-light);
+      border: 1px solid var(--lri-border);
+      border-radius: 6px;
     }
 
-    .lri-footer {
-      padding: 30px 24px 42px;
+    .empty-results p {
+      color: var(--lri-muted);
     }
 
-    .lri-footer p {
-      margin: 0;
+    /* ========================================
+       RESEARCH PORTFOLIO NOTE
+    ======================================== */
+
+    .research-note {
+      margin-top: 25px;
+      padding: 25px 30px;
+      background: var(--lri-navy-dark);
+      border-left: 3px solid var(--lri-gold);
+      border-radius: 0 6px 6px 0;
+    }
+
+    .research-note h3 {
+      font-size: 1.1rem;
+      color: var(--lri-gold);
+      margin-bottom: 12px;
+    }
+
+    .research-note p {
+      color: var(--lri-muted);
+      font-size: 0.93rem;
+    }
+
+    /* ========================================
+       COLLABORATION
+    ======================================== */
+
+    .publication-collaboration {
+      padding: 75px 24px;
       text-align: center;
+      background-color: var(--lri-navy-light);
+      background-image:
+        linear-gradient(
+          rgba(11, 20, 32, 0.94),
+          rgba(11, 20, 32, 0.72)
+        ),
+        url("/assets/img/lunar-landscape.jpg");
+
+      background-size: cover;
+      background-position: center 65%;
+      border-top: 1px solid var(--lri-border);
     }
 
-    @media (max-width: 1020px) {
-      .lri-card-grid-three {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+    .publication-collaboration h2 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      margin-bottom: 20px;
+    }
+
+    .publication-collaboration p {
+      max-width: 700px;
+      color: #d5dde7;
+      font-size: 1.05rem;
+      margin: 0 auto 25px;
+    }
+
+    /* ========================================
+       FOOTER
+    ======================================== */
+
+    .site-footer {
+      padding: 50px 0 25px;
+      text-align: left;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.8fr 1fr 1fr 1fr;
+      gap: 35px;
+      padding-bottom: 35px;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .footer-brand img {
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+    }
+
+    .footer-brand strong {
+      color: var(--lri-white);
+      font-size: 0.92rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      line-height: 1.4;
+    }
+
+    .footer-description {
+      max-width: 340px;
+      color: var(--lri-muted);
+      font-size: 0.88rem;
+    }
+
+    .footer-column h3 {
+      color: var(--lri-gold);
+      font-size: 0.95rem;
+      margin-bottom: 18px;
+    }
+
+    .footer-column a {
+      display: block;
+      color: var(--lri-muted);
+      margin-bottom: 10px;
+      font-size: 0.88rem;
+    }
+
+    .footer-column a:hover {
+      color: var(--lri-gold);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      padding-top: 24px;
+      border-top: 1px solid var(--lri-border);
+      color: var(--lri-muted);
+      font-size: 0.8rem;
+    }
+
+    /* ========================================
+       RESPONSIVE DESIGN
+    ======================================== */
+
+    @media (max-width: 1100px) {
+
+      .main-nav {
+        gap: 17px;
+      }
+
+      .brand-subtitle {
+        display: none;
       }
     }
 
     @media (max-width: 900px) {
-      .lri-card-grid,
-      .lri-card-grid-three {
+
+      .publication-container {
+        width: calc(100% - 48px);
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .main-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        padding: 24px;
+        background: var(--lri-navy-dark);
+        border-bottom: 1px solid var(--lri-border);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        max-height: 80vh;
+        overflow-y: auto;
+      }
+
+      .main-nav.is-open {
+        display: flex;
+      }
+
+      .main-nav > a,
+      .nav-dropdown > summary {
+        display: block;
+        padding: 14px 0;
+      }
+
+      .nav-dropdown > .dropdown-menu {
+        position: static;
+        box-shadow: none;
+      }
+
+      .summary-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .summary-item {
+        border-right: 0;
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 650px) {
+
+      .publication-container {
+        width: calc(100% - 36px);
+      }
+
+      .header-inner {
+        min-height: 82px;
+        gap: 12px;
+      }
+
+      .brand-logo {
+        width: 48px;
+        height: 48px;
+      }
+
+      .brand-name {
+        font-size: 0.8rem;
+      }
+
+      .site-header .brand {
+        gap: 10px;
+      }
+
+      .publication-hero {
+        min-height: 350px;
+        background-image:
+          linear-gradient(
+            rgba(8, 13, 20, 0.78),
+            rgba(8, 13, 20, 0.88)
+          ),
+          url("/assets/img/lunar-hero.jpg");
+      }
+
+      .publication-hero h1 {
+        font-size: 2.6rem;
+      }
+
+      .publication-hero p {
+        font-size: 1.05rem;
+      }
+
+      .summary-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .summary-number {
+        font-size: 1.6rem;
+      }
+
+      .catalogue-section {
+        padding: 45px 0;
+      }
+
+      .catalogue-toolbar {
+        padding: 18px;
+      }
+
+      .search-grid {
         grid-template-columns: 1fr;
+        gap: 15px;
       }
 
-      .lri-hero {
-        padding: 72px 20px 48px;
+      .publication-record {
+        padding: 22px;
       }
 
-      .lri-section {
-        padding: 34px 20px;
+      .publication-actions {
+        align-items: stretch;
+      }
+
+      .publication-actions .lri-btn,
+      .publication-actions button {
+        flex: 1 1 140px;
+      }
+
+      .footer-about {
+        grid-column: 1 / -1;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
       }
     }
 
-    @media (max-width: 600px) {
-      .lri-card,
-      .lri-featured-card,
-      .lri-note-card {
-        padding: 21px;
+    @media print {
+
+      .publication-hero,
+      .publication-summary,
+      .publication-record,
+      .research-note {
+        background: #ffffff !important;
+        color: #111111 !important;
+        border-color: #cccccc !important;
       }
+
+      .publication-record {
+        break-inside: avoid;
+      }
+
+      .publication-record * {
+        color: #111111 !important;
+      }
+
+      .catalogue-toolbar,
+      .publication-actions,
+      .publication-collaboration,
+      .publication-keywords {
+        display: none !important;
+      }
+
     }
+
   </style>
 
   <script type="application/ld+json">
@@ -419,7 +858,7 @@
     "@type": "CollectionPage",
     "name": "Lunar Research Initiative Publications",
     "url": "https://lunarresearchinitiative.github.io/publications/",
-    "description": "Peer-reviewed journal articles, public policy contributions, regulatory submissions, open research outputs, books, and selected publications from the Lunar Research Initiative.",
+    "description": "Scientific journal articles, professional publications, regulatory contributions, open research outputs, and books.",
     "publisher": {
       "@type": "Organization",
       "name": "Lunar Research Initiative",
@@ -427,859 +866,2234 @@
     }
   }
   </script>
+
 </head>
 
 <body>
 
-  <header class="lri-topbar">
-    <div class="lri-topbar-inner">
+  <a class="skip-link" href="#main-content">
+    Skip to main content
+  </a>
 
-      <div class="lri-topbar-left">
-        <a href="../" aria-label="Lunar Research Initiative home">
-          <img
-            src="../assets/img/LRI LOGO.jpeg"
-            alt="Lunar Research Initiative seal"
-            class="lri-seal"
-          >
+  <!-- ========================================
+       HEADER
+  ======================================== -->
+
+  <header class="site-header">
+
+    <div class="publication-container header-inner">
+
+      <a class="brand" href="/" aria-label="Lunar Research Initiative home">
+
+        <img
+          class="brand-logo"
+          src="/assets/img/LRI%20LOGO.jpeg"
+          alt="Lunar Research Initiative emblem"
+          width="66"
+          height="66"
+        >
+
+        <div class="brand-name">
+
+          Lunar Research<br>
+          Initiative
+
+          <span class="brand-subtitle">
+            Lunar Quality and Decision Assurance
+          </span>
+
+        </div>
+
+      </a>
+
+      <button
+        class="menu-toggle"
+        id="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="main-navigation"
+      >
+        &#9776; Menu
+      </button>
+
+      <nav
+        class="main-nav"
+        id="main-navigation"
+        aria-label="Primary navigation"
+      >
+
+        <a href="/">Home</a>
+
+        <a href="/about/">About</a>
+
+        <details class="nav-dropdown">
+
+          <summary>Research</summary>
+
+          <div class="dropdown-menu">
+
+            <a href="/research/">Research Overview</a>
+
+            <a href="/initiatives/">Research Initiatives</a>
+
+          </div>
+
+        </details>
+
+        <a href="/publications/" aria-current="page">
+          Publications
         </a>
-      </div>
 
-      <nav class="lri-topnav" aria-label="Primary navigation">
-        <a href="../">Home</a>
-        <a href="../about/">About</a>
-        <a href="../research/">Research</a>
-        <a href="../initiatives/">Initiatives</a>
-        <a href="../standards/">Standards</a>
-        <a href="./" aria-current="page">Publications</a>
-        <a href="../books/">Books</a>
-        <a href="../newsletter/">Newsletter</a>
-        <a href="../partnerships/">Partnerships</a>
-        <a href="../contact/">Contact</a>
+        <details class="nav-dropdown">
+
+          <summary>Resources</summary>
+
+          <div class="dropdown-menu">
+
+            <a href="/standards/">Standards</a>
+
+            <a href="/books/">Books</a>
+
+            <a href="/newsletter/">Aerospace Quality Brief</a>
+
+            <a href="/newsletter/archive/">Newsletter Archive</a>
+
+            <a href="/cite/">Cite This Site</a>
+
+          </div>
+
+        </details>
+
+        <details class="nav-dropdown">
+
+          <summary>Collaborate</summary>
+
+          <div class="dropdown-menu">
+
+            <a href="/partnerships/">Partnerships</a>
+
+            <a href="/contact/">Contact LRI</a>
+
+          </div>
+
+        </details>
+
       </nav>
 
     </div>
+
   </header>
 
-  <main>
+  <main id="main-content">
 
-    <section class="lri-hero">
-      <div class="lri-hero-inner">
+    <!-- ========================================
+         HERO
+    ======================================== -->
 
-        <span class="lri-kicker">
-          Lunar Quality and Decision Assurance
+    <section class="publication-hero">
+
+      <div class="publication-container publication-hero-content">
+
+        <span class="eyebrow">
+          Scientific Knowledge and Research Contributions
         </span>
 
         <h1>Publications</h1>
 
-        <p class="lri-hero-subtitle">
-          Peer-reviewed journal articles, public policy contributions,
-          regulatory submissions, open research outputs, books, and selected
-          publications from the Lunar Research Initiative.
+        <p>
+          Explore LRI's scientific journal articles,
+          professional publications, technical resources,
+          regulatory contributions, and books advancing
+          quality, verification, autonomy, and mission
+          assurance beyond Earth.
         </p>
 
-        <div class="lri-hero-actions">
-
-          <a
-            href="#journal-articles"
-            class="lri-btn lri-btn-primary"
-          >
-            View Journal Articles
-          </a>
-
-          <a
-            href="#policy-contributions"
-            class="lri-btn lri-btn-outline"
-          >
-            View Policy Contributions
-          </a>
-
-          <a
-            href="#open-research"
-            class="lri-btn lri-btn-outline"
-          >
-            View Open Research Outputs
-          </a>
-
-        </div>
       </div>
+
     </section>
 
-    <section class="lri-section lri-section-soft">
-      <div class="lri-section-inner">
-
-        <div class="lri-section-heading">
-
-          <span class="lri-kicker">
-            Latest Peer-Reviewed Publication
-          </span>
-
-          <h2 class="lri-section-title">
-            Decision Freshness Boundaries Under Delayed Supervision
-          </h2>
-
-          <p class="lri-section-text">
-            The newest JBIS publication reframes delayed lunar supervision as
-            a decision-freshness problem and distinguishes corrective,
-            advisory, and historical supervisory roles under communication
-            delay.
-          </p>
-
-        </div>
-
-        <article class="lri-featured-card">
-
-          <span class="lri-badge lri-badge-published">
-            Published
-          </span>
-
-          <h2>
-            Decision Freshness Boundaries Under Delayed Supervision in Lunar
-            Surface Operations
-          </h2>
-
-          <p>
-            This article examines when delayed supervisory input remains useful
-            for local action during lunar surface operations. It argues that
-            task-dependent freshness boundaries provide a more operationally
-            meaningful concept than a universal delay threshold.
-          </p>
-
-          <p class="lri-meta">
-            <strong>Author:</strong> Ralph Figueroa<br>
-            <strong>Journal:</strong> Journal of the British Interplanetary Society<br>
-            <strong>Year:</strong> 2026<br>
-            <strong>Reference:</strong> 2026.79.0291<br>
-            <strong>Type:</strong> Peer-reviewed journal article<br>
-            <strong>DOI:</strong>
-            <a
-              href="https://doi.org/10.59332/jbis-079-08-0291"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              10.59332/jbis-079-08-0291
-            </a>
-          </p>
-
-          <div class="lri-cta-row">
-
-            <a
-              href="https://doi.org/10.59332/jbis-079-08-0291"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="lri-btn lri-btn-primary"
-            >
-              View DOI
-            </a>
-
-            <a
-              href="https://bis-space.com/shop/product/jbis-079-08-0291/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="lri-btn lri-btn-outline"
-            >
-              View BIS Record
-            </a>
-
-          </div>
-        </article>
-      </div>
-    </section>
+    <!-- ========================================
+         PORTFOLIO SUMMARY
+    ======================================== -->
 
     <section
-      class="lri-section lri-section-policy"
-      id="policy-contributions"
+      class="publication-summary"
+      aria-label="Publication portfolio summary"
     >
-      <div class="lri-section-inner">
 
-        <div class="lri-section-heading">
+      <div class="publication-container summary-grid">
 
-          <span class="lri-kicker">
-            Public Policy Contributions
+        <div class="summary-item">
+          <span class="summary-number" id="journal-count">5</span>
+          <span class="summary-label">Scientific Journal Articles</span>
+        </div>
+
+        <div class="summary-item">
+          <span class="summary-number" id="professional-count">2</span>
+          <span class="summary-label">Professional Articles</span>
+        </div>
+
+        <div class="summary-item">
+          <span class="summary-number" id="open-count">4</span>
+          <span class="summary-label">Open Research Outputs</span>
+        </div>
+
+        <div class="summary-item">
+          <span class="summary-number" id="policy-count">1</span>
+          <span class="summary-label">Regulatory Contribution</span>
+        </div>
+
+        <div class="summary-item">
+          <span class="summary-number" id="book-count">2</span>
+          <span class="summary-label">Books</span>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ========================================
+         PUBLICATION CATALOGUE
+    ======================================== -->
+
+    <section class="catalogue-section">
+
+      <div class="publication-container">
+
+        <div class="catalogue-heading">
+
+          <span class="eyebrow">
+            Research Library
           </span>
 
-          <h2 class="lri-section-title">
-            Regulatory Comments and Government Submissions
-          </h2>
+          <h2>Publication Catalogue</h2>
 
-          <p class="lri-section-text">
-            Evidence-based contributions to public policy, regulatory review,
-            and government decision-making on commercial space transportation,
-            mission assurance, infrastructure, and space governance.
+          <p>
+            Browse the collection by publication type,
+            research topic, journal, title, or DOI.
+            Publisher links provide access to official
+            publication records.
           </p>
 
         </div>
 
-        <article class="lri-featured-card">
+        <!-- SEARCH AND FILTERS -->
 
-          <span class="lri-badge lri-badge-secondary">
-            FAA Public Comment
-          </span>
+        <div class="catalogue-toolbar">
 
-          <h2>
-            Response to the Request for Information: Siting New Spaceports and
-            Use of Priority Airspace for Critical Space Launch Corridors
-          </h2>
+          <div class="search-grid">
 
-          <p>
-            This public comment recommends that the Department of
-            Transportation advance Puerto Rico into a comparative, federally
-            coordinated feasibility and launch-corridor study centered on
-            Roosevelt Roads and Ceiba.
-          </p>
+            <div class="search-field">
 
-          <p>
-            The submission proposes a phased space transportation complex and
-            establishes decision gates for safety, operator demand,
-            environmental and land readiness, resilient infrastructure,
-            community participation, and lifecycle finance.
-          </p>
+              <label for="publication-search">
+                Search Publications
+              </label>
 
-          <p class="lri-meta">
-            <strong>Author:</strong> Ralph Figueroa<br>
-            <strong>Agency:</strong> Federal Aviation Administration,
-            U.S. Department of Transportation<br>
-            <strong>Type:</strong> Public comment and regulatory submission<br>
-            <strong>Posted:</strong> August 25, 2026<br>
-            <strong>Docket:</strong> FAA-2026-9736<br>
-            <strong>Comment ID:</strong> FAA-2026-9736-0003
-          </p>
+              <input
+                id="publication-search"
+                type="search"
+                placeholder="Search title, topic, author, journal, or DOI..."
+              >
 
-          <div class="lri-cta-row">
+            </div>
 
-            <a
-              href="./faa-2026-9736-puerto-rico-spaceport/"
-              class="lri-btn lri-btn-primary"
-            >
-              Read LRI Summary
-            </a>
+            <div class="sort-field">
 
-            <a
-              href="https://www.regulations.gov/comment/FAA-2026-9736-0003"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="lri-btn lri-btn-outline"
-            >
-              View Official Docket Record
-            </a>
+              <label for="publication-sort">
+                Sort Within Each Category
+              </label>
+
+              <select id="publication-sort">
+
+                <option value="newest">
+                  Newest First
+                </option>
+
+                <option value="oldest">
+                  Oldest First
+                </option>
+
+                <option value="title">
+                  Title A to Z
+                </option>
+
+              </select>
+
+            </div>
 
           </div>
-        </article>
-      </div>
-    </section>
 
-    <section class="lri-section" id="journal-articles">
-      <div class="lri-section-inner">
+          <div class="filter-row" aria-label="Publication categories">
 
-        <div class="lri-section-heading">
+            <button
+              class="filter-button active"
+              type="button"
+              data-filter="all"
+              aria-pressed="true"
+            >
+              All Publications
+            </button>
 
-          <span class="lri-kicker">
-            Peer-Reviewed Research
+            <button
+              class="filter-button"
+              type="button"
+              data-filter="journal"
+              aria-pressed="false"
+            >
+              Scientific Journals
+            </button>
+
+            <button
+              class="filter-button"
+              type="button"
+              data-filter="professional"
+              aria-pressed="false"
+            >
+              Professional Articles
+            </button>
+
+            <button
+              class="filter-button"
+              type="button"
+              data-filter="open"
+              aria-pressed="false"
+            >
+              Open Research
+            </button>
+
+            <button
+              class="filter-button"
+              type="button"
+              data-filter="policy"
+              aria-pressed="false"
+            >
+              Public Policy
+            </button>
+
+            <button
+              class="filter-button"
+              type="button"
+              data-filter="book"
+              aria-pressed="false"
+            >
+              Books
+            </button>
+
+          </div>
+
+        </div>
+
+        <div class="catalogue-results">
+
+          <span id="results-count" aria-live="polite">
+            14 publication records
           </span>
 
-          <h2 class="lri-section-title">
-            Journal Articles
-          </h2>
-
-          <p class="lri-section-text">
-            Published research on communication delay, evidence integrity,
-            verification timing, supervisory autonomy, and decision authority
-            in lunar operations.
-          </p>
+          <a href="/cite/" class="text-link">
+            Citation Information &rarr;
+          </a>
 
         </div>
 
-        <div class="lri-card-grid">
+        <!-- ========================================
+             SCIENTIFIC JOURNAL ARTICLES
+        ======================================== -->
 
-          <article class="lri-card">
+        <section
+          class="publication-group"
+          id="journal-articles"
+          data-group="journal"
+        >
 
-            <span class="lri-badge lri-badge-published">
-              Published
-            </span>
+          <div class="group-heading">
 
-            <h3>
-              Decision Freshness Boundaries Under Delayed Supervision in Lunar
-              Surface Operations
-            </h3>
+            <h2>Scientific Journal Articles</h2>
 
-            <p>
-              Reframes delayed lunar supervision as a decision-freshness
-              problem and distinguishes corrective, advisory, and historical
-              supervisory roles.
-            </p>
+            <span class="group-count">5 publications</span>
 
-            <p class="lri-meta">
-              <strong>Figueroa, R.</strong> (2026).
-              <em>
-                Decision Freshness Boundaries Under Delayed Supervision in
-                Lunar Surface Operations
-              </em>.
-              <em>Journal of the British Interplanetary Society</em>.<br>
-              <strong>Reference:</strong> 2026.79.0291<br>
-              <strong>DOI:</strong>
-              <a
-                href="https://doi.org/10.59332/jbis-079-08-0291"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                10.59332/jbis-079-08-0291
-              </a>
-            </p>
+          </div>
 
-            <div class="lri-cta-row">
+          <div class="publication-list">
 
-              <a
-                href="https://doi.org/10.59332/jbis-079-08-0291"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="lri-btn lri-btn-primary"
-              >
-                View DOI
-              </a>
+            <!-- JOURNAL ARTICLE 01 -->
 
-              <a
-                href="https://bis-space.com/shop/product/jbis-079-08-0291/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="lri-btn lri-btn-outline"
-              >
-                BIS Record
-              </a>
+            <article
+              class="publication-record featured"
+              data-category="journal"
+              data-date="2026-10-14"
+            >
 
-            </div>
-          </article>
+              <div class="publication-record-top">
 
-          <article class="lri-card">
+                <span class="publication-type">
+                  Peer-Reviewed Research &middot; Article in Press
+                </span>
 
-            <span class="lri-badge lri-badge-published">
-              Published
-            </span>
+                <span class="publication-date">
+                  October 2026
+                </span>
 
-            <h3>
-              When Performance Persists Beyond Admissibility: A Comparative
-              Modeling Study of Supervisory Autonomy Under Delay in Lunar
-              Surface Operations
-            </h3>
+              </div>
 
-            <p>
-              Compares a simplified performance-only continuation policy with
-              an assurance-bounded policy, showing why continued performance
-              should not alone define acceptable autonomous continuation.
-            </p>
+              <h3>
+                Autonomous Evidence Integrity for Spaceflight:
+                A Quality Assurance Framework for AI-Mediated
+                Evidence Under Delayed Human Review in
+                Lunar Operations
+              </h3>
 
-            <p class="lri-meta">
-              <strong>Figueroa, R.</strong> (2026).
-              <em>
-                When Performance Persists Beyond Admissibility: A Comparative
-                Modeling Study of Supervisory Autonomy Under Delay in Lunar
-                Surface Operations
-              </em>.
-              <em>Journal of the British Interplanetary Society</em>.<br>
-              <strong>Reference:</strong> 2026.79.0280<br>
-              <strong>DOI:</strong>
-              <a
-                href="https://doi.org/10.59332/jbis-079-08-0280"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                10.59332/jbis-079-08-0280
-              </a>
-            </p>
+              <p class="publication-author">
+                Ralph Figueroa
+              </p>
 
-            <div class="lri-cta-row">
+              <p class="publication-journal">
 
-              <a
-                href="https://doi.org/10.59332/jbis-079-08-0280"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="lri-btn lri-btn-primary"
-              >
-                View DOI
-              </a>
+                <em>Journal of Space Safety Engineering</em>
+                &middot; Elsevier &middot; 2026
 
-              <a
-                href="https://bis-space.com/shop/product/jbis-079-08-0280/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="lri-btn lri-btn-outline"
-              >
-                BIS Record
-              </a>
+              </p>
 
-            </div>
-          </article>
+              <p class="publication-description">
+                Introduces the Autonomous Evidence Integrity
+                for Spaceflight (AEI-S) framework, which treats
+                AI-mediated evidence as a distinct assurance
+                object. The study establishes five evidence
+                states and eighteen candidate quality-control
+                data requirements addressing source traceability,
+                transformation transparency, bounded decision
+                use, and reconstruction after delayed human review.
+                A retrospective mission analysis and an audit of
+                eleven flight data-product specifications
+                illustrate its potential application.
+              </p>
 
-          <article class="lri-card">
+              <p class="publication-doi">
 
-            <span class="lri-badge lri-badge-secondary">
-              Published
-            </span>
+                DOI:
 
-            <h3>
-              Temporal Misalignment Under Delayed Supervision in Lunar Surface
-              Operations
-            </h3>
+                <a
+                  href="https://doi.org/10.1016/j.jsse.2026.10.004"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  10.1016/j.jsse.2026.10.004
+                </a>
 
-            <p>
-              Examines the mismatch between changing lunar hazards and the
-              delayed operational picture available to remote supervisors.
-            </p>
+              </p>
 
-            <p class="lri-meta">
-              <strong>Figueroa, R.</strong> (2026).
-              <em>
-                Temporal Misalignment Under Delayed Supervision in Lunar
-                Surface Operations
-              </em>.
-              <em>Journal of Space Safety Engineering</em>.<br>
-              <strong>DOI:</strong>
-              <a
-                href="https://doi.org/10.1016/j.jsse.2026.05.008"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                10.1016/j.jsse.2026.05.008
-              </a>
-            </p>
+              <div class="publication-keywords">
 
-            <div class="lri-cta-row">
+                <span class="keyword">Artificial Intelligence</span>
+                <span class="keyword">Evidence Integrity</span>
+                <span class="keyword">Verification</span>
+                <span class="keyword">Mission Assurance</span>
+                <span class="keyword">Autonomous Systems</span>
 
-              <a
-                href="https://doi.org/10.1016/j.jsse.2026.05.008"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="lri-btn lri-btn-outline"
-              >
-                View Publication
-              </a>
+              </div>
 
-            </div>
-          </article>
+              <div class="publication-actions">
 
-          <article class="lri-card">
+                <a
+                  href="https://doi.org/10.1016/j.jsse.2026.10.004"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="lri-btn lri-btn-primary"
+                >
+                  View Publication &rarr;
+                </a>
 
-            <span class="lri-badge lri-badge-secondary">
-              Published
-            </span>
+                <button
+                  type="button"
+                  class="citation-button"
+                  data-citation="Figueroa, R. (2026). Autonomous evidence integrity for spaceflight: A quality assurance framework for AI-mediated evidence under delayed human review in lunar operations. Journal of Space Safety Engineering. Advance online publication. https://doi.org/10.1016/j.jsse.2026.10.004"
+                >
+                  Copy Citation
+                </button>
 
-            <h3>
-              Delay-Informed Decision Authority for Lunar Operations:
-              A Unified Lunar Quality Framework
-            </h3>
+              </div>
 
-            <p>
-              Presents a quality framework for allocating decision authority,
-              setting verification boundaries, and preserving evidence
-              integrity under communication delay and partial observability.
-            </p>
+              <p class="publication-note">
+                Accepted October 14, 2026. The supplied
+                publisher version identifies the article as
+                in press.
+              </p>
 
-            <p class="lri-meta">
-              <strong>Figueroa, R.</strong> (2026).
-              <em>
-                Delay-Informed Decision Authority for Lunar Operations:
-                A Unified Lunar Quality Framework
-              </em>.
-              <em>Journal of Space Safety Engineering</em>.<br>
-              <strong>DOI:</strong>
-              <a
-                href="https://doi.org/10.1016/j.jsse.2026.03.004"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                10.1016/j.jsse.2026.03.004
-              </a>
-            </p>
+            </article>
 
-            <div class="lri-cta-row">
+            <!-- JOURNAL ARTICLE 02 -->
 
-              <a
-                href="https://doi.org/10.1016/j.jsse.2026.03.004"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="lri-btn lri-btn-outline"
-              >
-                View Publication
-              </a>
+            <article
+              class="publication-record"
+              data-category="journal"
+              data-date="2026-08-01"
+            >
 
-            </div>
-          </article>
+              <div class="publication-record-top">
 
-        </div>
-      </div>
-    </section>
+                <span class="publication-type">
+                  Peer-Reviewed Journal Article
+                </span>
 
-    <section
-      class="lri-section lri-section-soft"
-      id="open-research"
-    >
-      <div class="lri-section-inner">
+                <span class="publication-date">
+                  August 2026
+                </span>
 
-        <div class="lri-section-heading">
+              </div>
 
-          <span class="lri-kicker">
-            Open Research Outputs
-          </span>
+              <h3>
+                Decision Freshness Boundaries Under Delayed
+                Supervision in Lunar Surface Operations
+              </h3>
 
-          <h2 class="lri-section-title">
-            Decision Quality and Lunar Manufacturing Research
-          </h2>
+              <p class="publication-author">
+                Ralph Figueroa
+              </p>
 
-          <p class="lri-section-text">
-            Selected open outputs addressing decision quality, delayed
-            authority, critical-to-quality decomposition, process drift,
-            predictive signatures, and verification design.
-          </p>
+              <p class="publication-journal">
 
-        </div>
+                <em>Journal of the British Interplanetary Society</em>
+                &middot; Volume 79, Issue 8, pp. 291&ndash;296
 
-        <div class="lri-card-grid lri-card-grid-three">
+              </p>
 
-          <article class="lri-card">
+              <p class="publication-description">
+                Develops a conceptual framework for determining
+                when delayed supervisory input remains useful
+                at local execution. The study distinguishes
+                corrective, advisory, and historical supervisory
+                roles according to information age and the
+                rate of local state change. It proposes
+                task-dependent decision-freshness boundaries
+                for future empirical investigation and
+                mission-rule development.
+              </p>
 
-            <span class="lri-badge lri-badge-published">
-              Published
-            </span>
+              <p class="publication-doi">
 
-            <h3>
-              Decision Quality System in High-Risk Environments
-            </h3>
+                DOI:
 
-            <p>
-              A practical decision-quality reference for high-risk contexts
-              where evidence, authority, timing, and accountability must remain
-              aligned before action.
-            </p>
+                <a
+                  href="https://doi.org/10.59332/jbis-079-08-0291"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  10.59332/jbis-079-08-0291
+                </a>
 
-            <p class="lri-meta">
-              <strong>Figueroa, R.</strong> (2026).
-              <em>Decision Quality System in High-Risk Environments</em>.
-              Zenodo.<br>
-              <strong>DOI:</strong>
-              <a
-                href="https://doi.org/10.5281/zenodo.19580949"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                10.5281/zenodo.19580949
-              </a>
-            </p>
+              </p>
 
-            <div class="lri-cta-row">
+              <div class="publication-keywords">
 
-              <a
-                href="https://doi.org/10.5281/zenodo.19580949"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="lri-btn lri-btn-primary"
-              >
-                View Publication
-              </a>
+                <span class="keyword">Decision Freshness</span>
+                <span class="keyword">Delayed Supervision</span>
+                <span class="keyword">Crew-Ground Coordination</span>
+                <span class="keyword">Lunar Operations</span>
 
-            </div>
-          </article>
+              </div>
 
-          <article class="lri-card">
+              <div class="publication-actions">
 
-            <span class="lri-badge lri-badge-published">
-              Published
-            </span>
+                <a
+                  href="https://doi.org/10.59332/jbis-079-08-0291"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="lri-btn lri-btn-primary"
+                >
+                  View Publication &rarr;
+                </a>
 
-            <h3>
-              A Practical Guide to Decision Authority Under Delay
-            </h3>
+                <a
+                  href="https://bis-space.com/shop/product/jbis-079-08-0291/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="lri-btn lri-btn-outline"
+                >
+                  BIS Record
+                </a>
 
-            <p>
-              A practical guide for assigning, bounding, and reviewing decision
-              authority when communication delay prevents continuous real-time
-              supervision.
-            </p>
+                <button
+                  type="button"
+                  class="citation-button"
+                  data-citation="Figueroa, R. (2026). Decision freshness boundaries under delayed supervision in lunar surface operations. Journal of the British Interplanetary Society, 79(8), 291–296. https://doi.org/10.59332/jbis-079-08-0291"
+                >
+                  Copy Citation
+                </button>
 
-            <p class="lri-meta">
-              <strong>Figueroa, R.</strong> (2026).
-              <em>A Practical Guide to Decision Authority Under Delay</em>.
-              Zenodo.<br>
-              <strong>DOI:</strong>
-              <a
-                href="https://doi.org/10.5281/zenodo.19580581"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                10.5281/zenodo.19580581
-              </a>
-            </p>
+              </div>
 
-            <div class="lri-cta-row">
+            </article>
 
-              <a
-                href="https://doi.org/10.5281/zenodo.19580581"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="lri-btn lri-btn-primary"
-              >
-                View Publication
-              </a>
+            <!-- JOURNAL ARTICLE 03 -->
 
-            </div>
-          </article>
+            <article
+              class="publication-record"
+              data-category="journal"
+              data-date="2026-08-01"
+            >
 
-          <article class="lri-card">
+              <div class="publication-record-top">
 
-            <span class="lri-badge lri-badge-published">
-              Published
-            </span>
+                <span class="publication-type">
+                  Peer-Reviewed Journal Article
+                </span>
 
-            <h3>
-              CTQ Decomposition for Lunar Additive Manufacturing
-            </h3>
+                <span class="publication-date">
+                  August 2026
+                </span>
 
-            <p>
-              Develops a critical-to-quality map for lunar additive
-              manufacturing, including environmental modifiers, process drift,
-              and verification-load design.
-            </p>
+              </div>
 
-            <p class="lri-meta">
-              <strong>Figueroa, R.</strong> (2025).
-              <em>
+              <h3>
+                When Performance Persists Beyond Admissibility:
+                A Comparative Modeling Study of Supervisory
+                Autonomy Under Delay in Lunar Surface Operations
+              </h3>
+
+              <p class="publication-author">
+                Ralph Figueroa
+              </p>
+
+              <p class="publication-journal">
+
+                <em>Journal of the British Interplanetary Society</em>
+                &middot; Volume 79, Issue 8, pp. 280&ndash;290
+
+              </p>
+
+              <p class="publication-description">
+                Compares a simplified performance-only
+                continuation policy with an assurance-bounded
+                policy across 162 notional lunar operational
+                cases. The analysis examines how communication
+                delay, hazard drift, decision fidelity, mission
+                consequence, and authority influence autonomous
+                continuation. A preliminary proxy-based analysis
+                of 60 public Perseverance cases supports limited
+                threshold adjustment. The study distinguishes
+                functional performance from justified
+                operational continuation.
+              </p>
+
+              <p class="publication-doi">
+
+                DOI:
+
+                <a
+                  href="https://doi.org/10.59332/jbis-079-08-0280"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  10.59332/jbis-079-08-0280
+                </a>
+
+              </p>
+
+              <div class="publication-keywords">
+
+                <span class="keyword">Supervisory Autonomy</span>
+                <span class="keyword">Admissibility</span>
+                <span class="keyword">Comparative Modeling</span>
+                <span class="keyword">Decision Authority</span>
+
+              </div>
+
+              <div class="publication-actions">
+
+                <a
+                  href="https://doi.org/10.59332/jbis-079-08-0280"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="lri-btn lri-btn-primary"
+                >
+                  View Publication &rarr;
+                </a>
+
+                <a
+                  href="https://bis-space.com/shop/product/jbis-079-08-0280/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="lri-btn lri-btn-outline"
+                >
+                  BIS Record
+                </a>
+
+                <button
+                  type="button"
+                  class="citation-button"
+                  data-citation="Figueroa, R. (2026). When performance persists beyond admissibility: A comparative modeling study of supervisory autonomy under delay in lunar surface operations. Journal of the British Interplanetary Society, 79(8), 280–290. https://doi.org/10.59332/jbis-079-08-0280"
+                >
+                  Copy Citation
+                </button>
+
+              </div>
+
+            </article>
+
+            <!-- JOURNAL ARTICLE 04 -->
+
+            <article
+              class="publication-record"
+              data-category="journal"
+              data-date="2026-06-03"
+            >
+
+              <div class="publication-record-top">
+
+                <span class="publication-type">
+                  Peer-Reviewed Journal Article
+                </span>
+
+                <span class="publication-date">
+                  June 2026
+                </span>
+
+              </div>
+
+              <h3>
+                Temporal Misalignment Under Delayed Supervision
+                in Lunar Surface Operations
+              </h3>
+
+              <p class="publication-author">
+                Ralph Figueroa
+              </p>
+
+              <p class="publication-journal">
+
+                <em>Journal of Space Safety Engineering</em>
+                &middot; Volume 13, pp. 303&ndash;315
+
+              </p>
+
+              <p class="publication-description">
+                Introduces a timing-sensitive analytical
+                method that combines hazard drift and decision
+                fidelity into a temporal misalignment metric.
+                Parametric Monte Carlo simulations examine
+                how communication delay and hazard evolution
+                jointly degrade supervisory relevance across
+                low-tempo, transitional, and high-tempo
+                lunar operational conditions.
+              </p>
+
+              <p class="publication-doi">
+
+                DOI:
+
+                <a
+                  href="https://doi.org/10.1016/j.jsse.2026.05.008"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  10.1016/j.jsse.2026.05.008
+                </a>
+
+              </p>
+
+              <div class="publication-keywords">
+
+                <span class="keyword">Temporal Misalignment</span>
+                <span class="keyword">Hazard Drift</span>
+                <span class="keyword">Monte Carlo Simulation</span>
+                <span class="keyword">Decision Fidelity</span>
+
+              </div>
+
+              <div class="publication-actions">
+
+                <a
+                  href="https://doi.org/10.1016/j.jsse.2026.05.008"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="lri-btn lri-btn-primary"
+                >
+                  View Publication &rarr;
+                </a>
+
+                <button
+                  type="button"
+                  class="citation-button"
+                  data-citation="Figueroa, R. (2026). Temporal misalignment under delayed supervision in lunar surface operations. Journal of Space Safety Engineering, 13, 303–315. https://doi.org/10.1016/j.jsse.2026.05.008"
+                >
+                  Copy Citation
+                </button>
+
+              </div>
+
+            </article>
+
+            <!-- JOURNAL ARTICLE 05 -->
+
+            <article
+              class="publication-record"
+              data-category="journal"
+              data-date="2026-03-27"
+            >
+
+              <div class="publication-record-top">
+
+                <span class="publication-type">
+                  Peer-Reviewed Journal Article
+                </span>
+
+                <span class="publication-date">
+                  March 2026
+                </span>
+
+              </div>
+
+              <h3>
+                Delay-Informed Decision Authority for Lunar
+                Operations: A Unified Lunar Quality Framework
+              </h3>
+
+              <p class="publication-author">
+                Ralph Figueroa
+              </p>
+
+              <p class="publication-journal">
+
+                <em>Journal of Space Safety Engineering</em>
+                &middot; Volume 13, pp. 285&ndash;287
+
+              </p>
+
+              <p class="publication-description">
+                Presents the Unified Lunar Quality Framework
+                as a delay-informed decision architecture
+                linking evidence confidence, verification
+                feasibility, hazard progression, and authority
+                allocation. The framework defines analytical
+                conditions for transferring authority among
+                Earth-based supervision, local crew, and
+                autonomous systems when operational timing
+                constrains remote oversight.
+              </p>
+
+              <p class="publication-doi">
+
+                DOI:
+
+                <a
+                  href="https://doi.org/10.1016/j.jsse.2026.03.004"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  10.1016/j.jsse.2026.03.004
+                </a>
+
+              </p>
+
+              <div class="publication-keywords">
+
+                <span class="keyword">ULQF</span>
+                <span class="keyword">Decision Authority</span>
+                <span class="keyword">Verification Timing</span>
+                <span class="keyword">Lunar Governance</span>
+
+              </div>
+
+              <div class="publication-actions">
+
+                <a
+                  href="https://doi.org/10.1016/j.jsse.2026.03.004"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="lri-btn lri-btn-primary"
+                >
+                  View Publication &rarr;
+                </a>
+
+                <button
+                  type="button"
+                  class="citation-button"
+                  data-citation="Figueroa, R. (2026). Delay-informed decision authority for lunar operations: A unified lunar quality framework. Journal of Space Safety Engineering, 13, 285–287. https://doi.org/10.1016/j.jsse.2026.03.004"
+                >
+                  Copy Citation
+                </button>
+
+              </div>
+
+            </article>
+
+          </div>
+
+        </section>
+
+        <!-- ========================================
+             PROFESSIONAL PUBLICATIONS
+        ======================================== -->
+
+        <section
+          class="publication-group"
+          id="professional-publications"
+          data-group="professional"
+        >
+
+          <div class="group-heading">
+
+            <h2>Professional Publications</h2>
+
+            <span class="group-count">2 publications</span>
+
+          </div>
+
+          <div class="publication-list">
+
+            <!-- QUALITY PROGRESS OCTOBER -->
+
+            <article
+              class="publication-record"
+              data-category="professional"
+              data-date="2026-10-01"
+            >
+
+              <div class="publication-record-top">
+
+                <span class="publication-type">
+                  Professional Feature Article
+                </span>
+
+                <span class="publication-date">
+                  October 2026
+                </span>
+
+              </div>
+
+              <h3>
+                When Failure Isn't an Option
+              </h3>
+
+              <p class="publication-subtitle">
+                10 Risk Management Lessons From Extreme
+                Environments for Everyday Quality Work
+              </p>
+
+              <p class="publication-author">
+                Ralph Figueroa
+              </p>
+
+              <p class="publication-journal">
+
+                <em>Quality Progress</em>
+                &middot; American Society for Quality (ASQ)
+                &middot; Volume 59, Issue 10
+
+              </p>
+
+              <p class="publication-description">
+                Translates ten risk management principles
+                from extreme and constrained environments
+                into practical quality engineering guidance.
+                The article addresses critical quality
+                attributes, process variability, meaningful
+                verification, evidence integrity, escalation,
+                feedback loops, ethics, collaboration,
+                operator tools, and decision-oriented training.
+              </p>
+
+              <div class="publication-keywords">
+
+                <span class="keyword">Risk Management</span>
+                <span class="keyword">Quality Engineering</span>
+                <span class="keyword">Process Reliability</span>
+                <span class="keyword">Decision Quality</span>
+
+              </div>
+
+              <div class="publication-actions">
+
+                <a
+                  href="https://asq.org/quality-progress/articles/when-failure-isnt-an-option?id=f5d3aada686645b58bc2f4a0cc8df53f"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="lri-btn lri-btn-primary"
+                >
+                  View ASQ Publication &rarr;
+                </a>
+
+                <button
+                  type="button"
+                  class="citation-button"
+                  data-citation="Figueroa, R. (2026, October). When failure isn't an option: 10 risk management lessons from extreme environments for everyday quality work. Quality Progress, 59(10). https://asq.org/quality-progress/articles/when-failure-isnt-an-option?id=f5d3aada686645b58bc2f4a0cc8df53f"
+                >
+                  Copy Citation
+                </button>
+
+              </div>
+
+            </article>
+
+            <!-- QUALITY PROGRESS SEPTEMBER -->
+
+            <article
+              class="publication-record"
+              data-category="professional"
+              data-date="2026-09-01"
+            >
+
+              <div class="publication-record-top">
+
+                <span class="publication-type">
+                  Professional Column &middot; Field Notes
+                </span>
+
+                <span class="publication-date">
+                  September 2026
+                </span>
+
+              </div>
+
+              <h3>
+                Field Notes: Mission Assurance Problem
+              </h3>
+
+              <p class="publication-subtitle">
+                Why Timing, Context and Authority
+                Matter as Much as Accuracy
+              </p>
+
+              <p class="publication-author">
+                Ralph Figueroa
+              </p>
+
+              <p class="publication-journal">
+
+                <em>Quality Progress</em>
+                &middot; American Society for Quality (ASQ)
+                &middot; Volume 59, Issue 9
+
+              </p>
+
+              <p class="publication-description">
+                Reframes data integrity as a time-bounded
+                mission assurance control rather than
+                exclusively a documentation or accuracy
+                requirement. The article examines stale
+                information, context drift, automation bias,
+                and authority carryover, and presents practical
+                safeguards for maintaining the decision
+                relevance of technically accurate information.
+              </p>
+
+              <div class="publication-keywords">
+
+                <span class="keyword">Data Integrity</span>
+                <span class="keyword">Mission Assurance</span>
+                <span class="keyword">Decision Validity</span>
+                <span class="keyword">Automation Bias</span>
+
+              </div>
+
+              <div class="publication-actions">
+
+                <a
+                  href="https://asq.org/quality-progress/articles/field-notes-mission-assurance-problem?id=a1eea918252b496b8095e6630b1b499d"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="lri-btn lri-btn-primary"
+                >
+                  View ASQ Publication &rarr;
+                </a>
+
+                <button
+                  type="button"
+                  class="citation-button"
+                  data-citation="Figueroa, R. (2026, September). Field notes: Mission assurance problem. Quality Progress, 59(9). https://asq.org/quality-progress/articles/field-notes-mission-assurance-problem?id=a1eea918252b496b8095e6630b1b499d"
+                >
+                  Copy Citation
+                </button>
+
+              </div>
+
+            </article>
+
+          </div>
+
+        </section>
+
+        <!-- ========================================
+             OPEN RESEARCH OUTPUTS
+        ======================================== -->
+
+        <section
+          class="publication-group"
+          id="open-research"
+          data-group="open"
+        >
+
+          <div class="group-heading">
+
+            <h2>Open Research and Technical Guides</h2>
+
+            <span class="group-count">4 publications</span>
+
+          </div>
+
+          <div class="publication-list">
+
+            <!-- OPEN RESEARCH 01 -->
+
+            <article
+              class="publication-record"
+              data-category="open"
+              data-date="2026"
+            >
+
+              <div class="publication-record-top">
+
+                <span class="publication-type">
+                  Open Technical Guide
+                </span>
+
+                <span class="publication-date">
+                  2026
+                </span>
+
+              </div>
+
+              <h3>
+                Decision Quality System in High-Risk Environments
+              </h3>
+
+              <p class="publication-author">
+                Ralph Figueroa
+              </p>
+
+              <p class="publication-journal">
+                Zenodo &middot; Open Research Repository
+              </p>
+
+              <p class="publication-description">
+                A practical decision-quality reference for
+                high-risk environments in which evidence,
+                authority, timing, and accountability must
+                remain aligned before action.
+              </p>
+
+              <p class="publication-doi">
+
+                DOI:
+
+                <a
+                  href="https://doi.org/10.5281/zenodo.19580949"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  10.5281/zenodo.19580949
+                </a>
+
+              </p>
+
+              <div class="publication-actions">
+
+                <a
+                  href="https://doi.org/10.5281/zenodo.19580949"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="lri-btn lri-btn-primary"
+                >
+                  Access Research Output &rarr;
+                </a>
+
+                <button
+                  type="button"
+                  class="citation-button"
+                  data-citation="Figueroa, R. (2026). Decision quality system in high-risk environments. Zenodo. https://doi.org/10.5281/zenodo.19580949"
+                >
+                  Copy Citation
+                </button>
+
+              </div>
+
+            </article>
+
+            <!-- OPEN RESEARCH 02 -->
+
+            <article
+              class="publication-record"
+              data-category="open"
+              data-date="2026"
+            >
+
+              <div class="publication-record-top">
+
+                <span class="publication-type">
+                  Open Technical Guide
+                </span>
+
+                <span class="publication-date">
+                  2026
+                </span>
+
+              </div>
+
+              <h3>
+                A Practical Guide to Decision Authority Under Delay
+              </h3>
+
+              <p class="publication-author">
+                Ralph Figueroa
+              </p>
+
+              <p class="publication-journal">
+                Zenodo &middot; Open Research Repository
+              </p>
+
+              <p class="publication-description">
+                Provides practical guidance for assigning,
+                bounding, and reviewing decision authority
+                when communication delay prevents continuous
+                real-time supervision.
+              </p>
+
+              <p class="publication-doi">
+
+                DOI:
+
+                <a
+                  href="https://doi.org/10.5281/zenodo.19580581"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  10.5281/zenodo.19580581
+                </a>
+
+              </p>
+
+              <div class="publication-actions">
+
+                <a
+                  href="https://doi.org/10.5281/zenodo.19580581"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="lri-btn lri-btn-primary"
+                >
+                  Access Research Output &rarr;
+                </a>
+
+                <button
+                  type="button"
+                  class="citation-button"
+                  data-citation="Figueroa, R. (2026). A practical guide to decision authority under delay. Zenodo. https://doi.org/10.5281/zenodo.19580581"
+                >
+                  Copy Citation
+                </button>
+
+              </div>
+
+            </article>
+
+            <!-- OPEN RESEARCH 03 -->
+
+            <article
+              class="publication-record"
+              data-category="open"
+              data-date=""
+            >
+
+              <div class="publication-record-top">
+
+                <span class="publication-type">
+                  Open Research Output
+                </span>
+
+                <span class="publication-date">
+                  Repository Record
+                </span>
+
+              </div>
+
+              <h3>
+                Predictive Signatures for Lunar Manufacturing Systems
+              </h3>
+
+              <p class="publication-journal">
+                Zenodo &middot; Open Research Repository
+              </p>
+
+              <p class="publication-description">
+                Introduces predictive-signature constructs
+                for lunar manufacturing systems, including
+                drift detection, verification overload,
+                and decision latency under environmental
+                constraints.
+              </p>
+
+              <p class="publication-doi">
+
+                DOI:
+
+                <a
+                  href="https://doi.org/10.5281/zenodo.18307522"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  10.5281/zenodo.18307522
+                </a>
+
+              </p>
+
+              <div class="publication-actions">
+
+                <a
+                  href="https://doi.org/10.5281/zenodo.18307522"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="lri-btn lri-btn-primary"
+                >
+                  Access Research Output &rarr;
+                </a>
+
+              </div>
+
+            </article>
+
+            <!-- OPEN RESEARCH 04 -->
+
+            <article
+              class="publication-record"
+              data-category="open"
+              data-date="2025"
+            >
+
+              <div class="publication-record-top">
+
+                <span class="publication-type">
+                  Open Research Output
+                </span>
+
+                <span class="publication-date">
+                  2025
+                </span>
+
+              </div>
+
+              <h3>
                 CTQ Decomposition for Lunar Additive Manufacturing:
-                Environmental Modifiers, Process Drift, and Verification Load
-                Design
-              </em>.
-              Zenodo.<br>
-              <strong>DOI:</strong>
-              <a
-                href="https://doi.org/10.5281/zenodo.18048071"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                10.5281/zenodo.18048071
-              </a>
-            </p>
+                Environmental Modifiers, Process Drift,
+                and Verification Load Design
+              </h3>
 
-            <div class="lri-cta-row">
+              <p class="publication-author">
+                Ralph Figueroa
+              </p>
 
-              <a
-                href="https://doi.org/10.5281/zenodo.18048071"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="lri-btn lri-btn-outline"
-              >
-                View Publication
-              </a>
+              <p class="publication-journal">
+                Zenodo &middot; Open Research Repository
+              </p>
 
-            </div>
-          </article>
+              <p class="publication-description">
+                Develops a critical-to-quality map for
+                lunar additive manufacturing that connects
+                environmental modifiers, manufacturing
+                process drift, and verification-load design.
+              </p>
 
-          <article class="lri-card">
+              <p class="publication-doi">
 
-            <span class="lri-badge lri-badge-published">
-              Published
-            </span>
+                DOI:
 
-            <h3>
-              Predictive Signatures for Lunar Manufacturing Systems
-            </h3>
+                <a
+                  href="https://doi.org/10.5281/zenodo.18048071"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  10.5281/zenodo.18048071
+                </a>
 
-            <p>
-              Introduces predictive-signature constructs for lunar
-              manufacturing systems, including drift detection, verification
-              overload, and decision latency under environmental constraints.
-            </p>
+              </p>
 
-            <p class="lri-meta">
-              <strong>Type:</strong> Open research output<br>
-              <strong>DOI:</strong>
-              <a
-                href="https://doi.org/10.5281/zenodo.18307522"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                10.5281/zenodo.18307522
-              </a>
-            </p>
+              <div class="publication-actions">
 
-            <div class="lri-cta-row">
+                <a
+                  href="https://doi.org/10.5281/zenodo.18048071"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="lri-btn lri-btn-primary"
+                >
+                  Access Research Output &rarr;
+                </a>
 
-              <a
-                href="https://doi.org/10.5281/zenodo.18307522"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="lri-btn lri-btn-outline"
-              >
-                View Publication
-              </a>
+                <button
+                  type="button"
+                  class="citation-button"
+                  data-citation="Figueroa, R. (2025). CTQ decomposition for lunar additive manufacturing: Environmental modifiers, process drift, and verification load design. Zenodo. https://doi.org/10.5281/zenodo.18048071"
+                >
+                  Copy Citation
+                </button>
 
-            </div>
-          </article>
+              </div>
 
-          <article class="lri-card">
-
-            <span class="lri-badge lri-badge-progress">
-              Research in Development
-            </span>
-
-            <h3>
-              Regolith Material Behavior and Process Drift in Lunar
-              Manufacturing
-            </h3>
-
-            <p>
-              Examines process-drift mechanisms in regolith-based
-              manufacturing and the verification structures required to
-              preserve process stability as materials and operating conditions
-              change.
-            </p>
-
-            <p class="lri-meta">
-              <strong>Status:</strong> Manuscript in preparation
-            </p>
-
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <section class="lri-section">
-      <div class="lri-section-inner">
-
-        <div class="lri-section-heading">
-
-          <span class="lri-kicker">
-            Long-Form Research
-          </span>
-
-          <h2 class="lri-section-title">
-            Books
-          </h2>
-
-          <p class="lri-section-text">
-            Book-length treatments of lunar systems, governance, evidence,
-            verification, and decision authority.
-          </p>
-
-        </div>
-
-        <div class="lri-card-grid">
-
-          <article class="lri-card">
-
-            <span class="lri-badge lri-badge-published">
-              Published
-            </span>
-
-            <h3>
-              Governance Beyond Earth: Decision Authority, Verification,
-              and Evidence Integrity for Lunar Operations
-            </h3>
-
-            <p>
-              Examines governance failure modes unique to lunar missions,
-              including communication delay, degraded evidence, constrained
-              verification, and distributed decision authority.
-            </p>
-
-            <p class="lri-meta">
-              <strong>Author:</strong> Ralph Figueroa<br>
-              <strong>Type:</strong> Book<br>
-              <strong>ISBN:</strong> 979-8243257398
-            </p>
-
-            <div class="lri-cta-row">
-
-              <a
-                href="../books/"
-                class="lri-btn lri-btn-outline"
-              >
-                View Book
-              </a>
-
-            </div>
-          </article>
-
-          <article class="lri-card">
-
-            <span class="lri-badge lri-badge-published">
-              Published
-            </span>
-
-            <h3>
-              The Moon: Our Celestial Neighbor
-            </h3>
-
-            <p>
-              Introduces the Moon’s origin, physical environment, exploration
-              history, resources, scientific value, and role in the future of
-              sustained human space activity.
-            </p>
-
-            <p class="lri-meta">
-              <strong>Author:</strong> Ralph Figueroa<br>
-              <strong>Type:</strong> Book<br>
-              <strong>ISBN:</strong> 979-8271695391
-            </p>
-
-            <div class="lri-cta-row">
-
-              <a
-                href="../books/"
-                class="lri-btn lri-btn-outline"
-              >
-                View Book
-              </a>
-
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <section class="lri-section lri-section-soft">
-      <div class="lri-section-inner">
-
-        <div class="lri-note-card">
-
-          <span class="lri-kicker">
-            Research Portfolio
-          </span>
-
-          <p>
-            This page highlights selected published and developing research
-            outputs. Follow the Aerospace Quality Brief and the LRI research
-            pages for new publications, framework updates, and project
-            announcements.
-          </p>
-
-          <div class="lri-hero-actions">
-
-            <a
-              href="../newsletter/"
-              class="lri-btn lri-btn-primary"
-            >
-              Read the Newsletter
-            </a>
-
-            <a
-              href="../research/"
-              class="lri-btn lri-btn-outline"
-            >
-              Explore Active Research
-            </a>
+            </article>
 
           </div>
+
+        </section>
+
+        <!-- ========================================
+             PUBLIC POLICY CONTRIBUTIONS
+        ======================================== -->
+
+        <section
+          class="publication-group"
+          id="policy-contributions"
+          data-group="policy"
+        >
+
+          <div class="group-heading">
+
+            <h2>Public Policy and Regulatory Contributions</h2>
+
+            <span class="group-count">1 contribution</span>
+
+          </div>
+
+          <div class="publication-list">
+
+            <article
+              class="publication-record"
+              data-category="policy"
+              data-date="2026-08-25"
+            >
+
+              <div class="publication-record-top">
+
+                <span class="publication-type">
+                  FAA Public Comment
+                </span>
+
+                <span class="publication-date">
+                  August 25, 2026
+                </span>
+
+              </div>
+
+              <h3>
+                Response to the Request for Information:
+                Siting New Spaceports and Use of Priority
+                Airspace for Critical Space Launch Corridors
+              </h3>
+
+              <p class="publication-author">
+                Ralph Figueroa
+              </p>
+
+              <p class="publication-journal">
+                Federal Aviation Administration (FAA)
+                &middot; U.S. Department of Transportation
+              </p>
+
+              <p class="publication-description">
+                Recommends that the Department of
+                Transportation advance Puerto Rico into a
+                comparative, federally coordinated feasibility
+                and launch-corridor study centered on
+                Roosevelt Roads and Ceiba.
+              </p>
+
+              <p class="publication-description">
+                The submission proposes a phased space
+                transportation complex and decision gates
+                addressing safety, operator demand,
+                environmental readiness, resilient
+                infrastructure, community participation,
+                and lifecycle finance.
+              </p>
+
+              <p class="publication-doi">
+
+                <strong>Docket:</strong>
+                FAA-2026-9736
+
+                <br>
+
+                <strong>Comment ID:</strong>
+                FAA-2026-9736-0003
+
+              </p>
+
+              <div class="publication-keywords">
+
+                <span class="keyword">Space Policy</span>
+                <span class="keyword">Spaceport Infrastructure</span>
+                <span class="keyword">Puerto Rico</span>
+                <span class="keyword">Regulatory Contribution</span>
+
+              </div>
+
+              <div class="publication-actions">
+
+                <a
+                  href="/publications/faa-2026-9736-puerto-rico-spaceport/"
+                  class="lri-btn lri-btn-primary"
+                >
+                  Read LRI Summary &rarr;
+                </a>
+
+                <a
+                  href="https://www.regulations.gov/comment/FAA-2026-9736-0003"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="lri-btn lri-btn-outline"
+                >
+                  Official Docket Record
+                </a>
+
+              </div>
+
+            </article>
+
+          </div>
+
+        </section>
+
+        <!-- ========================================
+             BOOKS
+        ======================================== -->
+
+        <section
+          class="publication-group"
+          id="books"
+          data-group="book"
+        >
+
+          <div class="group-heading">
+
+            <h2>Books</h2>
+
+            <span class="group-count">2 publications</span>
+
+          </div>
+
+          <div class="publication-list">
+
+            <!-- BOOK 01 -->
+
+            <article
+              class="publication-record"
+              data-category="book"
+              data-date="2026"
+            >
+
+              <div class="publication-record-top">
+
+                <span class="publication-type">
+                  Published Book
+                </span>
+
+              </div>
+
+              <h3>
+                Governance Beyond Earth: Decision Authority,
+                Verification, and Evidence Integrity
+                for Lunar Operations
+              </h3>
+
+              <p class="publication-author">
+                Ralph Figueroa
+              </p>
+
+              <p class="publication-description">
+                Examines governance challenges associated
+                with lunar operations, including communication
+                delay, degraded evidence, constrained
+                verification, and distributed decision
+                authority.
+              </p>
+
+              <p class="publication-doi">
+                <strong>ISBN:</strong> 979-8243257398
+              </p>
+
+              <div class="publication-actions">
+
+                <a href="/books/" class="lri-btn lri-btn-outline">
+                  View Book Collection &rarr;
+                </a>
+
+              </div>
+
+            </article>
+
+            <!-- BOOK 02 -->
+
+            <article
+              class="publication-record"
+              data-category="book"
+              data-date=""
+            >
+
+              <div class="publication-record-top">
+
+                <span class="publication-type">
+                  Published Book
+                </span>
+
+              </div>
+
+              <h3>
+                The Moon: Our Celestial Neighbor
+              </h3>
+
+              <p class="publication-author">
+                Ralph Figueroa
+              </p>
+
+              <p class="publication-description">
+                Explores the Moon's origin, physical
+                environment, scientific significance,
+                exploration history, resources, and role
+                in the future of sustained human space
+                activity.
+              </p>
+
+              <p class="publication-doi">
+                <strong>ISBN:</strong> 979-8271695391
+              </p>
+
+              <div class="publication-actions">
+
+                <a href="/books/" class="lri-btn lri-btn-outline">
+                  View Book Collection &rarr;
+                </a>
+
+              </div>
+
+            </article>
+
+          </div>
+
+        </section>
+
+        <!-- ========================================
+             EMPTY SEARCH RESULTS
+        ======================================== -->
+
+        <div class="empty-results" id="empty-results" hidden>
+
+          <h3>No Publications Found</h3>
+
+          <p>
+            Try a different search term or select
+            another publication category.
+          </p>
+
+          <button type="button" id="clear-filters">
+            Clear Search and Filters
+          </button>
+
         </div>
+
+        <!-- ========================================
+             RESEARCH IN DEVELOPMENT
+        ======================================== -->
+
+        <aside class="research-note">
+
+          <h3>
+            Research in Development
+          </h3>
+
+          <p>
+            LRI continues to investigate lunar manufacturing,
+            regolith material behavior and process drift,
+            verification planning, evidence integrity,
+            temporal evidence admissibility, supervisory
+            autonomy, and decision assurance.
+          </p>
+
+          <p>
+            The publication catalogue distinguishes published
+            contributions from ongoing research and manuscripts
+            in preparation.
+          </p>
+
+          <a href="/research/" class="text-link">
+            Explore Current Research Directions &rarr;
+          </a>
+
+        </aside>
+
       </div>
+
+    </section>
+
+    <!-- ========================================
+         SCIENTIFIC COLLABORATION
+    ======================================== -->
+
+    <section class="publication-collaboration">
+
+      <span class="eyebrow">
+        Scientific Exchange
+      </span>
+
+      <h2>
+        Research, Knowledge, and Collaboration
+      </h2>
+
+      <p>
+        LRI welcomes scientific discussion, research
+        collaboration, and professional engagement
+        related to its publications and engineering
+        research program.
+      </p>
+
+      <div class="button-row">
+
+        <a href="/contact/" class="lri-btn lri-btn-primary">
+          Contact the Initiative &rarr;
+        </a>
+
+        <a href="/research/" class="lri-btn lri-btn-outline">
+          Explore Our Research
+        </a>
+
+      </div>
+
     </section>
 
   </main>
 
-  <footer class="lri-footer">
-    <div class="lri-footer-inner">
-      <p>
-        &copy; 2026 Lunar Research Initiative. All rights reserved.
-      </p>
+  <!-- ========================================
+       FOOTER
+  ======================================== -->
+
+  <footer class="site-footer">
+
+    <div class="publication-container">
+
+      <div class="footer-grid">
+
+        <div class="footer-about">
+
+          <div class="footer-brand">
+
+            <img
+              src="/assets/img/LRI%20LOGO.jpeg"
+              alt=""
+              width="55"
+              height="55"
+              loading="lazy"
+            >
+
+            <strong>
+              Lunar Research<br>
+              Initiative
+            </strong>
+
+          </div>
+
+          <p class="footer-description">
+            Advancing scientific research and engineering
+            methods for quality, reliability, and decision
+            assurance beyond Earth.
+          </p>
+
+        </div>
+
+        <div class="footer-column">
+
+          <h3>Organization</h3>
+
+          <a href="/about/">About LRI</a>
+
+          <a href="/research/">Research</a>
+
+          <a href="/initiatives/">Initiatives</a>
+
+          <a href="/partnerships/">Partnerships</a>
+
+        </div>
+
+        <div class="footer-column">
+
+          <h3>Scientific Resources</h3>
+
+          <a href="/publications/">Publications</a>
+
+          <a href="/standards/">Standards</a>
+
+          <a href="/books/">Books</a>
+
+          <a href="/cite/">Cite This Site</a>
+
+        </div>
+
+        <div class="footer-column">
+
+          <h3>Connect</h3>
+
+          <a href="/contact/">Contact LRI</a>
+
+          <a href="/newsletter/">Aerospace Quality Brief</a>
+
+          <a
+            href="https://www.linkedin.com/newsletters/7402028860193796097/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Subscribe on LinkedIn
+          </a>
+
+          <a href="/newsletter/archive/">Newsletter Archive</a>
+
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+
+        <p>
+          &copy; <span id="copyright-year">2026</span>
+          Lunar Research Initiative. All rights reserved.
+        </p>
+
+        <p>
+          Lunar Quality &middot; Verification &middot; Decision Assurance
+        </p>
+
+      </div>
+
     </div>
+
   </footer>
 
+  <!-- ========================================
+       NAVIGATION AND CATALOGUE FUNCTIONALITY
+  ======================================== -->
+
+  <script>
+
+    /* MOBILE NAVIGATION */
+
+    const menuToggle =
+      document.getElementById("menu-toggle");
+
+    const navigation =
+      document.getElementById("main-navigation");
+
+    const dropdowns =
+      document.querySelectorAll(".nav-dropdown");
+
+    menuToggle.addEventListener("click", function () {
+
+      const isOpen =
+        navigation.classList.toggle("is-open");
+
+      menuToggle.setAttribute(
+        "aria-expanded",
+        String(isOpen)
+      );
+
+    });
+
+    dropdowns.forEach(function (dropdown) {
+
+      dropdown.addEventListener("toggle", function () {
+
+        if (dropdown.open) {
+
+          dropdowns.forEach(function (otherDropdown) {
+
+            if (otherDropdown !== dropdown) {
+              otherDropdown.open = false;
+            }
+
+          });
+
+        }
+
+      });
+
+    });
+
+    document.addEventListener("click", function (event) {
+
+      dropdowns.forEach(function (dropdown) {
+
+        if (!dropdown.contains(event.target)) {
+          dropdown.open = false;
+        }
+
+      });
+
+    });
+
+    document.addEventListener("keydown", function (event) {
+
+      if (event.key === "Escape") {
+
+        dropdowns.forEach(function (dropdown) {
+
+          if (dropdown.open) {
+
+            dropdown.open = false;
+
+            dropdown.querySelector("summary").focus();
+
+          }
+
+        });
+
+        if (navigation.classList.contains("is-open")) {
+
+          navigation.classList.remove("is-open");
+
+          menuToggle.setAttribute(
+            "aria-expanded",
+            "false"
+          );
+
+          menuToggle.focus();
+
+        }
+
+      }
+
+    });
+
+    window.addEventListener("resize", function () {
+
+      if (window.innerWidth > 900) {
+
+        navigation.classList.remove("is-open");
+
+        menuToggle.setAttribute(
+          "aria-expanded",
+          "false"
+        );
+
+      }
+
+    });
+
+
+    /* PUBLICATION SEARCH AND FILTERS */
+
+    const searchInput =
+      document.getElementById("publication-search");
+
+    const sortSelect =
+      document.getElementById("publication-sort");
+
+    const filterButtons =
+      document.querySelectorAll(".filter-button");
+
+    const publicationRecords =
+      Array.from(document.querySelectorAll(".publication-record"));
+
+    const publicationGroups =
+      document.querySelectorAll(".publication-group");
+
+    const resultsCount =
+      document.getElementById("results-count");
+
+    const emptyResults =
+      document.getElementById("empty-results");
+
+    let activeFilter = "all";
+
+
+    function updateSummaryCounts() {
+
+      const categories = [
+        "journal",
+        "professional",
+        "open",
+        "policy",
+        "book"
+      ];
+
+      categories.forEach(function (category) {
+
+        const count = publicationRecords.filter(
+          record => record.dataset.category === category
+        ).length;
+
+        const counter =
+          document.getElementById(category + "-count");
+
+        if (counter) {
+          counter.textContent = count;
+        }
+
+      });
+
+    }
+
+
+    function applyFilters() {
+
+      const query =
+        searchInput.value.toLowerCase().trim();
+
+      const terms =
+        query.split(/\s+/).filter(Boolean);
+
+      let visibleCount = 0;
+
+      publicationRecords.forEach(function (record) {
+
+        const text =
+          record.textContent.toLowerCase();
+
+        const categoryMatches =
+          activeFilter === "all" ||
+          record.dataset.category === activeFilter;
+
+        const searchMatches =
+          terms.every(term => text.includes(term));
+
+        const visible =
+          categoryMatches && searchMatches;
+
+        record.hidden = !visible;
+
+        if (visible) {
+          visibleCount++;
+        }
+
+      });
+
+      publicationGroups.forEach(function (group) {
+
+        const visibleRecords =
+          group.querySelectorAll(".publication-record:not([hidden])");
+
+        group.hidden = visibleRecords.length === 0;
+
+        const countLabel =
+          group.querySelector(".group-count");
+
+        if (countLabel) {
+
+          countLabel.textContent =
+            visibleRecords.length +
+            (visibleRecords.length === 1 ? " record" : " records");
+
+        }
+
+      });
+
+      resultsCount.textContent =
+        visibleCount + " of " +
+        publicationRecords.length +
+        " publication records";
+
+      emptyResults.hidden = visibleCount !== 0;
+
+    }
+
+
+    function dateValue(record) {
+
+      const value = record.dataset.date;
+
+      if (!value) {
+        return null;
+      }
+
+      const dateString =
+        /^\d{4}$/.test(value)
+          ? value + "-01-01"
+          : value;
+
+      const timestamp = Date.parse(dateString);
+
+      return Number.isNaN(timestamp)
+        ? null
+        : timestamp;
+
+    }
+
+
+    function sortPublications() {
+
+      const sortType = sortSelect.value;
+
+      publicationGroups.forEach(function (group) {
+
+        const list =
+          group.querySelector(".publication-list");
+
+        const records =
+          Array.from(list.querySelectorAll(".publication-record"));
+
+        records.sort(function (a, b) {
+
+          if (sortType === "title") {
+
+            return a.querySelector("h3").textContent.trim()
+              .localeCompare(
+                b.querySelector("h3").textContent.trim()
+              );
+
+          }
+
+          const dateA = dateValue(a);
+
+          const dateB = dateValue(b);
+
+          if (dateA === null && dateB === null) {
+            return 0;
+          }
+
+          if (dateA === null) {
+            return 1;
+          }
+
+          if (dateB === null) {
+            return -1;
+          }
+
+          return sortType === "oldest"
+            ? dateA - dateB
+            : dateB - dateA;
+
+        });
+
+        records.forEach(function (record) {
+
+          list.appendChild(record);
+
+        });
+
+      });
+
+      applyFilters();
+
+    }
+
+
+    filterButtons.forEach(function (button) {
+
+      button.addEventListener("click", function () {
+
+        activeFilter = button.dataset.filter;
+
+        filterButtons.forEach(function (item) {
+
+          item.classList.remove("active");
+
+          item.setAttribute(
+            "aria-pressed",
+            "false"
+          );
+
+        });
+
+        button.classList.add("active");
+
+        button.setAttribute(
+          "aria-pressed",
+          "true"
+        );
+
+        applyFilters();
+
+      });
+
+    });
+
+
+    searchInput.addEventListener(
+      "input",
+      applyFilters
+    );
+
+
+    sortSelect.addEventListener(
+      "change",
+      sortPublications
+    );
+
+
+    document.getElementById("clear-filters")
+      .addEventListener("click", function () {
+
+        searchInput.value = "";
+
+        activeFilter = "all";
+
+        filterButtons.forEach(function (button) {
+
+          const isActive =
+            button.dataset.filter === "all";
+
+          button.classList.toggle(
+            "active",
+            isActive
+          );
+
+          button.setAttribute(
+            "aria-pressed",
+            String(isActive)
+          );
+
+        });
+
+        sortSelect.value = "newest";
+
+        sortPublications();
+
+        searchInput.focus();
+
+      });
+
+
+    /* COPY CITATION FUNCTION */
+
+    document.querySelectorAll(".citation-button")
+      .forEach(function (button) {
+
+        button.addEventListener("click", async function () {
+
+          const citation = button.dataset.citation;
+
+          const originalLabel = "Copy Citation";
+
+          try {
+
+            await navigator.clipboard.writeText(citation);
+
+            button.textContent = "Citation Copied";
+
+            setTimeout(function () {
+
+              button.textContent = originalLabel;
+
+            }, 2000);
+
+          } catch (error) {
+
+            window.prompt(
+              "Copy the citation below:",
+              citation
+            );
+
+          }
+
+        });
+
+      });
+
+
+    /* AUTOMATIC COPYRIGHT YEAR */
+
+    document.getElementById("copyright-year").textContent =
+      new Date().getFullYear();
+
+
+    /* INITIALIZE CATALOGUE */
+
+    updateSummaryCounts();
+
+    sortPublications();
+
+  </script>
+
 </body>
+
 </html>
