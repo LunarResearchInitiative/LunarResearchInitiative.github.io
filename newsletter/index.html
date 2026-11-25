@@ -27,9 +27,25 @@
 
   <style>
 
-    /* ========================================
-       PAGE LAYOUT
-    ======================================== */
+    :root {
+      --lri-navy: #0b1420;
+      --lri-navy-light: #142334;
+      --lri-navy-dark: #080d14;
+      --lri-gold: #ddbb7a;
+      --lri-white: #f1f3f6;
+      --lri-muted: #aab8c8;
+      --lri-border: #344354;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    [hidden] {
+      display: none !important;
+    }
+
+    /* PAGE LAYOUT */
 
     main {
       max-width: none;
@@ -38,16 +54,17 @@
     }
 
     .newsletter-container {
-      width: min(100% - 64px, 1320px);
+      width: min(calc(100% - 64px), 1320px);
       margin: 0 auto;
     }
 
-    /* ========================================
-       HEADER AND NAVIGATION
-    ======================================== */
+    /* HEADER AND NAVIGATION */
 
     .site-header {
+      position: relative;
+      z-index: 100;
       padding: 0;
+      background: var(--lri-navy-dark);
     }
 
     .header-inner {
@@ -70,6 +87,8 @@
     .brand-logo {
       width: 66px;
       height: 66px;
+      object-fit: contain;
+      border-radius: 50%;
     }
 
     .brand-name {
@@ -151,7 +170,7 @@
       border: 1px solid var(--lri-border);
       border-radius: 5px;
       box-shadow: 0 15px 30px rgba(0,0,0,0.3);
-      z-index: 100;
+      z-index: 110;
     }
 
     .dropdown-menu a {
@@ -175,16 +194,13 @@
       border: 1px solid var(--lri-border);
     }
 
-    /* ========================================
-       NEWSLETTER HERO
-    ======================================== */
+    /* NEWSLETTER HERO */
 
     .newsletter-hero {
       min-height: 440px;
       display: flex;
       align-items: center;
       background-color: var(--lri-navy-dark);
-
       background-image:
         linear-gradient(
           90deg,
@@ -193,7 +209,6 @@
           rgba(8,13,20,0.28)
         ),
         url("/assets/img/lunar-hero.jpg");
-
       background-size: cover;
       background-position: center;
       border-bottom: 1px solid var(--lri-border);
@@ -231,9 +246,7 @@
       gap: 14px;
     }
 
-    /* ========================================
-       NEWSLETTER INFORMATION STRIP
-    ======================================== */
+    /* NEWSLETTER INFORMATION */
 
     .newsletter-info {
       background: var(--lri-navy-light);
@@ -268,9 +281,7 @@
       font-size: 0.87rem;
     }
 
-    /* ========================================
-       SECTION DESIGN
-    ======================================== */
+    /* SECTION DESIGN */
 
     .newsletter-section {
       padding: 65px 0;
@@ -298,9 +309,7 @@
       line-height: 1.8;
     }
 
-    /* ========================================
-       EDITORIAL PURPOSE
-    ======================================== */
+    /* EDITORIAL PURPOSE */
 
     .editorial-layout {
       display: grid;
@@ -329,9 +338,7 @@
       margin-bottom: 0;
     }
 
-    /* ========================================
-       FEATURED EDITION
-    ======================================== */
+    /* FEATURED EDITION */
 
     .featured-edition {
       padding: 35px;
@@ -375,9 +382,7 @@
       margin-bottom: 22px;
     }
 
-    /* ========================================
-       SELECTED EDITIONS
-    ======================================== */
+    /* SELECTED EDITIONS */
 
     .edition-grid {
       display: grid;
@@ -447,9 +452,7 @@
       text-align: center;
     }
 
-    /* ========================================
-       EDITORIAL TOPICS
-    ======================================== */
+    /* EDITORIAL TOPICS */
 
     .topic-grid {
       display: grid;
@@ -484,9 +487,7 @@
       margin-bottom: 0;
     }
 
-    /* ========================================
-       EDITORIAL FOCUS
-    ======================================== */
+    /* EDITORIAL FOCUS */
 
     .editorial-focus {
       padding: 28px 32px;
@@ -509,9 +510,7 @@
       margin-bottom: 0;
     }
 
-    /* ========================================
-       PROFESSIONAL RECOGNITION
-    ======================================== */
+    /* PROFESSIONAL RECOGNITION */
 
     .recognition-panel {
       padding: 30px 34px;
@@ -533,22 +532,18 @@
       margin-bottom: 20px;
     }
 
-    /* ========================================
-       SUBSCRIPTION SECTION
-    ======================================== */
+    /* SUBSCRIPTION */
 
     .newsletter-subscribe {
       padding: 85px 24px;
       text-align: center;
       background-color: var(--lri-navy-dark);
-
       background-image:
         linear-gradient(
           rgba(11,20,32,0.94),
           rgba(11,20,32,0.68)
         ),
         url("/assets/img/lunar-landscape.jpg");
-
       background-size: cover;
       background-position: center 65%;
       border-top: 1px solid var(--lri-border);
@@ -567,9 +562,7 @@
       line-height: 1.8;
     }
 
-    /* ========================================
-       FOOTER
-    ======================================== */
+    /* FOOTER */
 
     .site-footer {
       padding: 50px 0 25px;
@@ -639,9 +632,16 @@
       font-size: 0.8rem;
     }
 
-    /* ========================================
-       RESPONSIVE DESIGN
-    ======================================== */
+    /* ACCESSIBILITY */
+
+    a:focus-visible,
+    button:focus-visible,
+    summary:focus-visible {
+      outline: 2px solid var(--lri-gold);
+      outline-offset: 4px;
+    }
+
+    /* RESPONSIVE DESIGN */
 
     @media (max-width: 1100px) {
 
@@ -737,7 +737,6 @@
 
       .newsletter-hero {
         min-height: 400px;
-
         background-image:
           linear-gradient(
             rgba(8,13,20,0.78),
@@ -805,6 +804,15 @@
 
     }
 
+    @media (prefers-reduced-motion: reduce) {
+
+      * {
+        scroll-behavior: auto !important;
+        transition: none !important;
+      }
+
+    }
+
     @media print {
 
       .newsletter-hero,
@@ -868,9 +876,7 @@
     Skip to main content
   </a>
 
-  <!-- ========================================
-       HEADER
-  ======================================== -->
+  <!-- HEADER -->
 
   <header class="site-header">
 
@@ -981,9 +987,7 @@
 
   <main id="main-content">
 
-    <!-- ========================================
-         HERO
-    ======================================== -->
+    <!-- HERO -->
 
     <section
       class="newsletter-hero"
@@ -1035,9 +1039,7 @@
 
     </section>
 
-    <!-- ========================================
-         NEWSLETTER INFORMATION
-    ======================================== -->
+    <!-- NEWSLETTER INFORMATION -->
 
     <section
       class="newsletter-info"
@@ -1048,7 +1050,7 @@
 
         <div class="info-item">
 
-          <strong>Weekly Newsletter</strong>
+          <strong>Biweekly Newsletter</strong>
 
           <span>
             Practical aerospace-quality analysis
@@ -1080,9 +1082,7 @@
 
     </section>
 
-    <!-- ========================================
-         EDITORIAL PURPOSE
-    ======================================== -->
+    <!-- EDITORIAL PURPOSE -->
 
     <section
       class="newsletter-section"
@@ -1135,9 +1135,7 @@
 
     </section>
 
-    <!-- ========================================
-         FEATURED EDITION
-    ======================================== -->
+    <!-- FEATURED EDITION -->
 
     <section
       class="newsletter-section newsletter-section-alt"
@@ -1222,9 +1220,7 @@
 
     </section>
 
-    <!-- ========================================
-         SELECTED EDITIONS
-    ======================================== -->
+    <!-- SELECTED EDITIONS -->
 
     <section
       class="newsletter-section"
@@ -1432,9 +1428,7 @@
 
     </section>
 
-    <!-- ========================================
-         EDITORIAL TOPICS
-    ======================================== -->
+    <!-- EDITORIAL TOPICS -->
 
     <section
       class="newsletter-section newsletter-section-alt"
@@ -1578,9 +1572,7 @@
 
     </section>
 
-    <!-- ========================================
-         PROFESSIONAL RECOGNITION
-    ======================================== -->
+    <!-- PROFESSIONAL RECOGNITION -->
 
     <section
       class="newsletter-section"
@@ -1645,9 +1637,7 @@
 
     </section>
 
-    <!-- ========================================
-         PRACTICAL APPLICATION
-    ======================================== -->
+    <!-- PRACTICAL APPLICATION -->
 
     <section
       class="newsletter-section newsletter-section-alt"
@@ -1698,9 +1688,7 @@
 
     </section>
 
-    <!-- ========================================
-         SUBSCRIPTION
-    ======================================== -->
+    <!-- SUBSCRIPTION -->
 
     <section
       class="newsletter-subscribe"
@@ -1748,9 +1736,7 @@
 
   </main>
 
-  <!-- ========================================
-       FOOTER
-  ======================================== -->
+  <!-- FOOTER -->
 
   <footer class="site-footer">
 
@@ -1856,9 +1842,7 @@
 
   </footer>
 
-  <!-- ========================================
-       NAVIGATION SCRIPT
-  ======================================== -->
+  <!-- NAVIGATION SCRIPT -->
 
   <script>
 
@@ -1870,6 +1854,17 @@
 
     const dropdowns =
       document.querySelectorAll(".nav-dropdown");
+
+    function closeMobileMenu() {
+
+      navigation.classList.remove("is-open");
+
+      menuToggle.setAttribute(
+        "aria-expanded",
+        "false"
+      );
+
+    }
 
     menuToggle.addEventListener("click", function () {
 
@@ -1892,7 +1887,9 @@
           dropdowns.forEach(function (otherDropdown) {
 
             if (otherDropdown !== dropdown) {
+
               otherDropdown.open = false;
+
             }
 
           });
@@ -1908,10 +1905,21 @@
       dropdowns.forEach(function (dropdown) {
 
         if (!dropdown.contains(event.target)) {
+
           dropdown.open = false;
+
         }
 
       });
+
+      if (
+        !navigation.contains(event.target) &&
+        !menuToggle.contains(event.target)
+      ) {
+
+        closeMobileMenu();
+
+      }
 
     });
 
@@ -1919,26 +1927,20 @@
 
       if (event.key === "Escape") {
 
-        dropdowns.forEach(function (dropdown) {
-
-          if (dropdown.open) {
-
-            dropdown.open = false;
-
-            dropdown.querySelector("summary").focus();
-
-          }
-
-        });
-
-        if (navigation.classList.contains("is-open")) {
-
-          navigation.classList.remove("is-open");
-
-          menuToggle.setAttribute(
-            "aria-expanded",
-            "false"
+        const openDropdown =
+          Array.from(dropdowns).find(
+            dropdown => dropdown.open
           );
+
+        if (openDropdown) {
+
+          openDropdown.open = false;
+
+          openDropdown.querySelector("summary").focus();
+
+        } else if (navigation.classList.contains("is-open")) {
+
+          closeMobileMenu();
 
           menuToggle.focus();
 
@@ -1952,12 +1954,7 @@
 
       if (window.innerWidth > 900) {
 
-        navigation.classList.remove("is-open");
-
-        menuToggle.setAttribute(
-          "aria-expanded",
-          "false"
-        );
+        closeMobileMenu();
 
       }
 
