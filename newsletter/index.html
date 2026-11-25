@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,96 +7,29 @@
 
   <title>Aerospace Quality Brief | Lunar Research Initiative</title>
 
-  <meta
-    name="description"
-    content="Aerospace Quality Brief is the weekly LinkedIn newsletter from Ralph Figueroa and the Lunar Research Initiative, offering practical analysis of aerospace quality, digital-thread evidence integrity, verification, configuration control, CAPA, supplier risk, and decision assurance."
-  >
+  <meta name="description" content="Aerospace Quality Brief provides practical analysis of aerospace quality, evidence integrity, verification, configuration management, supplier risk, corrective action, and decision assurance.">
 
-  <meta name="author" content="Lunar Research Initiative">
+  <meta name="author" content="Ralph Figueroa">
   <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0b1420">
 
-  <link
-    rel="canonical"
-    href="https://lunarresearchinitiative.github.io/newsletter/"
-  >
-
+  <link rel="canonical" href="https://lunarresearchinitiative.github.io/newsletter/">
   <link rel="stylesheet" href="/assets/css/style.css">
 
   <meta property="og:type" content="website">
-
-  <meta
-    property="og:title"
-    content="Aerospace Quality Brief | Lunar Research Initiative"
-  >
-
-  <meta
-    property="og:description"
-    content="Weekly aerospace-quality analysis on evidence integrity, verification, configuration control, supplier risk, CAPA, and decision assurance."
-  >
-
-  <meta
-    property="og:url"
-    content="https://lunarresearchinitiative.github.io/newsletter/"
-  >
-
-  <meta
-    property="og:site_name"
-    content="Lunar Research Initiative"
-  >
-
-  <meta
-    property="og:image"
-    content="https://lunarresearchinitiative.github.io/assets/img/LRI%20LOGO.jpeg"
-  >
+  <meta property="og:title" content="Aerospace Quality Brief | Lunar Research Initiative">
+  <meta property="og:description" content="Practical engineering insights for trustworthy decisions, reliable systems, and effective aerospace quality management.">
+  <meta property="og:url" content="https://lunarresearchinitiative.github.io/newsletter/">
+  <meta property="og:site_name" content="Lunar Research Initiative">
+  <meta property="og:image" content="https://lunarresearchinitiative.github.io/assets/img/lunar-hero.jpg">
 
   <meta name="twitter:card" content="summary_large_image">
 
-  <meta
-    name="twitter:title"
-    content="Aerospace Quality Brief | Lunar Research Initiative"
-  >
-
-  <meta
-    name="twitter:description"
-    content="Weekly aerospace-quality analysis on evidence integrity, verification, configuration control, supplier risk, CAPA, and decision assurance."
-  >
-
-  <meta
-    name="twitter:image"
-    content="https://lunarresearchinitiative.github.io/assets/img/LRI%20LOGO.jpeg"
-  >
-
   <style>
-    :root {
-      --lri-orange: #e46a1f;
-      --lri-orange-dark: #cf5d18;
-      --lri-text: #111111;
-      --lri-muted: #5a5a5a;
-      --lri-border: rgba(0, 0, 0, 0.08);
-      --lri-bg: #ffffff;
-      --lri-soft: #fffaf7;
-      --lri-soft-gray: #f7f7f7;
-      --lri-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
-      --lri-shadow-soft: 0 2px 10px rgba(0, 0, 0, 0.03);
-      --lri-radius: 14px;
-      --lri-max: 1120px;
-    }
 
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      color: var(--lri-text);
-      background: #ffffff;
-      font-size: 16px;
-      line-height: 1.6;
-    }
+    /* ========================================
+       PAGE LAYOUT
+    ======================================== */
 
     main {
       max-width: none;
@@ -103,388 +37,805 @@
       padding: 0;
     }
 
-    a:focus-visible {
-      outline: 3px solid rgba(228, 106, 31, 0.35);
-      outline-offset: 3px;
-    }
-
-    .lri-section {
-      width: 100%;
-      padding: 32px 24px;
-    }
-
-    .lri-section-soft {
-      background: var(--lri-soft-gray);
-    }
-
-    .lri-section-inner,
-    .lri-topbar-inner,
-    .lri-footer-inner {
-      max-width: var(--lri-max);
+    .newsletter-container {
+      width: min(100% - 64px, 1320px);
       margin: 0 auto;
     }
 
-    .lri-hero {
-      padding: 82px 24px 42px;
+    /* ========================================
+       HEADER AND NAVIGATION
+    ======================================== */
+
+    .site-header {
+      padding: 0;
     }
 
-    .lri-hero-inner {
-      max-width: 920px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .lri-kicker {
-      display: block;
-      margin-bottom: 10px;
-      color: var(--lri-orange);
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .lri-hero h1 {
-      margin: 0 0 18px;
-      line-height: 1.12;
-      font-size: clamp(2.2rem, 5vw, 3.25rem);
-    }
-
-    .lri-hero-subtitle {
-      max-width: 820px;
-      margin: 0 auto 16px;
-      color: var(--lri-muted);
-      line-height: 1.75;
-      font-size: 1.06rem;
-    }
-
-    .lri-hero-subtitle:last-of-type {
-      margin-bottom: 0;
-    }
-
-    .lri-hero-actions,
-    .lri-cta-row {
+    .header-inner {
+      min-height: 96px;
       display: flex;
-      justify-content: center;
       align-items: center;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-top: 24px;
+      justify-content: space-between;
+      gap: 30px;
     }
 
-    .lri-btn {
-      display: inline-block;
-      padding: 0.9rem 1.45rem;
-      border: 1px solid transparent;
-      border-radius: 999px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.2s ease;
-    }
-
-    .lri-btn-primary {
-      background-color: var(--lri-orange);
-      color: #ffffff;
-      border-color: var(--lri-orange);
-    }
-
-    .lri-btn-primary:visited {
-      color: #ffffff;
-    }
-
-    .lri-btn-primary:hover,
-    .lri-btn-primary:focus {
-      background-color: var(--lri-orange-dark);
-      border-color: var(--lri-orange-dark);
-      color: #ffffff;
-      text-decoration: none;
-    }
-
-    .lri-btn-outline {
-      background-color: transparent;
-      color: var(--lri-orange);
-      border-color: var(--lri-orange);
-    }
-
-    .lri-btn-outline:visited {
-      color: var(--lri-orange);
-    }
-
-    .lri-btn-outline:hover,
-    .lri-btn-outline:focus {
-      background-color: rgba(228, 106, 31, 0.08);
-      color: var(--lri-orange);
-      text-decoration: none;
-    }
-
-    .lri-section-heading {
-      max-width: 840px;
-      margin: 0 auto 28px;
-      text-align: center;
-    }
-
-    .lri-section-title {
-      margin: 0 0 10px;
-      line-height: 1.25;
-      font-size: clamp(1.6rem, 3vw, 2.15rem);
-    }
-
-    .lri-section-note {
-      margin: 0;
-      color: var(--lri-muted);
-      line-height: 1.75;
-    }
-
-    .lri-stats-row {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+    .site-header .brand {
+      display: flex;
+      align-items: center;
       gap: 16px;
+      margin: 0;
+      color: var(--lri-white);
+      text-decoration: none;
     }
 
-    .lri-stat-card,
-    .lri-card,
-    .lri-featured-edition,
-    .lri-highlight-box {
-      background: var(--lri-bg);
-      border: 1px solid var(--lri-border);
-      border-radius: var(--lri-radius);
-      box-shadow: var(--lri-shadow);
+    .brand-logo {
+      width: 66px;
+      height: 66px;
     }
 
-    .lri-stat-card {
-      padding: 22px;
-      text-align: center;
-    }
-
-    .lri-stat-number {
-      display: block;
-      margin-bottom: 8px;
-      color: var(--lri-orange);
-      font-size: 1.55rem;
+    .brand-name {
+      font-size: 1.04rem;
       font-weight: 700;
-      line-height: 1.15;
-    }
-
-    .lri-stat-label {
-      color: var(--lri-muted);
-      font-size: 0.97rem;
-    }
-
-    .lri-featured-edition {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 30px;
-      border-left: 5px solid var(--lri-orange);
-      background: #fffdfb;
-    }
-
-    .lri-featured-edition h2 {
-      margin: 0 0 12px;
-      line-height: 1.32;
-      font-size: clamp(1.45rem, 3vw, 2rem);
-    }
-
-    .lri-featured-edition p {
-      line-height: 1.75;
-    }
-
-    .lri-featured-edition .lri-cta-row {
-      justify-content: flex-start;
-    }
-
-    .lri-badge {
-      display: inline-block;
-      margin: 0 0 12px;
-      padding: 0.25rem 0.65rem;
-      border-radius: 999px;
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.04em;
+      line-height: 1.35;
+      letter-spacing: 0.065em;
       text-transform: uppercase;
     }
 
-    .lri-badge-primary {
-      background: var(--lri-orange);
-      color: #ffffff;
+    .brand-subtitle {
+      display: block;
+      color: var(--lri-muted);
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.025em;
+      text-transform: none;
+      margin-top: 5px;
     }
 
-    .lri-badge-secondary {
-      background: rgba(228, 106, 31, 0.11);
-      color: var(--lri-orange-dark);
-      border: 1px solid rgba(228, 106, 31, 0.2);
-    }
-
-    .lri-meta {
+    .main-nav {
       display: flex;
-      gap: 8px 14px;
-      flex-wrap: wrap;
-      margin: 0 0 14px;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .main-nav > a,
+    .nav-dropdown > summary {
+      color: var(--lri-white);
+      font-size: 0.92rem;
+      font-weight: 500;
+      padding: 14px 0;
+      white-space: nowrap;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .main-nav > a:hover,
+    .nav-dropdown > summary:hover {
+      color: var(--lri-gold);
+    }
+
+    .nav-dropdown {
+      position: relative;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      background: transparent;
+    }
+
+    .nav-dropdown summary {
+      list-style: none;
+      border: 0 !important;
+    }
+
+    .nav-dropdown summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .nav-dropdown summary::after {
+      content: " \25BE";
+      font-size: 0.75rem;
+      color: var(--lri-gold);
+    }
+
+    .nav-dropdown.active > summary {
+      color: var(--lri-gold);
+      border-bottom: 2px solid var(--lri-gold) !important;
+    }
+
+    .nav-dropdown > .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      min-width: 230px;
+      margin: 0;
+      padding: 10px;
+      background: var(--lri-navy-light);
+      border: 1px solid var(--lri-border);
+      border-radius: 5px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+      z-index: 100;
+    }
+
+    .dropdown-menu a {
+      display: block;
+      color: var(--lri-white);
+      padding: 12px 14px;
+      font-size: 0.92rem;
+      text-decoration: none;
+    }
+
+    .dropdown-menu a:hover,
+    .dropdown-menu a[aria-current="page"] {
+      background: rgba(221,187,122,0.08);
+      color: var(--lri-gold);
+    }
+
+    .menu-toggle {
+      display: none;
+      color: var(--lri-gold);
+      background: transparent;
+      border: 1px solid var(--lri-border);
+    }
+
+    /* ========================================
+       NEWSLETTER HERO
+    ======================================== */
+
+    .newsletter-hero {
+      min-height: 440px;
+      display: flex;
+      align-items: center;
+      background-color: var(--lri-navy-dark);
+
+      background-image:
+        linear-gradient(
+          90deg,
+          rgba(8,13,20,0.98),
+          rgba(8,13,20,0.80),
+          rgba(8,13,20,0.28)
+        ),
+        url("/assets/img/lunar-hero.jpg");
+
+      background-size: cover;
+      background-position: center;
+      border-bottom: 1px solid var(--lri-border);
+    }
+
+    .newsletter-hero-content {
+      padding: 75px 0;
+    }
+
+    .newsletter-hero h1 {
+      max-width: 850px;
+      font-size: clamp(2.6rem, 5vw, 4.3rem);
+      line-height: 1.12;
+      margin-bottom: 20px;
+    }
+
+    .newsletter-hero-subtitle {
+      max-width: 740px;
+      color: #d5dde7;
+      font-size: 1.18rem;
+      line-height: 1.8;
+      margin-bottom: 24px;
+    }
+
+    .newsletter-byline {
       color: var(--lri-muted);
       font-size: 0.9rem;
+      margin-bottom: 28px;
     }
 
-    .lri-meta span {
-      display: inline-flex;
-      align-items: center;
-    }
-
-    .lri-meta span:not(:last-child)::after {
-      content: "•";
-      margin-left: 14px;
-      color: #a0a0a0;
-    }
-
-    .lri-edition-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 20px;
-    }
-
-    .lri-card {
-      padding: 24px;
-    }
-
-    .lri-card h3 {
-      margin: 0 0 12px;
-      font-size: 1.08rem;
-      line-height: 1.42;
-    }
-
-    .lri-card p {
-      line-height: 1.7;
-    }
-
-    .lri-card p:last-child {
-      margin-bottom: 0;
-    }
-
-    .lri-card a {
-      color: var(--lri-orange);
-      font-weight: 600;
-      text-decoration: none;
-    }
-
-    .lri-card a:hover,
-    .lri-card a:focus {
-      text-decoration: underline;
-    }
-
-    .lri-card-actions {
+    .newsletter-actions {
       display: flex;
-      gap: 12px;
       align-items: center;
       flex-wrap: wrap;
-      margin-top: 18px;
+      gap: 14px;
     }
 
-    .lri-card-actions .lri-btn {
-      padding: 0.72rem 1.08rem;
-      font-size: 0.94rem;
+    /* ========================================
+       NEWSLETTER INFORMATION STRIP
+    ======================================== */
+
+    .newsletter-info {
+      background: var(--lri-navy-light);
+      border-bottom: 1px solid var(--lri-border);
     }
 
-    .lri-highlight-box {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 24px;
-      background: var(--lri-soft);
-      border-color: rgba(228, 106, 31, 0.18);
-      box-shadow: var(--lri-shadow-soft);
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      padding: 25px 0;
     }
 
-    .lri-highlight-box h2,
-    .lri-highlight-box h3 {
-      margin-top: 0;
+    .info-item {
+      padding: 12px 20px;
+      text-align: center;
+      border-right: 1px solid var(--lri-border);
     }
 
-    .lri-highlight-box p {
-      line-height: 1.75;
+    .info-item:last-child {
+      border-right: 0;
     }
 
-    .lri-highlight-box p:last-child {
+    .info-item strong {
+      display: block;
+      color: var(--lri-gold);
+      font-size: 1.15rem;
+      margin-bottom: 5px;
+    }
+
+    .info-item span {
+      color: var(--lri-muted);
+      font-size: 0.87rem;
+    }
+
+    /* ========================================
+       SECTION DESIGN
+    ======================================== */
+
+    .newsletter-section {
+      padding: 65px 0;
+    }
+
+    .newsletter-section-alt {
+      background: var(--lri-navy-light);
+      border-top: 1px solid var(--lri-border);
+      border-bottom: 1px solid var(--lri-border);
+    }
+
+    .section-heading {
+      max-width: 850px;
+      margin-bottom: 35px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(1.9rem, 3vw, 2.6rem);
+      margin-bottom: 16px;
+    }
+
+    .section-heading p {
+      color: var(--lri-muted);
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+
+    /* ========================================
+       EDITORIAL PURPOSE
+    ======================================== */
+
+    .editorial-layout {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 65px;
+      align-items: start;
+    }
+
+    .editorial-heading {
+      border-left: 3px solid var(--lri-gold);
+      padding-left: 25px;
+    }
+
+    .editorial-heading h2 {
+      font-size: clamp(1.9rem, 3vw, 2.6rem);
       margin-bottom: 0;
     }
 
-    .lri-topic-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
+    .editorial-copy p {
+      color: #d2dce7;
+      font-size: 1.06rem;
+      line-height: 1.85;
     }
 
-    .lri-topic-card {
-      padding: 22px;
-      background: #ffffff;
+    .editorial-copy p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ========================================
+       FEATURED EDITION
+    ======================================== */
+
+    .featured-edition {
+      padding: 35px;
+      background: linear-gradient(145deg, #172638, #101b29);
       border: 1px solid var(--lri-border);
-      border-radius: var(--lri-radius);
-      box-shadow: var(--lri-shadow-soft);
+      border-left: 3px solid var(--lri-gold);
+      border-radius: 6px;
     }
 
-    .lri-topic-card h3 {
-      margin: 0 0 10px;
-      font-size: 1rem;
+    .edition-label {
+      display: block;
+      color: var(--lri-gold);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+      margin-bottom: 15px;
     }
 
-    .lri-topic-card p {
-      margin: 0;
+    .featured-edition h3 {
+      max-width: 1000px;
+      font-size: clamp(1.5rem, 3vw, 2.1rem);
+      line-height: 1.4;
+      margin-bottom: 16px;
+    }
+
+    .edition-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 16px;
       color: var(--lri-muted);
-      line-height: 1.68;
+      font-size: 0.84rem;
+      margin-bottom: 20px;
     }
 
-    .lri-footer {
-      padding: 30px 24px 42px;
+    .featured-edition p {
+      max-width: 1000px;
+      color: var(--lri-muted);
+      font-size: 1rem;
+      line-height: 1.85;
+      margin-bottom: 22px;
     }
 
-    .lri-footer p {
-      margin: 0;
+    /* ========================================
+       SELECTED EDITIONS
+    ======================================== */
+
+    .edition-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+      margin-top: 25px;
+    }
+
+    .edition-card {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      padding: 28px;
+      background: linear-gradient(145deg, #172638, #101b29);
+      border: 1px solid var(--lri-border);
+      border-radius: 6px;
+      transition: border-color 0.2s ease;
+    }
+
+    .edition-card:hover {
+      border-color: var(--lri-gold);
+    }
+
+    .edition-date {
+      color: var(--lri-gold);
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .edition-card h3 {
+      color: var(--lri-white);
+      font-size: 1.2rem;
+      line-height: 1.5;
+      margin-bottom: 14px;
+    }
+
+    .edition-card p {
+      color: var(--lri-muted);
+      font-size: 0.95rem;
+      line-height: 1.8;
+      margin-bottom: 22px;
+    }
+
+    .edition-card .text-link {
+      margin-top: auto;
+      font-size: 0.92rem;
+    }
+
+    .edition-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-bottom: 16px;
+    }
+
+    .edition-tag {
+      padding: 4px 9px;
+      border: 1px solid var(--lri-border);
+      border-radius: 3px;
+      color: var(--lri-muted);
+      font-size: 0.74rem;
+    }
+
+    .archive-action {
+      margin-top: 30px;
       text-align: center;
     }
 
-    @media (max-width: 980px) {
-      .lri-topic-grid {
-        grid-template-columns: 1fr;
-      }
+    /* ========================================
+       EDITORIAL TOPICS
+    ======================================== */
+
+    .topic-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 28px;
     }
 
-    @media (max-width: 820px) {
-      .lri-edition-grid,
-      .lri-stats-row {
-        grid-template-columns: 1fr;
-      }
+    .topic-card {
+      padding: 22px 0;
+      border-top: 2px solid var(--lri-gold);
     }
 
-    @media (max-width: 760px) {
-      .lri-hero {
-        padding: 72px 20px 34px;
-      }
-
-      .lri-section {
-        padding: 26px 20px;
-      }
-
-      .lri-hero-subtitle {
-        font-size: 1rem;
-      }
-
-      .lri-featured-edition,
-      .lri-card,
-      .lri-highlight-box {
-        padding: 21px;
-      }
+    .topic-number {
+      display: block;
+      color: var(--lri-gold);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      margin-bottom: 15px;
     }
 
-    @media (max-width: 560px) {
-      .lri-meta {
+    .topic-card h3 {
+      font-size: 1.18rem;
+      line-height: 1.4;
+      margin-bottom: 12px;
+    }
+
+    .topic-card p {
+      color: var(--lri-muted);
+      font-size: 0.95rem;
+      line-height: 1.8;
+      margin-bottom: 0;
+    }
+
+    /* ========================================
+       EDITORIAL FOCUS
+    ======================================== */
+
+    .editorial-focus {
+      padding: 28px 32px;
+      background: var(--lri-navy-dark);
+      border-left: 3px solid var(--lri-gold);
+      border-radius: 0 6px 6px 0;
+      margin-top: 35px;
+    }
+
+    .editorial-focus h3 {
+      color: var(--lri-white);
+      font-size: 1.3rem;
+      margin-bottom: 14px;
+    }
+
+    .editorial-focus p {
+      color: var(--lri-muted);
+      font-size: 0.96rem;
+      line-height: 1.8;
+      margin-bottom: 0;
+    }
+
+    /* ========================================
+       PROFESSIONAL RECOGNITION
+    ======================================== */
+
+    .recognition-panel {
+      padding: 30px 34px;
+      background: linear-gradient(145deg, #172638, #101b29);
+      border: 1px solid var(--lri-border);
+      border-radius: 6px;
+    }
+
+    .recognition-panel h3 {
+      font-size: 1.4rem;
+      line-height: 1.4;
+      margin-bottom: 15px;
+    }
+
+    .recognition-panel p {
+      color: var(--lri-muted);
+      line-height: 1.8;
+      max-width: 950px;
+      margin-bottom: 20px;
+    }
+
+    /* ========================================
+       SUBSCRIPTION SECTION
+    ======================================== */
+
+    .newsletter-subscribe {
+      padding: 85px 24px;
+      text-align: center;
+      background-color: var(--lri-navy-dark);
+
+      background-image:
+        linear-gradient(
+          rgba(11,20,32,0.94),
+          rgba(11,20,32,0.68)
+        ),
+        url("/assets/img/lunar-landscape.jpg");
+
+      background-size: cover;
+      background-position: center 65%;
+      border-top: 1px solid var(--lri-border);
+    }
+
+    .newsletter-subscribe h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 20px;
+    }
+
+    .newsletter-subscribe p {
+      max-width: 760px;
+      margin: 0 auto 28px;
+      color: #d5dde7;
+      font-size: 1.08rem;
+      line-height: 1.8;
+    }
+
+    /* ========================================
+       FOOTER
+    ======================================== */
+
+    .site-footer {
+      padding: 50px 0 25px;
+      text-align: left;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.8fr 1fr 1fr 1fr;
+      gap: 35px;
+      padding-bottom: 35px;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .footer-brand img {
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+    }
+
+    .footer-brand strong {
+      color: var(--lri-white);
+      font-size: 0.92rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      line-height: 1.4;
+    }
+
+    .footer-description {
+      max-width: 340px;
+      color: var(--lri-muted);
+      font-size: 0.88rem;
+    }
+
+    .footer-column h3 {
+      color: var(--lri-gold);
+      font-size: 0.95rem;
+      margin-bottom: 18px;
+    }
+
+    .footer-column a {
+      display: block;
+      color: var(--lri-muted);
+      margin-bottom: 10px;
+      font-size: 0.88rem;
+    }
+
+    .footer-column a:hover {
+      color: var(--lri-gold);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      padding-top: 24px;
+      border-top: 1px solid var(--lri-border);
+      color: var(--lri-muted);
+      font-size: 0.8rem;
+    }
+
+    /* ========================================
+       RESPONSIVE DESIGN
+    ======================================== */
+
+    @media (max-width: 1100px) {
+
+      .main-nav {
+        gap: 17px;
+      }
+
+      .brand-subtitle {
+        display: none;
+      }
+
+    }
+
+    @media (max-width: 900px) {
+
+      .newsletter-container {
+        width: calc(100% - 48px);
+      }
+
+      .menu-toggle {
         display: block;
       }
 
-      .lri-meta span {
-        display: block;
+      .main-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        padding: 24px;
+        background: var(--lri-navy-dark);
+        border-bottom: 1px solid var(--lri-border);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        max-height: 80vh;
+        overflow-y: auto;
       }
 
-      .lri-meta span:not(:last-child)::after {
-        content: "";
-        margin: 0;
+      .main-nav.is-open {
+        display: flex;
       }
+
+      .main-nav > a,
+      .nav-dropdown > summary {
+        display: block;
+        padding: 14px 0;
+      }
+
+      .nav-dropdown > .dropdown-menu {
+        position: static;
+        box-shadow: none;
+      }
+
+      .editorial-layout {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .topic-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
     }
+
+    @media (max-width: 650px) {
+
+      .newsletter-container {
+        width: calc(100% - 36px);
+      }
+
+      .header-inner {
+        min-height: 82px;
+        gap: 12px;
+      }
+
+      .brand-logo {
+        width: 48px;
+        height: 48px;
+      }
+
+      .brand-name {
+        font-size: 0.8rem;
+      }
+
+      .site-header .brand {
+        gap: 10px;
+      }
+
+      .newsletter-hero {
+        min-height: 400px;
+
+        background-image:
+          linear-gradient(
+            rgba(8,13,20,0.78),
+            rgba(8,13,20,0.88)
+          ),
+          url("/assets/img/lunar-hero.jpg");
+      }
+
+      .newsletter-hero-content {
+        padding: 50px 0;
+      }
+
+      .newsletter-hero h1 {
+        font-size: 2.6rem;
+      }
+
+      .newsletter-hero-subtitle {
+        font-size: 1.05rem;
+      }
+
+      .newsletter-section {
+        padding: 45px 0;
+      }
+
+      .info-grid,
+      .edition-grid,
+      .topic-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .info-item {
+        border-right: 0;
+        border-bottom: 1px solid var(--lri-border);
+        padding: 16px;
+      }
+
+      .info-item:last-child {
+        border-bottom: 0;
+      }
+
+      .newsletter-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .featured-edition,
+      .edition-card,
+      .editorial-focus,
+      .recognition-panel {
+        padding: 24px;
+      }
+
+      .newsletter-subscribe {
+        padding: 65px 18px;
+      }
+
+      .footer-about {
+        grid-column: 1 / -1;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+    }
+
+    @media print {
+
+      .newsletter-hero,
+      .newsletter-section-alt,
+      .featured-edition,
+      .edition-card,
+      .editorial-focus,
+      .recognition-panel,
+      .newsletter-info {
+        background: #ffffff !important;
+        color: #111111 !important;
+        border-color: #cccccc !important;
+      }
+
+      main * {
+        color: #111111 !important;
+      }
+
+      .newsletter-actions,
+      .newsletter-subscribe,
+      .archive-action {
+        display: none !important;
+      }
+
+      .edition-card,
+      .featured-edition {
+        break-inside: avoid;
+      }
+
+    }
+
   </style>
 
   <script type="application/ld+json">
@@ -492,8 +843,11 @@
     "@context": "https://schema.org",
     "@type": "Periodical",
     "name": "Aerospace Quality Brief",
-    "description": "A weekly newsletter offering practical aerospace-quality analysis on evidence integrity, verification, configuration control, supplier risk, CAPA, and decision assurance.",
+    "alternateName": "AQB",
+    "description": "A professional newsletter examining aerospace quality, evidence integrity, verification, configuration control, supplier risk, corrective action, and decision assurance.",
     "url": "https://lunarresearchinitiative.github.io/newsletter/",
+    "inLanguage": "en",
+    "sameAs": "https://www.linkedin.com/newsletters/7402028860193796097/",
     "publisher": {
       "@type": "Organization",
       "name": "Lunar Research Initiative",
@@ -505,63 +859,159 @@
     }
   }
   </script>
+
 </head>
 
 <body>
 
-  <header class="lri-topbar">
-    <div class="lri-topbar-inner">
+  <a class="skip-link" href="#main-content">
+    Skip to main content
+  </a>
 
-      <div class="lri-topbar-left">
-        <a href="/" aria-label="Lunar Research Initiative home">
-          <img
-            src="/assets/img/LRI LOGO.jpeg"
-            alt="Lunar Research Initiative seal"
-            class="lri-seal"
-          >
-        </a>
-      </div>
+  <!-- ========================================
+       HEADER
+  ======================================== -->
 
-      <nav class="lri-topnav" aria-label="Primary navigation">
+  <header class="site-header">
+
+    <div class="newsletter-container header-inner">
+
+      <a class="brand" href="/" aria-label="Lunar Research Initiative home">
+
+        <img
+          class="brand-logo"
+          src="/assets/img/LRI%20LOGO.jpeg"
+          alt="Lunar Research Initiative emblem"
+          width="66"
+          height="66"
+        >
+
+        <div class="brand-name">
+
+          Lunar Research<br>
+          Initiative
+
+          <span class="brand-subtitle">
+            Lunar Quality and Decision Assurance
+          </span>
+
+        </div>
+
+      </a>
+
+      <button
+        class="menu-toggle"
+        id="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="main-navigation"
+      >
+        &#9776; Menu
+      </button>
+
+      <nav
+        class="main-nav"
+        id="main-navigation"
+        aria-label="Primary navigation"
+      >
+
         <a href="/">Home</a>
+
         <a href="/about/">About</a>
-        <a href="/research/">Research</a>
-        <a href="/initiatives/">Initiatives</a>
-        <a href="/standards/">Standards</a>
+
+        <details class="nav-dropdown">
+
+          <summary>Research</summary>
+
+          <div class="dropdown-menu">
+
+            <a href="/research/">Research Overview</a>
+
+            <a href="/initiatives/">Research Initiatives</a>
+
+          </div>
+
+        </details>
+
         <a href="/publications/">Publications</a>
-        <a href="/books/">Books</a>
-        <a href="/newsletter/" aria-current="page">Newsletter</a>
-        <a href="/partnerships/">Partnerships</a>
-        <a href="/contact/">Contact</a>
+
+        <details class="nav-dropdown active">
+
+          <summary>Resources</summary>
+
+          <div class="dropdown-menu">
+
+            <a href="/standards/">Standards</a>
+
+            <a href="/books/">Books</a>
+
+            <a href="/newsletter/" aria-current="page">
+              Aerospace Quality Brief
+            </a>
+
+            <a href="/newsletter/archive/">
+              Newsletter Archive
+            </a>
+
+            <a href="/cite/">Cite This Site</a>
+
+          </div>
+
+        </details>
+
+        <details class="nav-dropdown">
+
+          <summary>Collaborate</summary>
+
+          <div class="dropdown-menu">
+
+            <a href="/partnerships/">Partnerships</a>
+
+            <a href="/contact/">Contact LRI</a>
+
+          </div>
+
+        </details>
+
       </nav>
 
     </div>
+
   </header>
 
-  <main>
+  <main id="main-content">
 
-    <section class="lri-section lri-hero">
-      <div class="lri-hero-inner">
+    <!-- ========================================
+         HERO
+    ======================================== -->
 
-        <span class="lri-kicker">
-          Published Weekly on LinkedIn
+    <section
+      class="newsletter-hero"
+      aria-labelledby="newsletter-title"
+    >
+
+      <div class="newsletter-container newsletter-hero-content">
+
+        <span class="eyebrow">
+          Professional Insights and Engineering Perspectives
         </span>
 
-        <h1>Aerospace Quality Brief</h1>
+        <h1 id="newsletter-title">
+          Aerospace Quality Brief
+        </h1>
 
-        <p class="lri-hero-subtitle">
-          Aerospace Quality Brief delivers practical analysis for engineers,
-          quality professionals, program leaders, and researchers who must
-          protect speed without weakening control.
+        <p class="newsletter-hero-subtitle">
+          Practical engineering insights for trustworthy
+          decisions, reliable systems, and effective
+          quality management in aerospace and other
+          high-consequence environments.
         </p>
 
-        <p class="lri-hero-subtitle">
-          Each edition examines how evidence, verification, configuration,
-          supplier behavior, corrective action, and decision authority shape
-          quality outcomes in aerospace and other high-consequence systems.
+        <p class="newsletter-byline">
+          By Ralph Figueroa &middot; Lunar Research Initiative
         </p>
 
-        <div class="lri-hero-actions">
+        <div class="newsletter-actions">
 
           <a
             href="https://www.linkedin.com/newsletters/7402028860193796097/"
@@ -569,7 +1019,7 @@
             target="_blank"
             rel="noopener noreferrer"
           >
-            Subscribe on LinkedIn
+            Subscribe on LinkedIn &rarr;
           </a>
 
           <a
@@ -580,139 +1030,173 @@
           </a>
 
         </div>
+
       </div>
+
     </section>
 
-    <section class="lri-section">
-      <div class="lri-section-inner">
+    <!-- ========================================
+         NEWSLETTER INFORMATION
+    ======================================== -->
 
-        <div class="lri-stats-row">
+    <section
+      class="newsletter-info"
+      aria-label="Newsletter information"
+    >
 
-          <article class="lri-stat-card">
-            <span class="lri-stat-number">Weekly</span>
-            <span class="lri-stat-label">
-              New aerospace-quality analysis
-            </span>
-          </article>
+      <div class="newsletter-container info-grid">
 
-          <article class="lri-stat-card">
-            <span class="lri-stat-number">LinkedIn</span>
-            <span class="lri-stat-label">
-              Primary publication and subscription platform
-            </span>
-          </article>
+        <div class="info-item">
 
-          <article class="lri-stat-card">
-            <span class="lri-stat-number">AQB</span>
-            <span class="lri-stat-label">
-              Evidence, control, risk, and decision assurance
-            </span>
-          </article>
+          <strong>Weekly Newsletter</strong>
 
-        </div>
-      </div>
-    </section>
-
-    <section class="lri-section">
-      <div class="lri-section-inner">
-
-        <div class="lri-highlight-box">
-
-          <span class="lri-badge lri-badge-primary">
-            Upcoming AQB Edition
+          <span>
+            Practical aerospace-quality analysis
           </span>
 
-          <h2>
-            Digital Thread Without Evidence Integrity Is Just Faster Confusion
+        </div>
+
+        <div class="info-item">
+
+          <strong>LinkedIn</strong>
+
+          <span>
+            Publication and subscription platform
+          </span>
+
+        </div>
+
+        <div class="info-item">
+
+          <strong>Engineering Perspectives</strong>
+
+          <span>
+            Evidence, verification, risk, and authority
+          </span>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ========================================
+         EDITORIAL PURPOSE
+    ======================================== -->
+
+    <section
+      class="newsletter-section"
+      aria-labelledby="editorial-title"
+    >
+
+      <div class="newsletter-container editorial-layout">
+
+        <div class="editorial-heading">
+
+          <span class="eyebrow">
+            Editorial Purpose
+          </span>
+
+          <h2 id="editorial-title">
+            Quality Beyond Compliance
           </h2>
 
-          <div class="lri-meta">
-            <span>Digital thread</span>
-            <span>Evidence integrity</span>
-            <span>Decision authority</span>
-          </div>
-
-          <p>
-            Connected data creates value only when every critical decision can
-            be traced to evidence whose origin, transformation, configuration,
-            verification status, and authority remain clear.
-          </p>
-
-          <p>
-            This edition examines why faster data flow can accelerate
-            uncertainty when provenance and evidence controls do not travel
-            with the record.
-          </p>
-
-          <p>
-            <strong>Focus:</strong> Provenance, verification, and authority.
-          </p>
-
-          <div class="lri-card-actions">
-
-            <a
-              href="https://www.linkedin.com/newsletters/7402028860193796097/"
-              class="lri-btn lri-btn-primary"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Subscribe for the New Edition
-            </a>
-
-          </div>
         </div>
+
+        <div class="editorial-copy">
+
+          <p>
+            Aerospace Quality Brief (AQB) examines the
+            engineering and organizational conditions
+            that determine whether quality systems
+            genuinely protect performance, reliability,
+            and operational safety.
+          </p>
+
+          <p>
+            Each edition connects practical quality
+            engineering experience with broader questions
+            involving evidence integrity, verification,
+            configuration control, supplier behavior,
+            corrective action, and decision authority.
+          </p>
+
+          <p>
+            AQB serves engineers, quality professionals,
+            researchers, program leaders, and organizations
+            seeking to improve the reliability of their
+            decisions without introducing unnecessary
+            procedural complexity.
+          </p>
+
+        </div>
+
       </div>
+
     </section>
 
-    <section class="lri-section lri-section-soft">
-      <div class="lri-section-inner">
+    <!-- ========================================
+         FEATURED EDITION
+    ======================================== -->
 
-        <div class="lri-section-heading">
+    <section
+      class="newsletter-section newsletter-section-alt"
+      aria-labelledby="featured-title"
+    >
 
-          <span class="lri-kicker">
-            Latest Published Edition
+      <div class="newsletter-container">
+
+        <div class="section-heading">
+
+          <span class="eyebrow">
+            Featured Article
           </span>
 
-          <h2 class="lri-section-title">
+          <h2 id="featured-title">
             Detection Does Not Prove Process Control
           </h2>
 
-          <p class="lri-section-note">
-            The latest published AQB edition examines why catching
-            nonconformance cannot substitute for changing the process
-            conditions that created it.
-          </p>
-
         </div>
 
-        <article class="lri-featured-edition">
+        <article class="featured-edition">
 
-          <span class="lri-badge lri-badge-primary">
-            June 30, 2026
+          <span class="edition-label">
+            Aerospace Quality Brief
           </span>
 
-          <h2>
-            Teams Can Detect Nonconformance and Still Fail to Control the Process
-          </h2>
+          <h3>
+            Teams Can Detect Nonconformance and Still
+            Fail to Control the Process
+          </h3>
 
-          <div class="lri-meta">
-            <span>Aerospace Quality Brief</span>
-            <span>Process control</span>
-            <span>Nonconformance</span>
+          <div class="edition-meta">
+
+            <time datetime="2026-06-30">
+              June 30, 2026
+            </time>
+
+            <span>Process Control</span>
+
+            <span>Nonconformance Management</span>
+
           </div>
 
           <p>
-            Inspection confirms whether an item met a requirement at a
-            specific point in time. Process control asks whether the system
+            Inspection confirms whether a product meets
+            a requirement at a particular point in time.
+            Process control determines whether the system
             can repeatedly produce conforming output.
           </p>
 
           <p>
-            This edition explains why repeated detection can create false
-            confidence when the underlying failure condition remains active.
+            This edition examines why repeated detection
+            can create false confidence when the underlying
+            failure condition remains active, and why
+            quality teams must distinguish detection
+            effectiveness from process stability.
           </p>
 
-          <div class="lri-cta-row">
+          <div class="newsletter-actions">
 
             <a
               href="https://www.linkedin.com/pulse/teams-can-detect-nonconformance-still-fail-control-process-figueroa-3rtgf"
@@ -720,332 +1204,770 @@
               target="_blank"
               rel="noopener noreferrer"
             >
-              Read the Latest Edition
+              Read the Article &rarr;
             </a>
 
             <a
               href="/newsletter/archive/"
               class="lri-btn lri-btn-outline"
             >
-              View All Editions
+              Explore All Editions
             </a>
 
           </div>
+
         </article>
 
       </div>
+
     </section>
 
-    <section class="lri-section">
-      <div class="lri-section-inner">
+    <!-- ========================================
+         SELECTED EDITIONS
+    ======================================== -->
 
-        <div class="lri-section-heading">
+    <section
+      class="newsletter-section"
+      aria-labelledby="editions-title"
+    >
 
-          <span class="lri-kicker">
-            Recent Editions
+      <div class="newsletter-container">
+
+        <div class="section-heading">
+
+          <span class="eyebrow">
+            Selected Editions
           </span>
 
-          <h2 class="lri-section-title">
-            Practical Aerospace-Quality Analysis
+          <h2 id="editions-title">
+            Practical Engineering Analysis
           </h2>
-
-          <p class="lri-section-note">
-            Recent editions connect everyday quality activity to the evidence
-            needed for trustworthy operational decisions.
-          </p>
-
-        </div>
-
-        <div class="lri-edition-grid">
-
-          <article class="lri-card">
-
-            <span class="lri-badge lri-badge-secondary">
-              June 23, 2026
-            </span>
-
-            <h3>
-              Why Paperwork Closure Does Not Prove System Correction
-            </h3>
-
-            <div class="lri-meta">
-              <span>CAPA</span>
-              <span>Risk reduction</span>
-            </div>
-
-            <p>
-              Corrective action should close only when evidence shows that the
-              failure condition and recurrence risk changed, not simply when
-              the record reaches administrative completion.
-            </p>
-
-            <div class="lri-card-actions">
-
-              <a
-                href="https://www.linkedin.com/pulse/why-paperwork-closure-does-prove-system-correction-ralph-figueroa-bgnve"
-                class="lri-btn lri-btn-outline"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Read on LinkedIn
-              </a>
-
-            </div>
-          </article>
-
-          <article class="lri-card">
-
-            <span class="lri-badge lri-badge-secondary">
-              June 16, 2026
-            </span>
-
-            <h3>
-              Why Aerospace Qualification Evidence Can Fail When Operational
-              Reality Is Messier Than the Test Environment
-            </h3>
-
-            <div class="lri-meta">
-              <span>Qualification</span>
-              <span>Test fidelity</span>
-            </div>
-
-            <p>
-              A controlled test can produce strong evidence for a narrow claim
-              while excluding the environmental and operational stressors that
-              determine whether the system remains mission-ready.
-            </p>
-
-            <div class="lri-card-actions">
-
-              <a
-                href="https://www.linkedin.com/pulse/why-aerospace-qualification-evidence-can-fail-when-reality-figueroa-bwpke"
-                class="lri-btn lri-btn-outline"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Read on LinkedIn
-              </a>
-
-            </div>
-          </article>
-
-          <article class="lri-card">
-
-            <span class="lri-badge lri-badge-secondary">
-              June 9, 2026
-            </span>
-
-            <h3>
-              When Approved Data No Longer Represents the Product Being Built
-            </h3>
-
-            <div class="lri-meta">
-              <span>Configuration control</span>
-              <span>Traceability</span>
-            </div>
-
-            <p>
-              Configuration drift can separate engineering intent, supplier
-              activity, production execution, inspection evidence, and
-              certification assumptions from the actual product.
-            </p>
-
-            <div class="lri-card-actions">
-
-              <a
-                href="https://www.linkedin.com/pulse/when-approved-data-longer-represents-product-being-built-figueroa-pzn8e"
-                class="lri-btn lri-btn-outline"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Read on LinkedIn
-              </a>
-
-            </div>
-          </article>
-
-          <article class="lri-card">
-
-            <span class="lri-badge lri-badge-secondary">
-              May 26, 2026
-            </span>
-
-            <h3>
-              Why Sub-Tier Risk Hides Behind Approved Supplier Status
-            </h3>
-
-            <div class="lri-meta">
-              <span>Supplier quality</span>
-              <span>Flow-down risk</span>
-            </div>
-
-            <p>
-              Supplier approval does not automatically create visibility or
-              control across brokers, special processors, outsourced
-              operations, and lower-tier manufacturing sources.
-            </p>
-
-            <div class="lri-card-actions">
-
-              <a
-                href="https://www.linkedin.com/pulse/why-sub-tier-risk-hides-behind-approved-supplier-status-figueroa-ufvoe"
-                class="lri-btn lri-btn-outline"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Read on LinkedIn
-              </a>
-
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <section class="lri-section lri-section-soft">
-      <div class="lri-section-inner">
-
-        <div class="lri-section-heading">
-
-          <span class="lri-kicker">
-            What AQB Covers
-          </span>
-
-          <h2 class="lri-section-title">
-            Quality Signals That Matter Before Failure
-          </h2>
-
-          <p class="lri-section-note">
-            AQB focuses on operational gaps that often remain invisible inside
-            routine metrics, approvals, and closure records.
-          </p>
-
-        </div>
-
-        <div class="lri-topic-grid">
-
-          <article class="lri-topic-card">
-            <h3>Evidence and Verification</h3>
-
-            <p>
-              What the available evidence can support, how long it remains
-              valid, and when verification no longer represents the operating
-              condition.
-            </p>
-          </article>
-
-          <article class="lri-topic-card">
-            <h3>Configuration and Supplier Control</h3>
-
-            <p>
-              How change, outsourcing, sub-tier work, data drift, and weak
-              flow-down can separate the approved system from the product
-              being built.
-            </p>
-          </article>
-
-          <article class="lri-topic-card">
-            <h3>CAPA and Decision Assurance</h3>
-
-            <p>
-              Whether corrective action changes the failure condition, whether
-              risk truly declines, and whether leaders receive usable signals
-              early enough to act.
-            </p>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <section class="lri-section">
-      <div class="lri-section-inner">
-
-        <div class="lri-highlight-box">
-
-          <span class="lri-badge lri-badge-secondary">
-            Special Update
-          </span>
-
-          <h3>
-            NASA’s New Moon Lander Contracts, LinkedIn News Top Perspective
-          </h3>
 
           <p>
-            A July 1, 2026 newsletter update recognized the selection of Ralph
-            Figueroa’s Artemis analysis as a LinkedIn News Top Perspective on
-            NASA’s new Moon lander contracts.
+            Explore selected articles addressing the
+            operational gaps that conventional quality
+            metrics, approval records, and administrative
+            controls may overlook.
           </p>
 
-          <div class="lri-card-actions">
+        </div>
+
+        <div class="edition-grid">
+
+          <!-- EDITION 01 -->
+
+          <article class="edition-card">
+
+            <time class="edition-date" datetime="2026-06-23">
+              June 23, 2026
+            </time>
+
+            <h3>
+              Why Paperwork Closure Does Not Prove
+              System Correction
+            </h3>
+
+            <div class="edition-tags">
+
+              <span class="edition-tag">CAPA</span>
+
+              <span class="edition-tag">Risk Reduction</span>
+
+            </div>
+
+            <p>
+              Corrective action should close only when
+              evidence demonstrates a change in the
+              underlying failure condition and recurrence
+              risk, rather than merely confirming
+              administrative completion.
+            </p>
 
             <a
-              href="https://www.linkedin.com/pulse/nasas-new-moon-lander-contracts-linkedin-news-top-ralph-figueroa-ffqke"
-              class="lri-btn lri-btn-outline"
+              href="https://www.linkedin.com/pulse/why-paperwork-closure-does-prove-system-correction-ralph-figueroa-bgnve"
+              class="text-link"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Read the Special Update
+              Read on LinkedIn &rarr;
             </a>
 
-          </div>
+          </article>
+
+          <!-- EDITION 02 -->
+
+          <article class="edition-card">
+
+            <time class="edition-date" datetime="2026-06-16">
+              June 16, 2026
+            </time>
+
+            <h3>
+              Why Aerospace Qualification Evidence Can Fail
+              When Operational Reality Is Messier Than
+              the Test Environment
+            </h3>
+
+            <div class="edition-tags">
+
+              <span class="edition-tag">Qualification</span>
+
+              <span class="edition-tag">Test Fidelity</span>
+
+            </div>
+
+            <p>
+              Controlled tests can generate compelling
+              evidence for narrowly defined claims while
+              excluding environmental and operational
+              stressors that influence actual system
+              performance and mission readiness.
+            </p>
+
+            <a
+              href="https://www.linkedin.com/pulse/why-aerospace-qualification-evidence-can-fail-when-reality-figueroa-bwpke"
+              class="text-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Read on LinkedIn &rarr;
+            </a>
+
+          </article>
+
+          <!-- EDITION 03 -->
+
+          <article class="edition-card">
+
+            <time class="edition-date" datetime="2026-06-09">
+              June 9, 2026
+            </time>
+
+            <h3>
+              When Approved Data No Longer Represents
+              the Product Being Built
+            </h3>
+
+            <div class="edition-tags">
+
+              <span class="edition-tag">Configuration Control</span>
+
+              <span class="edition-tag">Traceability</span>
+
+            </div>
+
+            <p>
+              Configuration drift can separate engineering
+              intent, supplier activity, manufacturing
+              execution, inspection evidence, and
+              certification assumptions from the actual
+              product configuration.
+            </p>
+
+            <a
+              href="https://www.linkedin.com/pulse/when-approved-data-longer-represents-product-being-built-figueroa-pzn8e"
+              class="text-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Read on LinkedIn &rarr;
+            </a>
+
+          </article>
+
+          <!-- EDITION 04 -->
+
+          <article class="edition-card">
+
+            <time class="edition-date" datetime="2026-05-26">
+              May 26, 2026
+            </time>
+
+            <h3>
+              Why Sub-Tier Risk Hides Behind Approved
+              Supplier Status
+            </h3>
+
+            <div class="edition-tags">
+
+              <span class="edition-tag">Supplier Quality</span>
+
+              <span class="edition-tag">Flow-Down Risk</span>
+
+            </div>
+
+            <p>
+              Supplier approval does not automatically
+              establish visibility or control across
+              brokers, special processors, outsourced
+              operations, and lower-tier manufacturing
+              sources.
+            </p>
+
+            <a
+              href="https://www.linkedin.com/pulse/why-sub-tier-risk-hides-behind-approved-supplier-status-figueroa-ufvoe"
+              class="text-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Read on LinkedIn &rarr;
+            </a>
+
+          </article>
+
         </div>
+
+        <div class="archive-action">
+
+          <a
+            href="/newsletter/archive/"
+            class="lri-btn lri-btn-primary"
+          >
+            Browse the Newsletter Archive &rarr;
+          </a>
+
+        </div>
+
       </div>
+
     </section>
 
-    <section class="lri-section lri-section-soft">
-      <div class="lri-section-inner">
+    <!-- ========================================
+         EDITORIAL TOPICS
+    ======================================== -->
 
-        <div class="lri-section-heading">
+    <section
+      class="newsletter-section newsletter-section-alt"
+      aria-labelledby="topics-title"
+    >
 
-          <span class="lri-kicker">
-            Use AQB in Practice
+      <div class="newsletter-container">
+
+        <div class="section-heading">
+
+          <span class="eyebrow">
+            Editorial Coverage
           </span>
 
-          <h2 class="lri-section-title">
-            A Practical Resource for Teams
+          <h2 id="topics-title">
+            Quality Signals That Matter Before Failure
           </h2>
 
-          <p class="lri-section-note">
-            Organizations can use AQB editions as short discussion starters
-            for quality meetings, leadership reviews, onboarding, supplier
-            conversations, and cross-functional risk analysis.
+          <p>
+            AQB examines six interconnected engineering
+            disciplines that influence operational
+            reliability and decision quality.
           </p>
 
         </div>
 
-        <div class="lri-cta-row">
+        <div class="topic-grid">
+
+          <article class="topic-card">
+
+            <span class="topic-number">01</span>
+
+            <h3>Evidence Integrity</h3>
+
+            <p>
+              Evidence provenance, traceability,
+              information freshness, transformation
+              transparency, and confidence in
+              engineering records.
+            </p>
+
+          </article>
+
+          <article class="topic-card">
+
+            <span class="topic-number">02</span>
+
+            <h3>Verification and Qualification</h3>
+
+            <p>
+              Test representativeness, verification
+              boundaries, acceptance criteria, and
+              the relationship between evidence
+              and engineering claims.
+            </p>
+
+          </article>
+
+          <article class="topic-card">
+
+            <span class="topic-number">03</span>
+
+            <h3>Configuration Management</h3>
+
+            <p>
+              Engineering change, configuration drift,
+              digital-thread integrity, and alignment
+              between approved requirements and
+              actual product configurations.
+            </p>
+
+          </article>
+
+          <article class="topic-card">
+
+            <span class="topic-number">04</span>
+
+            <h3>Supplier Quality and Risk</h3>
+
+            <p>
+              Supplier oversight, lower-tier visibility,
+              outsourced processes, requirements
+              flow-down, and supply-chain assurance.
+            </p>
+
+          </article>
+
+          <article class="topic-card">
+
+            <span class="topic-number">05</span>
+
+            <h3>Corrective Action and Process Control</h3>
+
+            <p>
+              CAPA effectiveness, recurrence prevention,
+              process capability, meaningful metrics,
+              and evidence of sustained improvement.
+            </p>
+
+          </article>
+
+          <article class="topic-card">
+
+            <span class="topic-number">06</span>
+
+            <h3>Decision and Mission Assurance</h3>
+
+            <p>
+              Decision authority, operational timing,
+              uncertainty, escalation boundaries,
+              accountability, and risk-informed
+              engineering decisions.
+            </p>
+
+          </article>
+
+        </div>
+
+        <aside class="editorial-focus">
+
+          <span class="edition-label">
+            Editorial Focus
+          </span>
+
+          <h3>
+            Digital Thread and Evidence Integrity
+          </h3>
+
+          <p>
+            Connected data creates value when engineering
+            decisions remain traceable to evidence with
+            identifiable origins, transformations,
+            configurations, verification status, and
+            decision authority. Faster information flow
+            alone cannot guarantee more reliable decisions.
+          </p>
+
+        </aside>
+
+      </div>
+
+    </section>
+
+    <!-- ========================================
+         PROFESSIONAL RECOGNITION
+    ======================================== -->
+
+    <section
+      class="newsletter-section"
+      aria-labelledby="recognition-title"
+    >
+
+      <div class="newsletter-container">
+
+        <div class="section-heading">
+
+          <span class="eyebrow">
+            Professional Engagement
+          </span>
+
+          <h2 id="recognition-title">
+            Aerospace Perspectives
+          </h2>
+
+        </div>
+
+        <article class="recognition-panel">
+
+          <span class="edition-label">
+            LinkedIn News Top Perspective
+          </span>
+
+          <h3>
+            NASA's New Moon Lander Contracts
+          </h3>
+
+          <div class="edition-meta">
+
+            <time datetime="2026-07-01">
+              July 1, 2026
+            </time>
+
+            <span>Artemis</span>
+
+            <span>Lunar Infrastructure</span>
+
+          </div>
+
+          <p>
+            A special AQB update reported the selection
+            of Ralph Figueroa's analysis of NASA's new
+            Moon lander contracts as a LinkedIn News
+            Top Perspective.
+          </p>
 
           <a
-            href="https://www.linkedin.com/newsletters/7402028860193796097/"
-            class="lri-btn lri-btn-primary"
+            href="https://www.linkedin.com/pulse/nasas-new-moon-lander-contracts-linkedin-news-top-ralph-figueroa-ffqke"
+            class="lri-btn lri-btn-outline"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Subscribe to Aerospace Quality Brief
+            Read the Special Update &rarr;
           </a>
 
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- ========================================
+         PRACTICAL APPLICATION
+    ======================================== -->
+
+    <section
+      class="newsletter-section newsletter-section-alt"
+      aria-labelledby="application-title"
+    >
+
+      <div class="newsletter-container editorial-layout">
+
+        <div class="editorial-heading">
+
+          <span class="eyebrow">
+            Practical Application
+          </span>
+
+          <h2 id="application-title">
+            From Reading to Engineering Practice
+          </h2>
+
+        </div>
+
+        <div class="editorial-copy">
+
+          <p>
+            Organizations can use AQB editions as
+            discussion resources during quality meetings,
+            engineering reviews, supplier assessments,
+            leadership discussions, and professional
+            development activities.
+          </p>
+
+          <p>
+            The objective is to encourage critical
+            examination of the evidence, assumptions,
+            and decision processes that influence
+            engineering outcomes.
+          </p>
+
           <a
-            href="/newsletter/archive/"
-            class="lri-btn lri-btn-outline"
+            href="/publications/"
+            class="text-link"
           >
-            Browse the Full Archive
+            Explore Related Scientific Publications &rarr;
           </a>
 
         </div>
+
       </div>
+
+    </section>
+
+    <!-- ========================================
+         SUBSCRIPTION
+    ======================================== -->
+
+    <section
+      class="newsletter-subscribe"
+      aria-labelledby="subscribe-title"
+    >
+
+      <span class="eyebrow">
+        Stay Connected
+      </span>
+
+      <h2 id="subscribe-title">
+        Engineering Insights That Challenge
+        Conventional Quality Thinking
+      </h2>
+
+      <p>
+        Subscribe to Aerospace Quality Brief for
+        practical perspectives on aerospace quality,
+        verification, evidence integrity, operational
+        risk, and the engineering decisions that
+        shape mission success.
+      </p>
+
+      <div class="button-row">
+
+        <a
+          href="https://www.linkedin.com/newsletters/7402028860193796097/"
+          class="lri-btn lri-btn-primary"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Subscribe on LinkedIn &rarr;
+        </a>
+
+        <a
+          href="/newsletter/archive/"
+          class="lri-btn lri-btn-outline"
+        >
+          View Newsletter Archive
+        </a>
+
+      </div>
+
     </section>
 
   </main>
 
-  <footer class="lri-footer">
-    <div class="lri-footer-inner">
-      <p>
-        &copy; 2026 Lunar Research Initiative. All rights reserved.
-      </p>
+  <!-- ========================================
+       FOOTER
+  ======================================== -->
+
+  <footer class="site-footer">
+
+    <div class="newsletter-container">
+
+      <div class="footer-grid">
+
+        <div class="footer-about">
+
+          <div class="footer-brand">
+
+            <img
+              src="/assets/img/LRI%20LOGO.jpeg"
+              alt=""
+              width="55"
+              height="55"
+              loading="lazy"
+            >
+
+            <strong>
+              Lunar Research<br>
+              Initiative
+            </strong>
+
+          </div>
+
+          <p class="footer-description">
+            Advancing scientific research and engineering
+            methods for quality, reliability, and decision
+            assurance beyond Earth.
+          </p>
+
+        </div>
+
+        <div class="footer-column">
+
+          <h3>Organization</h3>
+
+          <a href="/about/">About LRI</a>
+
+          <a href="/research/">Research</a>
+
+          <a href="/initiatives/">Initiatives</a>
+
+          <a href="/partnerships/">Partnerships</a>
+
+        </div>
+
+        <div class="footer-column">
+
+          <h3>Scientific Resources</h3>
+
+          <a href="/publications/">Publications</a>
+
+          <a href="/standards/">Standards</a>
+
+          <a href="/books/">Books</a>
+
+          <a href="/cite/">Cite This Site</a>
+
+        </div>
+
+        <div class="footer-column">
+
+          <h3>Connect</h3>
+
+          <a href="/contact/">Contact LRI</a>
+
+          <a href="/newsletter/">
+            Aerospace Quality Brief
+          </a>
+
+          <a
+            href="https://www.linkedin.com/newsletters/7402028860193796097/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Subscribe on LinkedIn
+          </a>
+
+          <a href="/newsletter/archive/">
+            Newsletter Archive
+          </a>
+
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+
+        <p>
+          &copy; <span id="copyright-year">2026</span>
+          Lunar Research Initiative. All rights reserved.
+        </p>
+
+        <p>
+          Lunar Quality &middot; Verification &middot; Decision Assurance
+        </p>
+
+      </div>
+
     </div>
+
   </footer>
 
+  <!-- ========================================
+       NAVIGATION SCRIPT
+  ======================================== -->
+
+  <script>
+
+    const menuToggle =
+      document.getElementById("menu-toggle");
+
+    const navigation =
+      document.getElementById("main-navigation");
+
+    const dropdowns =
+      document.querySelectorAll(".nav-dropdown");
+
+    menuToggle.addEventListener("click", function () {
+
+      const isOpen =
+        navigation.classList.toggle("is-open");
+
+      menuToggle.setAttribute(
+        "aria-expanded",
+        String(isOpen)
+      );
+
+    });
+
+    dropdowns.forEach(function (dropdown) {
+
+      dropdown.addEventListener("toggle", function () {
+
+        if (dropdown.open) {
+
+          dropdowns.forEach(function (otherDropdown) {
+
+            if (otherDropdown !== dropdown) {
+              otherDropdown.open = false;
+            }
+
+          });
+
+        }
+
+      });
+
+    });
+
+    document.addEventListener("click", function (event) {
+
+      dropdowns.forEach(function (dropdown) {
+
+        if (!dropdown.contains(event.target)) {
+          dropdown.open = false;
+        }
+
+      });
+
+    });
+
+    document.addEventListener("keydown", function (event) {
+
+      if (event.key === "Escape") {
+
+        dropdowns.forEach(function (dropdown) {
+
+          if (dropdown.open) {
+
+            dropdown.open = false;
+
+            dropdown.querySelector("summary").focus();
+
+          }
+
+        });
+
+        if (navigation.classList.contains("is-open")) {
+
+          navigation.classList.remove("is-open");
+
+          menuToggle.setAttribute(
+            "aria-expanded",
+            "false"
+          );
+
+          menuToggle.focus();
+
+        }
+
+      }
+
+    });
+
+    window.addEventListener("resize", function () {
+
+      if (window.innerWidth > 900) {
+
+        navigation.classList.remove("is-open");
+
+        menuToggle.setAttribute(
+          "aria-expanded",
+          "false"
+        );
+
+      }
+
+    });
+
+    document.getElementById("copyright-year").textContent =
+      new Date().getFullYear();
+
+  </script>
+
 </body>
+
 </html>
