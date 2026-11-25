@@ -1,78 +1,2014 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
-  <title>About – Lunar Research Initiative</title>
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>About | Lunar Research Initiative</title>
+
+  <meta name="description" content="Learn about the Lunar Research Initiative, its scientific mission, research philosophy, leadership, and contributions to lunar quality, verification, reliability, and decision assurance.">
+
+  <meta name="author" content="Lunar Research Initiative">
+
+  <meta name="robots" content="index, follow">
+
+  <meta name="theme-color" content="#0b1420">
+
+  <link rel="canonical" href="https://lunarresearchinitiative.github.io/about/">
+
   <link rel="stylesheet" href="/assets/css/style.css">
+
+  <meta property="og:type" content="website">
+
+  <meta property="og:title" content="About the Lunar Research Initiative">
+
+  <meta property="og:description" content="Advancing scientific research and engineering methods for reliable and sustainable lunar operations.">
+
+  <meta property="og:url" content="https://lunarresearchinitiative.github.io/about/">
+
+  <meta property="og:image" content="https://lunarresearchinitiative.github.io/assets/img/lunar-hero.jpg">
+
+
+  <style>
+
+    /* ======================================
+       ABOUT PAGE DESIGN
+    ====================================== */
+
+    main {
+
+      max-width: none;
+
+      padding: 0;
+
+    }
+
+    .about-container {
+
+      width: min(100% - 64px, 1320px);
+
+      margin: 0 auto;
+
+    }
+
+
+    /* HEADER */
+
+    .site-header {
+
+      padding: 0;
+
+    }
+
+    .header-inner {
+
+      min-height: 96px;
+
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+
+      gap: 30px;
+
+    }
+
+    .site-header .brand {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 16px;
+
+      margin: 0;
+
+      color: var(--lri-white);
+
+      text-decoration: none;
+
+    }
+
+    .brand-logo {
+
+      width: 66px;
+
+      height: 66px;
+
+    }
+
+    .brand-name {
+
+      font-size: 1.04rem;
+
+      font-weight: 700;
+
+      line-height: 1.35;
+
+      letter-spacing: 0.065em;
+
+      text-transform: uppercase;
+
+    }
+
+    .brand-subtitle {
+
+      display: block;
+
+      color: var(--lri-muted);
+
+      font-size: 0.72rem;
+
+      font-weight: 400;
+
+      letter-spacing: 0.025em;
+
+      text-transform: none;
+
+      margin-top: 5px;
+
+    }
+
+    .main-nav {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 25px;
+
+    }
+
+    .main-nav > a,
+
+    .nav-dropdown > summary {
+
+      color: var(--lri-white);
+
+      font-size: 0.92rem;
+
+      font-weight: 500;
+
+      padding: 14px 0;
+
+      white-space: nowrap;
+
+      text-decoration: none;
+
+      cursor: pointer;
+
+    }
+
+    .main-nav > a:hover,
+
+    .nav-dropdown > summary:hover {
+
+      color: var(--lri-gold);
+
+    }
+
+    .main-nav > a[aria-current="page"] {
+
+      color: var(--lri-gold);
+
+      border-bottom: 2px solid var(--lri-gold);
+
+    }
+
+    .nav-dropdown {
+
+      position: relative;
+
+      margin: 0;
+
+      padding: 0;
+
+      border: 0;
+
+      background: transparent;
+
+    }
+
+    .nav-dropdown summary {
+
+      list-style: none;
+
+      border: 0 !important;
+
+    }
+
+    .nav-dropdown summary::-webkit-details-marker {
+
+      display: none;
+
+    }
+
+    .nav-dropdown summary::after {
+
+      content: " \25BE";
+
+      font-size: 0.75rem;
+
+      color: var(--lri-gold);
+
+    }
+
+    .nav-dropdown > .dropdown-menu {
+
+      position: absolute;
+
+      top: 100%;
+
+      right: 0;
+
+      min-width: 230px;
+
+      margin: 0;
+
+      padding: 10px;
+
+      background: var(--lri-navy-light);
+
+      border: 1px solid var(--lri-border);
+
+      border-radius: 5px;
+
+      box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+
+      z-index: 100;
+
+    }
+
+    .dropdown-menu a {
+
+      display: block;
+
+      color: var(--lri-white);
+
+      font-size: 0.92rem;
+
+      padding: 12px 14px;
+
+      text-decoration: none;
+
+    }
+
+    .dropdown-menu a:hover {
+
+      background: rgba(221,187,122,0.08);
+
+      color: var(--lri-gold);
+
+    }
+
+    .menu-toggle {
+
+      display: none;
+
+      background: transparent;
+
+      color: var(--lri-gold);
+
+      border-color: var(--lri-border);
+
+    }
+
+
+    /* ABOUT HERO */
+
+    .about-hero {
+
+      position: relative;
+
+      min-height: 440px;
+
+      display: flex;
+
+      align-items: center;
+
+      background:
+
+        linear-gradient(
+
+          90deg,
+
+          rgba(8,13,20,0.97),
+
+          rgba(8,13,20,0.82),
+
+          rgba(8,13,20,0.30)
+
+        ),
+
+        url("/assets/img/lunar-hero.jpg");
+
+      background-size: cover;
+
+      background-position: center;
+
+      border-bottom: 1px solid var(--lri-border);
+
+    }
+
+    .about-hero-content {
+
+      padding: 75px 0;
+
+    }
+
+    .about-hero h1 {
+
+      max-width: 850px;
+
+      font-size: clamp(2.5rem, 5vw, 4rem);
+
+      line-height: 1.12;
+
+      margin-bottom: 24px;
+
+    }
+
+    .about-hero p {
+
+      max-width: 680px;
+
+      font-size: 1.2rem;
+
+      color: #d5dde7;
+
+      line-height: 1.8;
+
+      margin-bottom: 0;
+
+    }
+
+
+    /* INSTITUTIONAL SECTIONS */
+
+    .about-section {
+
+      padding: 75px 0;
+
+    }
+
+    .about-section-alt {
+
+      background: var(--lri-navy-light);
+
+      border-top: 1px solid var(--lri-border);
+
+      border-bottom: 1px solid var(--lri-border);
+
+    }
+
+    .section-introduction {
+
+      max-width: 850px;
+
+      margin-bottom: 35px;
+
+    }
+
+    .section-introduction h2 {
+
+      margin-bottom: 18px;
+
+      font-size: clamp(1.9rem, 3vw, 2.6rem);
+
+    }
+
+    .section-introduction p {
+
+      color: var(--lri-muted);
+
+      font-size: 1.05rem;
+
+    }
+
+    .institutional-layout {
+
+      display: grid;
+
+      grid-template-columns: 1fr 2fr;
+
+      gap: 70px;
+
+      align-items: start;
+
+    }
+
+    .institutional-heading {
+
+      border-left: 3px solid var(--lri-gold);
+
+      padding-left: 25px;
+
+    }
+
+    .institutional-heading h2 {
+
+      margin-bottom: 0;
+
+      font-size: clamp(1.9rem, 3vw, 2.6rem);
+
+    }
+
+    .institutional-copy p {
+
+      color: #d2dce7;
+
+      font-size: 1.08rem;
+
+      line-height: 1.85;
+
+    }
+
+    .institutional-copy p:last-child {
+
+      margin-bottom: 0;
+
+    }
+
+
+    /* MISSION AND VISION */
+
+    .mission-vision-grid {
+
+      display: grid;
+
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+
+      gap: 28px;
+
+    }
+
+    .institutional-card {
+
+      padding: 32px;
+
+      background: linear-gradient(145deg, #172638, #101b29);
+
+      border: 1px solid var(--lri-border);
+
+      border-radius: 6px;
+
+    }
+
+    .institutional-card h3 {
+
+      font-size: 1.4rem;
+
+      margin-bottom: 16px;
+
+    }
+
+    .institutional-card p {
+
+      color: var(--lri-muted);
+
+      line-height: 1.8;
+
+      margin-bottom: 0;
+
+    }
+
+    .institutional-label {
+
+      display: block;
+
+      margin-bottom: 18px;
+
+      color: var(--lri-gold);
+
+      font-size: 0.75rem;
+
+      font-weight: 600;
+
+      letter-spacing: 0.14em;
+
+      text-transform: uppercase;
+
+    }
+
+
+    /* RESEARCH PHILOSOPHY */
+
+    .principles-grid {
+
+      display: grid;
+
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+
+      gap: 30px;
+
+    }
+
+    .principle {
+
+      padding: 20px 0;
+
+      border-top: 2px solid var(--lri-gold);
+
+    }
+
+    .principle-number {
+
+      display: block;
+
+      color: var(--lri-gold);
+
+      font-size: 0.85rem;
+
+      letter-spacing: 0.12em;
+
+      margin-bottom: 16px;
+
+    }
+
+    .principle h3 {
+
+      font-size: 1.2rem;
+
+      margin-bottom: 14px;
+
+    }
+
+    .principle p {
+
+      font-size: 0.97rem;
+
+      color: var(--lri-muted);
+
+      line-height: 1.8;
+
+      margin-bottom: 0;
+
+    }
+
+
+    /* LEADERSHIP */
+
+    .leadership-layout {
+
+      display: grid;
+
+      grid-template-columns: 260px 1fr;
+
+      align-items: center;
+
+      gap: 55px;
+
+    }
+
+    .leadership-emblem {
+
+      padding: 30px;
+
+      background: var(--lri-navy-dark);
+
+      border: 1px solid var(--lri-border);
+
+      border-radius: 6px;
+
+    }
+
+    .leadership-emblem img {
+
+      display: block;
+
+      width: 100%;
+
+      height: auto;
+
+      border-radius: 50%;
+
+    }
+
+    .leadership-name {
+
+      font-size: 2rem;
+
+      margin-bottom: 8px;
+
+    }
+
+    .leadership-title {
+
+      color: var(--lri-gold);
+
+      font-size: 1rem;
+
+      margin-bottom: 24px;
+
+    }
+
+    .leadership-copy p {
+
+      max-width: 850px;
+
+      color: var(--lri-muted);
+
+      font-size: 1.05rem;
+
+      line-height: 1.85;
+
+    }
+
+
+    /* INSTITUTIONAL INDEPENDENCE */
+
+    .independence-statement {
+
+      padding: 28px 32px;
+
+      background: var(--lri-navy-dark);
+
+      border-left: 3px solid var(--lri-gold);
+
+      border-radius: 0 6px 6px 0;
+
+    }
+
+    .independence-statement h3 {
+
+      color: var(--lri-gold);
+
+      font-size: 1.1rem;
+
+      margin-bottom: 12px;
+
+    }
+
+    .independence-statement p {
+
+      margin-bottom: 0;
+
+      color: var(--lri-muted);
+
+      font-size: 0.95rem;
+
+      line-height: 1.8;
+
+    }
+
+
+    /* COLLABORATION */
+
+    .about-collaboration {
+
+      padding: 90px 24px;
+
+      text-align: center;
+
+      background:
+
+        linear-gradient(
+
+          rgba(11,20,32,0.92),
+
+          rgba(11,20,32,0.68)
+
+        ),
+
+        url("/assets/img/lunar-landscape.jpg");
+
+      background-size: cover;
+
+      background-position: center 65%;
+
+      border-top: 1px solid var(--lri-border);
+
+    }
+
+    .about-collaboration h2 {
+
+      font-size: clamp(2rem, 4vw, 3rem);
+
+      margin-bottom: 20px;
+
+    }
+
+    .about-collaboration p {
+
+      max-width: 720px;
+
+      color: #d5dde7;
+
+      font-size: 1.1rem;
+
+      margin: 0 auto 28px;
+
+    }
+
+
+    /* FOOTER */
+
+    .site-footer {
+
+      padding: 50px 0 25px;
+
+      text-align: left;
+
+    }
+
+    .footer-grid {
+
+      display: grid;
+
+      grid-template-columns: 1.8fr 1fr 1fr 1fr;
+
+      gap: 35px;
+
+      padding-bottom: 35px;
+
+    }
+
+    .footer-brand {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 14px;
+
+      margin-bottom: 18px;
+
+    }
+
+    .footer-brand img {
+
+      width: 55px;
+
+      height: 55px;
+
+      border-radius: 50%;
+
+    }
+
+    .footer-brand strong {
+
+      color: var(--lri-white);
+
+      font-size: 0.92rem;
+
+      letter-spacing: 0.05em;
+
+      text-transform: uppercase;
+
+      line-height: 1.4;
+
+    }
+
+    .footer-description {
+
+      max-width: 340px;
+
+      color: var(--lri-muted);
+
+      font-size: 0.88rem;
+
+    }
+
+    .footer-column h3 {
+
+      color: var(--lri-gold);
+
+      font-size: 0.95rem;
+
+      margin-bottom: 18px;
+
+    }
+
+    .footer-column a {
+
+      display: block;
+
+      color: var(--lri-muted);
+
+      margin-bottom: 10px;
+
+      font-size: 0.88rem;
+
+    }
+
+    .footer-column a:hover {
+
+      color: var(--lri-gold);
+
+    }
+
+    .footer-bottom {
+
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+
+      flex-wrap: wrap;
+
+      gap: 15px;
+
+      padding-top: 24px;
+
+      border-top: 1px solid var(--lri-border);
+
+      color: var(--lri-muted);
+
+      font-size: 0.8rem;
+
+    }
+
+
+    /* RESPONSIVE DESIGN */
+
+    @media (max-width: 1100px) {
+
+      .main-nav {
+
+        gap: 17px;
+
+      }
+
+      .brand-subtitle {
+
+        display: none;
+
+      }
+
+    }
+
+    @media (max-width: 900px) {
+
+      .about-container {
+
+        width: calc(100% - 48px);
+
+      }
+
+      .menu-toggle {
+
+        display: block;
+
+      }
+
+      .main-nav {
+
+        display: none;
+
+        position: absolute;
+
+        top: 100%;
+
+        left: 0;
+
+        right: 0;
+
+        padding: 24px;
+
+        background: var(--lri-navy-dark);
+
+        border-bottom: 1px solid var(--lri-border);
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 0;
+
+      }
+
+      .main-nav.is-open {
+
+        display: flex;
+
+      }
+
+      .main-nav > a,
+
+      .nav-dropdown > summary {
+
+        display: block;
+
+        padding: 14px 0;
+
+      }
+
+      .nav-dropdown > .dropdown-menu {
+
+        position: static;
+
+        box-shadow: none;
+
+      }
+
+      .institutional-layout {
+
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+
+      }
+
+      .leadership-layout {
+
+        grid-template-columns: 180px 1fr;
+
+        gap: 30px;
+
+      }
+
+      .principles-grid {
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+      }
+
+      .footer-grid {
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+      }
+
+    }
+
+    @media (max-width: 560px) {
+
+      .about-container {
+
+        width: calc(100% - 36px);
+
+      }
+
+      .header-inner {
+
+        min-height: 82px;
+
+        gap: 12px;
+
+      }
+
+      .brand-logo {
+
+        width: 48px;
+
+        height: 48px;
+
+      }
+
+      .brand-name {
+
+        font-size: 0.8rem;
+
+      }
+
+      .site-header .brand {
+
+        gap: 10px;
+
+      }
+
+      .about-hero {
+
+        min-height: 400px;
+
+        background:
+
+          linear-gradient(
+
+            rgba(8,13,20,0.78),
+
+            rgba(8,13,20,0.86)
+
+          ),
+
+          url("/assets/img/lunar-hero.jpg");
+
+        background-size: cover;
+
+        background-position: center;
+
+      }
+
+      .about-hero h1 {
+
+        font-size: 2.35rem;
+
+      }
+
+      .about-hero p {
+
+        font-size: 1.05rem;
+
+      }
+
+      .about-section {
+
+        padding: 50px 0;
+
+      }
+
+      .mission-vision-grid,
+
+      .principles-grid,
+
+      .leadership-layout {
+
+        grid-template-columns: 1fr;
+
+      }
+
+      .leadership-emblem {
+
+        max-width: 180px;
+
+      }
+
+      .institutional-card {
+
+        padding: 25px;
+
+      }
+
+      .independence-statement {
+
+        padding: 24px;
+
+      }
+
+      .about-collaboration {
+
+        padding: 65px 18px;
+
+      }
+
+      .footer-about {
+
+        grid-column: 1 / -1;
+
+      }
+
+      .footer-bottom {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+      }
+
+    }
+
+  </style>
+
 </head>
+
+
 <body>
 
-<header class="lri-topbar">
-  <div class="lri-topbar-inner">
-    <div class="lri-topbar-left">
-      <img src="/assets/img/LRI LOGO.jpeg" alt="Lunar Research Initiative seal" class="lri-seal">
+  <a class="skip-link" href="#main-content">
+
+    Skip to main content
+
+  </a>
+
+
+  <!-- HEADER -->
+
+  <header class="site-header">
+
+    <div class="about-container header-inner">
+
+      <a class="brand" href="/" aria-label="Lunar Research Initiative home">
+
+        <img
+
+          class="brand-logo"
+
+          src="/assets/img/LRI%20LOGO.jpeg"
+
+          alt="Lunar Research Initiative emblem"
+
+          width="66"
+
+          height="66"
+
+        >
+
+        <div class="brand-name">
+
+          Lunar Research<br>
+
+          Initiative
+
+          <span class="brand-subtitle">
+
+            Lunar Quality and Decision Assurance
+
+          </span>
+
+        </div>
+
+      </a>
+
+      <button
+
+        class="menu-toggle"
+
+        id="menu-toggle"
+
+        type="button"
+
+        aria-expanded="false"
+
+        aria-controls="main-navigation"
+
+      >
+
+        &#9776; Menu
+
+      </button>
+
+      <nav
+
+        class="main-nav"
+
+        id="main-navigation"
+
+        aria-label="Primary navigation"
+
+      >
+
+        <a href="/">Home</a>
+
+        <a href="/about/" aria-current="page">About</a>
+
+        <details class="nav-dropdown">
+
+          <summary>Research</summary>
+
+          <div class="dropdown-menu">
+
+            <a href="/research/">Research Overview</a>
+
+            <a href="/initiatives/">Research Initiatives</a>
+
+          </div>
+
+        </details>
+
+        <a href="/publications/">Publications</a>
+
+        <details class="nav-dropdown">
+
+          <summary>Resources</summary>
+
+          <div class="dropdown-menu">
+
+            <a href="/standards/">Standards</a>
+
+            <a href="/books/">Books</a>
+
+            <a href="/newsletter/">Aerospace Quality Brief</a>
+
+            <a href="/newsletter/archive/">Newsletter Archive</a>
+
+            <a href="/cite/">Cite This Site</a>
+
+          </div>
+
+        </details>
+
+        <details class="nav-dropdown">
+
+          <summary>Collaborate</summary>
+
+          <div class="dropdown-menu">
+
+            <a href="/partnerships/">Partnerships</a>
+
+            <a href="/contact/">Contact LRI</a>
+
+          </div>
+
+        </details>
+
+      </nav>
+
     </div>
-    <nav class="lri-topnav">
-  <a href="/">Home</a>
-  <a href="/about/">About</a>
-  <a href="/research/">Research</a>
-  <a href="/initiatives/">Initiatives</a>
-  <a href="/standards/">Standards</a>
-  <a href="/publications/">Publications</a>
-  <a href="/newsletter/">Newsletter</a>
-  <a href="/partnerships/">Partnerships</a>
-  <a href="/contact/">Contact</a>
-</nav>
 
-  </div>
-</header>
+  </header>
 
-<main>
-  <section class="lri-section">
-    <div class="lri-section-inner">
-      <h1 class="lri-section-title">About the Lunar Research Initiative</h1>
-      <p class="lri-section-text">
-        The Lunar Research Initiative (LRI) develops quality, reliability, and manufacturing frameworks
-        for future lunar infrastructure. The goal is simple: give mission planners, engineers, and
-        regulators a set of tools they can trust when they design factories and construction systems on the Moon.
-      </p>
-    </div>
-  </section>
 
-  <section class="lri-section">
-    <div class="lri-section-inner">
-      <h2 class="lri-section-title">Our Focus</h2>
-      <div class="lri-card-grid">
-        <article class="lri-card">
-          <h3>Quality Engineering</h3>
-          <p>Translating proven quality methods from aerospace and medical devices into lunar surface operations.</p>
-        </article>
-        <article class="lri-card">
-          <h3>Regolith Manufacturing</h3>
-          <p>Studying how regolith behaves as a production material and how to keep those processes stable over time.</p>
-        </article>
-        <article class="lri-card">
-          <h3>Predictive and Risk Based Methods</h3>
-          <p>Building architectures that connect CTQs, capability, reliability, and mission risk in one structure.</p>
-        </article>
+  <main id="main-content">
+
+
+    <!-- HERO -->
+
+    <section class="about-hero" aria-labelledby="about-title">
+
+      <div class="about-container about-hero-content">
+
+        <span class="eyebrow">
+
+          About the Initiative
+
+        </span>
+
+        <h1 id="about-title">
+
+          Advancing the Science of Reliable Lunar Operations
+
+        </h1>
+
+        <p>
+
+          An independent scientific research initiative connecting
+
+          quality engineering, systems engineering, reliability,
+
+          and decision science to the challenges of operating
+
+          beyond Earth.
+
+        </p>
+
       </div>
+
+    </section>
+
+
+    <!-- WHO WE ARE -->
+
+    <section class="about-section" aria-labelledby="identity-title">
+
+      <div class="about-container institutional-layout">
+
+        <div class="institutional-heading">
+
+          <span class="eyebrow">
+
+            Institutional Identity
+
+          </span>
+
+          <h2 id="identity-title">
+
+            Who We Are
+
+          </h2>
+
+        </div>
+
+        <div class="institutional-copy">
+
+          <p>
+
+            The Lunar Research Initiative (LRI) is an independent
+
+            scientific and educational organization dedicated to
+
+            advancing the engineering foundations of safe,
+
+            reliable, verifiable, and sustainable lunar operations.
+
+          </p>
+
+          <p>
+
+            LRI investigates how quality systems, evidence integrity,
+
+            verification, communication delay, autonomy, and
+
+            decision authority influence the reliability of complex
+
+            aerospace systems.
+
+          </p>
+
+          <p>
+
+            Through scientific research, analytical frameworks,
+
+            computational modeling, and engineering methods,
+
+            LRI seeks to strengthen the technical foundations
+
+            that support mission planning, operational decisions,
+
+            and future lunar infrastructure.
+
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- MISSION AND VISION -->
+
+    <section class="about-section about-section-alt"
+
+      aria-labelledby="purpose-title">
+
+      <div class="about-container">
+
+        <div class="section-introduction">
+
+          <span class="eyebrow">
+
+            Purpose and Direction
+
+          </span>
+
+          <h2 id="purpose-title">
+
+            Our Mission and Vision
+
+          </h2>
+
+        </div>
+
+        <div class="mission-vision-grid">
+
+          <article class="institutional-card">
+
+            <span class="institutional-label">
+
+              Our Mission
+
+            </span>
+
+            <h3>
+
+              Building Confidence Beyond Earth
+
+            </h3>
+
+            <p>
+
+              Develop scientific frameworks, engineering methods,
+
+              and practical tools that strengthen quality,
+
+              reliability, verification, evidence integrity,
+
+              and decision assurance for lunar and aerospace
+
+              operations.
+
+            </p>
+
+          </article>
+
+          <article class="institutional-card">
+
+            <span class="institutional-label">
+
+              Our Vision
+
+            </span>
+
+            <h3>
+
+              Enabling Sustainable Lunar Exploration
+
+            </h3>
+
+            <p>
+
+              Contribute to a future in which lunar exploration,
+
+              manufacturing, infrastructure development, and
+
+              autonomous operations rely on scientifically
+
+              defensible evidence, robust engineering practices,
+
+              and accountable decision-making.
+
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- RESEARCH PHILOSOPHY -->
+
+    <section class="about-section"
+
+      aria-labelledby="philosophy-title">
+
+      <div class="about-container">
+
+        <div class="section-introduction">
+
+          <span class="eyebrow">
+
+            Scientific Principles
+
+          </span>
+
+          <h2 id="philosophy-title">
+
+            Our Research Philosophy
+
+          </h2>
+
+          <p>
+
+            LRI approaches complex engineering challenges through
+
+            scientific rigor, interdisciplinary analysis,
+
+            and evidence-driven reasoning.
+
+          </p>
+
+        </div>
+
+        <div class="principles-grid">
+
+          <article class="principle">
+
+            <span class="principle-number">01</span>
+
+            <h3>Scientific Rigor</h3>
+
+            <p>
+
+              Apply systematic research methods, transparent
+
+              assumptions, analytical verification, and
+
+              reproducible approaches wherever feasible.
+
+            </p>
+
+          </article>
+
+          <article class="principle">
+
+            <span class="principle-number">02</span>
+
+            <h3>Evidence Integrity</h3>
+
+            <p>
+
+              Examine the validity, traceability, timeliness,
+
+              and decision relevance of evidence supporting
+
+              scientific and engineering claims.
+
+            </p>
+
+          </article>
+
+          <article class="principle">
+
+            <span class="principle-number">03</span>
+
+            <h3>Systems Thinking</h3>
+
+            <p>
+
+              Investigate the relationships among technical
+
+              performance, operational constraints, human
+
+              behavior, autonomy, and mission risk.
+
+            </p>
+
+          </article>
+
+          <article class="principle">
+
+            <span class="principle-number">04</span>
+
+            <h3>Engineering Accountability</h3>
+
+            <p>
+
+              Connect engineering decisions to explicit
+
+              requirements, supporting evidence, operational
+
+              boundaries, and responsible decision authority.
+
+            </p>
+
+          </article>
+
+          <article class="principle">
+
+            <span class="principle-number">05</span>
+
+            <h3>Interdisciplinary Research</h3>
+
+            <p>
+
+              Integrate knowledge from aerospace engineering,
+
+              quality engineering, reliability science,
+
+              decision science, and human factors.
+
+            </p>
+
+          </article>
+
+          <article class="principle">
+
+            <span class="principle-number">06</span>
+
+            <h3>Knowledge Dissemination</h3>
+
+            <p>
+
+              Share scientific findings through scholarly
+
+              publications, educational resources, technical
+
+              guides, and professional engagement.
+
+            </p>
+
+          </article>
+
+        </div>
+
+        <div class="lri-cta-row"
+
+          style="justify-content: flex-start; margin-top: 30px;">
+
+          <a href="/research/" class="lri-btn lri-btn-primary">
+
+            Explore Our Research &rarr;
+
+          </a>
+
+          <a href="/publications/" class="lri-btn lri-btn-outline">
+
+            Scientific Publications
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- LEADERSHIP -->
+
+    <section class="about-section about-section-alt"
+
+      aria-labelledby="leadership-title">
+
+      <div class="about-container">
+
+        <div class="section-introduction">
+
+          <span class="eyebrow">
+
+            Institutional Leadership
+
+          </span>
+
+          <h2 id="leadership-title">
+
+            Founder and Principal Investigator
+
+          </h2>
+
+        </div>
+
+        <div class="leadership-layout">
+
+          <div class="leadership-emblem">
+
+            <img
+
+              src="/assets/img/LRI%20LOGO.jpeg"
+
+              alt="Lunar Research Initiative institutional emblem"
+
+              loading="lazy"
+
+            >
+
+          </div>
+
+          <div class="leadership-copy">
+
+            <h3 class="leadership-name">
+
+              Ralph Figueroa
+
+            </h3>
+
+            <p class="leadership-title">
+
+              Founder &amp; Principal Investigator
+
+            </p>
+
+            <p>
+
+              Ralph Figueroa is an author, engineer, and researcher
+
+              with more than 25 years of professional experience
+
+              in quality engineering, manufacturing engineering,
+
+              reliability, regulatory compliance, and quality
+
+              management across highly regulated industries.
+
+            </p>
+
+            <p>
+
+              His academic background includes chemistry,
+
+              engineering, and space studies. His current doctoral
+
+              research focuses on scientific and engineering
+
+              approaches to quality, verification, evidence
+
+              integrity, and decision assurance in lunar operations.
+
+            </p>
+
+            <p>
+
+              Through LRI, he connects established engineering
+
+              disciplines with the emerging technical challenges
+
+              of autonomous aerospace systems, delayed supervision,
+
+              lunar manufacturing, and sustained space exploration.
+
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- INDEPENDENCE -->
+
+    <section class="about-section">
+
+      <div class="about-container">
+
+        <div class="independence-statement">
+
+          <h3>
+
+            Institutional Independence
+
+          </h3>
+
+          <p>
+
+            LRI operates as an independent scientific research
+
+            and educational initiative. It does not act as a
+
+            certification, regulatory, or approval authority.
+
+            Its research frameworks, publications, and technical
+
+            resources support scientific inquiry and engineering
+
+            decision-making without replacing applicable
+
+            regulatory requirements, qualification processes,
+
+            or mission-specific approval procedures.
+
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- COLLABORATION -->
+
+    <section class="about-collaboration"
+
+      aria-labelledby="collaboration-title">
+
+      <span class="eyebrow">
+
+        Scientific and Engineering Collaboration
+
+      </span>
+
+      <h2 id="collaboration-title">
+
+        Advancing Lunar Exploration Together
+
+      </h2>
+
+      <p>
+
+        LRI welcomes collaboration with researchers, universities,
+
+        aerospace organizations, and engineering professionals
+
+        who share an interest in reliable and sustainable
+
+        operations beyond Earth.
+
+      </p>
+
+      <div class="button-row">
+
+        <a href="/partnerships/" class="lri-btn lri-btn-primary">
+
+          Explore Partnerships &rarr;
+
+        </a>
+
+        <a href="/contact/" class="lri-btn lri-btn-outline">
+
+          Contact the Initiative
+
+        </a>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer class="site-footer">
+
+    <div class="about-container">
+
+      <div class="footer-grid">
+
+        <div class="footer-about">
+
+          <div class="footer-brand">
+
+            <img
+
+              src="/assets/img/LRI%20LOGO.jpeg"
+
+              alt=""
+
+              width="55"
+
+              height="55"
+
+              loading="lazy"
+
+            >
+
+            <strong>
+
+              Lunar Research<br>
+
+              Initiative
+
+            </strong>
+
+          </div>
+
+          <p class="footer-description">
+
+            Advancing scientific research and engineering
+
+            methods for quality, reliability, and decision
+
+            assurance beyond Earth.
+
+          </p>
+
+        </div>
+
+        <div class="footer-column">
+
+          <h3>Organization</h3>
+
+          <a href="/about/">About LRI</a>
+
+          <a href="/research/">Research</a>
+
+          <a href="/initiatives/">Initiatives</a>
+
+          <a href="/partnerships/">Partnerships</a>
+
+        </div>
+
+        <div class="footer-column">
+
+          <h3>Scientific Resources</h3>
+
+          <a href="/publications/">Publications</a>
+
+          <a href="/standards/">Standards</a>
+
+          <a href="/books/">Books</a>
+
+          <a href="/cite/">Cite This Site</a>
+
+        </div>
+
+        <div class="footer-column">
+
+          <h3>Connect</h3>
+
+          <a href="/contact/">Contact LRI</a>
+
+          <a href="/newsletter/">Aerospace Quality Brief</a>
+
+          <a
+
+            href="https://www.linkedin.com/newsletters/7402028860193796097/"
+
+            target="_blank"
+
+            rel="noopener noreferrer"
+
+          >
+
+            Subscribe on LinkedIn
+
+          </a>
+
+          <a href="/newsletter/archive/">
+
+            Newsletter Archive
+
+          </a>
+
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+
+        <p>
+
+          &copy; <span id="copyright-year">2026</span>
+
+          Lunar Research Initiative. All rights reserved.
+
+        </p>
+
+        <p>
+
+          Lunar Quality &middot; Verification &middot; Decision Assurance
+
+        </p>
+
+      </div>
+
     </div>
-  </section>
-  <section class="lri-section">
-  <div class="lri-section-inner">
-    <p class="lri-section-text" style="max-width: 900px; font-size: 0.95em;">
-      LRI operates as an independent research initiative and does not act as a certification,
-      regulatory, or approval authority.
-    </p>
-  </div>
-</section>
 
-</main>
+  </footer>
 
-<footer class="lri-footer">
-  <p>© 2025 Lunar Research Initiative. All rights reserved.</p>
-</footer>
+
+  <!-- NAVIGATION SCRIPT -->
+
+  <script>
+
+    const menuToggle = document.getElementById("menu-toggle");
+
+    const navigation = document.getElementById("main-navigation");
+
+    const dropdowns = document.querySelectorAll(".nav-dropdown");
+
+
+    menuToggle.addEventListener("click", function () {
+
+      const isOpen = navigation.classList.toggle("is-open");
+
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+
+    });
+
+
+    dropdowns.forEach(function (dropdown) {
+
+      dropdown.addEventListener("toggle", function () {
+
+        if (dropdown.open) {
+
+          dropdowns.forEach(function (otherDropdown) {
+
+            if (otherDropdown !== dropdown) {
+
+              otherDropdown.open = false;
+
+            }
+
+          });
+
+        }
+
+      });
+
+    });
+
+
+    document.addEventListener("click", function (event) {
+
+      dropdowns.forEach(function (dropdown) {
+
+        if (!dropdown.contains(event.target)) {
+
+          dropdown.open = false;
+
+        }
+
+      });
+
+    });
+
+
+    document.addEventListener("keydown", function (event) {
+
+      if (event.key === "Escape") {
+
+        dropdowns.forEach(function (dropdown) {
+
+          if (dropdown.open) {
+
+            dropdown.open = false;
+
+            dropdown.querySelector("summary").focus();
+
+          }
+
+        });
+
+        if (navigation.classList.contains("is-open")) {
+
+          navigation.classList.remove("is-open");
+
+          menuToggle.setAttribute("aria-expanded", "false");
+
+          menuToggle.focus();
+
+        }
+
+      }
+
+    });
+
+
+    window.addEventListener("resize", function () {
+
+      if (window.innerWidth > 900) {
+
+        navigation.classList.remove("is-open");
+
+        menuToggle.setAttribute("aria-expanded", "false");
+
+      }
+
+    });
+
+
+    document.getElementById("copyright-year").textContent =
+
+      new Date().getFullYear();
+
+  </script>
+
 
 </body>
+
 </html>
