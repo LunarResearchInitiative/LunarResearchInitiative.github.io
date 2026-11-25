@@ -1,56 +1,2258 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
-  <title>Contact – Lunar Research Initiative</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Contact | Lunar Research Initiative</title>
+
+  <meta name="description" content="Contact the Lunar Research Initiative for scientific collaboration, research inquiries, publications, speaking invitations, technical discussions, and institutional partnerships.">
+
+  <meta name="author" content="Lunar Research Initiative">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0b1420">
+
+  <link rel="canonical" href="https://lunarresearchinitiative.github.io/contact/">
+
   <link rel="stylesheet" href="/assets/css/style.css">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Contact | Lunar Research Initiative">
+  <meta property="og:description" content="Connect with LRI to discuss scientific research, engineering collaboration, publications, and professional engagement.">
+  <meta property="og:url" content="https://lunarresearchinitiative.github.io/contact/">
+  <meta property="og:image" content="https://lunarresearchinitiative.github.io/assets/img/lunar-hero.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+
+  <style>
+
+    /* ========================================
+       PAGE LAYOUT
+    ======================================== */
+
+    main {
+      max-width: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .contact-container {
+      width: min(100% - 64px, 1320px);
+      margin: 0 auto;
+    }
+
+    /* ========================================
+       HEADER AND NAVIGATION
+    ======================================== */
+
+    .site-header {
+      padding: 0;
+    }
+
+    .header-inner {
+      min-height: 96px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .site-header .brand {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 0;
+      color: var(--lri-white);
+      text-decoration: none;
+    }
+
+    .brand-logo {
+      width: 66px;
+      height: 66px;
+    }
+
+    .brand-name {
+      font-size: 1.04rem;
+      font-weight: 700;
+      line-height: 1.35;
+      letter-spacing: 0.065em;
+      text-transform: uppercase;
+    }
+
+    .brand-subtitle {
+      display: block;
+      color: var(--lri-muted);
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.025em;
+      text-transform: none;
+      margin-top: 5px;
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .main-nav > a,
+    .nav-dropdown > summary {
+      color: var(--lri-white);
+      font-size: 0.92rem;
+      font-weight: 500;
+      padding: 14px 0;
+      white-space: nowrap;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .main-nav > a:hover,
+    .nav-dropdown > summary:hover {
+      color: var(--lri-gold);
+    }
+
+    .nav-dropdown {
+      position: relative;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      background: transparent;
+    }
+
+    .nav-dropdown summary {
+      list-style: none;
+      border: 0 !important;
+    }
+
+    .nav-dropdown summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .nav-dropdown summary::after {
+      content: " \25BE";
+      font-size: 0.75rem;
+      color: var(--lri-gold);
+    }
+
+    .nav-dropdown.active > summary {
+      color: var(--lri-gold);
+      border-bottom: 2px solid var(--lri-gold) !important;
+    }
+
+    .nav-dropdown > .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      min-width: 230px;
+      margin: 0;
+      padding: 10px;
+      background: var(--lri-navy-light);
+      border: 1px solid var(--lri-border);
+      border-radius: 5px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+      z-index: 100;
+    }
+
+    .dropdown-menu a {
+      display: block;
+      color: var(--lri-white);
+      padding: 12px 14px;
+      font-size: 0.92rem;
+      text-decoration: none;
+    }
+
+    .dropdown-menu a:hover,
+    .dropdown-menu a[aria-current="page"] {
+      background: rgba(221,187,122,0.08);
+      color: var(--lri-gold);
+    }
+
+    .menu-toggle {
+      display: none;
+      color: var(--lri-gold);
+      background: transparent;
+      border: 1px solid var(--lri-border);
+    }
+
+    /* ========================================
+       CINEMATIC HERO
+    ======================================== */
+
+    .contact-hero {
+      min-height: 390px;
+      display: flex;
+      align-items: center;
+      background-color: var(--lri-navy-dark);
+
+      background-image:
+        linear-gradient(
+          90deg,
+          rgba(8,13,20,0.98),
+          rgba(8,13,20,0.80),
+          rgba(8,13,20,0.28)
+        ),
+        url("/assets/img/lunar-hero.jpg");
+
+      background-size: cover;
+      background-position: center;
+      border-bottom: 1px solid var(--lri-border);
+    }
+
+    .contact-hero-content {
+      padding: 70px 0;
+    }
+
+    .contact-hero h1 {
+      max-width: 850px;
+      font-size: clamp(2.6rem, 5vw, 4.1rem);
+      line-height: 1.12;
+      margin-bottom: 24px;
+    }
+
+    .contact-hero p {
+      max-width: 740px;
+      color: #d5dde7;
+      font-size: 1.18rem;
+      line-height: 1.8;
+      margin-bottom: 0;
+    }
+
+    /* ========================================
+       SECTION DESIGN
+    ======================================== */
+
+    .contact-section {
+      padding: 70px 0;
+    }
+
+    .contact-section-alt {
+      background: var(--lri-navy-light);
+      border-top: 1px solid var(--lri-border);
+      border-bottom: 1px solid var(--lri-border);
+    }
+
+    .section-heading {
+      max-width: 850px;
+      margin-bottom: 35px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(1.9rem, 3vw, 2.6rem);
+      margin-bottom: 16px;
+    }
+
+    .section-heading p {
+      color: var(--lri-muted);
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+
+    /* ========================================
+       CONTACT INFORMATION
+    ======================================== */
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.45fr);
+      align-items: start;
+      gap: 45px;
+    }
+
+    .contact-details {
+      display: grid;
+      gap: 22px;
+      min-width: 0;
+    }
+
+    .contact-panel {
+      padding: 28px;
+      background: linear-gradient(145deg, #172638, #101b29);
+      border: 1px solid var(--lri-border);
+      border-radius: 6px;
+    }
+
+    .contact-panel h2,
+    .contact-panel h3 {
+      margin-bottom: 15px;
+    }
+
+    .contact-panel h3 {
+      font-size: 1.18rem;
+    }
+
+    .contact-panel p {
+      color: var(--lri-muted);
+      font-size: 0.96rem;
+      line-height: 1.8;
+    }
+
+    .contact-icon {
+      width: 38px;
+      height: 38px;
+      margin-bottom: 18px;
+      color: var(--lri-gold);
+    }
+
+    .contact-icon svg {
+      width: 100%;
+      height: 100%;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .contact-label {
+      display: block;
+      color: var(--lri-gold);
+      font-size: 0.74rem;
+      font-weight: 600;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .contact-email {
+      display: inline-block;
+      color: var(--lri-gold);
+      font-size: 1rem;
+      font-weight: 600;
+      overflow-wrap: anywhere;
+      margin-bottom: 20px;
+    }
+
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .copy-email-button {
+      padding: 10px 16px;
+      background: transparent;
+      color: var(--lri-gold);
+      border: 1px solid var(--lri-border);
+      font-size: 0.85rem;
+    }
+
+    .copy-email-button:hover {
+      background: rgba(221,187,122,0.08);
+      border-color: var(--lri-gold);
+    }
+
+    .contact-person {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+
+    .contact-person img {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      object-fit: contain;
+    }
+
+    .contact-person strong {
+      display: block;
+      color: var(--lri-white);
+      font-size: 1.05rem;
+      margin-bottom: 5px;
+    }
+
+    .contact-person span {
+      display: block;
+      color: var(--lri-muted);
+      font-size: 0.86rem;
+    }
+
+    .contact-links {
+      display: grid;
+      gap: 14px;
+    }
+
+    .contact-links a {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--lri-border);
+      font-size: 0.93rem;
+    }
+
+    .contact-links a:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    /* ========================================
+       INQUIRY FORM
+    ======================================== */
+
+    .inquiry-panel {
+      padding: 35px;
+      background: linear-gradient(145deg, #172638, #101b29);
+      border: 1px solid var(--lri-border);
+      border-radius: 6px;
+      min-width: 0;
+    }
+
+    .inquiry-panel h2 {
+      font-size: 1.8rem;
+      margin-bottom: 14px;
+    }
+
+    .form-intro {
+      color: var(--lri-muted);
+      font-size: 0.95rem;
+      line-height: 1.75;
+      margin-bottom: 26px;
+    }
+
+    .inquiry-form {
+      max-width: none;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0 20px;
+    }
+
+    .form-field {
+      min-width: 0;
+    }
+
+    .form-field-full {
+      grid-column: 1 / -1;
+    }
+
+    .form-field label {
+      color: var(--lri-white);
+      font-size: 0.88rem;
+      font-weight: 500;
+      margin-bottom: 9px;
+    }
+
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
+      width: 100%;
+      min-width: 0;
+      padding: 13px 15px;
+      margin-bottom: 22px;
+      color: var(--lri-white);
+      background: var(--lri-navy-dark);
+      border: 1px solid var(--lri-border);
+      border-radius: 4px;
+      font: inherit;
+      font-size: 0.94rem;
+    }
+
+    .form-field input:focus,
+    .form-field select:focus,
+    .form-field textarea:focus {
+      border-color: var(--lri-gold);
+      outline: 1px solid var(--lri-gold);
+      outline-offset: 0;
+    }
+
+    .form-field textarea {
+      min-height: 190px;
+      resize: vertical;
+    }
+
+    .required-mark {
+      color: var(--lri-gold);
+    }
+
+    .optional-mark {
+      color: var(--lri-muted);
+      font-size: 0.8rem;
+      font-weight: 400;
+    }
+
+    .form-note {
+      color: var(--lri-muted);
+      font-size: 0.82rem;
+      line-height: 1.7;
+      margin-bottom: 22px;
+    }
+
+    .form-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .form-clear {
+      background: transparent;
+      color: var(--lri-muted);
+      border: 1px solid var(--lri-border);
+    }
+
+    .form-clear:hover {
+      color: var(--lri-white);
+      background: rgba(170,184,200,0.08);
+    }
+
+    .form-status {
+      margin-top: 18px;
+      padding: 15px 18px;
+      background: var(--lri-navy-dark);
+      color: var(--lri-muted);
+      border-left: 3px solid var(--lri-gold);
+      font-size: 0.88rem;
+      line-height: 1.7;
+      overflow-wrap: anywhere;
+    }
+
+    /* ========================================
+       INQUIRY CATEGORIES
+    ======================================== */
+
+    .inquiry-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .inquiry-card {
+      padding: 26px;
+      background: var(--lri-navy);
+      border: 1px solid var(--lri-border);
+      border-radius: 6px;
+    }
+
+    .inquiry-number {
+      display: block;
+      color: var(--lri-gold);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.10em;
+      margin-bottom: 15px;
+    }
+
+    .inquiry-card h3 {
+      font-size: 1.15rem;
+      line-height: 1.4;
+      margin-bottom: 12px;
+    }
+
+    .inquiry-card p {
+      color: var(--lri-muted);
+      font-size: 0.94rem;
+      line-height: 1.8;
+      margin-bottom: 18px;
+    }
+
+    .inquiry-select {
+      padding: 0;
+      background: transparent;
+      border: 0;
+      color: var(--lri-gold);
+      font-size: 0.88rem;
+      font-weight: 600;
+      text-align: left;
+    }
+
+    .inquiry-select:hover {
+      background: transparent;
+      color: var(--lri-gold-hover);
+      text-decoration: underline;
+    }
+
+    /* ========================================
+       CONTACT GUIDANCE
+    ======================================== */
+
+    .guidance-layout {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .guidance-heading {
+      border-left: 3px solid var(--lri-gold);
+      padding-left: 25px;
+    }
+
+    .guidance-heading h2 {
+      font-size: clamp(1.9rem, 3vw, 2.5rem);
+      margin-bottom: 0;
+    }
+
+    .guidance-copy p,
+    .guidance-copy li {
+      color: var(--lri-muted);
+      line-height: 1.8;
+    }
+
+    .guidance-copy ul {
+      padding-left: 22px;
+      margin-bottom: 20px;
+    }
+
+    .privacy-note {
+      padding: 22px 25px;
+      margin-top: 25px;
+      background: var(--lri-navy-dark);
+      border-left: 3px solid var(--lri-gold);
+      border-radius: 0 5px 5px 0;
+    }
+
+    .privacy-note h3 {
+      color: var(--lri-gold);
+      font-size: 1.05rem;
+      margin-bottom: 10px;
+    }
+
+    .privacy-note p {
+      font-size: 0.9rem;
+      margin-bottom: 0;
+    }
+
+    /* ========================================
+       SCIENTIFIC CONNECTIONS
+    ======================================== */
+
+    .contact-closing {
+      padding: 80px 24px;
+      text-align: center;
+      background-color: var(--lri-navy-dark);
+
+      background-image:
+        linear-gradient(
+          rgba(11,20,32,0.94),
+          rgba(11,20,32,0.68)
+        ),
+        url("/assets/img/lunar-landscape.jpg");
+
+      background-size: cover;
+      background-position: center 65%;
+      border-top: 1px solid var(--lri-border);
+    }
+
+    .contact-closing h2 {
+      font-size: clamp(1.9rem, 4vw, 2.8rem);
+      margin-bottom: 20px;
+    }
+
+    .contact-closing p {
+      max-width: 740px;
+      color: #d5dde7;
+      font-size: 1.08rem;
+      line-height: 1.8;
+      margin: 0 auto 28px;
+    }
+
+    /* ========================================
+       FOOTER
+    ======================================== */
+
+    .site-footer {
+      padding: 50px 0 25px;
+      text-align: left;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.8fr 1fr 1fr 1fr;
+      gap: 35px;
+      padding-bottom: 35px;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .footer-brand img {
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+    }
+
+    .footer-brand strong {
+      color: var(--lri-white);
+      font-size: 0.92rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      line-height: 1.4;
+    }
+
+    .footer-description {
+      max-width: 340px;
+      color: var(--lri-muted);
+      font-size: 0.88rem;
+    }
+
+    .footer-column h3 {
+      color: var(--lri-gold);
+      font-size: 0.95rem;
+      margin-bottom: 18px;
+    }
+
+    .footer-column a {
+      display: block;
+      color: var(--lri-muted);
+      margin-bottom: 10px;
+      font-size: 0.88rem;
+    }
+
+    .footer-column a:hover {
+      color: var(--lri-gold);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      padding-top: 24px;
+      border-top: 1px solid var(--lri-border);
+      color: var(--lri-muted);
+      font-size: 0.8rem;
+    }
+
+    /* ========================================
+       RESPONSIVE DESIGN
+    ======================================== */
+
+    @media (max-width: 1100px) {
+
+      .main-nav {
+        gap: 17px;
+      }
+
+      .brand-subtitle {
+        display: none;
+      }
+
+      .contact-layout {
+        gap: 25px;
+      }
+
+    }
+
+    @media (max-width: 900px) {
+
+      .contact-container {
+        width: calc(100% - 48px);
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .main-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        padding: 24px;
+        background: var(--lri-navy-dark);
+        border-bottom: 1px solid var(--lri-border);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        max-height: 80vh;
+        overflow-y: auto;
+      }
+
+      .main-nav.is-open {
+        display: flex;
+      }
+
+      .main-nav > a,
+      .nav-dropdown > summary {
+        display: block;
+        padding: 14px 0;
+      }
+
+      .nav-dropdown > .dropdown-menu {
+        position: static;
+        box-shadow: none;
+      }
+
+      .contact-layout,
+      .guidance-layout {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .inquiry-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+    }
+
+    @media (max-width: 650px) {
+
+      .contact-container {
+        width: calc(100% - 36px);
+      }
+
+      .header-inner {
+        min-height: 82px;
+        gap: 12px;
+      }
+
+      .brand-logo {
+        width: 48px;
+        height: 48px;
+      }
+
+      .brand-name {
+        font-size: 0.8rem;
+      }
+
+      .site-header .brand {
+        gap: 10px;
+      }
+
+      .contact-hero {
+        min-height: 350px;
+
+        background-image:
+          linear-gradient(
+            rgba(8,13,20,0.78),
+            rgba(8,13,20,0.88)
+          ),
+          url("/assets/img/lunar-hero.jpg");
+      }
+
+      .contact-hero-content {
+        padding: 50px 0;
+      }
+
+      .contact-hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .contact-hero p {
+        font-size: 1.05rem;
+      }
+
+      .contact-section {
+        padding: 45px 0;
+      }
+
+      .inquiry-grid,
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-panel,
+      .inquiry-panel,
+      .inquiry-card {
+        padding: 23px;
+      }
+
+      .form-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .contact-closing {
+        padding: 60px 18px;
+      }
+
+      .footer-about {
+        grid-column: 1 / -1;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+    }
+
+    @media print {
+
+      main * {
+        color: #111111 !important;
+      }
+
+      .contact-hero,
+      .contact-panel,
+      .contact-section-alt,
+      .inquiry-card,
+      .privacy-note {
+        background: #ffffff !important;
+        border-color: #cccccc !important;
+      }
+
+      .inquiry-panel,
+      .contact-closing,
+      .copy-email-button,
+      .inquiry-select {
+        display: none !important;
+      }
+
+      .contact-layout {
+        display: block;
+      }
+
+    }
+
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contact Lunar Research Initiative",
+    "url": "https://lunarresearchinitiative.github.io/contact/",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "Lunar Research Initiative",
+      "alternateName": "LRI",
+      "url": "https://lunarresearchinitiative.github.io/",
+      "email": "rlphfgr@lunarresearchinitiative.org",
+      "founder": {
+        "@type": "Person",
+        "name": "Ralph Figueroa"
+      }
+    }
+  }
+  </script>
+
 </head>
+
 <body>
 
-<header class="lri-topbar">
-  <div class="lri-topbar-inner">
-    <div class="lri-topbar-left">
-      <img src="/assets/img/LRI LOGO.jpeg" alt="Lunar Research Initiative seal" class="lri-seal">
+  <a class="skip-link" href="#main-content">
+    Skip to main content
+  </a>
+
+  <!-- ========================================
+       HEADER
+  ======================================== -->
+
+  <header class="site-header">
+
+    <div class="contact-container header-inner">
+
+      <a class="brand" href="/" aria-label="Lunar Research Initiative home">
+
+        <img
+          class="brand-logo"
+          src="/assets/img/LRI%20LOGO.jpeg"
+          alt="Lunar Research Initiative emblem"
+          width="66"
+          height="66"
+        >
+
+        <div class="brand-name">
+
+          Lunar Research<br>
+          Initiative
+
+          <span class="brand-subtitle">
+            Lunar Quality and Decision Assurance
+          </span>
+
+        </div>
+
+      </a>
+
+      <button
+        class="menu-toggle"
+        id="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="main-navigation"
+      >
+        &#9776; Menu
+      </button>
+
+      <nav
+        class="main-nav"
+        id="main-navigation"
+        aria-label="Primary navigation"
+      >
+
+        <a href="/">Home</a>
+
+        <a href="/about/">About</a>
+
+        <details class="nav-dropdown">
+
+          <summary>Research</summary>
+
+          <div class="dropdown-menu">
+
+            <a href="/research/">Research Overview</a>
+
+            <a href="/initiatives/">Research Initiatives</a>
+
+          </div>
+
+        </details>
+
+        <a href="/publications/">Publications</a>
+
+        <details class="nav-dropdown">
+
+          <summary>Resources</summary>
+
+          <div class="dropdown-menu">
+
+            <a href="/standards/">Standards</a>
+
+            <a href="/books/">Books</a>
+
+            <a href="/newsletter/">Aerospace Quality Brief</a>
+
+            <a href="/newsletter/archive/">Newsletter Archive</a>
+
+            <a href="/cite/">Cite This Site</a>
+
+          </div>
+
+        </details>
+
+        <details class="nav-dropdown active">
+
+          <summary>Collaborate</summary>
+
+          <div class="dropdown-menu">
+
+            <a href="/partnerships/">Partnerships</a>
+
+            <a href="/contact/" aria-current="page">
+              Contact LRI
+            </a>
+
+          </div>
+
+        </details>
+
+      </nav>
+
     </div>
-   <nav class="lri-topnav">
-  <a href="/">Home</a>
-  <a href="/about/">About</a>
-  <a href="/research/">Research</a>
-  <a href="/initiatives/">Initiatives</a>
-  <a href="/standards/">Standards</a>
-  <a href="/publications/">Publications</a>
-  <a href="/newsletter/">Newsletter</a>
-  <a href="/partnerships/">Partnerships</a>
-  <a href="/contact/">Contact</a>
-</nav>
 
-  </div>
-</header>
+  </header>
 
-<main>
-  <section class="lri-section">
-    <div class="lri-section-inner">
-      <h1 class="lri-section-title">Contact LRI</h1>
-      <p class="lri-section-text">
-        For questions about publications, collaborations, or speaking invitations, you can reach the Lunar Research Initiative at:
+  <main id="main-content">
+
+    <!-- ========================================
+         HERO
+    ======================================== -->
+
+    <section class="contact-hero" aria-labelledby="contact-title">
+
+      <div class="contact-container contact-hero-content">
+
+        <span class="eyebrow">
+          Scientific and Professional Engagement
+        </span>
+
+        <h1 id="contact-title">
+          Connect With the Lunar Research Initiative
+        </h1>
+
+        <p>
+          Begin a conversation about scientific research,
+          engineering collaboration, publications,
+          educational opportunities, or the future of
+          reliable and sustainable operations beyond Earth.
+        </p>
+
+      </div>
+
+    </section>
+
+    <!-- ========================================
+         CONTACT INFORMATION AND INQUIRY FORM
+    ======================================== -->
+
+    <section class="contact-section" id="contact-inquiry">
+
+      <div class="contact-container">
+
+        <div class="contact-layout">
+
+          <!-- CONTACT INFORMATION -->
+
+          <div class="contact-details">
+
+            <article class="contact-panel">
+
+              <div class="contact-icon" aria-hidden="true">
+
+                <svg viewBox="0 0 48 48">
+
+                  <rect x="5" y="10" width="38" height="28" rx="3"/>
+
+                  <path d="m6 13 18 14 18-14"/>
+
+                </svg>
+
+              </div>
+
+              <span class="contact-label">
+                Official Correspondence
+              </span>
+
+              <h2>Contact LRI</h2>
+
+              <p>
+                Direct scientific, professional,
+                institutional, and general inquiries
+                to our official email address.
+              </p>
+
+              <a
+                class="contact-email"
+                href="mailto:rlphfgr@lunarresearchinitiative.org"
+              >
+                rlphfgr@lunarresearchinitiative.org
+              </a>
+
+              <div class="contact-actions">
+
+                <a
+                  href="mailto:rlphfgr@lunarresearchinitiative.org"
+                  class="lri-btn lri-btn-primary"
+                >
+                  Email LRI &rarr;
+                </a>
+
+                <button
+                  type="button"
+                  class="copy-email-button"
+                  id="copy-email"
+                  hidden
+                >
+                  Copy Email
+                </button>
+
+              </div>
+
+            </article>
+
+            <!-- PRINCIPAL CONTACT -->
+
+            <article class="contact-panel">
+
+              <span class="contact-label">
+                Principal Contact
+              </span>
+
+              <div class="contact-person">
+
+                <img
+                  src="/assets/img/LRI%20LOGO.jpeg"
+                  alt="Lunar Research Initiative emblem"
+                  loading="lazy"
+                >
+
+                <div>
+
+                  <strong>Ralph Figueroa</strong>
+
+                  <span>
+                    Founder &amp; Principal Investigator
+                  </span>
+
+                </div>
+
+              </div>
+
+              <p>
+                Scientific research, engineering
+                collaboration, scholarly publications,
+                technical presentations, and institutional
+                engagement.
+              </p>
+
+              <a href="/about/" class="text-link">
+                About LRI &rarr;
+              </a>
+
+            </article>
+
+            <!-- PROFESSIONAL CONNECTIONS -->
+
+            <article class="contact-panel">
+
+              <span class="contact-label">
+                Professional Connections
+              </span>
+
+              <h3>Explore and Connect</h3>
+
+              <div class="contact-links">
+
+                <a href="/research/">
+                  <span>Research Program</span>
+                  <span aria-hidden="true">&rarr;</span>
+                </a>
+
+                <a href="/publications/">
+                  <span>Scientific Publications</span>
+                  <span aria-hidden="true">&rarr;</span>
+                </a>
+
+                <a href="/partnerships/">
+                  <span>Collaboration Opportunities</span>
+                  <span aria-hidden="true">&rarr;</span>
+                </a>
+
+                <a
+                  href="https://www.linkedin.com/in/ralph-figueroa-283335273/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span>Professional LinkedIn Profile</span>
+                  <span aria-hidden="true">&rarr;</span>
+                </a>
+
+                <a
+                  href="https://www.linkedin.com/newsletters/7402028860193796097/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span>Aerospace Quality Brief</span>
+                  <span aria-hidden="true">&rarr;</span>
+                </a>
+
+              </div>
+
+            </article>
+
+          </div>
+
+          <!-- INQUIRY FORM -->
+
+          <div class="inquiry-panel">
+
+            <span class="contact-label">
+              Scientific and Institutional Correspondence
+            </span>
+
+            <h2>Prepare an Inquiry</h2>
+
+            <p class="form-intro">
+              Provide a short introduction and describe
+              your research interest, project, question,
+              or proposed collaboration.
+            </p>
+
+            <noscript>
+
+              <p>
+                Please email
+                <a href="mailto:rlphfgr@lunarresearchinitiative.org">
+                  rlphfgr@lunarresearchinitiative.org
+                </a>
+                directly to submit an inquiry.
+              </p>
+
+            </noscript>
+
+            <form
+              class="inquiry-form"
+              id="inquiry-form"
+              hidden
+            >
+
+              <div class="form-grid">
+
+                <!-- FULL NAME -->
+
+                <div class="form-field">
+
+                  <label for="full-name">
+
+                    Full Name
+
+                    <span class="required-mark">*</span>
+
+                  </label>
+
+                  <input
+                    type="text"
+                    id="full-name"
+                    name="full-name"
+                    placeholder="Your full name"
+                    autocomplete="name"
+                    maxlength="120"
+                    required
+                  >
+
+                </div>
+
+                <!-- EMAIL -->
+
+                <div class="form-field">
+
+                  <label for="email">
+
+                    Email Address
+
+                    <span class="required-mark">*</span>
+
+                  </label>
+
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="you@organization.org"
+                    autocomplete="email"
+                    maxlength="180"
+                    required
+                  >
+
+                </div>
+
+                <!-- ORGANIZATION -->
+
+                <div class="form-field">
+
+                  <label for="organization">
+
+                    Organization
+
+                    <span class="optional-mark">
+                      (Optional)
+                    </span>
+
+                  </label>
+
+                  <input
+                    type="text"
+                    id="organization"
+                    name="organization"
+                    placeholder="University, company, or agency"
+                    autocomplete="organization"
+                    maxlength="180"
+                  >
+
+                </div>
+
+                <!-- PROFESSIONAL ROLE -->
+
+                <div class="form-field">
+
+                  <label for="professional-role">
+
+                    Professional Role
+
+                    <span class="optional-mark">
+                      (Optional)
+                    </span>
+
+                  </label>
+
+                  <input
+                    type="text"
+                    id="professional-role"
+                    name="professional-role"
+                    placeholder="Researcher, engineer, student..."
+                    autocomplete="organization-title"
+                    maxlength="120"
+                  >
+
+                </div>
+
+                <!-- INQUIRY CATEGORY -->
+
+                <div class="form-field form-field-full">
+
+                  <label for="inquiry-category">
+
+                    Inquiry Category
+
+                    <span class="required-mark">*</span>
+
+                  </label>
+
+                  <select
+                    id="inquiry-category"
+                    name="inquiry-category"
+                    required
+                  >
+
+                    <option value="">
+                      Select an inquiry category
+                    </option>
+
+                    <option value="Scientific Research">
+                      Scientific Research
+                    </option>
+
+                    <option value="Research Collaboration">
+                      Research Collaboration
+                    </option>
+
+                    <option value="Institutional Partnership">
+                      Institutional Partnership
+                    </option>
+
+                    <option value="Publications and Books">
+                      Publications and Books
+                    </option>
+
+                    <option value="Speaking and Presentations">
+                      Speaking and Presentations
+                    </option>
+
+                    <option value="Education and Training">
+                      Education and Training
+                    </option>
+
+                    <option value="Technical Inquiry">
+                      Technical Inquiry
+                    </option>
+
+                    <option value="Media and Professional Engagement">
+                      Media and Professional Engagement
+                    </option>
+
+                    <option value="General Inquiry">
+                      General Inquiry
+                    </option>
+
+                  </select>
+
+                </div>
+
+                <!-- SUBJECT -->
+
+                <div class="form-field form-field-full">
+
+                  <label for="subject">
+
+                    Subject
+
+                    <span class="required-mark">*</span>
+
+                  </label>
+
+                  <input
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    placeholder="Brief description of your inquiry"
+                    maxlength="150"
+                    required
+                  >
+
+                </div>
+
+                <!-- MESSAGE -->
+
+                <div class="form-field form-field-full">
+
+                  <label for="message">
+
+                    Message
+
+                    <span class="required-mark">*</span>
+
+                  </label>
+
+                  <textarea
+                    id="message"
+                    name="message"
+                    placeholder="Introduce yourself and describe your inquiry, research interests, or proposed collaboration..."
+                    maxlength="1500"
+                    required
+                  ></textarea>
+
+                </div>
+
+              </div>
+
+              <p class="form-note">
+
+                Fields marked with an asterisk are required.
+                This form prepares an email in your default
+                email application. It does not transmit
+                or store information directly on this website.
+                Please review and send the email from your
+                email application.
+
+              </p>
+
+              <div class="form-actions">
+
+                <button
+                  type="submit"
+                  class="lri-btn lri-btn-primary"
+                >
+                  Prepare Email &rarr;
+                </button>
+
+                <button
+                  type="reset"
+                  class="form-clear"
+                >
+                  Clear Form
+                </button>
+
+              </div>
+
+              <div
+                class="form-status"
+                id="form-status"
+                role="status"
+                aria-live="polite"
+                hidden
+              ></div>
+
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ========================================
+         INQUIRY CATEGORIES
+    ======================================== -->
+
+    <section
+      class="contact-section contact-section-alt"
+      aria-labelledby="categories-title"
+    >
+
+      <div class="contact-container">
+
+        <div class="section-heading">
+
+          <span class="eyebrow">
+            Professional Engagement
+          </span>
+
+          <h2 id="categories-title">
+            How Can We Connect?
+          </h2>
+
+          <p>
+            Select the area that best describes your
+            scientific or professional interest.
+          </p>
+
+        </div>
+
+        <div class="inquiry-grid">
+
+          <article class="inquiry-card">
+
+            <span class="inquiry-number">01</span>
+
+            <h3>Scientific Research</h3>
+
+            <p>
+              Questions concerning research methods,
+              published findings, evidence integrity,
+              verification, autonomy, and lunar quality systems.
+            </p>
+
+            <button
+              type="button"
+              class="inquiry-select"
+              data-category="Scientific Research"
+              hidden
+            >
+              Prepare Research Inquiry &rarr;
+            </button>
+
+          </article>
+
+          <article class="inquiry-card">
+
+            <span class="inquiry-number">02</span>
+
+            <h3>Research Collaboration</h3>
+
+            <p>
+              Interdisciplinary investigations,
+              complementary expertise, joint scientific
+              projects, and potential scholarly contributions.
+            </p>
+
+            <button
+              type="button"
+              class="inquiry-select"
+              data-category="Research Collaboration"
+              hidden
+            >
+              Discuss Collaboration &rarr;
+            </button>
+
+          </article>
+
+          <article class="inquiry-card">
+
+            <span class="inquiry-number">03</span>
+
+            <h3>Institutional Partnerships</h3>
+
+            <p>
+              Exploratory engagement with universities,
+              government agencies, research organizations,
+              laboratories, and aerospace companies.
+            </p>
+
+            <button
+              type="button"
+              class="inquiry-select"
+              data-category="Institutional Partnership"
+              hidden
+            >
+              Discuss Partnership &rarr;
+            </button>
+
+          </article>
+
+          <article class="inquiry-card">
+
+            <span class="inquiry-number">04</span>
+
+            <h3>Publications and Books</h3>
+
+            <p>
+              Questions about journal articles, research
+              frameworks, technical guides, published books,
+              citations, and related scientific resources.
+            </p>
+
+            <button
+              type="button"
+              class="inquiry-select"
+              data-category="Publications and Books"
+              hidden
+            >
+              Request Publication Information &rarr;
+            </button>
+
+          </article>
+
+          <article class="inquiry-card">
+
+            <span class="inquiry-number">05</span>
+
+            <h3>Speaking and Presentations</h3>
+
+            <p>
+              Invitations to scientific conferences,
+              academic seminars, technical panels,
+              professional meetings, and research discussions.
+            </p>
+
+            <button
+              type="button"
+              class="inquiry-select"
+              data-category="Speaking and Presentations"
+              hidden
+            >
+              Discuss a Speaking Invitation &rarr;
+            </button>
+
+          </article>
+
+          <article class="inquiry-card">
+
+            <span class="inquiry-number">06</span>
+
+            <h3>Education and Technical Engagement</h3>
+
+            <p>
+              Educational discussions, technical knowledge
+              exchange, research methodology, engineering
+              quality practices, and professional development.
+            </p>
+
+            <button
+              type="button"
+              class="inquiry-select"
+              data-category="Education and Training"
+              hidden
+            >
+              Prepare Educational Inquiry &rarr;
+            </button>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ========================================
+         CORRESPONDENCE GUIDANCE
+    ======================================== -->
+
+    <section
+      class="contact-section"
+      aria-labelledby="guidance-title"
+    >
+
+      <div class="contact-container guidance-layout">
+
+        <div class="guidance-heading">
+
+          <span class="eyebrow">
+            Correspondence Guidance
+          </span>
+
+          <h2 id="guidance-title">
+            Before Contacting LRI
+          </h2>
+
+        </div>
+
+        <div class="guidance-copy">
+
+          <p>
+            To support a productive scientific or
+            professional discussion, please include
+            the information relevant to your inquiry.
+          </p>
+
+          <ul>
+
+            <li>
+              Your name and institutional affiliation,
+              if applicable.
+            </li>
+
+            <li>
+              A brief description of your research
+              interest or technical challenge.
+            </li>
+
+            <li>
+              The relevant LRI publication, research area,
+              or engineering initiative.
+            </li>
+
+            <li>
+              Your proposed objectives and expected outcomes,
+              particularly for collaboration inquiries.
+            </li>
+
+            <li>
+              Any important deadlines or scheduling
+              requirements.
+            </li>
+
+          </ul>
+
+          <aside class="privacy-note">
+
+            <h3>
+              Privacy and Information Handling
+            </h3>
+
+            <p>
+              Please do not include confidential,
+              proprietary, export-controlled, personally
+              sensitive, or security-restricted information
+              in an initial inquiry. Discuss appropriate
+              information-sharing arrangements before
+              exchanging restricted technical materials.
+            </p>
+
+          </aside>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ========================================
+         SCIENTIFIC CONNECTIONS
+    ======================================== -->
+
+    <section
+      class="contact-closing"
+      aria-labelledby="closing-title"
+    >
+
+      <span class="eyebrow">
+        Advancing Scientific Knowledge
+      </span>
+
+      <h2 id="closing-title">
+        Building the Foundations of Lunar Exploration
+      </h2>
+
+      <p>
+        LRI welcomes scientific exchange and professional
+        engagement that contribute to the engineering
+        foundations of safe, reliable, verifiable, and
+        sustainable operations beyond Earth.
       </p>
-      <p class="lri-section-text">
-        <strong>Email:</strong>
-        <a href="mailto:rlphfgr@lunarresearchinitiative.org">
-  rlphfgr@lunarresearchinitiative.org
-</a>
-      </p>
-      <p class="lri-section-text">
-        Please include a short description of your project or question so we can respond with the right level of detail.
-      </p>
+
+      <div class="button-row">
+
+        <a href="/partnerships/" class="lri-btn lri-btn-primary">
+          Explore Collaboration Opportunities &rarr;
+        </a>
+
+        <a href="/publications/" class="lri-btn lri-btn-outline">
+          Review Our Scientific Contributions
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ========================================
+       FOOTER
+  ======================================== -->
+
+  <footer class="site-footer">
+
+    <div class="contact-container">
+
+      <div class="footer-grid">
+
+        <div class="footer-about">
+
+          <div class="footer-brand">
+
+            <img
+              src="/assets/img/LRI%20LOGO.jpeg"
+              alt=""
+              width="55"
+              height="55"
+              loading="lazy"
+            >
+
+            <strong>
+              Lunar Research<br>
+              Initiative
+            </strong>
+
+          </div>
+
+          <p class="footer-description">
+            Advancing scientific research and engineering
+            methods for quality, reliability, and decision
+            assurance beyond Earth.
+          </p>
+
+        </div>
+
+        <div class="footer-column">
+
+          <h3>Organization</h3>
+
+          <a href="/about/">About LRI</a>
+
+          <a href="/research/">Research</a>
+
+          <a href="/initiatives/">Initiatives</a>
+
+          <a href="/partnerships/">Partnerships</a>
+
+        </div>
+
+        <div class="footer-column">
+
+          <h3>Scientific Resources</h3>
+
+          <a href="/publications/">Publications</a>
+
+          <a href="/standards/">Standards</a>
+
+          <a href="/books/">Books</a>
+
+          <a href="/cite/">Cite This Site</a>
+
+        </div>
+
+        <div class="footer-column">
+
+          <h3>Connect</h3>
+
+          <a href="/contact/">Contact LRI</a>
+
+          <a href="/newsletter/">Aerospace Quality Brief</a>
+
+          <a
+            href="https://www.linkedin.com/newsletters/7402028860193796097/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Subscribe on LinkedIn
+          </a>
+
+          <a href="/newsletter/archive/">Newsletter Archive</a>
+
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+
+        <p>
+          &copy; <span id="copyright-year">2026</span>
+          Lunar Research Initiative. All rights reserved.
+        </p>
+
+        <p>
+          Lunar Quality &middot; Verification &middot; Decision Assurance
+        </p>
+
+      </div>
+
     </div>
-  </section>
-</main>
 
-<footer class="lri-footer">
-  <p>© 2025 Lunar Research Initiative. All rights reserved.</p>
-</footer>
+  </footer>
+
+  <!-- ========================================
+       NAVIGATION AND CONTACT FUNCTIONALITY
+  ======================================== -->
+
+  <script>
+
+    /* MOBILE NAVIGATION */
+
+    const menuToggle =
+      document.getElementById("menu-toggle");
+
+    const navigation =
+      document.getElementById("main-navigation");
+
+    const dropdowns =
+      document.querySelectorAll(".nav-dropdown");
+
+    menuToggle.addEventListener("click", function () {
+
+      const isOpen =
+        navigation.classList.toggle("is-open");
+
+      menuToggle.setAttribute(
+        "aria-expanded",
+        String(isOpen)
+      );
+
+    });
+
+    dropdowns.forEach(function (dropdown) {
+
+      dropdown.addEventListener("toggle", function () {
+
+        if (dropdown.open) {
+
+          dropdowns.forEach(function (otherDropdown) {
+
+            if (otherDropdown !== dropdown) {
+
+              otherDropdown.open = false;
+
+            }
+
+          });
+
+        }
+
+      });
+
+    });
+
+    document.addEventListener("click", function (event) {
+
+      dropdowns.forEach(function (dropdown) {
+
+        if (!dropdown.contains(event.target)) {
+
+          dropdown.open = false;
+
+        }
+
+      });
+
+    });
+
+    document.addEventListener("keydown", function (event) {
+
+      if (event.key === "Escape") {
+
+        dropdowns.forEach(function (dropdown) {
+
+          if (dropdown.open) {
+
+            dropdown.open = false;
+
+            dropdown.querySelector("summary").focus();
+
+          }
+
+        });
+
+        if (navigation.classList.contains("is-open")) {
+
+          navigation.classList.remove("is-open");
+
+          menuToggle.setAttribute(
+            "aria-expanded",
+            "false"
+          );
+
+          menuToggle.focus();
+
+        }
+
+      }
+
+    });
+
+    window.addEventListener("resize", function () {
+
+      if (window.innerWidth > 900) {
+
+        navigation.classList.remove("is-open");
+
+        menuToggle.setAttribute(
+          "aria-expanded",
+          "false"
+        );
+
+      }
+
+    });
+
+
+    /* OFFICIAL CONTACT EMAIL */
+
+    const contactEmail =
+      "rlphfgr@lunarresearchinitiative.org";
+
+
+    /* COPY EMAIL ADDRESS */
+
+    const copyEmailButton =
+      document.getElementById("copy-email");
+
+    copyEmailButton.hidden = false;
+
+    copyEmailButton.addEventListener("click", async function () {
+
+      try {
+
+        await navigator.clipboard.writeText(contactEmail);
+
+        copyEmailButton.textContent = "Email Copied";
+
+        setTimeout(function () {
+
+          copyEmailButton.textContent = "Copy Email";
+
+        }, 2000);
+
+      } catch (error) {
+
+        window.prompt(
+          "Copy the LRI email address:",
+          contactEmail
+        );
+
+      }
+
+    });
+
+
+    /* INQUIRY FORM */
+
+    const inquiryForm =
+      document.getElementById("inquiry-form");
+
+    const formStatus =
+      document.getElementById("form-status");
+
+    const inquiryCategory =
+      document.getElementById("inquiry-category");
+
+    inquiryForm.hidden = false;
+
+
+    /* PREPARE EMAIL MESSAGE */
+
+    inquiryForm.addEventListener("submit", function (event) {
+
+      event.preventDefault();
+
+      if (!inquiryForm.reportValidity()) {
+
+        return;
+
+      }
+
+      const name =
+        document.getElementById("full-name").value.trim();
+
+      const email =
+        document.getElementById("email").value.trim();
+
+      const organization =
+        document.getElementById("organization").value.trim();
+
+      const professionalRole =
+        document.getElementById("professional-role").value.trim();
+
+      const category =
+        inquiryCategory.value;
+
+      const subject =
+        document.getElementById("subject").value.trim();
+
+      const message =
+        document.getElementById("message").value.trim();
+
+      if (!name || !subject || !message) {
+
+        formStatus.hidden = false;
+
+        formStatus.textContent =
+          "Please complete all required fields.";
+
+        return;
+
+      }
+
+      const emailSubject =
+        "[LRI Inquiry: " + category + "] " + subject;
+
+      const emailBody = [
+
+        "Dear Lunar Research Initiative,",
+
+        "",
+
+        message,
+
+        "",
+
+        "Correspondence Information",
+
+        "Name: " + name,
+
+        "Email: " + email,
+
+        "Organization: " +
+          (organization || "Not provided"),
+
+        "Professional Role: " +
+          (professionalRole || "Not provided"),
+
+        "Inquiry Category: " + category,
+
+        "",
+
+        "Submitted through the LRI website inquiry form."
+
+      ].join("\r\n");
+
+      const mailtoLink =
+
+        "mailto:" + contactEmail +
+
+        "?subject=" + encodeURIComponent(emailSubject) +
+
+        "&body=" + encodeURIComponent(emailBody);
+
+      formStatus.hidden = false;
+
+      formStatus.textContent =
+
+        "Your inquiry is ready. This page will attempt " +
+
+        "to open your default email application. " +
+
+        "Review the message and send it from that " +
+
+        "application. If it does not open, email LRI " +
+
+        "directly at " + contactEmail + ".";
+
+      window.location.href = mailtoLink;
+
+    });
+
+
+    /* CLEAR FORM STATUS */
+
+    inquiryForm.addEventListener("reset", function () {
+
+      formStatus.hidden = true;
+
+      formStatus.textContent = "";
+
+    });
+
+
+    /* INQUIRY CATEGORY SHORTCUTS */
+
+    document.querySelectorAll(".inquiry-select")
+      .forEach(function (button) {
+
+        button.hidden = false;
+
+        button.addEventListener("click", function () {
+
+          inquiryCategory.value =
+            button.dataset.category;
+
+          inquiryForm.scrollIntoView({
+
+            behavior: window.matchMedia(
+              "(prefers-reduced-motion: reduce)"
+            ).matches ? "auto" : "smooth",
+
+            block: "start"
+
+          });
+
+          document.getElementById("full-name").focus({
+
+            preventScroll: true
+
+          });
+
+        });
+
+      });
+
+
+    /* AUTOMATIC COPYRIGHT YEAR */
+
+    document.getElementById("copyright-year").textContent =
+      new Date().getFullYear();
+
+  </script>
 
 </body>
+
 </html>
