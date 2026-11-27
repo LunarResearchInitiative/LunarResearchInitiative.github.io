@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://lunarresearchinitiative.github.io/sitemap.xml
+Sitemap: https://lunarresearchinitiative.org/sitemap.xml
